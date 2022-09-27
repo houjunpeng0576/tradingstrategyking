@@ -14,80 +14,80 @@
 /* The Folowing Is Stock Technique Analysis Identify Number */
 /* 技术指标唯一编号 */
 #define	STT_MIN			1
-//	K线属性类
+// K线属性类
 #define	STT_KLINE_MIN	1
-#define	STT_MA			1		//	移动平均线MA
-#define	STT_BBI			2		//	多空指标BBI
-#define	STT_BOLL		3		//	布林带BOLL
-#define	STT_PV			4		//	汇证均价线P/V
-#define	STT_SAR			5		//	停损点转向指标SAR
-#define	STT_DJ			6		//	叠加图DJ
-#define	STT_CW			7		//	筹码分布图CW
+#define	STT_MA			1		// 移动平均线MA
+#define	STT_BBI			2		// 多空指标BBI
+#define	STT_BOLL		3		// 布林带BOLL
+#define	STT_PV			4		// 汇证均价线P/V
+#define	STT_SAR			5		// 停损点转向指标SAR
+#define	STT_DJ			6		// 叠加图DJ
+#define	STT_CW			7		// 筹码分布图CW
 #define	STT_KLINE_MAX	7
 
-//	趋势类
+// 趋势类
 #define	STT_TREND_MIN	8
-#define	STT_MACD		8		//	指数平滑异同移动平均线MACD
-#define	STT_MIKE		9		//	麦克指标MIKE
-#define	STT_PSY			10		//	心理线PSY
+#define	STT_MACD		8		// 指数平滑异同移动平均线MACD
+#define	STT_MIKE		9		// 麦克指标MIKE
+#define	STT_PSY			10		// 心理线PSY
 #define	STT_TREND_MAX	10
 
-//	能量类
+// 能量类
 #define	STT_ENERGY_MIN	11
-#define	STT_VOLUME		11		//	成交量
-#define	STT_NVI			12		//	负成交量指标NVI
-#define	STT_PVI			13		//	正成交量指标PVI
-#define	STT_VR			14		//	容量比率VR
-#define	STT_VROC		15		//	成交量变动率指标VROC
-#define	STT_OBV			16		//	能量线OBV
-#define	STT_MOBV		17		//	主力进出MOBV
-#define	STT_MFI			18		//	资金流动指数MFI
-#define	STT_VMACD		19		//	量指数平滑异同移动平均线VMACD
-#define	STT_WVAD		20		//	威廉变异离散量WVAD
-#define	STT_EMV			21		//	简易波动指标EMV
-#define	STT_VRSI		22		//	量相对强弱指标VRSI
-#define	STT_NVRSI		23		//	新量相对强弱指标VRSI
-#define	STT_AD			24		//	聚/散指标A/D
-#define	STT_CI			25		//	累积指数CI
+#define	STT_VOLUME		11		// 成交量
+#define	STT_NVI			12		// 负成交量指标NVI
+#define	STT_PVI			13		// 正成交量指标PVI
+#define	STT_VR			14		// 容量比率VR
+#define	STT_VROC		15		// 成交量变动率指标VROC
+#define	STT_OBV			16		// 能量线OBV
+#define	STT_MOBV		17		// 主力进出MOBV
+#define	STT_MFI			18		// 资金流动指数MFI
+#define	STT_VMACD		19		// 量指数平滑异同移动平均线VMACD
+#define	STT_WVAD		20		// 威廉变异离散量WVAD
+#define	STT_EMV			21		// 简易波动指标EMV
+#define	STT_VRSI		22		// 量相对强弱指标VRSI
+#define	STT_NVRSI		23		// 新量相对强弱指标VRSI
+#define	STT_AD			24		// 聚/散指标A/D
+#define	STT_CI			25		// 累积指数CI
 #define	STT_ENERGY_MAX	25
 
-//	摆动类
+// 摆动类
 #define	STT_SWING_MIN	26
-#define	STT_KDJ			26		//	随机指标KDJ
-#define	STT_R			27		//	威廉指标R
-#define	STT_RSI			28		//	相对强弱指标
-#define	STT_BIAS		29		//	乖离率BIAS
-#define	STT_MTM			30		//	动量指标MTM
-#define	STT_DMI			31		//	动向指标DMI
-#define	STT_ROC			32		//	变动率指标ROC
-#define	STT_CCI			33		//	顺势通道指标CCI
-#define	STT_CV			34		//	佳庆指标CV
-#define	STT_ARBR		35		//	人气意愿指标ARBR
-#define	STT_CR			36		//	中间意愿指标CR
-#define	STT_OSC			37		//	摆动量OSC
-#define	STT_UOS			38		//	极摆动指标UOS
-#define	STT_MAOSC		39		//	移动平均摆动量MAOSC
-#define	STT_36BIAS		40		//	3减6日乖离3-6BIAS
-#define	STT_DPO			41		//	去势价格摆动指数DPO
-#define	STT_KST			42		//	确然指标KST
+#define	STT_KDJ			26		// 随机指标KDJ
+#define	STT_R			27		// 威廉指标R
+#define	STT_RSI			28		// 相对强弱指标
+#define	STT_BIAS		29		// 乖离率BIAS
+#define	STT_MTM			30		// 动量指标MTM
+#define	STT_DMI			31		// 动向指标DMI
+#define	STT_ROC			32		// 变动率指标ROC
+#define	STT_CCI			33		// 顺势通道指标CCI
+#define	STT_CV			34		// 佳庆指标CV
+#define	STT_ARBR		35		// 人气意愿指标ARBR
+#define	STT_CR			36		// 中间意愿指标CR
+#define	STT_OSC			37		// 摆动量OSC
+#define	STT_UOS			38		// 极摆动指标UOS
+#define	STT_MAOSC		39		// 移动平均摆动量MAOSC
+#define	STT_36BIAS		40		// 3减6日乖离3-6BIAS
+#define	STT_DPO			41		// 去势价格摆动指数DPO
+#define	STT_KST			42		// 确然指标KST
 #define	STT_SWING_MAX	42
 
-//	其他类
+// 其他类
 #define	STT_OTHER_MIN	43
-#define	STT_REI			43		//	范围膨胀指数REI
-#define	STT_DMKI		44		//	迪马克尔指标DMKI
-#define	STT_PCNT		45		//	幅度比PCNT
-#define	STT_HLC			46		//	幅度分析HLC
-#define	STT_CDP			47		//	逆势操作指标CDP
-#define	STT_ASI			48		//	累积摆动指标ASI
-#define	STT_ATR			49		//	均幅指标ATR
+#define	STT_REI			43		// 范围膨胀指数REI
+#define	STT_DMKI		44		// 迪马克尔指标DMKI
+#define	STT_PCNT		45		// 幅度比PCNT
+#define	STT_HLC			46		// 幅度分析HLC
+#define	STT_CDP			47		// 逆势操作指标CDP
+#define	STT_ASI			48		// 累积摆动指标ASI
+#define	STT_ATR			49		// 均幅指标ATR
 #define	STT_OTHER_MAX	49
 
 #define	STT_CLK_MIN		50
-#define	STT_CYO			50		//	周期摆动量CYO
-#define	STT_DCYO		51		//	去噪周期摆动量DCYO
-#define	STT_HSL			52		//	相对换手率HSL
-#define	STT_DPER		53		//	去势百分比指标DPER
+#define	STT_CYO			50		// 周期摆动量CYO
+#define	STT_DCYO		51		// 去噪周期摆动量DCYO
+#define	STT_HSL			52		// 相对换手率HSL
+#define	STT_DPER		53		// 去势百分比指标DPER
 #define	STT_CLK_MAX		53
 
 #define	STT_MAX			53
@@ -109,34 +109,34 @@
 
 // 买卖信号
 #define	ITS_MIN				-15
-#define	ITS_SELLINTENSE		-15	//	强烈卖出
-#define	ITSG_SELLINTENSE	-13	//	门限
-#define	ITS_SELL			-10	//	卖出
-#define	ITSG_SELL			-8	//	门限
-#define	ITS_SELLFEEBLE		-5	//	微弱卖出
-#define	ITSG_SELLFEEBLE		-3	//	门限
-#define	ITS_NOTHING			0	//	无
-#define	ITSG_BUYFEEBLE		3	//	门限
-#define	ITS_BUYFEEBLE		5	//	微弱买进
-#define	ITSG_BUY			8	//	门限
-#define	ITS_BUY				10	//	买进
-#define	ITSG_BUYINTENSE		13	//	门限
-#define	ITS_BUYINTENSE		15	//	强烈买进
+#define	ITS_SELLINTENSE		-15	// 强烈卖出
+#define	ITSG_SELLINTENSE	-13	// 门限
+#define	ITS_SELL			-10	// 卖出
+#define	ITSG_SELL			-8	// 门限
+#define	ITS_SELLFEEBLE		-5	// 微弱卖出
+#define	ITSG_SELLFEEBLE		-3	// 门限
+#define	ITS_NOTHING			0	// 无
+#define	ITSG_BUYFEEBLE		3	// 门限
+#define	ITS_BUYFEEBLE		5	// 微弱买进
+#define	ITSG_BUY			8	// 门限
+#define	ITS_BUY				10	// 买进
+#define	ITSG_BUYINTENSE		13	// 门限
+#define	ITS_BUYINTENSE		15	// 强烈买进
 #define	ITS_MAX				15
 
 // 买卖信号理由
 #define	ITSC_MIN				1
-#define	ITSC_NOTHING			1	//	无
-#define	ITSC_DEVIATEONBOTTOM	2	//	底背离
-#define	ITSC_DEVIATEONTOP		3	//	顶背离
-#define	ITSC_GOLDENFORK			4	//	金叉
-#define	ITSC_DEADFORK			5	//	死叉
-#define	ITSC_LONG				6	//	多头
-#define	ITSC_SHORT				7	//	空头
-#define	ITSC_OVERBOUGHT			8	//	超买
-#define	ITSC_OVERSOLD			9	//	超卖
-#define	ITSC_SUPPORT			10	//	支撑位
-#define	ITSC_RESISTANCE			11	//	阻力位
+#define	ITSC_NOTHING			1	// 无
+#define	ITSC_DEVIATEONBOTTOM	2	// 底背离
+#define	ITSC_DEVIATEONTOP		3	// 顶背离
+#define	ITSC_GOLDENFORK			4	// 金叉
+#define	ITSC_DEADFORK			5	// 死叉
+#define	ITSC_LONG				6	// 多头
+#define	ITSC_SHORT				7	// 空头
+#define	ITSC_OVERBOUGHT			8	// 超买
+#define	ITSC_OVERSOLD			9	// 超卖
+#define	ITSC_SUPPORT			10	// 支撑位
+#define	ITSC_RESISTANCE			11	// 阻力位
 #define	ITSC_MAX				11
 
 #define	ITS_ISSELL(x)			(x<0)
@@ -203,11 +203,11 @@ public:
 	CTechnique( CKData * pKData );
 	virtual ~CTechnique();
 
-	void SetKData( CKData * pKData );	//	设定K线数据
+	void SetKData( CKData * pKData );	// 设定K线数据
 	CKData * GetKData( );
-	virtual	void	Clear( );			//	清除
-	virtual	void	ClearLastIntensity( );	//	清除上次买卖信号
-	virtual	BOOL	PrepareCache( int nStart, int nEnd, BOOL bForceRecalculate );	//	计算好数据，放入缓冲区
+	virtual	void	Clear( );			// 清除
+	virtual	void	ClearLastIntensity( );	// 清除上次买卖信号
+	virtual	BOOL	PrepareCache( int nStart, int nEnd, BOOL bForceRecalculate );	// 计算好数据，放入缓冲区
 
 protected:
 	BOOL	LoadFromCache( int nIndex, double * pValue1,
@@ -295,8 +295,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-//	K线属性类
-//	移动平均线MA
+// K线属性类
+// 移动平均线MA
 class STKLIB_API CMA : public CTechnique
 {
 public:
@@ -329,7 +329,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );
 };
 
-//	多空指标BBI
+// 多空指标BBI
 class STKLIB_API CBBI : public CTechnique
 {
 public:
@@ -358,7 +358,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	布林带BOLL
+// 布林带BOLL
 class STKLIB_API CBOLL : public CTechnique
 {
 public:
@@ -386,7 +386,7 @@ public:
 	virtual	BOOL	Calculate( double * pdMA, double * pdUp, double * pdDown, int nIndex, BOOL bUseLast );
 };
 
-//	汇证均价线P/V
+// 汇证均价线P/V
 class STKLIB_API CPV : public CTechnique
 {
 public:
@@ -409,7 +409,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	停损点转向指标SAR
+// 停损点转向指标SAR
 class STKLIB_API CSAR : public CTechnique
 {
 public:
@@ -448,7 +448,7 @@ protected:
 	double			m_dCurLow;
 };
 
-//	叠加图DJ
+// 叠加图DJ
 class STKLIB_API CDJ : public CTechnique
 {
 public:
@@ -477,7 +477,7 @@ public:
 	// Operations
 };
 
-//	筹码分布图CW
+// 筹码分布图CW
 class STKLIB_API CCW : public CTechnique
 {
 public:
@@ -519,8 +519,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-//	趋势类
-//	指数平滑异同移动平均线MACD
+// 趋势类
+// 指数平滑异同移动平均线MACD
 class STKLIB_API CMACD : public CTechnique
 {
 public:
@@ -551,7 +551,7 @@ public:
 					int nIndex, BOOL bUseLast );
 };
 
-//	麦克指标MIKE
+// 麦克指标MIKE
 class STKLIB_API CMIKE : public CTechnique
 {
 public:
@@ -574,7 +574,7 @@ public:
 							double *pWS, double *pMS, double *pSS, int nIndex );
 };
 
-//	心理线PSY
+// 心理线PSY
 class STKLIB_API CPSY : public CTechnique
 {
 public:
@@ -601,8 +601,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-//	能量类
-//	成交量
+// 能量类
+// 成交量
 class STKLIB_API CVOLUME : public CTechnique
 {
 public:
@@ -630,7 +630,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );
 };
 
-//	负成交量指标NVI
+// 负成交量指标NVI
 class STKLIB_API CNVI : public CTechnique
 {
 public:
@@ -656,7 +656,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double *pMA, int nIndex, BOOL bUseLast );
 };
 
-//	正成交量指标PVI
+// 正成交量指标PVI
 class STKLIB_API CPVI : public CTechnique
 {
 public:
@@ -682,7 +682,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double *pMA, int nIndex, BOOL bUseLast );
 };
 
-//	容量比率VR
+// 容量比率VR
 class STKLIB_API CVR : public CTechnique
 {
 public:
@@ -708,7 +708,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	成交量变动率指标VROC
+// 成交量变动率指标VROC
 class STKLIB_API CVROC : public CTechnique
 {
 public:
@@ -736,7 +736,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	能量线OBV
+// 能量线OBV
 class STKLIB_API COBV : public CTechnique
 {
 public:
@@ -761,7 +761,7 @@ public:
 	virtual	BOOL	Calculate( double * pdOBV, int nIndex, BOOL bUseLast );
 };
 
-//	主力进出MOBV
+// 主力进出MOBV
 class STKLIB_API CMOBV : public COBV
 {
 public:
@@ -788,7 +788,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, int nIndex, BOOL bUseLast );
 };
 
-//	资金流动指数MFI
+// 资金流动指数MFI
 class STKLIB_API CMFI : public CTechnique
 {
 public:
@@ -814,7 +814,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	量指数平滑异同移动平均线VMACD
+// 量指数平滑异同移动平均线VMACD
 class STKLIB_API CVMACD : public CMACD
 {
 public:
@@ -830,7 +830,7 @@ public:
 					int nIndex, BOOL bUseLast );
 };
 
-//	威廉变异离散量WVAD
+// 威廉变异离散量WVAD
 class STKLIB_API CWVAD : public CTechnique
 {
 public:
@@ -856,7 +856,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	简易波动指标EMV
+// 简易波动指标EMV
 class STKLIB_API CEMV : public CTechnique
 {
 public:
@@ -884,7 +884,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	量相对强弱指标VRSI
+// 量相对强弱指标VRSI
 class STKLIB_API CVRSI : public CTechnique
 {
 public:
@@ -912,7 +912,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	新量相对强弱指标VRSI
+// 新量相对强弱指标VRSI
 class STKLIB_API CNVRSI : public CVRSI
 {
 public:
@@ -926,7 +926,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	聚/散指标A/D
+// 聚/散指标A/D
 class STKLIB_API CAD : public CTechnique
 {
 public:
@@ -950,7 +950,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	累积指数CI
+// 累积指数CI
 class STKLIB_API CCI : public CTechnique
 {
 public:
@@ -974,8 +974,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-//	摆动类
-//	随机指标KDJ
+// 摆动类
+// 随机指标KDJ
 class STKLIB_API CKDJ : public CTechnique
 {
 public:
@@ -998,7 +998,7 @@ public:
 	int		m_nRSVDays;
 	int		m_nKDays;
 	int		m_nDDays;
-	int		m_nJ;		//	1 For 3K-2D, 2 For 3D-2K
+	int		m_nJ;		// 1 For 3K-2D, 2 For 3D-2K
 	int		m_itsGoldenFork;
 	int		m_itsDeadFork;
 	virtual	void	SetDefaultParameters( );
@@ -1011,7 +1011,7 @@ public:
 	virtual	BOOL	Calculate( double *pValue1, double *pValue2, double *pValue3, int nIndex, BOOL bUseLast );
 };
 
-//	威廉指标R
+// 威廉指标R
 class STKLIB_API CR : public CTechnique
 {
 public:
@@ -1035,7 +1035,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	相对强弱指标
+// 相对强弱指标
 class STKLIB_API CRSI : public CTechnique
 {
 public:
@@ -1062,7 +1062,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );
 };
 
-//	乖离率BIAS
+// 乖离率BIAS
 class STKLIB_API CBIAS : public CTechnique
 {
 public:
@@ -1088,7 +1088,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	动量指标MTM
+// 动量指标MTM
 class STKLIB_API CMTM : public CTechnique
 {
 public:
@@ -1116,7 +1116,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double *pMA, int nIndex, BOOL bUseLast );
 };
 
-//	动向指标DMI
+// 动向指标DMI
 class STKLIB_API CDMI : public CTechnique
 {
 public:
@@ -1146,7 +1146,7 @@ public:
 	virtual	BOOL	Calculate( double * pDIPlus, double * pDIMinus, double *pADX, double *pADXR, int nIndex, BOOL bUseLast );
 };
 
-//	变动率指标ROC
+// 变动率指标ROC
 class STKLIB_API CROC : public CTechnique
 {
 public:
@@ -1174,7 +1174,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	顺势通道指标CCI
+// 顺势通道指标CCI
 class STKLIB_API CCCI : public CTechnique
 {
 public:
@@ -1203,7 +1203,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	佳庆指标CV
+// 佳庆指标CV
 class STKLIB_API CCV : public CTechnique
 {
 public:
@@ -1230,7 +1230,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	人气意愿指标ARBR
+// 人气意愿指标ARBR
 class STKLIB_API CARBR : public CTechnique
 {
 public:
@@ -1258,7 +1258,7 @@ public:
 	virtual	BOOL	Calculate( double * pAR, double *pBR, int nIndex, BOOL bUseLast );
 };
 
-//	中间意愿指标CR
+// 中间意愿指标CR
 class STKLIB_API CCR : public CTechnique
 {
 public:
@@ -1289,7 +1289,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pA, double * pB, double * pC, double * pD, int nIndex, BOOL bUseLast );
 };
 
-//	摆动量OSC
+// 摆动量OSC
 class STKLIB_API COSC : public CTechnique
 {
 public:
@@ -1317,7 +1317,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	极摆动指标UOS
+// 极摆动指标UOS
 class STKLIB_API CUOS : public CTechnique
 {
 public:
@@ -1347,7 +1347,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	移动平均摆动量MAOSC
+// 移动平均摆动量MAOSC
 class STKLIB_API CMAOSC : public CTechnique
 {
 public:
@@ -1376,7 +1376,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	3减6日乖离3-6BIAS
+// 3减6日乖离3-6BIAS
 class STKLIB_API C36BIAS : public CTechnique
 {
 public:
@@ -1401,7 +1401,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	去势价格摆动指数DPO
+// 去势价格摆动指数DPO
 class STKLIB_API CDPO : public CTechnique
 {
 public:
@@ -1429,7 +1429,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	确然指标KST
+// 确然指标KST
 class STKLIB_API CKST : public CTechnique
 {
 public:
@@ -1458,8 +1458,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-//	其他类
-//	范围膨胀指数REI
+// 其他类
+// 范围膨胀指数REI
 class STKLIB_API CREI : public CTechnique
 {
 public:
@@ -1485,7 +1485,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	迪马克尔指标DMKI
+// 迪马克尔指标DMKI
 class STKLIB_API CDMKI : public CTechnique
 {
 public:
@@ -1511,7 +1511,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	幅度比PCNT
+// 幅度比PCNT
 class STKLIB_API CPCNT : public CTechnique
 {
 public:
@@ -1538,7 +1538,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	幅度分析HLC
+// 幅度分析HLC
 class STKLIB_API CHLC : public CTechnique
 {
 public:
@@ -1566,7 +1566,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	逆势操作指标CDP
+// 逆势操作指标CDP
 class STKLIB_API CCDP : public CTechnique
 {
 public:
@@ -1589,7 +1589,7 @@ public:
 	virtual	BOOL	Calculate( double * pAH, double * pNH, double * pAL, double * pNL, int nIndex, BOOL bUseLast );
 };
 
-//	累积摆动指标ASI
+// 累积摆动指标ASI
 class STKLIB_API CASI : public CTechnique
 {
 public:
@@ -1615,7 +1615,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-//	均幅指标ATR
+// 均幅指标ATR
 class STKLIB_API CATR : public CTechnique
 {
 public:
@@ -1642,8 +1642,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-//	策略为王类
-//	周期摆动量CYO
+// 策略为王类
+// 周期摆动量CYO
 class STKLIB_API CCYO : public CTechnique
 {
 public:
@@ -1671,7 +1671,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	去噪周期摆动量DCYO
+// 去噪周期摆动量DCYO
 class STKLIB_API CDCYO : public CTechnique
 {
 public:
@@ -1699,7 +1699,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-//	相对换手率HSL
+// 相对换手率HSL
 class STKLIB_API CHSL : public CTechnique
 {
 public:
@@ -1731,7 +1731,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );
 };
 
-//	去势百分比指标DPER
+// 去势百分比指标DPER
 class STKLIB_API CDPER : public CTechnique
 {
 public:
@@ -1785,7 +1785,7 @@ public:
 	CSPString	GetLineName( int nLine );
 
 public:
-	virtual	void	Clear( );			//	清除
+	virtual	void	Clear( );			// 清除
 
 public:
 	// Attributes
