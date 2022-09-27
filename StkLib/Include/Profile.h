@@ -18,7 +18,7 @@
 /////////////////////////////////////////////////////////////////////////////
 // CTechParameters
 /***
-	¼¼ÊõÖ¸±ê²ÎÊı£¬°üº¬ËùÓĞ¼¼ÊõÖ¸±êµÄ²ÎÊıÉè¶¨
+	æŠ€æœ¯æŒ‡æ ‡å‚æ•°ï¼ŒåŒ…å«æ‰€æœ‰æŠ€æœ¯æŒ‡æ ‡çš„å‚æ•°è®¾å®š
 */
 class STKLIB_API CTechParameters
 {
@@ -104,7 +104,7 @@ public:
 	virtual	void Copy(const CColorRefArray& src)	{	CColorRefArray::Copy(src);	}
 };
 
-// ÑÕÉ«¶¨Òå
+// é¢œè‰²å®šä¹‰
 #define	NDCLR_BLACK			RGB(0,0,0)
 #define	NDCLR_WHITE			RGB(255,255,255)
 #define	NDCLR_GREYISH		RGB(215,212,206)
@@ -123,7 +123,7 @@ public:
 #define	NDCLR_WATERBLUE		RGB(128,128,192)
 #define	NDCLR_DEFAULT		RGB(255,255,255)
 /***
-	½çÃæÅäÉ«·½°¸
+	ç•Œé¢é…è‰²æ–¹æ¡ˆ
 */
 class STKLIB_API CColorClass
 {
@@ -185,10 +185,10 @@ public:
 	void		SetColor( int nColorIndex, COLORREF clrRGB );
 	COLORREF	GetColor( int nColorIndex );
 	void		SetColorDefault( );
-	void		SetColorStandard( );		// ´«Í³Ê½ÅäÉ«·½°¸
-	void		SetColorByzantinesque( );	// °İÕ¼Í¥Ê½ÅäÉ«·½°¸
-	void		SetColorGothic( );			// ¸çÌØÊ½ÅäÉ«·½°¸
-	void		SetColorBaroque( );			// °ÍÂå¿ËÊ½ÅäÉ«·½°¸
+	void		SetColorStandard( );		// ä¼ ç»Ÿå¼é…è‰²æ–¹æ¡ˆ
+	void		SetColorByzantinesque( );	// æ‹œå åº­å¼é…è‰²æ–¹æ¡ˆ
+	void		SetColorGothic( );			// å“¥ç‰¹å¼é…è‰²æ–¹æ¡ˆ
+	void		SetColorBaroque( );			// å·´æ´›å…‹å¼é…è‰²æ–¹æ¡ˆ
 	static	BOOL	IsSysColorClass( LPCTSTR lpszColorClassName );
 	static	BOOL	IsColorStandard( LPCTSTR lpszColorClassName );
 	static	BOOL	IsColorByzantinesque( LPCTSTR lpszColorClassName );
@@ -204,7 +204,7 @@ protected:
 //template class __declspec(dllexport)	CSPArray<CColorClass, CColorClass &>;
 typedef	CSPArray<CColorClass, CColorClass &>	CColorClassArray;
 /***
-	ÅäÉ«·½°¸Êı×é
+	é…è‰²æ–¹æ¡ˆæ•°ç»„
 */
 class STKLIB_API CColorClassContainer : public CColorClassArray
 {
@@ -232,7 +232,7 @@ protected:
 };
 
 /***
-	ÏµÍ³ÉèÖÃ
+	ç³»ç»Ÿè®¾ç½®
 */
 class STKLIB_API CStProfile
 {
@@ -474,14 +474,14 @@ protected:
 	// HTML URL to Explorer
 	CSPStringArray		m_aHTMLURLToExplorer;
 
-	// È±Ê¡Æô¶¯¼æÈİÍ¨ÊÓÒıÇæ
+	// ç¼ºçœå¯åŠ¨å…¼å®¹é€šè§†å¼•æ“
 	CSPStringArray		m_astrProvider;
 	CSPStringArray		m_astrDriver;
 
-	// È±Ê¡½»Ò×Èí¼ş
+	// ç¼ºçœäº¤æ˜“è½¯ä»¶
 	CSPString			m_strTrader;
 
-	// ÊÇ·ñ×Ô¶¯±£´æKData MinuteÊı¾İ
+	// æ˜¯å¦è‡ªåŠ¨ä¿å­˜KData Minuteæ•°æ®
 	BOOL				m_bAutoSaveKDataMin;
 
 	// Proxy (second part), not use now, use CQSProfile's proxy settings
@@ -489,16 +489,16 @@ protected:
 	CSPString		m_strProxyUser;
 	CSPString		m_strProxyPasswd;
 
-	// ÊÇ·ñ×îĞ¡»¯Ê±ÏÔÊ¾ÎªÍ¨ÖªÍ¼±ê
+	// æ˜¯å¦æœ€å°åŒ–æ—¶æ˜¾ç¤ºä¸ºé€šçŸ¥å›¾æ ‡
 	BOOL				m_bNotifyIcon;
 
-	// KÏß»º´æÌìÊı,¸ÃÉèÖÃÊı¾İ½öÔÚ±¾´ÎÔËĞĞÆÚ¼ä±£´æ,²»´æÅÌ
+	// Kçº¿ç¼“å­˜å¤©æ•°,è¯¥è®¾ç½®æ•°æ®ä»…åœ¨æœ¬æ¬¡è¿è¡ŒæœŸé—´ä¿å­˜,ä¸å­˜ç›˜
 	UINT				m_nCacheDays;
 
-	// Ô¤¾¯ÏµÍ³ÉèÖÃ
+	// é¢„è­¦ç³»ç»Ÿè®¾ç½®
 	CAlarmCondContainer	m_aAlarmCond;
 
-	// ±¾µØ´úÂë±í,°å¿é,»ù±¾×ÊÁÏµÈÊı¾İµÄ°æ±¾ºÅ
+	// æœ¬åœ°ä»£ç è¡¨,æ¿å—,åŸºæœ¬èµ„æ–™ç­‰æ•°æ®çš„ç‰ˆæœ¬å·
 	int					m_nLocalDataVersion;
 };
 

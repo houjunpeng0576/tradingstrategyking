@@ -28,22 +28,22 @@
 
 #define	STKLIB_CODE_MAIN			"1A0001"
 #define	STKLIB_CODE_MAINSZN			"399001"
-#define	STKLIB_CODE_SZZS			"1A0001"	// ÉÏÖ¤Ö¸Êı
-#define	STKLIB_CODE_SZYBL			"1A0009"	// ÉÏÖ¤180Ö¸Êı
-#define	STKLIB_CODE_SZAG			"1A0002"	// ÉÏÖ¤A¹É
-#define	STKLIB_CODE_SZBG			"1A0003"	// ÉÏÖ¤B¹É
-#define	STKLIB_CODE_SZNCZ			"399001"	// ÉîÖ¤³ÉÖ¸
-#define	STKLIB_CODE_SZNZZ			"399106"	// ÉîÖ¤×ÛÖ¸
-#define	STKLIB_CODE_SZNCFAZ			"399002"	// ÉîÖ¤³É·İAÖ¸
-#define	STKLIB_CODE_SZNCFBZ			"399003"	// ÉîÖ¤³É·İBÖ¸
-#define	STKLIB_CODE_SZNFIRST		"000001"	// ÉîÖ¤µÚÒ»Ö§¹ÉÆ±
-#define	STKLIB_CODE_SHAFIRST		"600000"	// ÉÏÖ¤µÚÒ»Ö§¹ÉÆ±
-#define	STKLIB_CODE_ZLDD			"000000"	// Ö÷Á¦´óµ¥
+#define	STKLIB_CODE_SZZS			"1A0001"	// ä¸Šè¯æŒ‡æ•°
+#define	STKLIB_CODE_SZYBL			"1A0009"	// ä¸Šè¯180æŒ‡æ•°
+#define	STKLIB_CODE_SZAG			"1A0002"	// ä¸Šè¯Aè‚¡
+#define	STKLIB_CODE_SZBG			"1A0003"	// ä¸Šè¯Bè‚¡
+#define	STKLIB_CODE_SZNCZ			"399001"	// æ·±è¯æˆæŒ‡
+#define	STKLIB_CODE_SZNZZ			"399106"	// æ·±è¯ç»¼æŒ‡
+#define	STKLIB_CODE_SZNCFAZ			"399002"	// æ·±è¯æˆä»½AæŒ‡
+#define	STKLIB_CODE_SZNCFBZ			"399003"	// æ·±è¯æˆä»½BæŒ‡
+#define	STKLIB_CODE_SZNFIRST		"000001"	// æ·±è¯ç¬¬ä¸€æ”¯è‚¡ç¥¨
+#define	STKLIB_CODE_SHAFIRST		"600000"	// ä¸Šè¯ç¬¬ä¸€æ”¯è‚¡ç¥¨
+#define	STKLIB_CODE_ZLDD			"000000"	// ä¸»åŠ›å¤§å•
 
 
 // some fixed length
 #define	STKLIB_MAX_CODE			8
-#define	STKLIB_MAX_CODE2		16	// ¼æÈİ½Ï³¤¹ÉÆ±´úÂë
+#define	STKLIB_MAX_CODE2		16	// å…¼å®¹è¾ƒé•¿è‚¡ç¥¨ä»£ç 
 #define	STKLIB_MAX_NAME			16
 #define	STKLIB_MAX_NAMEENU		80
 #define	STKLIB_MAX_SHORTNAME	16
@@ -54,157 +54,157 @@
 
 #pragma pack(1)
 
-// ±¾Í·ÎÄ¼şÖĞ¶¨ÒåµÄÊıÖµµ¥Î»£º
-// 		¼Û¸ñ¼°Óë½ğ¶îÓĞ¹ØµÄµ¥Î»£¬Èç³É½»½ğ¶î¡¢Ö÷ÓªÊÕÈë¡¢Ã¿¹ÉÊÕÒæ¡¢×ÜÊĞÖµµÈ£ºÔª
-// 		³É½»Á¿µ¥Î»£ºÊÖ£¨=100¹É£©
+// æœ¬å¤´æ–‡ä»¶ä¸­å®šä¹‰çš„æ•°å€¼å•ä½ï¼š
+// 		ä»·æ ¼åŠä¸é‡‘é¢æœ‰å…³çš„å•ä½ï¼Œå¦‚æˆäº¤é‡‘é¢ã€ä¸»è¥æ”¶å…¥ã€æ¯è‚¡æ”¶ç›Šã€æ€»å¸‚å€¼ç­‰ï¼šå…ƒ
+// 		æˆäº¤é‡å•ä½ï¼šæ‰‹ï¼ˆ=100è‚¡ï¼‰
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-// ¹ÉÆ±¾²Ì¬Êı¾İ½á¹¹
+// è‚¡ç¥¨é™æ€æ•°æ®ç»“æ„
 
-// KÏßÊı¾İ½á¹¹	CStock::dataK
+// Kçº¿æ•°æ®ç»“æ„	CStock::dataK
 typedef struct kdata_t {
-	DWORD	m_dwMarket;						// Ö¤È¯ÊĞ³¡ÀàĞÍ,see CStock::StockMarket
-	char	m_szCode[STKLIB_MAX_CODE];		// Ö¤È¯´úÂë,ÒÔ'\0'½áÎ²
+	DWORD	m_dwMarket;						// è¯åˆ¸å¸‚åœºç±»å‹,see CStock::StockMarket
+	char	m_szCode[STKLIB_MAX_CODE];		// è¯åˆ¸ä»£ç ,ä»¥'\0'ç»“å°¾
 
-	DWORD	m_date;				//ÈÕÆÚ	Format is XXMMDDHHMM for 5min, Format is YYYYMMDD for day
-	time_t	m_time;				//Ê±¼ä¡¡Óëm_dateÒ»ÖÂ£®Èç¹ûÊÇÊÇÄ³ÈÕ£¬ÔòĞ¡Ê±·ÖÃë¾ùÎª0
+	DWORD	m_date;				//æ—¥æœŸ	Format is XXMMDDHHMM for 5min, Format is YYYYMMDD for day
+	time_t	m_time;				//æ—¶é—´ã€€ä¸m_dateä¸€è‡´ï¼å¦‚æœæ˜¯æ˜¯æŸæ—¥ï¼Œåˆ™å°æ—¶åˆ†ç§’å‡ä¸º0
 
-	float	m_fOpen;			// ¿ªÅÌ¼Û£¨Ôª£©
-	float	m_fHigh;			// ×î¸ß¼Û£¨Ôª£©
-	float	m_fLow;				// ×îµÍ¼Û£¨Ôª£©
-	float	m_fClose;			// ÊÕÅÌ¼Û£¨Ôª£©
-	float	m_fVolume;			// ³É½»Á¿£¨¹É£©
-	float	m_fAmount;			// ³É½»½ğ¶î£¨Ôª£©
+	float	m_fOpen;			// å¼€ç›˜ä»·ï¼ˆå…ƒï¼‰
+	float	m_fHigh;			// æœ€é«˜ä»·ï¼ˆå…ƒï¼‰
+	float	m_fLow;				// æœ€ä½ä»·ï¼ˆå…ƒï¼‰
+	float	m_fClose;			// æ”¶ç›˜ä»·ï¼ˆå…ƒï¼‰
+	float	m_fVolume;			// æˆäº¤é‡ï¼ˆè‚¡ï¼‰
+	float	m_fAmount;			// æˆäº¤é‡‘é¢ï¼ˆå…ƒï¼‰
 
-	DWORD	m_dwAdvance;		// ½öÖ¸ÊıÓĞĞ§
-	DWORD	m_dwDecline;		// ½öÖ¸ÊıÓĞĞ§
+	DWORD	m_dwAdvance;		// ä»…æŒ‡æ•°æœ‰æ•ˆ
+	DWORD	m_dwDecline;		// ä»…æŒ‡æ•°æœ‰æ•ˆ
 
 	DWORD	m_dwReserved;
 } KDATA, *PKDATA;
 
-// ³ıÈ¨Êı¾İ½á¹¹ CStock::dataDR
+// é™¤æƒæ•°æ®ç»“æ„ CStock::dataDR
 typedef struct drdata_t
 {
-	DWORD	m_dwMarket;						// Ö¤È¯ÊĞ³¡ÀàĞÍ,see CStock::StockMarket
-	char	m_szCode[STKLIB_MAX_CODE];		// Ö¤È¯´úÂë,ÒÔ'\0'½áÎ²
+	DWORD	m_dwMarket;						// è¯åˆ¸å¸‚åœºç±»å‹,see CStock::StockMarket
+	char	m_szCode[STKLIB_MAX_CODE];		// è¯åˆ¸ä»£ç ,ä»¥'\0'ç»“å°¾
 
-	DWORD	m_date;				//ÈÕÆÚ	Format is XXMMDDHHMM for 5min, Format is YYYYMMDD for day
-	time_t	m_time;				//Ê±¼ä¡¡Óëm_dateÒ»ÖÂ£®Èç¹ûÊÇÊÇÄ³ÈÕ£¬ÔòĞ¡Ê±·ÖÃë¾ùÎª0
+	DWORD	m_date;				//æ—¥æœŸ	Format is XXMMDDHHMM for 5min, Format is YYYYMMDD for day
+	time_t	m_time;				//æ—¶é—´ã€€ä¸m_dateä¸€è‡´ï¼å¦‚æœæ˜¯æ˜¯æŸæ—¥ï¼Œåˆ™å°æ—¶åˆ†ç§’å‡ä¸º0
 
-	float	m_fGive;			// Ã¿¹ÉËÍ
-	float	m_fPei;				// Ã¿¹ÉÅä
-	float	m_fPeiPrice;		// Åä¹É¼Û,½öµ± m_fPei!=0.0f Ê±ÓĞĞ§
-	float	m_fProfit;			// Ã¿¹ÉºìÀû
+	float	m_fGive;			// æ¯è‚¡é€
+	float	m_fPei;				// æ¯è‚¡é…
+	float	m_fPeiPrice;		// é…è‚¡ä»·,ä»…å½“ m_fPei!=0.0f æ—¶æœ‰æ•ˆ
+	float	m_fProfit;			// æ¯è‚¡çº¢åˆ©
 
 	DWORD	m_dwReserved;
 } DRDATA, * PDRDATA;
 
-// ²ÆÎñĞÅÏ¢Êı¾İ½á¹¹ CStock::dataBasetbl
+// è´¢åŠ¡ä¿¡æ¯æ•°æ®ç»“æ„ CStock::dataBasetbl
 typedef struct basedata_t {
-	DWORD	m_dwMarket;						// Ö¤È¯ÊĞ³¡ÀàĞÍ,see CStock::StockMarket
-	char	m_szCode[STKLIB_MAX_CODE2];		// Ö¤È¯´úÂë,ÒÔ'\0'½áÎ²
+	DWORD	m_dwMarket;						// è¯åˆ¸å¸‚åœºç±»å‹,see CStock::StockMarket
+	char	m_szCode[STKLIB_MAX_CODE2];		// è¯åˆ¸ä»£ç ,ä»¥'\0'ç»“å°¾
 	
-	char	m_szDomain[STKLIB_MAX_DOMAIN];		// °å¿é
-	char	m_szProvince[STKLIB_MAX_PROVINCE];	// Ê¡·İ
+	char	m_szDomain[STKLIB_MAX_DOMAIN];		// æ¿å—
+	char	m_szProvince[STKLIB_MAX_PROVINCE];	// çœä»½
 
-	time_t	m_time;						// ÈÕÆÚ£¬time_t
-	DWORD	m_date;				 		// ÈÕÆÚ	Format is YYYYMMDD for base data
-	LONG	m_reporttype;				// ±¨¸æÀàĞÍ£ºÄê±¨¡¢ÖĞ±¨¡¢¼¾±¨
-	float	m_fErate_dollar;			// µ±ÆÚÃÀÔª»ãÂÊ
-	float	m_fErate_hkdollar;			// µ±ÆÚ¸Û±Ò»ãÂÊ
+	time_t	m_time;						// æ—¥æœŸï¼Œtime_t
+	DWORD	m_date;				 		// æ—¥æœŸ	Format is YYYYMMDD for base data
+	LONG	m_reporttype;				// æŠ¥å‘Šç±»å‹ï¼šå¹´æŠ¥ã€ä¸­æŠ¥ã€å­£æŠ¥
+	float	m_fErate_dollar;			// å½“æœŸç¾å…ƒæ±‡ç‡
+	float	m_fErate_hkdollar;			// å½“æœŸæ¸¯å¸æ±‡ç‡
 
-	// ¡ï³¥Õ®ÄÜÁ¦
-	float	m_fRatio_liquidity;			// Á÷¶¯±ÈÂÊ
-	float	m_fRatio_quick;				// ËÙ¶¯±ÈÂÊ
-	float	m_fVelocity_receivables;	// Ó¦ÊÕÕÊ¿îÖÜÂÊ
-	// ¡ï¾­ÓªÄÜÁ¦
-	float	m_fVelocity_merchandise;	// ´æ»õÖÜ×ªÂÊ
-	float	m_fMain_income;				// Ö÷ÓªÒµÎñÊÕÈë
-	float	m_fCash_ps;					// Ã¿¹É¾»ÏÖ½ğÁ÷Á¿
-	// ¡ïÓ¯ÀûÄÜÁ¦
-	float	m_fProfit_margin;			// Ö÷ÓªÒµÎñÀûÈóÂÊ %
-	float	m_fNetasset_yield;			// ¾»×Ê²úÊÕÒæÂÊ %
-	// ¡ï×Ê±¾½á¹¹
-	DWORD	m_datebegin;				// ÉÏÊĞÈÕÆÚ Format is YYYYMMDD
-	float	m_fShare_count_total;		// ×Ü¹É±¾
-	float	m_fShare_count_a;			// Á÷Í¨A¹É
-	float	m_fShare_count_b;			// Á÷Í¨B¹É
-	float	m_fShare_count_h;			// Á÷Í¨H¹É
-	float	m_fShare_count_national;	// ¹úÓĞ¹É
-	float	m_fShare_count_corp;		// ·¨ÈË¹É
-	float	m_fProfit_psud;				// Ã¿¹ÉÎ´·ÖÅäÀûÈó
-	float	m_fAsset;					// ×Ü×Ê²ú
-	float	m_fRatio_holderright;		// ¹É¶«È¨Òæ±ÈÂÊ
-	float	m_fRatio_longdebt;			// ³¤ÆÚ¸ºÕ®ÂÊ
-	float	m_fRatio_debt;				// ×Ê²ú¸ºÕ®ÂÊ
-	// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
-	float	m_fNetasset_ps;				// Ã¿¹É¾»×Ê²ú
-	float	m_fNetasset_ps_regulate;	// µ÷ÕûÃ¿¹É¾»×Ê²ú
-	float	m_fEps;						// Ã¿¹ÉÊÕÒæ
-	float	m_fEps_deduct;				// ¿Û³ıºóÃ¿¹ÉÊÕÒæ
-	float	m_fNet_profit;				// ¾»ÀûÈó
-	float	m_fMain_profit;				// Ö÷ÓªÒµÎñÀûÈó
-	float	m_fTotal_profit;			// ÀûÈó×Ü¶î
-	// ¡ïÔö³¤ÂÊ
-	float	m_fProfit_inc;				// Ö÷ÓªÀûÈóÔö³¤ÂÊ%
-	float	m_fIncome_inc;				// Ö÷ÓªÊÕÈëÔö³¤ÂÊ%
-	float	m_fAsset_inc;				// ×Ü×Ê²úÔö³¤ÂÊ%
-	// ¡ï¼¼ÊõÊı¾İÍ³¼ÆÖµ
-	float	m_fYield_average;			// Æ½¾ùÊÕÒæÂÊ%
-	float	m_fYield_stddev;			// ÊÕÒæ±ê×¼²î%
-	float	m_fBeite;					// ¦ÂÖµ
+	// â˜…å¿å€ºèƒ½åŠ›
+	float	m_fRatio_liquidity;			// æµåŠ¨æ¯”ç‡
+	float	m_fRatio_quick;				// é€ŸåŠ¨æ¯”ç‡
+	float	m_fVelocity_receivables;	// åº”æ”¶å¸æ¬¾å‘¨ç‡
+	// â˜…ç»è¥èƒ½åŠ›
+	float	m_fVelocity_merchandise;	// å­˜è´§å‘¨è½¬ç‡
+	float	m_fMain_income;				// ä¸»è¥ä¸šåŠ¡æ”¶å…¥
+	float	m_fCash_ps;					// æ¯è‚¡å‡€ç°é‡‘æµé‡
+	// â˜…ç›ˆåˆ©èƒ½åŠ›
+	float	m_fProfit_margin;			// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦ç‡ %
+	float	m_fNetasset_yield;			// å‡€èµ„äº§æ”¶ç›Šç‡ %
+	// â˜…èµ„æœ¬ç»“æ„
+	DWORD	m_datebegin;				// ä¸Šå¸‚æ—¥æœŸ Format is YYYYMMDD
+	float	m_fShare_count_total;		// æ€»è‚¡æœ¬
+	float	m_fShare_count_a;			// æµé€šAè‚¡
+	float	m_fShare_count_b;			// æµé€šBè‚¡
+	float	m_fShare_count_h;			// æµé€šHè‚¡
+	float	m_fShare_count_national;	// å›½æœ‰è‚¡
+	float	m_fShare_count_corp;		// æ³•äººè‚¡
+	float	m_fProfit_psud;				// æ¯è‚¡æœªåˆ†é…åˆ©æ¶¦
+	float	m_fAsset;					// æ€»èµ„äº§
+	float	m_fRatio_holderright;		// è‚¡ä¸œæƒç›Šæ¯”ç‡
+	float	m_fRatio_longdebt;			// é•¿æœŸè´Ÿå€ºç‡
+	float	m_fRatio_debt;				// èµ„äº§è´Ÿå€ºç‡
+	// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
+	float	m_fNetasset_ps;				// æ¯è‚¡å‡€èµ„äº§
+	float	m_fNetasset_ps_regulate;	// è°ƒæ•´æ¯è‚¡å‡€èµ„äº§
+	float	m_fEps;						// æ¯è‚¡æ”¶ç›Š
+	float	m_fEps_deduct;				// æ‰£é™¤åæ¯è‚¡æ”¶ç›Š
+	float	m_fNet_profit;				// å‡€åˆ©æ¶¦
+	float	m_fMain_profit;				// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦
+	float	m_fTotal_profit;			// åˆ©æ¶¦æ€»é¢
+	// â˜…å¢é•¿ç‡
+	float	m_fProfit_inc;				// ä¸»è¥åˆ©æ¶¦å¢é•¿ç‡%
+	float	m_fIncome_inc;				// ä¸»è¥æ”¶å…¥å¢é•¿ç‡%
+	float	m_fAsset_inc;				// æ€»èµ„äº§å¢é•¿ç‡%
+	// â˜…æŠ€æœ¯æ•°æ®ç»Ÿè®¡å€¼
+	float	m_fYield_average;			// å¹³å‡æ”¶ç›Šç‡%
+	float	m_fYield_stddev;			// æ”¶ç›Šæ ‡å‡†å·®%
+	float	m_fBeite;					// Î²å€¼
 
 	DWORD	m_dwReserved[4];
 }BASEDATA, *PBASEDATA;
 
-// ¹ÉÆ±¾²Ì¬Êı¾İ½á¹¹½áÊø
+// è‚¡ç¥¨é™æ€æ•°æ®ç»“æ„ç»“æŸ
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-// ÊµÊ±ĞĞÇéÊ¹ÓÃÊı¾İ½á¹¹
+// å®æ—¶è¡Œæƒ…ä½¿ç”¨æ•°æ®ç»“æ„
 
-// ĞĞÇéË¢ĞÂÊı¾İ½á¹¹ CStock::dataReport
+// è¡Œæƒ…åˆ·æ–°æ•°æ®ç»“æ„ CStock::dataReport
 typedef struct report_t {
-	DWORD	m_dwMarket;						// Ö¤È¯ÊĞ³¡ÀàĞÍ,see CStock::StockMarket
-	char	m_szCode[STKLIB_MAX_CODE];		// Ö¤È¯´úÂë,ÒÔ'\0'½áÎ²
+	DWORD	m_dwMarket;						// è¯åˆ¸å¸‚åœºç±»å‹,see CStock::StockMarket
+	char	m_szCode[STKLIB_MAX_CODE];		// è¯åˆ¸ä»£ç ,ä»¥'\0'ç»“å°¾
 
-	char	m_szName[STKLIB_MAX_NAME];		// Ö¤È¯Ãû³Æ,ÒÔ'\0'½áÎ²
+	char	m_szName[STKLIB_MAX_NAME];		// è¯åˆ¸åç§°,ä»¥'\0'ç»“å°¾
 
-	time_t	m_time;						// ½»Ò×Ê±¼ä
+	time_t	m_time;						// äº¤æ˜“æ—¶é—´
 
-	DWORD	m_dwFlag;					// Í£ÅÆ±êÖ¾
+	DWORD	m_dwFlag;					// åœç‰Œæ ‡å¿—
 
-	float	m_fLast;					// ×òÊÕ£¨Ôª£©
-	float	m_fOpen;					// ½ñ¿ª£¨Ôª£©
-	float	m_fHigh;					// ×î¸ß£¨Ôª£©
-	float	m_fLow;						// ×îµÍ£¨Ôª£©
-	float	m_fNew;						// ×îĞÂ£¨Ôª£©
-	float	m_fVolume;					// ³É½»Á¿£¨¹É£©
-	float	m_fAmount;					// ³É½»¶î£¨Ôª£©
+	float	m_fLast;					// æ˜¨æ”¶ï¼ˆå…ƒï¼‰
+	float	m_fOpen;					// ä»Šå¼€ï¼ˆå…ƒï¼‰
+	float	m_fHigh;					// æœ€é«˜ï¼ˆå…ƒï¼‰
+	float	m_fLow;						// æœ€ä½ï¼ˆå…ƒï¼‰
+	float	m_fNew;						// æœ€æ–°ï¼ˆå…ƒï¼‰
+	float	m_fVolume;					// æˆäº¤é‡ï¼ˆè‚¡ï¼‰
+	float	m_fAmount;					// æˆäº¤é¢ï¼ˆå…ƒï¼‰
 
-	float	m_fBuyPrice[5];				// ÉêÂò¼Û1,2,3,4£¨Ôª£©
-	float	m_fBuyVolume[5];			// ÉêÂòÁ¿1,2,3,4£¨¹É£©
-	float	m_fSellPrice[5];			// ÉêÂô¼Û1,2,3,4£¨Ôª£©
-	float	m_fSellVolume[5];			// ÉêÂôÁ¿1,2,3,4£¨¹É£©
+	float	m_fBuyPrice[5];				// ç”³ä¹°ä»·1,2,3,4ï¼ˆå…ƒï¼‰
+	float	m_fBuyVolume[5];			// ç”³ä¹°é‡1,2,3,4ï¼ˆè‚¡ï¼‰
+	float	m_fSellPrice[5];			// ç”³å–ä»·1,2,3,4ï¼ˆå…ƒï¼‰
+	float	m_fSellVolume[5];			// ç”³å–é‡1,2,3,4ï¼ˆè‚¡ï¼‰
 } REPORT, *PREPORT;
 
-// ĞĞÇé·ÖÊ±Êı¾İ½á¹¹ CStock::dataMinute
+// è¡Œæƒ…åˆ†æ—¶æ•°æ®ç»“æ„ CStock::dataMinute
 typedef struct minute_t {
 	DWORD	m_dwType;	// 1 min, 5 min, 15 min, 30 min line
 
-	DWORD	m_dwMarket;						// Ö¤È¯ÊĞ³¡ÀàĞÍ,see CStock::StockMarket
-	char	m_szCode[STKLIB_MAX_CODE];		// Ö¤È¯´úÂë,ÒÔ'\0'½áÎ²
+	DWORD	m_dwMarket;						// è¯åˆ¸å¸‚åœºç±»å‹,see CStock::StockMarket
+	char	m_szCode[STKLIB_MAX_CODE];		// è¯åˆ¸ä»£ç ,ä»¥'\0'ç»“å°¾
 
-	time_t	m_time;				// ½»Ò×Ê±¼ä
-	float	m_fHigh;			// ×î¸ß¼Û£¨Ôª£©
-	float	m_fLow;				// ×îµÍ¼Û£¨Ôª£©
-	float	m_fNew;				// ×îĞÂ¼Û£¨Ôª£©
-	float	m_fVolume;			// ³É½»Á¿£¨¹É£©
-	float	m_fAmount;			// ³É½»¶î£¨Ôª£©
+	time_t	m_time;				// äº¤æ˜“æ—¶é—´
+	float	m_fHigh;			// æœ€é«˜ä»·ï¼ˆå…ƒï¼‰
+	float	m_fLow;				// æœ€ä½ä»·ï¼ˆå…ƒï¼‰
+	float	m_fNew;				// æœ€æ–°ä»·ï¼ˆå…ƒï¼‰
+	float	m_fVolume;			// æˆäº¤é‡ï¼ˆè‚¡ï¼‰
+	float	m_fAmount;			// æˆäº¤é¢ï¼ˆå…ƒï¼‰
 } MINUTE, *PMINUTE;
 
-// ĞĞÇé¶îÍâÊı¾İ½á¹¹ CStock::dataOutline
+// è¡Œæƒ…é¢å¤–æ•°æ®ç»“æ„ CStock::dataOutline
 typedef struct outline_t {
 	time_t	m_time;
 
@@ -222,8 +222,8 @@ typedef struct outline_t {
 	DWORD	m_dwSzStockCount;
 } OUTLINE, *POUTLINE;
 
-// ×ÛºÏÅÅÃûÊı¾İ½á¹¹ CStock::dataMultisort
-//×ÛºÏÅÅÃû
+// ç»¼åˆæ’åæ•°æ®ç»“æ„ CStock::dataMultisort
+//ç»¼åˆæ’å
 typedef struct multisort_item_t {
 	BYTE	m_type;					// stock's type
 	char	m_code[6];				// stock code
@@ -231,19 +231,19 @@ typedef struct multisort_item_t {
 	long	m_data2;
 } MULTISORT_ITEM;
 typedef struct multisort_t {
-	DWORD	m_class;				// 1-ÕÇ·ù 2-µø·ù 4-5·ÖÖÓÕÇ·ù 8-5·ÖÖÓµø·ù 16-Î¯±ÈÇ°Áù 32-Î¯±ÈºóÁù
-									// 64-Õğ·ù 128-Á¿±È 256-×Ü½ğ¶î
+	DWORD	m_class;				// 1-æ¶¨å¹… 2-è·Œå¹… 4-5åˆ†é’Ÿæ¶¨å¹… 8-5åˆ†é’Ÿè·Œå¹… 16-å§”æ¯”å‰å…­ 32-å§”æ¯”åå…­
+									// 64-éœ‡å¹… 128-é‡æ¯” 256-æ€»é‡‘é¢
 	DWORD	m_tag;					// 0xf0 00 06 00
 	MULTISORT_ITEM	m_stocks[6];
 } MULTISORT, *PMULTISORT;
 
-// ¹ÉÆ±´úÂë CStock::dataCode
+// è‚¡ç¥¨ä»£ç  CStock::dataCode
 typedef	struct stockcode {
-	DWORD	m_dwMarket;						// Ö¤È¯ÊĞ³¡ÀàĞÍ,see CStock::StockMarket
-	char	m_szCode[STKLIB_MAX_CODE2];		// Ö¤È¯´úÂë,ÒÔ'\0'½áÎ²
+	DWORD	m_dwMarket;						// è¯åˆ¸å¸‚åœºç±»å‹,see CStock::StockMarket
+	char	m_szCode[STKLIB_MAX_CODE2];		// è¯åˆ¸ä»£ç ,ä»¥'\0'ç»“å°¾
 } STOCKCODE, *PSTOCKCODE;
 
-// ĞĞÇéÍ¨ÓÃÊı¾İ°ü
+// è¡Œæƒ…é€šç”¨æ•°æ®åŒ…
 #define	STKLIB_COMMPACKET_TAG	'KPMC'
 typedef struct commpacket_t {
 	DWORD	m_dwTag;			// = STKLIB_COMMPACKET_TAG
@@ -252,18 +252,18 @@ typedef struct commpacket_t {
 
 	union
 	{
-		REPORT *	m_pReport;		// ĞĞÇéË¢ĞÂÊı¾İ
-		MINUTE *	m_pMinute;		// ·ÖÊ±³É½»Êı¾İ
-		MULTISORT *	m_pMultisort;	// ×ÛºÏÅÅÃûÊı¾İ
-		OUTLINE *	m_pOutline;		// ¸½¼ÓÊı¾İ
-		KDATA *		m_pKdata;		// ²¹³äÀúÊ·ÈÕÏßÊı¾İ
-		DRDATA *	m_pDrdata;		// ²¹³äÈ¨Ï¢×ÊÁÏ
-		STOCKCODE *	m_pStockcode;	// ¹ÉÆ±´úÂë
+		REPORT *	m_pReport;		// è¡Œæƒ…åˆ·æ–°æ•°æ®
+		MINUTE *	m_pMinute;		// åˆ†æ—¶æˆäº¤æ•°æ®
+		MULTISORT *	m_pMultisort;	// ç»¼åˆæ’åæ•°æ®
+		OUTLINE *	m_pOutline;		// é™„åŠ æ•°æ®
+		KDATA *		m_pKdata;		// è¡¥å……å†å²æ—¥çº¿æ•°æ®
+		DRDATA *	m_pDrdata;		// è¡¥å……æƒæ¯èµ„æ–™
+		STOCKCODE *	m_pStockcode;	// è‚¡ç¥¨ä»£ç 
 		void *		m_pData;
 	};
 } COMMPACKET, *PCOMMPACKET;
 
-// ÊµÊ±ĞĞÇéÊ¹ÓÃÊı¾İ½á¹¹½áÊø
+// å®æ—¶è¡Œæƒ…ä½¿ç”¨æ•°æ®ç»“æ„ç»“æŸ
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma pack()
@@ -274,7 +274,7 @@ typedef struct commpacket_t {
 #endif
 
 /***
-	³ıÈ¨³ıÏ¢Êı×éÀà
+	é™¤æƒé™¤æ¯æ•°ç»„ç±»
 */
 class STKLIB_API CDRData
 {
@@ -332,7 +332,7 @@ public:
 };
 
 /***
-	KÏßÊı¾İÊı×éÀà
+	Kçº¿æ•°æ®æ•°ç»„ç±»
 */
 class STKLIB_API CKData
 {
@@ -397,7 +397,7 @@ public:
 	const KDATA* GetData() const;
 	KDATA* GetData();
 	
-	float	MaindataAt(int nIndex) const;	// µÃµ½CKDataµÄnIndexÈÕµÄÖ÷Êı¾İ£¬¸ù¾İÖ÷Êı¾İÀàĞÍ²»Í¬£¬·µ»ØÖµ¿ÉÄÜÊÇ¿ªÅÌ¼Û¡¢ÊÕÅÌ¼Û»òÕßÆ½¾ù¼Û
+	float	MaindataAt(int nIndex) const;	// å¾—åˆ°CKDataçš„nIndexæ—¥çš„ä¸»æ•°æ®ï¼Œæ ¹æ®ä¸»æ•°æ®ç±»å‹ä¸åŒï¼Œè¿”å›å€¼å¯èƒ½æ˜¯å¼€ç›˜ä»·ã€æ”¶ç›˜ä»·æˆ–è€…å¹³å‡ä»·
 	BOOL	DateAt(int nIndex,
 					int &nYear, int &nMonth, int &nDay, int &nHour, int &nMinute ) const;
 	BOOL	LatestDate(
@@ -493,7 +493,7 @@ protected:
 };
 
 /***
-	²ÆÎñ×ÊÁÏÊı×éÀà£¬¿ÉÒÔ¼ÇÂ¼¶àÄêµÄ»ù±¾×ÊÁÏ
+	è´¢åŠ¡èµ„æ–™æ•°ç»„ç±»ï¼Œå¯ä»¥è®°å½•å¤šå¹´çš„åŸºæœ¬èµ„æ–™
 */
 class STKLIB_API CBaseData
 {
@@ -550,7 +550,7 @@ public:
 };
 
 /***
-	ĞĞÇéĞÅÏ¢Êı¾İÊı×éÀà
+	è¡Œæƒ…ä¿¡æ¯æ•°æ®æ•°ç»„ç±»
 */
 class STKLIB_API CReport
 {
@@ -596,8 +596,8 @@ public:
 	CReport	& operator = ( const CReport &src );
 	void	Copy( const CReport &src );
 
-	BOOL	GetMMLD( int nIndex, double *pdVolBuy, double *pdVolSell, double * pdVolDiff );	// È¡µÃÂòÂôÁ¦µÀÖ¸±êÖµ
-	BOOL	GetMMLDMinMaxInfo( double *pdMin, double *pdMax );			// È¡µÃÂòÂôÁ¦µÀÖ¸±ê×î´óÖµ×îĞ¡Öµ
+	BOOL	GetMMLD( int nIndex, double *pdVolBuy, double *pdVolSell, double * pdVolDiff );	// å–å¾—ä¹°å–åŠ›é“æŒ‡æ ‡å€¼
+	BOOL	GetMMLDMinMaxInfo( double *pdMin, double *pdMax );			// å–å¾—ä¹°å–åŠ›é“æŒ‡æ ‡æœ€å¤§å€¼æœ€å°å€¼
 	BOOL	StatBuySellEx( float * fSellPrice, float * fSellVolume, float * fBuyPrice, float * fBuyVolume, int nSize );
 
 // Implementation
@@ -612,7 +612,7 @@ public:
 };
 
 /***
-	ĞĞÇé·ÖÊ±Êı¾İÊı×éÀà
+	è¡Œæƒ…åˆ†æ—¶æ•°æ®æ•°ç»„ç±»
 */
 class STKLIB_API CMinute
 {
@@ -658,10 +658,10 @@ public:
 	CMinute	& operator = ( const CMinute &src );
 	void	Copy( const CMinute &src );
 	
-	BOOL	StatVolumeInfo( double *pdVolNow, double *pdVolOuter, double *pdVolInner );	// Í³¼ÆÄÚÅÌÍâÅÌ
-	BOOL	StatDealInfo( CSPDWordArray & adwPrice, CSPDWordArray & adwVolume, double * pdMaxVolume ); // Í³¼Æ¼ÛÁ¿¹ØÏµ£¬·µ»ØÖµÖĞµÄ¼Û¸ñĞè³ËÒÔ0.001
+	BOOL	StatVolumeInfo( double *pdVolNow, double *pdVolOuter, double *pdVolInner );	// ç»Ÿè®¡å†…ç›˜å¤–ç›˜
+	BOOL	StatDealInfo( CSPDWordArray & adwPrice, CSPDWordArray & adwVolume, double * pdMaxVolume ); // ç»Ÿè®¡ä»·é‡å…³ç³»ï¼Œè¿”å›å€¼ä¸­çš„ä»·æ ¼éœ€ä¹˜ä»¥0.001
 	BOOL	GetDiffPercentMin5( double * pValue );
-	BOOL	GetLBDKMinMaxInfo( double dVolAverage, double *pdMin, double *pdMax );	// È¡µÃÁ¿±È¶à¿ÕÖ¸±ê×î´óÖµ×îĞ¡Öµ
+	BOOL	GetLBDKMinMaxInfo( double dVolAverage, double *pdMin, double *pdMax );	// å–å¾—é‡æ¯”å¤šç©ºæŒ‡æ ‡æœ€å¤§å€¼æœ€å°å€¼
 
 	BOOL	GetIndexWave( double *pdWave, int nIndex );
 
@@ -679,7 +679,7 @@ public:
 };
 
 /***
-	ĞĞÇé¶îÍâĞÅÏ¢Êı¾İÊı×éÀà
+	è¡Œæƒ…é¢å¤–ä¿¡æ¯æ•°æ®æ•°ç»„ç±»
 */
 class STKLIB_API COutline
 {
@@ -738,7 +738,7 @@ public:
 class CStDatabase;
 
 /***
-	µ¥¸ö¹ÉÆ±ĞÅÏ¢Àà CStock::dataInfo
+	å•ä¸ªè‚¡ç¥¨ä¿¡æ¯ç±» CStock::dataInfo
 */
 class STKLIB_API	CStockInfo
 {
@@ -771,75 +771,75 @@ public:
 	const char * GetStockProvince( );
 	void	SetStockProvince( const char * szProvince );
 
-	BOOL	StatTechIndex( DWORD dwDate );	// Éè¶¨µ±Ç°¼¼Êõ×ÊÁÏÈÕÆÚ£¬Format is YYYYMMDD
-	BOOL	StatBaseIndex( DWORD dwDate );	// Éè¶¨µ±Ç°»ù±¾×ÊÁÏÈÕÆÚ£¬Format is YYYYMMDD
+	BOOL	StatTechIndex( DWORD dwDate );	// è®¾å®šå½“å‰æŠ€æœ¯èµ„æ–™æ—¥æœŸï¼ŒFormat is YYYYMMDD
+	BOOL	StatBaseIndex( DWORD dwDate );	// è®¾å®šå½“å‰åŸºæœ¬èµ„æ–™æ—¥æœŸï¼ŒFormat is YYYYMMDD
 	
 	// Attributes
-	BOOL	IsValidStock( );	// ¹ÉÆ±ĞÅÏ¢ÊÇ·ñÕıÈ·
-	BOOL	IsShangHai( );		// ÉÏÖ¤¹ÉÆ±
-	BOOL	IsShenZhen( );		// ÉîÖ¤¹ÉÆ±
-	BOOL	IsIndex( );			// ÊÇ·ñÖ¸Êı
-	BOOL	IsBond( );			// ÊÇ·ñÕ®È¯
-	BOOL	IsBondIndex( );		// ÊÇ·ñ¹úÕ®Ö¸Êı
-	BOOL	IsFund( );			// ÊÇ·ñ»ù½ğ
-	BOOL	IsRight( );			// ÊÇ·ñÈ¨Ö¤
-	int		DigitBit( );		// µÃµ½¸Ã¹É¼Û¸ñÓĞ¼¸Î»Ğ¡ÊıÎ»£¬»ù½ğºÍÉÏº£B¹ÉÊÇÈıÎ»
+	BOOL	IsValidStock( );	// è‚¡ç¥¨ä¿¡æ¯æ˜¯å¦æ­£ç¡®
+	BOOL	IsShangHai( );		// ä¸Šè¯è‚¡ç¥¨
+	BOOL	IsShenZhen( );		// æ·±è¯è‚¡ç¥¨
+	BOOL	IsIndex( );			// æ˜¯å¦æŒ‡æ•°
+	BOOL	IsBond( );			// æ˜¯å¦å€ºåˆ¸
+	BOOL	IsBondIndex( );		// æ˜¯å¦å›½å€ºæŒ‡æ•°
+	BOOL	IsFund( );			// æ˜¯å¦åŸºé‡‘
+	BOOL	IsRight( );			// æ˜¯å¦æƒè¯
+	int		DigitBit( );		// å¾—åˆ°è¯¥è‚¡ä»·æ ¼æœ‰å‡ ä½å°æ•°ä½ï¼ŒåŸºé‡‘å’Œä¸Šæµ·Bè‚¡æ˜¯ä¸‰ä½
 
 	// Variant
-	BOOL	GetAverage( double *pValue );	// µ±ÈÕ³É½»¾ù¼Û
-	BOOL	GetDiff( double *pValue, DWORD dateCur, int nDays );	// ÕÇµø
-	BOOL	GetDiffPercent( double *pValue, DWORD dateCur, int nDays );	// ÕÇµø·ù¶È
-	BOOL	GetScope( double *pValue, DWORD dateCur, int nDays );	// ÕÇµø·¶Î§
+	BOOL	GetAverage( double *pValue );	// å½“æ—¥æˆäº¤å‡ä»·
+	BOOL	GetDiff( double *pValue, DWORD dateCur, int nDays );	// æ¶¨è·Œ
+	BOOL	GetDiffPercent( double *pValue, DWORD dateCur, int nDays );	// æ¶¨è·Œå¹…åº¦
+	BOOL	GetScope( double *pValue, DWORD dateCur, int nDays );	// æ¶¨è·ŒèŒƒå›´
 	BOOL	GetDiffPercentMin5( double *pValue );
 
-	BOOL	GetPE( double * pValue );		// ÊĞÓ¯ÂÊ
-	BOOL	GetPNetAsset( double *pValue );	// ÊĞ¾»ÂÊ
-	BOOL	GetPMainIncome( double * pValue );	// ÊĞÏúÂÊ
-	BOOL	GetRatioPCash( double * pValue );	// ¼Û¸ñÏÖ½ğÁ÷±È
+	BOOL	GetPE( double * pValue );		// å¸‚ç›ˆç‡
+	BOOL	GetPNetAsset( double *pValue );	// å¸‚å‡€ç‡
+	BOOL	GetPMainIncome( double * pValue );	// å¸‚é”€ç‡
+	BOOL	GetRatioPCash( double * pValue );	// ä»·æ ¼ç°é‡‘æµæ¯”
 
-	BOOL	GetShareCurrency( double * pValue );	// Á÷Í¨¹ÉÊı
-	BOOL	GetRatioCurrency( double * pValue );	// Á÷Í¨±ÈÂÊ
+	BOOL	GetShareCurrency( double * pValue );	// æµé€šè‚¡æ•°
+	BOOL	GetRatioCurrency( double * pValue );	// æµé€šæ¯”ç‡
 	BOOL	GetRatioChangeHand( double * pValue, double dVolume );
 	BOOL	GetRatioChangeHand( CKData &kdata, double * pValue, DWORD dateCur, int nDays );
-	BOOL	GetRatioChangeHand( double * pValue, DWORD dateCur, int nDays );	// nÈÕ»»ÊÖÂÊ
-	BOOL	GetRatioVolume( double * pValue, DWORD dateCur, int nDays );		// nÈÕÁ¿±È
-	BOOL	GetRS( double * pValue, DWORD dateCur, int nDays );					// nÈÕÏà¶ÔÇ¿¶È
-	BOOL	GetSellBuyRatio( double *pdRatio, double *pdDiff );					// Î¯±ÈºÍÎ¯²î
+	BOOL	GetRatioChangeHand( double * pValue, DWORD dateCur, int nDays );	// næ—¥æ¢æ‰‹ç‡
+	BOOL	GetRatioVolume( double * pValue, DWORD dateCur, int nDays );		// næ—¥é‡æ¯”
+	BOOL	GetRS( double * pValue, DWORD dateCur, int nDays );					// næ—¥ç›¸å¯¹å¼ºåº¦
+	BOOL	GetSellBuyRatio( double *pdRatio, double *pdDiff );					// å§”æ¯”å’Œå§”å·®
 
-	BOOL	GetMarketValue( double * pValue );	// ÊĞÖµ
-	BOOL	GetMarketValueA( double * pValue );	// A¹ÉÊĞÖµ
-	BOOL	GetMarketValueB( double * pValue );	// B¹ÉÊĞÖµ
+	BOOL	GetMarketValue( double * pValue );	// å¸‚å€¼
+	BOOL	GetMarketValueA( double * pValue );	// Aè‚¡å¸‚å€¼
+	BOOL	GetMarketValueB( double * pValue );	// Bè‚¡å¸‚å€¼
 
-	BOOL	GetXiapu( double * pValue );		// ÏÄÆÕ·çÏÕÖ¸Êı
+	BOOL	GetXiapu( double * pValue );		// å¤æ™®é£é™©æŒ‡æ•°
 
 protected:
 	// data from codetable
-	DWORD	m_dwMarket;							// Ö¤È¯ÊĞ³¡ÀàĞÍ,see CStock::StockMarket
-	char	m_szCode[STKLIB_MAX_CODE2];			// Ö¤È¯´úÂë,ÒÔ'\0'½áÎ²
+	DWORD	m_dwMarket;							// è¯åˆ¸å¸‚åœºç±»å‹,see CStock::StockMarket
+	char	m_szCode[STKLIB_MAX_CODE2];			// è¯åˆ¸ä»£ç ,ä»¥'\0'ç»“å°¾
 
 	LONG	m_type;								// see CStock::StockType
-	char	m_szName[STKLIB_MAX_NAME];			// Ãû³Æ
-	char	m_szNameEnu[STKLIB_MAX_NAMEENU];		// Ó¢ÎÄÃû³Æ
-	char	m_szShortname[STKLIB_MAX_SHORTNAME];	// Æ´Òô¼ò³Æ
+	char	m_szName[STKLIB_MAX_NAME];			// åç§°
+	char	m_szNameEnu[STKLIB_MAX_NAMEENU];		// è‹±æ–‡åç§°
+	char	m_szShortname[STKLIB_MAX_SHORTNAME];	// æ‹¼éŸ³ç®€ç§°
 
-	char	m_szDomain[STKLIB_MAX_DOMAIN];		// °å¿é
-	char	m_szProvince[STKLIB_MAX_PROVINCE];	// Ê¡·İ
+	char	m_szDomain[STKLIB_MAX_DOMAIN];		// æ¿å—
+	char	m_szProvince[STKLIB_MAX_PROVINCE];	// çœä»½
 
 public:
 
-	DWORD	m_datetech;	//ÈÕÆÚ	Format is XXMMDDHHMM for 5min, Format is YYYYMMDD for day
+	DWORD	m_datetech;	//æ—¥æœŸ	Format is XXMMDDHHMM for 5min, Format is YYYYMMDD for day
 
-	float	m_fLast;			// ×òÊÕ£¨Ôª£©
-	float	m_fOpen;			// ¿ªÅÌ£¨Ôª£©
-	float	m_fHigh;			// ×î¸ß¼Û£¨Ôª£©
-	float	m_fLow;				// ×îµÍ¼Û£¨Ôª£©
-	float	m_fClose;			// ÊÕÅÌ£¨Ôª£©
+	float	m_fLast;			// æ˜¨æ”¶ï¼ˆå…ƒï¼‰
+	float	m_fOpen;			// å¼€ç›˜ï¼ˆå…ƒï¼‰
+	float	m_fHigh;			// æœ€é«˜ä»·ï¼ˆå…ƒï¼‰
+	float	m_fLow;				// æœ€ä½ä»·ï¼ˆå…ƒï¼‰
+	float	m_fClose;			// æ”¶ç›˜ï¼ˆå…ƒï¼‰
 
-	float	m_fVolume;			// ³É½»Á¿(¹É)
-	float	m_fAmount;			// ³É½»¶î(Ôª)
+	float	m_fVolume;			// æˆäº¤é‡(è‚¡)
+	float	m_fAmount;			// æˆäº¤é¢(å…ƒ)
 
-	DWORD	m_dwAdvance;		// ½öÖ¸ÊıÓĞĞ§
-	DWORD	m_dwDecline;		// ½öÖ¸ÊıÓĞĞ§
+	DWORD	m_dwAdvance;		// ä»…æŒ‡æ•°æœ‰æ•ˆ
+	DWORD	m_dwDecline;		// ä»…æŒ‡æ•°æœ‰æ•ˆ
 
 	float	m_fBuyPrice[5];
 	float	m_fBuyVolume[5];
@@ -847,62 +847,62 @@ public:
 	float	m_fSellVolume[5];
 
 public:
-	CKData		m_kdata;		// ±£´æ×î½üAfxGetProfile().GetCacheDays()ÌìKÏßÊı¾İ
-	CBaseData	m_basedata;		// ±£´æ»ù±¾×ÊÁÏÊı¾İ
-	CMinute		m_minute;		// ×î½ü5·ÖÖÓµÄMINUTE·ÖÊ±Êı¾İ
-	REPORT		m_reportLatest;	// ±£´æ×î½üµÄREPORT±¨¼ÛÊı¾İ
+	CKData		m_kdata;		// ä¿å­˜æœ€è¿‘AfxGetProfile().GetCacheDays()å¤©Kçº¿æ•°æ®
+	CBaseData	m_basedata;		// ä¿å­˜åŸºæœ¬èµ„æ–™æ•°æ®
+	CMinute		m_minute;		// æœ€è¿‘5åˆ†é’Ÿçš„MINUTEåˆ†æ—¶æ•°æ®
+	REPORT		m_reportLatest;	// ä¿å­˜æœ€è¿‘çš„REPORTæŠ¥ä»·æ•°æ®
 	
 public:
 	// From Base Data
-	DWORD	m_datebase;					//ÈÕÆÚ	Format is YYYYMMDD for base data
+	DWORD	m_datebase;					//æ—¥æœŸ	Format is YYYYMMDD for base data
 	LONG	m_reporttype;
-	float	m_fErate_dollar;			// µ±ÆÚÃÀÔª»ãÂÊ
-	float	m_fErate_hkdollar;			// µ±ÆÚ¸Û±Ò»ãÂÊ
+	float	m_fErate_dollar;			// å½“æœŸç¾å…ƒæ±‡ç‡
+	float	m_fErate_hkdollar;			// å½“æœŸæ¸¯å¸æ±‡ç‡
 
-	// ¡ï³¥Õ®ÄÜÁ¦
-	float	m_fRatio_liquidity;			// Á÷¶¯±ÈÂÊ
-	float	m_fRatio_quick;				// ËÙ¶¯±ÈÂÊ
-	float	m_fVelocity_receivables;	// Ó¦ÊÕÕÊ¿îÖÜÂÊ
-	// ¡ï¾­ÓªÄÜÁ¦
-	float	m_fVelocity_merchandise;	// ´æ»õÖÜ×ªÂÊ
-	float	m_fMain_income;				// Ö÷ÓªÒµÎñÊÕÈë
-	float	m_fCash_ps;					// Ã¿¹É¾»ÏÖ½ğÁ÷Á¿
-	// ¡ïÓ¯ÀûÄÜÁ¦
-	float	m_fProfit_margin;			// Ö÷ÓªÒµÎñÀûÈóÂÊ %
-	float	m_fNetasset_yield;			// ¾»×Ê²úÊÕÒæÂÊ %
-	// ¡ï×Ê±¾½á¹¹
-	DWORD	m_datebegin;				// ÉÏÊĞÈÕÆÚ Format is YYYYMMDD
-	float	m_fShare_count_total;		// ×Ü¹É±¾
-	float	m_fShare_count_a;			// Á÷Í¨A¹É
-	float	m_fShare_count_b;			// Á÷Í¨B¹É
-	float	m_fShare_count_h;			// Á÷Í¨H¹É
-	float	m_fShare_count_national;	// ¹úÓĞ¹É
-	float	m_fShare_count_corp;		// ·¨ÈË¹É
-	float	m_fProfit_psud;				// Ã¿¹ÉÎ´·ÖÅäÀûÈó
-	float	m_fAsset;					// ×Ü×Ê²ú
-	float	m_fRatio_holderright;		// ¹É¶«È¨Òæ±ÈÂÊ %
-	float	m_fRatio_longdebt;			// ³¤ÆÚ¸ºÕ®ÂÊ % 
-	float	m_fRatio_debt;				// ×Ê²ú¸ºÕ®ÂÊ %
-	// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
-	float	m_fNetasset_ps;				// Ã¿¹É¾»×Ê²ú
-	float	m_fNetasset_ps_regulate;	// µ÷ÕûÃ¿¹É¾»×Ê²ú
-	float	m_fEps;						// Ã¿¹ÉÊÕÒæ
-	float	m_fEps_deduct;				// ¿Û³ıºóÃ¿¹ÉÊÕÒæ
-	float	m_fNet_profit;				// ¾»ÀûÈó
-	float	m_fMain_profit;				// Ö÷ÓªÒµÎñÀûÈó
-	float	m_fTotal_profit;			// ÀûÈó×Ü¶î
-	// ¡ïÔö³¤ÂÊ
-	float	m_fProfit_inc;				// Ö÷ÓªÀûÈóÔö³¤ÂÊ%
-	float	m_fIncome_inc;				// Ö÷ÓªÊÕÈëÔö³¤ÂÊ%
-	float	m_fAsset_inc;				// ×Ü×Ê²úÔö³¤ÂÊ%
-	// ¡ï¼¼ÊõÊı¾İÍ³¼ÆÖµ
-	float	m_fYield_average;			// Æ½¾ùÊÕÒæÂÊ%
-	float	m_fYield_stddev;			// ÊÕÒæ±ê×¼²î%
-	float	m_fBeite;					// ¦ÂÖµ
+	// â˜…å¿å€ºèƒ½åŠ›
+	float	m_fRatio_liquidity;			// æµåŠ¨æ¯”ç‡
+	float	m_fRatio_quick;				// é€ŸåŠ¨æ¯”ç‡
+	float	m_fVelocity_receivables;	// åº”æ”¶å¸æ¬¾å‘¨ç‡
+	// â˜…ç»è¥èƒ½åŠ›
+	float	m_fVelocity_merchandise;	// å­˜è´§å‘¨è½¬ç‡
+	float	m_fMain_income;				// ä¸»è¥ä¸šåŠ¡æ”¶å…¥
+	float	m_fCash_ps;					// æ¯è‚¡å‡€ç°é‡‘æµé‡
+	// â˜…ç›ˆåˆ©èƒ½åŠ›
+	float	m_fProfit_margin;			// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦ç‡ %
+	float	m_fNetasset_yield;			// å‡€èµ„äº§æ”¶ç›Šç‡ %
+	// â˜…èµ„æœ¬ç»“æ„
+	DWORD	m_datebegin;				// ä¸Šå¸‚æ—¥æœŸ Format is YYYYMMDD
+	float	m_fShare_count_total;		// æ€»è‚¡æœ¬
+	float	m_fShare_count_a;			// æµé€šAè‚¡
+	float	m_fShare_count_b;			// æµé€šBè‚¡
+	float	m_fShare_count_h;			// æµé€šHè‚¡
+	float	m_fShare_count_national;	// å›½æœ‰è‚¡
+	float	m_fShare_count_corp;		// æ³•äººè‚¡
+	float	m_fProfit_psud;				// æ¯è‚¡æœªåˆ†é…åˆ©æ¶¦
+	float	m_fAsset;					// æ€»èµ„äº§
+	float	m_fRatio_holderright;		// è‚¡ä¸œæƒç›Šæ¯”ç‡ %
+	float	m_fRatio_longdebt;			// é•¿æœŸè´Ÿå€ºç‡ % 
+	float	m_fRatio_debt;				// èµ„äº§è´Ÿå€ºç‡ %
+	// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
+	float	m_fNetasset_ps;				// æ¯è‚¡å‡€èµ„äº§
+	float	m_fNetasset_ps_regulate;	// è°ƒæ•´æ¯è‚¡å‡€èµ„äº§
+	float	m_fEps;						// æ¯è‚¡æ”¶ç›Š
+	float	m_fEps_deduct;				// æ‰£é™¤åæ¯è‚¡æ”¶ç›Š
+	float	m_fNet_profit;				// å‡€åˆ©æ¶¦
+	float	m_fMain_profit;				// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦
+	float	m_fTotal_profit;			// åˆ©æ¶¦æ€»é¢
+	// â˜…å¢é•¿ç‡
+	float	m_fProfit_inc;				// ä¸»è¥åˆ©æ¶¦å¢é•¿ç‡%
+	float	m_fIncome_inc;				// ä¸»è¥æ”¶å…¥å¢é•¿ç‡%
+	float	m_fAsset_inc;				// æ€»èµ„äº§å¢é•¿ç‡%
+	// â˜…æŠ€æœ¯æ•°æ®ç»Ÿè®¡å€¼
+	float	m_fYield_average;			// å¹³å‡æ”¶ç›Šç‡%
+	float	m_fYield_stddev;			// æ”¶ç›Šæ ‡å‡†å·®%
+	float	m_fBeite;					// Î²å€¼
 };
 
 /***
-	µ¥¸ö¹ÉÆ±µÄÊı¾İ£¬°üÀ¨¹ÉÆ±ĞÅÏ¢£¬KÏßÊı¾İ£¬»ù±¾×ÊÁÏ£¬³ıÈ¨³ıÏ¢Êı¾İµÈ¡£
+	å•ä¸ªè‚¡ç¥¨çš„æ•°æ®ï¼ŒåŒ…æ‹¬è‚¡ç¥¨ä¿¡æ¯ï¼ŒKçº¿æ•°æ®ï¼ŒåŸºæœ¬èµ„æ–™ï¼Œé™¤æƒé™¤æ¯æ•°æ®ç­‰ã€‚
 */
 class CStock
 {
@@ -915,82 +915,82 @@ public:
 
 	// Flag values
 	enum StockMarket {
-		marketUnknown	=	'UKNW',	// Î´Öª
-		marketSHSE		=	'ESHS',	// ÉÏº£Ö¤È¯½»Ò×Ëù
-		marketSZSE		=	'ESZS',	// ÉîÛÚÖ¤È¯½»Ò×Ëù
-		marketCYSE		=	'ESYC',	// ÖĞ¹ú´óÂ½´´Òµ°åÊĞ³¡
-		marketCHNA		=	'ANHC',	// ÖĞ¹ú´óÂ½ÉÏº£»òÉîÛÚ»ò´´Òµ°åÖ¤È¯½»Ò×Ëù
-		marketHKEX		=	'XEKH',	// Ïã¸ÛÁªºÏ½»Ò×Ëù
-		marketTBSE		=	'ESBT',	// Ì¨±±Ö¤È¯½»Ò×Ëù
-		marketTKSE		=	'EST',	// ¶«¾©Ö¤È¯½»Ò×Ëù
-		marketLSE		=	'ESL',	// Â×¶ØÖ¤È¯½»Ò×Ëù
-		marketFLKFSE	=	'FKLF',	// ·¨À¼¿Ë¸£Ö¤È¯½»Ò×Ëù
-		marketNYSE		=	'ESYN',	// Å¦Ô¼Ö¤È¯½»Ò×Ëù
-		marketNASDAQ	=	'QDSN',	// ÄÉË¹´ï¿ËÖ¤È¯½»Ò×Ëù
+		marketUnknown	=	'UKNW',	// æœªçŸ¥
+		marketSHSE		=	'ESHS',	// ä¸Šæµ·è¯åˆ¸äº¤æ˜“æ‰€
+		marketSZSE		=	'ESZS',	// æ·±åœ³è¯åˆ¸äº¤æ˜“æ‰€
+		marketCYSE		=	'ESYC',	// ä¸­å›½å¤§é™†åˆ›ä¸šæ¿å¸‚åœº
+		marketCHNA		=	'ANHC',	// ä¸­å›½å¤§é™†ä¸Šæµ·æˆ–æ·±åœ³æˆ–åˆ›ä¸šæ¿è¯åˆ¸äº¤æ˜“æ‰€
+		marketHKEX		=	'XEKH',	// é¦™æ¸¯è”åˆäº¤æ˜“æ‰€
+		marketTBSE		=	'ESBT',	// å°åŒ—è¯åˆ¸äº¤æ˜“æ‰€
+		marketTKSE		=	'EST',	// ä¸œäº¬è¯åˆ¸äº¤æ˜“æ‰€
+		marketLSE		=	'ESL',	// ä¼¦æ•¦è¯åˆ¸äº¤æ˜“æ‰€
+		marketFLKFSE	=	'FKLF',	// æ³•å…°å…‹ç¦è¯åˆ¸äº¤æ˜“æ‰€
+		marketNYSE		=	'ESYN',	// çº½çº¦è¯åˆ¸äº¤æ˜“æ‰€
+		marketNASDAQ	=	'QDSN',	// çº³æ–¯è¾¾å…‹è¯åˆ¸äº¤æ˜“æ‰€
 	};
 
 	enum DataType {
-		dataUnknown		=	0x00,		// Î´ÖªÊı¾İ
-		dataInfo		=	0x01,		// ¹ÉÆ±ĞÅÏ¢
-		dataK			=	0x02,		// KÏßÊı¾İ
-		dataDR			=	0x03,		// È¨Ï¢×ÊÁÏ
-		dataBasetable	=	0x04,		// ²ÆÎñÊı¾İ
-		dataBasetext	=	0x05,		// F10×ÊÁÏ
-		dataNews		=	0x06,		// ĞÂÎÅ×ÊÑ¶
-		dataReport		=	0x07,		// ĞĞÇéË¢ĞÂÊı¾İ
-		dataMinute		=	0x08,		// ĞĞÇé·ÖÊ±Êı¾İ
-		dataOutline		=	0x09,		// ĞĞÇé¶îÍâÊı¾İ
-		dataCode		=	0x0A,		// ¹ÉÆ±´úÂëÊı×é
-		dataMultisort	=	0x0B,		// ×ÛºÏÅÅÃû
-		dataDetail		=	0x0C,		// ³É½»Ã÷Ï¸
+		dataUnknown		=	0x00,		// æœªçŸ¥æ•°æ®
+		dataInfo		=	0x01,		// è‚¡ç¥¨ä¿¡æ¯
+		dataK			=	0x02,		// Kçº¿æ•°æ®
+		dataDR			=	0x03,		// æƒæ¯èµ„æ–™
+		dataBasetable	=	0x04,		// è´¢åŠ¡æ•°æ®
+		dataBasetext	=	0x05,		// F10èµ„æ–™
+		dataNews		=	0x06,		// æ–°é—»èµ„è®¯
+		dataReport		=	0x07,		// è¡Œæƒ…åˆ·æ–°æ•°æ®
+		dataMinute		=	0x08,		// è¡Œæƒ…åˆ†æ—¶æ•°æ®
+		dataOutline		=	0x09,		// è¡Œæƒ…é¢å¤–æ•°æ®
+		dataCode		=	0x0A,		// è‚¡ç¥¨ä»£ç æ•°ç»„
+		dataMultisort	=	0x0B,		// ç»¼åˆæ’å
+		dataDetail		=	0x0C,		// æˆäº¤æ˜ç»†
 	};
 
 	enum StockType {
 		typeNone		=	0x00,
-		typeshIndex		=	0x10,	//	ÉÏº£Ö¸Êı
-		typeshA			=	0x11,	//	ÉÏº£A¹É
-		typeshB			=	0x12,	//	ÉÏº£B¹É
-		typeshBond		=	0x13,	//	ÉÏº£Õ®È¯
-		typeshRight		=	0x14,	//	ÉÏº£È¨Ö¤
-		typeshBonus		=	0x15,	//	ÉÏº£ºìÀû
-		typeshAdmeasure	=	0x16,	//	ÉÏº£Åä¹É
-		typeshInfo		=	0x1F,	//	ÉÏº£Ö¤½»ËùĞÅÏ¢
-		typeszIndex		=	0x20,	//	ÉîÛÚÖ¸Êı 0x20
-		typeszA			=	0x21,	//	ÉîÛÚA¹É 0x21
-		typeszB			=	0x22,	//	ÉîÛÚB¹É 0x22
-		typeszBond		=	0x23,	//	ÉîÛÚÕ®È¯ 0x23
-		typeszRight		=	0x24,	//	ÉîÛÚÈ¨Ö¤ 0x24
-		typeszBonus		=	0x25,	//	ÉîÛÚºìÀû 0x25
-		typeszAdmeasure	=	0x26,	//	ÉîÛÚÅä¹É 0x26
-		typeszMsmall	=	0x27,	//	ÉîÛÚÖĞĞ¡ÆóÒµ
-		typeszInfo		=	0x2F,	//	ÉîÛÚÖ¤½»ËùĞÅÏ¢ 0x2f
-		typeGeneralInfo	=	0x05,	//	×ÛºÏ²Æ¾­ĞÅÏ¢ 0x05
+		typeshIndex		=	0x10,	//	ä¸Šæµ·æŒ‡æ•°
+		typeshA			=	0x11,	//	ä¸Šæµ·Aè‚¡
+		typeshB			=	0x12,	//	ä¸Šæµ·Bè‚¡
+		typeshBond		=	0x13,	//	ä¸Šæµ·å€ºåˆ¸
+		typeshRight		=	0x14,	//	ä¸Šæµ·æƒè¯
+		typeshBonus		=	0x15,	//	ä¸Šæµ·çº¢åˆ©
+		typeshAdmeasure	=	0x16,	//	ä¸Šæµ·é…è‚¡
+		typeshInfo		=	0x1F,	//	ä¸Šæµ·è¯äº¤æ‰€ä¿¡æ¯
+		typeszIndex		=	0x20,	//	æ·±åœ³æŒ‡æ•° 0x20
+		typeszA			=	0x21,	//	æ·±åœ³Aè‚¡ 0x21
+		typeszB			=	0x22,	//	æ·±åœ³Bè‚¡ 0x22
+		typeszBond		=	0x23,	//	æ·±åœ³å€ºåˆ¸ 0x23
+		typeszRight		=	0x24,	//	æ·±åœ³æƒè¯ 0x24
+		typeszBonus		=	0x25,	//	æ·±åœ³çº¢åˆ© 0x25
+		typeszAdmeasure	=	0x26,	//	æ·±åœ³é…è‚¡ 0x26
+		typeszMsmall	=	0x27,	//	æ·±åœ³ä¸­å°ä¼ä¸š
+		typeszInfo		=	0x2F,	//	æ·±åœ³è¯äº¤æ‰€ä¿¡æ¯ 0x2f
+		typeGeneralInfo	=	0x05,	//	ç»¼åˆè´¢ç»ä¿¡æ¯ 0x05
 	};
 
 	enum StockTypeMark {
-		markShanghai	=	0x10,	// ÉÏº£
-		markShenzhen	=	0x20,	// ÉîÛÚ
-		markGeneralInfo	=	0x05,	// ×ÛºÏ²Æ¾­ĞÅÏ¢
+		markShanghai	=	0x10,	// ä¸Šæµ·
+		markShenzhen	=	0x20,	// æ·±åœ³
+		markGeneralInfo	=	0x05,	// ç»¼åˆè´¢ç»ä¿¡æ¯
 	};
 
 	enum ReportType	{
-		reportUnknown	=	0x00,	//	Î´Öª
-		reportQuarter	=	0x01,	//	µÚÒ»¼¾¶È¼¾±¨
-		reportMid		=	0x02,	//	ÖĞ±¨
-		reportQuarter3	=	0x03,	//	µÚÈı¼¾¶È¼¾±¨
-		reportAnnals	=	0x04,	//	Äê±¨
+		reportUnknown	=	0x00,	//	æœªçŸ¥
+		reportQuarter	=	0x01,	//	ç¬¬ä¸€å­£åº¦å­£æŠ¥
+		reportMid		=	0x02,	//	ä¸­æŠ¥
+		reportQuarter3	=	0x03,	//	ç¬¬ä¸‰å­£åº¦å­£æŠ¥
+		reportAnnals	=	0x04,	//	å¹´æŠ¥
 	};
 
 	enum MultisortType {
-		classRise		=	0x01,	// ÕÇ·ù
-		classFall		=	0x02,	// µø·ù
-		claddRiseMin5	=	0x04,	// 5·ÖÖÓÕÇ·ù
-		classFallMin5	=	0x08,	// 5·ÖÖÓµø·ù
-		classBSRatioAsc	=	0x10,	// Î¯±ÈÇ°Áù
-		classBSRatioDesc=	0x20,	// Î¯±ÈºóÁù
-		classDiff		=	0x40,	// Õğ·ù
-		classVolRatio	=	0x80,	// Á¿±È
-		classAmount		=	0x100,	// ×Ü½ğ¶î
+		classRise		=	0x01,	// æ¶¨å¹…
+		classFall		=	0x02,	// è·Œå¹…
+		claddRiseMin5	=	0x04,	// 5åˆ†é’Ÿæ¶¨å¹…
+		classFallMin5	=	0x08,	// 5åˆ†é’Ÿè·Œå¹…
+		classBSRatioAsc	=	0x10,	// å§”æ¯”å‰å…­
+		classBSRatioDesc=	0x20,	// å§”æ¯”åå…­
+		classDiff		=	0x40,	// éœ‡å¹…
+		classVolRatio	=	0x80,	// é‡æ¯”
+		classAmount		=	0x100,	// æ€»é‡‘é¢
 	};
 
 	static	double GetReportFactor( int nReportType );
@@ -1043,18 +1043,11 @@ protected:
 	CKData		m_kdMin15;
 	CKData		m_kdMin5;
 	CDRData		m_drData;
-	CReport		m_report;
-	CMinute		m_minute;
-	COutline	m_outline;
-	int			m_nBaseTextLen;
-	char *		m_pBaseText;
-};
-
-
-#ifdef	_SP_ENABLE_INLINES
-#define	_STOCK_INLINE	inline
-#include "Stock.inl"
-#undef	_STOCK_INLINE
-#endif
-
-#endif	//__STKLIB_STOCK_H__
+{
+		classRise		=	0x01,	// å¨‘ã„¥ç®™
+		classFall		=	0x02,	// ç’ºå±½ç®™
+		claddRiseMin5	=	0x04,	// 5é’å—›æŒ“å¨‘ã„¥ç®™
+		classFallMin5	=	0x08,	// 5é’å—›æŒ“ç’ºå±½ç®™
+		classBSRatioAsc	=	0x10,	// æ¿®æ—€ç˜®é“å¶…åš
+		classBSRatioDesc=	0x20,	// æ¿®æ—€ç˜®éšåº¡åš
+		classDiff		=	0x40,	/

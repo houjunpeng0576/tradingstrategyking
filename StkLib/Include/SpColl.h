@@ -22,16 +22,16 @@
 
 ////////////////////////////////////////////////////////////////////////////
 // WARNING!!!!!!
-// 1. ������dll���߿�ִ�г��������ֱ�ӵ���CSPArray<TYPE,TYPE&>�ĺ�������Ϊ��
-//    _DEBUG��ʽ�£��ڴ�ķ��䡢�ͷŷ�ʽ��ͬ��
+// 1. 在其他dll或者可执行程序里，不能直接调用CSPArray<TYPE,TYPE&>的函数，因为在
+//    _DEBUG方式下，内存的分配、释放方式不同。
 ////////////////////////////////////////////////////////////////////////////
 
 #define	_SPARRAY_INLINE
 
 ////////////////////////////////////////////////////////////////////////////
 // WARNING!!!!!!
-// 1. ����� operator new �� delete ����SPConstructElements���ã����Ե���Ԫ�ص�
-// ���캯����
+// 1. 下面的 operator new 和 delete 仅供SPConstructElements调用，用以调用元素的
+// 构造函数。
 inline void *__cdecl operator new(size_t, void *_P, int, int )
         {return (_P); }
 #if     _MSC_VER >= 1200

@@ -28,20 +28,20 @@ public:
 #pragma	pack(1)
 
 ////////////////////////////////////////////////////////////////////
-//	Í¨ÓÃÊı¾İ°üµÄÊı¾İ½á¹¹(*.STK)
+//	é€šç”¨æ•°æ®åŒ…çš„æ•°æ®ç»“æ„(*.STK)
 typedef	struct tyday_fheader	{
 	char	magic;
 	char	code[6];
 	char	magic2;
 	char	name[8];
-	DWORD	date;		//ÈÕÆÚ
-	DWORD	datebegin;	//ÆğÊ¼ÈÕÆÚ
-	DWORD	dateend;	//ÖÕÖ¹ÈÕÆÚ
-	DWORD	gendate;	//Éú³ÉÈÕÆÚ
-	DWORD	gentime;	//Éú³ÉÊ±¼ä
-	DWORD	from;		//À´Ô´
-	DWORD	sharecount;	//¹ÉÆ±Êı
-	DWORD	recordcount;//¼ÇÂ¼Êı
+	DWORD	date;		//æ—¥æœŸ
+	DWORD	datebegin;	//èµ·å§‹æ—¥æœŸ
+	DWORD	dateend;	//ç»ˆæ­¢æ—¥æœŸ
+	DWORD	gendate;	//ç”Ÿæˆæ—¥æœŸ
+	DWORD	gentime;	//ç”Ÿæˆæ—¶é—´
+	DWORD	from;		//æ¥æº
+	DWORD	sharecount;	//è‚¡ç¥¨æ•°
+	DWORD	recordcount;//è®°å½•æ•°
 }TYDAY_FHEADER;
 
 typedef	struct tyday_record	{
@@ -49,23 +49,23 @@ typedef	struct tyday_record	{
 	char	code[6];
 	char	magic2;
 	char	name[8];
-	DWORD	date;		//ÈÕÆÚ
-	DWORD	open;		//¿ªÅÌ(Ôª/1000)
-	DWORD	high;		//×î¸ß¼Û(Ôª/1000)
-	DWORD	low;		//×îµÍ¼Û(Ôª/1000)
-	DWORD	close;		//ÊÕÅÌ(Ôª/1000)
-	DWORD	amount;		//³É½»¶î(Ç§Ôª)
-	DWORD	volume;		//³É½»Á¿(ÊÖ)
-	DWORD	serial;		//¼ÇÂ¼ĞòºÅ
+	DWORD	date;		//æ—¥æœŸ
+	DWORD	open;		//å¼€ç›˜(å…ƒ/1000)
+	DWORD	high;		//æœ€é«˜ä»·(å…ƒ/1000)
+	DWORD	low;		//æœ€ä½ä»·(å…ƒ/1000)
+	DWORD	close;		//æ”¶ç›˜(å…ƒ/1000)
+	DWORD	amount;		//æˆäº¤é¢(åƒå…ƒ)
+	DWORD	volume;		//æˆäº¤é‡(æ‰‹)
+	DWORD	serial;		//è®°å½•åºå·
 }TYDAY_RECORD;
 
 ////////////////////////////////////////////////////////////////////
-//	·ÖÎö¼ÒÊı¾İ°üµÄÊı¾İ½á¹¹(*.DAD)
+//	åˆ†æå®¶æ•°æ®åŒ…çš„æ•°æ®ç»“æ„(*.DAD)
 #define	FXJDAY_FHEADER_MAGIC	0x8C19FC33
 typedef	struct fxjday_fheader	{
-	DWORD	m_dwMagic;			// 33 FC 19 8C£¬ÀÏ°æ±¾µÄMagic
-	DWORD	m_dwUnknown;		// Î´Öª
-	DWORD	m_dwStockCount;		// Îª±¾ÎÄ¼şµÄ¹ÉÆ±Êı
+	DWORD	m_dwMagic;			// 33 FC 19 8Cï¼Œè€ç‰ˆæœ¬çš„Magic
+	DWORD	m_dwUnknown;		// æœªçŸ¥
+	DWORD	m_dwStockCount;		// ä¸ºæœ¬æ–‡ä»¶çš„è‚¡ç¥¨æ•°
 	DWORD	m_dwReserved;		// = 0
 }FXJDAY_FHEADER;
 
@@ -73,19 +73,19 @@ typedef	union fxjday_record	{
 	struct
 	{
 		DWORD	m_dwMagic;		// = -1
-		WORD	m_wMarket;		// ÊĞ³¡ SH, SZ
+		WORD	m_wMarket;		// å¸‚åœº SH, SZ
 		char	m_szCode[6];
 		DWORD	m_dwReserved[5];
 	};
 	struct
 	{
-		time_t	m_time;		//ÈÕÆÚ
-		float	open;		//¿ªÅÌ(Ôª/1000)
-		float	high;		//×î¸ß¼Û(Ôª/1000)
-		float	low;		//×îµÍ¼Û(Ôª/1000)
-		float	close;		//ÊÕÅÌ(Ôª/1000)
-		float	volume;		//³É½»Á¿(ÊÖ)
-		float	amount;		//³É½»¶î(Ôª)
+		time_t	m_time;		//æ—¥æœŸ
+		float	open;		//å¼€ç›˜(å…ƒ/1000)
+		float	high;		//æœ€é«˜ä»·(å…ƒ/1000)
+		float	low;		//æœ€ä½ä»·(å…ƒ/1000)
+		float	close;		//æ”¶ç›˜(å…ƒ/1000)
+		float	volume;		//æˆäº¤é‡(æ‰‹)
+		float	amount;		//æˆäº¤é¢(å…ƒ)
 		float	reserved;	//
 	};
 }FXJDAY_RECORD;
@@ -108,12 +108,12 @@ typedef BOOL (CALLBACK* PROGRESS_CALLBACK)(DWORD dwCode, DWORD dwProgress, LPCTS
 class	CStockContainer;
 
 /***
-	¶ÁÈ¡KÏßÊı¾İµÄÍ¨ÓÃ½Ó¿Ú£¬¸÷ÖÖ¸ñÊ½µÄ¶ÁÈ¡KÏßÊı¾İÀà±ØĞë´Ó´ËÀà¼Ì³Ğ
+	è¯»å–Kçº¿æ•°æ®çš„é€šç”¨æ¥å£ï¼Œå„ç§æ ¼å¼çš„è¯»å–Kçº¿æ•°æ®ç±»å¿…é¡»ä»æ­¤ç±»ç»§æ‰¿
 */
 class IStStore
 {
 public:
-	enum DBTypes {	// Êı¾İ¸ñÊ½ÀàĞÍ£¬Ä¿Ç°Ö»Ö§³ÖtypeSelfDB£¨×ÔÓĞ¸ñÊ½£©ºÍtypeQianlong£¨Ç®Áú¸ñÊ½£©
+	enum DBTypes {	// æ•°æ®æ ¼å¼ç±»å‹ï¼Œç›®å‰åªæ”¯æŒtypeSelfDBï¼ˆè‡ªæœ‰æ ¼å¼ï¼‰å’ŒtypeQianlongï¼ˆé’±é¾™æ ¼å¼ï¼‰
 		dbtypeUnknown		=	0x01,
 		dbtypeSelfDB		=	0x02,
 		dbtypeQianlong		=	0x03,
@@ -122,50 +122,50 @@ public:
 
 	static	BOOL IsValidDataType( int nType );
 	static	int	GetSupportedDataType ( CDBType * pdbtype, int maxsize );
-	static	IStStore * CreateStore( const char * rootpath, int nDBType = dbtypeUnknown );	// ¸ø³ö¸ùÄ¿Â¼ºÍÀàĞÍ£¬ĞÂ½¨Ò»¸ö¶ÔÏó
+	static	IStStore * CreateStore( const char * rootpath, int nDBType = dbtypeUnknown );	// ç»™å‡ºæ ¹ç›®å½•å’Œç±»å‹ï¼Œæ–°å»ºä¸€ä¸ªå¯¹è±¡
 
 	virtual	int IsOK( ) { return m_bIsOK; }
-	virtual	const char * GetRootPath( );	// µÃµ½µ±Ç°¶ÔÏóµÄ¸ùÄ¿Â¼
+	virtual	const char * GetRootPath( );	// å¾—åˆ°å½“å‰å¯¹è±¡çš„æ ¹ç›®å½•
 
-	virtual	int	GetDBType( )	=	0;		// µÃµ½µ±Ç°¶ÔÏóµÄÊı¾İÀàĞÍ
-	virtual	const char * GetDBTypeName( )	=	0;	// µÃµ½µ±Ç°¶ÔÏóµÄÊı¾İÀàĞÍÃû³Æ
-	virtual	int	GetMaxStockNumber( )	=	0;	// µÃµ½¹ÉÆ±ÊıÁ¿
-	virtual	int	LoadCodetable( CStockContainer & container )	=	0;	// ¶ÁÈ¡ËùÓĞ¹ÉÆ±µÄĞÅÏ¢
-	virtual	int	StoreCodetable( CStockContainer & container )	=	0;	// ±£´æ´úÂë±í
-	virtual	int	LoadKDataCache( CStockContainer & container, PROGRESS_CALLBACK fnCallback, void *cookie, int nProgStart, int nProgEnd )	=	0;	// ¶ÁÈ¡ËùÓĞ¹ÉÆ±µÄ×î½üÈÕÏßÊı¾İ»º³å
-	virtual	int	LoadBasetable( CStockContainer & container )	=	0;	// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄ²ÆÎñ×ÊÁÏ±í£¬°üÀ¨Ã¿¹ÉÊÕÒæ£¬Ã¿¹É¾»×Ê²úµÈ£¬¼ûCBaseData
-	virtual	int	StoreBasetable( CStockContainer & container )	=	0;	// ±£´æÄ³Ò»¹ÉÆ±µÄ²ÆÎñ×ÊÁÏ±í
-	virtual	int	LoadBaseText( CStock *pstock )	=	0;					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄ»ù±¾×ÊÁÏÎÄ±¾
-	virtual	int	LoadKData( CStock *pstock, int nKType )	=	0;			// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄÄ³¸öÖÜÆÚµÄKÏßÊı¾İ
-	virtual	int	LoadDRData( CStock *pstock )	=	0;					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄ³ıÈ¨³ıÏ¢×ÊÁÏ
-	virtual	int StoreDRData( CStock *pstock )	=	0;					// ±£´æÄ³Ò»¹ÉÆ±µÄ³ıÈ¨³ıÏ¢×ÊÁÏ
-	virtual int	LoadReport( CStock *pstock )	=	0;					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄĞĞÇéË¢ĞÂÊı¾İ
-	virtual int	LoadMinute( CStock *pstock )	=	0;					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄĞĞÇé·ÖÊ±Êı¾İ
-	virtual int	LoadOutline( CStock *pstock )	=	0;					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄĞĞÇé¶îÍâÊı¾İ
-	virtual int	StoreReport( REPORT * pReport, int nCount, BOOL bBigTrade )	=	0;		// ±£´æĞĞÇéË¢ĞÂÊı¾İ
-	virtual int	StoreMinute( MINUTE * pMinute, int nCount )	=	0;		// ±£´æĞĞÇé·ÖÊ±Êı¾İ
-	virtual int	StoreOutline( OUTLINE * pOutline, int nCount )	=	0;	// ±£´æĞĞÇé·ÖÊ±Êı¾İ
+	virtual	int	GetDBType( )	=	0;		// å¾—åˆ°å½“å‰å¯¹è±¡çš„æ•°æ®ç±»å‹
+	virtual	const char * GetDBTypeName( )	=	0;	// å¾—åˆ°å½“å‰å¯¹è±¡çš„æ•°æ®ç±»å‹åç§°
+	virtual	int	GetMaxStockNumber( )	=	0;	// å¾—åˆ°è‚¡ç¥¨æ•°é‡
+	virtual	int	LoadCodetable( CStockContainer & container )	=	0;	// è¯»å–æ‰€æœ‰è‚¡ç¥¨çš„ä¿¡æ¯
+	virtual	int	StoreCodetable( CStockContainer & container )	=	0;	// ä¿å­˜ä»£ç è¡¨
+	virtual	int	LoadKDataCache( CStockContainer & container, PROGRESS_CALLBACK fnCallback, void *cookie, int nProgStart, int nProgEnd )	=	0;	// è¯»å–æ‰€æœ‰è‚¡ç¥¨çš„æœ€è¿‘æ—¥çº¿æ•°æ®ç¼“å†²
+	virtual	int	LoadBasetable( CStockContainer & container )	=	0;	// è¯»å–æŸä¸€è‚¡ç¥¨çš„è´¢åŠ¡èµ„æ–™è¡¨ï¼ŒåŒ…æ‹¬æ¯è‚¡æ”¶ç›Šï¼Œæ¯è‚¡å‡€èµ„äº§ç­‰ï¼Œè§CBaseData
+	virtual	int	StoreBasetable( CStockContainer & container )	=	0;	// ä¿å­˜æŸä¸€è‚¡ç¥¨çš„è´¢åŠ¡èµ„æ–™è¡¨
+	virtual	int	LoadBaseText( CStock *pstock )	=	0;					// è¯»å–æŸä¸€è‚¡ç¥¨çš„åŸºæœ¬èµ„æ–™æ–‡æœ¬
+	virtual	int	LoadKData( CStock *pstock, int nKType )	=	0;			// è¯»å–æŸä¸€è‚¡ç¥¨çš„æŸä¸ªå‘¨æœŸçš„Kçº¿æ•°æ®
+	virtual	int	LoadDRData( CStock *pstock )	=	0;					// è¯»å–æŸä¸€è‚¡ç¥¨çš„é™¤æƒé™¤æ¯èµ„æ–™
+	virtual	int StoreDRData( CStock *pstock )	=	0;					// ä¿å­˜æŸä¸€è‚¡ç¥¨çš„é™¤æƒé™¤æ¯èµ„æ–™
+	virtual int	LoadReport( CStock *pstock )	=	0;					// è¯»å–æŸä¸€è‚¡ç¥¨çš„è¡Œæƒ…åˆ·æ–°æ•°æ®
+	virtual int	LoadMinute( CStock *pstock )	=	0;					// è¯»å–æŸä¸€è‚¡ç¥¨çš„è¡Œæƒ…åˆ†æ—¶æ•°æ®
+	virtual int	LoadOutline( CStock *pstock )	=	0;					// è¯»å–æŸä¸€è‚¡ç¥¨çš„è¡Œæƒ…é¢å¤–æ•°æ®
+	virtual int	StoreReport( REPORT * pReport, int nCount, BOOL bBigTrade )	=	0;		// ä¿å­˜è¡Œæƒ…åˆ·æ–°æ•°æ®
+	virtual int	StoreMinute( MINUTE * pMinute, int nCount )	=	0;		// ä¿å­˜è¡Œæƒ…åˆ†æ—¶æ•°æ®
+	virtual int	StoreOutline( OUTLINE * pOutline, int nCount )	=	0;	// ä¿å­˜è¡Œæƒ…åˆ†æ—¶æ•°æ®
 
 
-	virtual	int	InstallCodetbl( const char * filename, const char *orgname )	=	0;	// °²×°ÏÂÔØµÄ´úÂë±í
-	virtual	int	InstallCodetblBlock( const char * filename, const char *orgname )	=	0;	// °²×°ÏÂÔØµÄ°å¿é±í
-	virtual	int	InstallCodetblFxjBlock( const char * filename, const char *orgname )	=	0;	// °²×°ÏÂÔØµÄ·ÖÎö¼Ò°å¿é±í
-	virtual	int	InstallKData( CKData & kdata, BOOL bOverwrite = FALSE )	=	0;			// °²×°KÏßÊı¾İ
-	virtual	int InstallKDataTy( const char * stkfile, int nKType, PROGRESS_CALLBACK fnCallback, void *cookie )	=	0;	// °²×°ÏÂÔØµÄKÏßÍ¨ÓÃ¸ñÊ½Êı¾İ°ü
-	virtual	int InstallKDataFxj( const char * dadfile, int nKType, PROGRESS_CALLBACK fnCallback, void *cookie )	=	0;	// °²×°ÏÂÔØµÄKÏß·ÖÎö¼Ò¸ñÊ½Í¨ÓÃÊı¾İ°ü
-	virtual	int InstallDRData( CDRData & drdata )	=	0;								// °²×°³ıÈ¨³ıÏ¢Êı¾İ
-	virtual	int	InstallDRDataClk( const char * filename, const char *orgname )	=	0;	// °²×°ÏÂÔØµÄ³ıÈ¨³ıÏ¢Êı¾İ£¬Ò»Ö»¹ÉÆ±Ò»¸öÎÄ¼ş
-	virtual	int	InstallDRDataFxj( const char * fxjfilename )	=	0;					// °²×°·ÖÎö¼Ò³ıÈ¨³ıÏ¢Êı¾İ
-	virtual	int	InstallBasetable( const char * filename, const char *orgname )	=	0;	// °²×°²ÆÎñÊı¾İ
-	virtual	int	InstallBasetableTdx( const char * filename )	=	0;					// °²×°Í¨´ïĞÅ²ÆÎñÊı¾İ
-	virtual	int	InstallBasetableFxj( const char * filename )	=	0;					// °²×°·ÖÎö¼Ò²ÆÎñÊı¾İ
-	virtual	int InstallBaseText( const char * filename, const char *orgname )	=	0;	// °²×°ÏÂÔØµÄ»ù±¾×ÊÁÏÊı¾İ£¬Ò»Ö»¹ÉÆ±Ò»¸öÎÄ¼ş
-	virtual	int InstallBaseText( const char * buffer, int nLen, const char *orgname )	=	0;	// °²×°»ù±¾×ÊÁÏÊı¾İ
-	virtual	int InstallNewsText( const char * filename, const char *orgname )	=	0;	// °²×°ĞÂÎÅÊı¾İÎÄ¼ş
-	virtual	int InstallNewsText( const char * buffer, int nLen, const char *orgname )	=	0;	// °²×°ĞÂÎÅÊı¾İ
+	virtual	int	InstallCodetbl( const char * filename, const char *orgname )	=	0;	// å®‰è£…ä¸‹è½½çš„ä»£ç è¡¨
+	virtual	int	InstallCodetblBlock( const char * filename, const char *orgname )	=	0;	// å®‰è£…ä¸‹è½½çš„æ¿å—è¡¨
+	virtual	int	InstallCodetblFxjBlock( const char * filename, const char *orgname )	=	0;	// å®‰è£…ä¸‹è½½çš„åˆ†æå®¶æ¿å—è¡¨
+	virtual	int	InstallKData( CKData & kdata, BOOL bOverwrite = FALSE )	=	0;			// å®‰è£…Kçº¿æ•°æ®
+	virtual	int InstallKDataTy( const char * stkfile, int nKType, PROGRESS_CALLBACK fnCallback, void *cookie )	=	0;	// å®‰è£…ä¸‹è½½çš„Kçº¿é€šç”¨æ ¼å¼æ•°æ®åŒ…
+	virtual	int InstallKDataFxj( const char * dadfile, int nKType, PROGRESS_CALLBACK fnCallback, void *cookie )	=	0;	// å®‰è£…ä¸‹è½½çš„Kçº¿åˆ†æå®¶æ ¼å¼é€šç”¨æ•°æ®åŒ…
+	virtual	int InstallDRData( CDRData & drdata )	=	0;								// å®‰è£…é™¤æƒé™¤æ¯æ•°æ®
+	virtual	int	InstallDRDataClk( const char * filename, const char *orgname )	=	0;	// å®‰è£…ä¸‹è½½çš„é™¤æƒé™¤æ¯æ•°æ®ï¼Œä¸€åªè‚¡ç¥¨ä¸€ä¸ªæ–‡ä»¶
+	virtual	int	InstallDRDataFxj( const char * fxjfilename )	=	0;					// å®‰è£…åˆ†æå®¶é™¤æƒé™¤æ¯æ•°æ®
+	virtual	int	InstallBasetable( const char * filename, const char *orgname )	=	0;	// å®‰è£…è´¢åŠ¡æ•°æ®
+	virtual	int	InstallBasetableTdx( const char * filename )	=	0;					// å®‰è£…é€šè¾¾ä¿¡è´¢åŠ¡æ•°æ®
+	virtual	int	InstallBasetableFxj( const char * filename )	=	0;					// å®‰è£…åˆ†æå®¶è´¢åŠ¡æ•°æ®
+	virtual	int InstallBaseText( const char * filename, const char *orgname )	=	0;	// å®‰è£…ä¸‹è½½çš„åŸºæœ¬èµ„æ–™æ•°æ®ï¼Œä¸€åªè‚¡ç¥¨ä¸€ä¸ªæ–‡ä»¶
+	virtual	int InstallBaseText( const char * buffer, int nLen, const char *orgname )	=	0;	// å®‰è£…åŸºæœ¬èµ„æ–™æ•°æ®
+	virtual	int InstallNewsText( const char * filename, const char *orgname )	=	0;	// å®‰è£…æ–°é—»æ•°æ®æ–‡ä»¶
+	virtual	int InstallNewsText( const char * buffer, int nLen, const char *orgname )	=	0;	// å®‰è£…æ–°é—»æ•°æ®
 
 	virtual	BOOL GetFileName( CSPString &sFileName, int nDataType,
-				CStockInfo * pInfo = NULL, int nKType = CKData::ktypeDay )	=	0;		// µÃµ½Ä³ÖÖÊı¾İµÄÎÄ¼şÃû³Æ
+				CStockInfo * pInfo = NULL, int nKType = CKData::ktypeDay )	=	0;		// å¾—åˆ°æŸç§æ•°æ®çš„æ–‡ä»¶åç§°
 protected:
 	BOOL	m_bIsOK;
 	char	m_szRootPath[1024];
@@ -174,10 +174,10 @@ protected:
 #define	ERR_DB_MAX	1000
 
 /***
-	±¾µØÊı¾İÀà£¬Ìá¹©¶Ô´ÅÅÌÊı¾İµÄ²Ù×÷½Ó¿Ú£¬°üÀ¨¹ÉÆ±ĞÅÏ¢£¬¸÷ÖÖÖÜÆÚKÏßÊı¾İ£¬»ù±¾
-	×ÊÁÏ£¬È¨Ï¢×ÊÁÏµÄ¶ÁÈ¡ºÍ°²×°¡£
+	æœ¬åœ°æ•°æ®ç±»ï¼Œæä¾›å¯¹ç£ç›˜æ•°æ®çš„æ“ä½œæ¥å£ï¼ŒåŒ…æ‹¬è‚¡ç¥¨ä¿¡æ¯ï¼Œå„ç§å‘¨æœŸKçº¿æ•°æ®ï¼ŒåŸºæœ¬
+	èµ„æ–™ï¼Œæƒæ¯èµ„æ–™çš„è¯»å–å’Œå®‰è£…ã€‚
 	
-	Ê¹ÓÃ·½·¨ÈçÏÂ£º
+	ä½¿ç”¨æ–¹æ³•å¦‚ä¸‹ï¼š
 	CStDatabase::CreateSelfDB( "./" );
 
 	CStDatabase	db;
@@ -199,8 +199,8 @@ protected:
 	kday.SetDRData( stock.GetDRData() );
 	kday.ChangeCurFormat( CKData::formatXDRdown, AfxGetProfile().GetAutoResumeDRBegin(), AfxGetProfile().GetAutoResumeDRLimit() );
 
-	×¢Òâ£ºÊ¹ÓÃCStDatabaseµÄ×ÓÀàCNetDatabaseÒ²¿ÉÒÔÊµÏÖÉÏÊö¹¦ÄÜ£¬²¢ÇÒÌá¹©µÄ¹¦ÄÜ
-	¸ü¶à£¬Ê¹ÓÃ·½·¨ÏàÍ¬¡£
+	æ³¨æ„ï¼šä½¿ç”¨CStDatabaseçš„å­ç±»CNetDatabaseä¹Ÿå¯ä»¥å®ç°ä¸Šè¿°åŠŸèƒ½ï¼Œå¹¶ä¸”æä¾›çš„åŠŸèƒ½
+	æ›´å¤šï¼Œä½¿ç”¨æ–¹æ³•ç›¸åŒã€‚
 */
 class CStDatabase : public Object
 {
@@ -214,64 +214,64 @@ public:
 	// Attributes
 
 	// Operations
-	static	BOOL CreateSelfDB( const char * rootpath );		// ´´½¨ËùĞèÄ¿Â¼
-	static	BOOL IsValidDataType( int nType );				// ÀàĞÍÊÇ·ñºÏ·¨
-	static	int	GetSupportedDataType ( CDBType * pdbtype, int maxsize );	// µÃµ½Ö§³ÖµÄÊı¾İÀàĞÍ
-	BOOL	SetRootPath( const char * rootpath, int nDBType = IStStore::dbtypeUnknown );	// Éè¶¨Êı¾İÄ¿Â¼
+	static	BOOL CreateSelfDB( const char * rootpath );		// åˆ›å»ºæ‰€éœ€ç›®å½•
+	static	BOOL IsValidDataType( int nType );				// ç±»å‹æ˜¯å¦åˆæ³•
+	static	int	GetSupportedDataType ( CDBType * pdbtype, int maxsize );	// å¾—åˆ°æ”¯æŒçš„æ•°æ®ç±»å‹
+	BOOL	SetRootPath( const char * rootpath, int nDBType = IStStore::dbtypeUnknown );	// è®¾å®šæ•°æ®ç›®å½•
 
-	BOOL	IsOK( );	// Êı¾İÄ¿Â¼ÊÇ·ñ·ûºÏ
-	const char * GetRootPath( );	// µÃµ½Êı¾İÄ¿Â¼
-	int	GetDBType( );				// µÃµ½Êı¾İÀàĞÍ
-	const char * GetDBTypeName( );	// µÃµ½Êı¾İÀàĞÍÃû³Æ
+	BOOL	IsOK( );	// æ•°æ®ç›®å½•æ˜¯å¦ç¬¦åˆ
+	const char * GetRootPath( );	// å¾—åˆ°æ•°æ®ç›®å½•
+	int	GetDBType( );				// å¾—åˆ°æ•°æ®ç±»å‹
+	const char * GetDBTypeName( );	// å¾—åˆ°æ•°æ®ç±»å‹åç§°
 
-	virtual	DWORD	GetSelfTempPath( char *szTempPath, int size );	// µÃµ½ÁÙÊ±Ä¿Â¼
+	virtual	DWORD	GetSelfTempPath( char *szTempPath, int size );	// å¾—åˆ°ä¸´æ—¶ç›®å½•
 
-	virtual	BOOL GetLastErrorMessage(LPTSTR lpszError, UINT nMaxError);	// µÃµ½×î½ü´íÎó
-	virtual	int	GetMaxStockNumber( );		// µÃµ½¹ÉÆ±ÊıÁ¿
-	virtual	int	LoadCodetable( CStockContainer &container );	// ¶ÁÈ¡ËùÓĞ¹ÉÆ±µÄĞÅÏ¢
-	virtual	int	StoreCodetable( CStockContainer & container );	// ±£´æ´úÂë±í
-	virtual	int	LoadKDataCache( CStockContainer &container, PROGRESS_CALLBACK fnCallback, void *cookie, int nProgStart, int nProgEnd );	// ¶ÁÈ¡ËùÓĞ¹ÉÆ±µÄ×î½üÈÕÏßÊı¾İ»º³å
-	virtual	int	LoadBasetable( CStockContainer & container );	// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄ²ÆÎñ×ÊÁÏ±í£¬°üÀ¨Ã¿¹ÉÊÕÒæ£¬Ã¿¹É¾»×Ê²úµÈ£¬¼ûCBaseData
-	virtual	int	StoreBasetable( CStockContainer & container );	// ±£´æÄ³Ò»¹ÉÆ±µÄ²ÆÎñ×ÊÁÏ±í
-	virtual	int	LoadBaseText( CStock *pstock );					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄ»ù±¾×ÊÁÏÎÄ±¾
-	virtual	int	LoadKData( CStock *pstock, int nKType );		// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄÄ³¸öÖÜÆÚµÄKÏßÊı¾İ
-	virtual int	LoadDRData( CStock *pstock );					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄ³ıÈ¨³ıÏ¢×ÊÁÏ
-	virtual	int StoreDRData( CStock *pstock );					// ±£´æÄ³Ò»¹ÉÆ±µÄ³ıÈ¨³ıÏ¢×ÊÁÏ
-	virtual int	LoadReport( CStock *pstock );					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄĞĞÇéË¢ĞÂÊı¾İ
-	virtual int	LoadMinute( CStock *pstock );					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄĞĞÇé·ÖÊ±Êı¾İ
-	virtual int	LoadOutline( CStock *pstock );					// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄĞĞÇé¶îÍâÊı¾İ
-	virtual int	StoreReport( REPORT * pReport, int nCount, BOOL bBigTrade );	// ±£´æĞĞÇéË¢ĞÂÊı¾İ
-	virtual int	StoreMinute( MINUTE * pMinute, int nCount );	// ±£´æĞĞÇé·ÖÊ±Êı¾İ
-	virtual int	StoreOutline( OUTLINE * pOutline, int nCount );	// ±£´æĞĞÇé·ÖÊ±Êı¾İ
+	virtual	BOOL GetLastErrorMessage(LPTSTR lpszError, UINT nMaxError);	// å¾—åˆ°æœ€è¿‘é”™è¯¯
+	virtual	int	GetMaxStockNumber( );		// å¾—åˆ°è‚¡ç¥¨æ•°é‡
+	virtual	int	LoadCodetable( CStockContainer &container );	// è¯»å–æ‰€æœ‰è‚¡ç¥¨çš„ä¿¡æ¯
+	virtual	int	StoreCodetable( CStockContainer & container );	// ä¿å­˜ä»£ç è¡¨
+	virtual	int	LoadKDataCache( CStockContainer &container, PROGRESS_CALLBACK fnCallback, void *cookie, int nProgStart, int nProgEnd );	// è¯»å–æ‰€æœ‰è‚¡ç¥¨çš„æœ€è¿‘æ—¥çº¿æ•°æ®ç¼“å†²
+	virtual	int	LoadBasetable( CStockContainer & container );	// è¯»å–æŸä¸€è‚¡ç¥¨çš„è´¢åŠ¡èµ„æ–™è¡¨ï¼ŒåŒ…æ‹¬æ¯è‚¡æ”¶ç›Šï¼Œæ¯è‚¡å‡€èµ„äº§ç­‰ï¼Œè§CBaseData
+	virtual	int	StoreBasetable( CStockContainer & container );	// ä¿å­˜æŸä¸€è‚¡ç¥¨çš„è´¢åŠ¡èµ„æ–™è¡¨
+	virtual	int	LoadBaseText( CStock *pstock );					// è¯»å–æŸä¸€è‚¡ç¥¨çš„åŸºæœ¬èµ„æ–™æ–‡æœ¬
+	virtual	int	LoadKData( CStock *pstock, int nKType );		// è¯»å–æŸä¸€è‚¡ç¥¨çš„æŸä¸ªå‘¨æœŸçš„Kçº¿æ•°æ®
+	virtual int	LoadDRData( CStock *pstock );					// è¯»å–æŸä¸€è‚¡ç¥¨çš„é™¤æƒé™¤æ¯èµ„æ–™
+	virtual	int StoreDRData( CStock *pstock );					// ä¿å­˜æŸä¸€è‚¡ç¥¨çš„é™¤æƒé™¤æ¯èµ„æ–™
+	virtual int	LoadReport( CStock *pstock );					// è¯»å–æŸä¸€è‚¡ç¥¨çš„è¡Œæƒ…åˆ·æ–°æ•°æ®
+	virtual int	LoadMinute( CStock *pstock );					// è¯»å–æŸä¸€è‚¡ç¥¨çš„è¡Œæƒ…åˆ†æ—¶æ•°æ®
+	virtual int	LoadOutline( CStock *pstock );					// è¯»å–æŸä¸€è‚¡ç¥¨çš„è¡Œæƒ…é¢å¤–æ•°æ®
+	virtual int	StoreReport( REPORT * pReport, int nCount, BOOL bBigTrade );	// ä¿å­˜è¡Œæƒ…åˆ·æ–°æ•°æ®
+	virtual int	StoreMinute( MINUTE * pMinute, int nCount );	// ä¿å­˜è¡Œæƒ…åˆ†æ—¶æ•°æ®
+	virtual int	StoreOutline( OUTLINE * pOutline, int nCount );	// ä¿å­˜è¡Œæƒ…åˆ†æ—¶æ•°æ®
 
-	virtual	int	InstallCodetbl( const char * filename, const char *orgname );		// °²×°ÏÂÔØµÄ´úÂë±í
-	virtual	int	InstallCodetblBlock( const char * filename, const char *orgname );	// °²×°ÏÂÔØµÄ°å¿é±í
-	virtual	int	InstallCodetblFxjBlock( const char * filename, const char *orgname );	// °²×°ÏÂÔØµÄ·ÖÎö¼Ò°å¿é±í
-	virtual	int	InstallKData( CKData & kdata, BOOL bOverwrite = FALSE );			// °²×°KÏßÊı¾İ
-	virtual	int InstallKDataTy( const char * stkfile, int nKType, PROGRESS_CALLBACK fnCallback, void *cookie );	// °²×°ÏÂÔØµÄKÏßÍ¨ÓÃ¸ñÊ½Êı¾İ
-	virtual	int InstallKDataFxj( const char * dadfile, int nKType, PROGRESS_CALLBACK fnCallback, void *cookie );	// °²×°ÏÂÔØµÄKÏß·ÖÎö¼Ò¸ñÊ½Êı¾İ
-	virtual	int InstallDRData( CDRData & drdata );									// °²×°³ıÈ¨³ıÏ¢Êı¾İ
-	virtual	int	InstallDRDataClk( const char * filename, const char *orgname );		// °²×°ÏÂÔØµÄ³ıÈ¨³ıÏ¢Êı¾İ£¬Ò»Ö»¹ÉÆ±Ò»¸öÎÄ¼ş
-	virtual	int	InstallDRDataFxj( const char * fxjfilename );						// °²×°·ÖÎö¼Ò³ıÈ¨³ıÏ¢Êı¾İ
-	virtual	int	InstallBasetable( const char * filename, const char *orgname );		// °²×°²ÆÎñÊı¾İ
-	virtual	int	InstallBasetableTdx( const char * filename );						// °²×°Í¨´ïĞÅ²ÆÎñÊı¾İ
-	virtual	int	InstallBasetableFxj( const char * filename );						// °²×°·ÖÎö¼Ò²ÆÎñÊı¾İ
-	virtual	int InstallBaseText( const char * filename, const char *orgname );		// °²×°ÏÂÔØµÄ»ù±¾×ÊÁÏÊı¾İ£¬Ò»Ö»¹ÉÆ±Ò»¸öÎÄ¼ş
-	virtual	int InstallBaseText( const char * buffer, int nLen, const char *orgname );		// °²×°»ù±¾×ÊÁÏÊı¾İ
-	virtual	int InstallNewsText( const char * filename, const char *orgname );		// °²×°ĞÂÎÅÊı¾İÎÄ¼ş
-	virtual	int InstallNewsText( const char * buffer, int nLen, const char *orgname );		// °²×°ĞÂÎÅÊı¾İ
+	virtual	int	InstallCodetbl( const char * filename, const char *orgname );		// å®‰è£…ä¸‹è½½çš„ä»£ç è¡¨
+	virtual	int	InstallCodetblBlock( const char * filename, const char *orgname );	// å®‰è£…ä¸‹è½½çš„æ¿å—è¡¨
+	virtual	int	InstallCodetblFxjBlock( const char * filename, const char *orgname );	// å®‰è£…ä¸‹è½½çš„åˆ†æå®¶æ¿å—è¡¨
+	virtual	int	InstallKData( CKData & kdata, BOOL bOverwrite = FALSE );			// å®‰è£…Kçº¿æ•°æ®
+	virtual	int InstallKDataTy( const char * stkfile, int nKType, PROGRESS_CALLBACK fnCallback, void *cookie );	// å®‰è£…ä¸‹è½½çš„Kçº¿é€šç”¨æ ¼å¼æ•°æ®
+	virtual	int InstallKDataFxj( const char * dadfile, int nKType, PROGRESS_CALLBACK fnCallback, void *cookie );	// å®‰è£…ä¸‹è½½çš„Kçº¿åˆ†æå®¶æ ¼å¼æ•°æ®
+	virtual	int InstallDRData( CDRData & drdata );									// å®‰è£…é™¤æƒé™¤æ¯æ•°æ®
+	virtual	int	InstallDRDataClk( const char * filename, const char *orgname );		// å®‰è£…ä¸‹è½½çš„é™¤æƒé™¤æ¯æ•°æ®ï¼Œä¸€åªè‚¡ç¥¨ä¸€ä¸ªæ–‡ä»¶
+	virtual	int	InstallDRDataFxj( const char * fxjfilename );						// å®‰è£…åˆ†æå®¶é™¤æƒé™¤æ¯æ•°æ®
+	virtual	int	InstallBasetable( const char * filename, const char *orgname );		// å®‰è£…è´¢åŠ¡æ•°æ®
+	virtual	int	InstallBasetableTdx( const char * filename );						// å®‰è£…é€šè¾¾ä¿¡è´¢åŠ¡æ•°æ®
+	virtual	int	InstallBasetableFxj( const char * filename );						// å®‰è£…åˆ†æå®¶è´¢åŠ¡æ•°æ®
+	virtual	int InstallBaseText( const char * filename, const char *orgname );		// å®‰è£…ä¸‹è½½çš„åŸºæœ¬èµ„æ–™æ•°æ®ï¼Œä¸€åªè‚¡ç¥¨ä¸€ä¸ªæ–‡ä»¶
+	virtual	int InstallBaseText( const char * buffer, int nLen, const char *orgname );		// å®‰è£…åŸºæœ¬èµ„æ–™æ•°æ®
+	virtual	int InstallNewsText( const char * filename, const char *orgname );		// å®‰è£…æ–°é—»æ•°æ®æ–‡ä»¶
+	virtual	int InstallNewsText( const char * buffer, int nLen, const char *orgname );		// å®‰è£…æ–°é—»æ•°æ®
 
 
 	// assistant operation
-	BOOL	AddAssistantRootPath( const char * rootpath, int nDBType = IStStore::dbtypeUnknown );	// Ö¸¶¨ÁíÍâÒ»¸ö¸½¼ÓÊı¾İÔ´µÄÄ¿Â¼£¬×Ô¶¯¶ÁÈ¡
-	void	RemoveAssistant( const char * rootpath );	// ÒÆ³ıÁíÍâÒ»¸ö¸½¼ÓÊı¾İÔ´Ä¿Â¼
-	void	RemoveAllAssistant(  );						// ÒÆ³ıËùÓĞ¸½¼ÓÊı¾İÔ´Ä¿Â¼
+	BOOL	AddAssistantRootPath( const char * rootpath, int nDBType = IStStore::dbtypeUnknown );	// æŒ‡å®šå¦å¤–ä¸€ä¸ªé™„åŠ æ•°æ®æºçš„ç›®å½•ï¼Œè‡ªåŠ¨è¯»å–
+	void	RemoveAssistant( const char * rootpath );	// ç§»é™¤å¦å¤–ä¸€ä¸ªé™„åŠ æ•°æ®æºç›®å½•
+	void	RemoveAllAssistant(  );						// ç§»é™¤æ‰€æœ‰é™„åŠ æ•°æ®æºç›®å½•
 
-	static CSPTime	GetTimeInitial( );		// µÃµ½³õÊ¼Êı¾İÈÕÆÚ
-	BOOL	GetTimeLocalRange( CSPTime *ptmLatest, CSPTime * ptmPioneer, CSPTime * ptmInitial );	// µÃµ½±¾µØÊı¾İÈÕÆÚÇø¼ä
-	BOOL	GetNeedDownloadRange( CStockInfo &info, CSPTime tmBegin, CSPTime tmEnd, CSPTime &tmDLBegin, CSPTime &tmDLEnd );	// µÃµ½ĞèÒªÏÂÔØµÄÊı¾İÈÕÆÚÇø¼ä
+	static CSPTime	GetTimeInitial( );		// å¾—åˆ°åˆå§‹æ•°æ®æ—¥æœŸ
+	BOOL	GetTimeLocalRange( CSPTime *ptmLatest, CSPTime * ptmPioneer, CSPTime * ptmInitial );	// å¾—åˆ°æœ¬åœ°æ•°æ®æ—¥æœŸåŒºé—´
+	BOOL	GetNeedDownloadRange( CStockInfo &info, CSPTime tmBegin, CSPTime tmEnd, CSPTime &tmDLBegin, CSPTime &tmDLEnd );	// å¾—åˆ°éœ€è¦ä¸‹è½½çš„æ•°æ®æ—¥æœŸåŒºé—´
 
-	// ½«Ç®Áú¸ñÊ½KÏßÊı¾İ ¼ÓÈë Í¨ÓÃÊı¾İ°ü
+	// å°†é’±é¾™æ ¼å¼Kçº¿æ•°æ® åŠ å…¥ é€šç”¨æ•°æ®åŒ…
 	static	int		AppendToTyData( const char *code, const char *name, int nKType, LPCTSTR lpszKFile, LPCTSTR lpszTyDataFile, time_t tmBegin, time_t tmEnd );
 
 protected:

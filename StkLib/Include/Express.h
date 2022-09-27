@@ -14,98 +14,98 @@
 #define	__STKLIB_EXPRESS_H__
 
 /***
-	¶¨Òå¹ÉÆ±ÁĞ±íÏîµÄÎ¨Ò»±êÊ¶
+	å®šä¹‰è‚¡ç¥¨åˆ—è¡¨é¡¹çš„å”¯ä¸€æ ‡è¯†
 */
-	//	¹ÉÆ±
+	//	è‚¡ç¥¨
 #define	SLH_NONE					0
 #define	SLH_MIN						1
-#define	SLH_CODE					1	//	¹ÉÆ±´úÂë
-#define	SLH_NAME					2	//	¹ÉÆ±Ãû³Æ
-	//	¼¼ÊõÊı¾İ
-#define	SLH_DATE					3	//	ÈÕÆÚ
-#define	SLH_LASTCLOSE				4	//	×òÊÕ
-#define	SLH_OPEN					5	//	½ñ¿ª
-#define	SLH_CLOSE					6	//	ÊÕÅÌ¼Û
-#define	SLH_HIGH					7	//	×î¸ß¼Û
-#define	SLH_LOW						8	//	×îµÍ¼Û
-#define	SLH_AVERAGE					9	//	¾ù¼Û
-#define	SLH_DIFF					10	//	ÕÇµø
-#define	SLH_DIFFPERCENT				11	//	ÕÇ·ù%
-#define	SLH_SCOPE					12	//	Õğ·ù%
-#define	SLH_VOLUME					13	//	³É½»Á¿
-#define	SLH_AMOUNT					14	//	³É½»¶î
-#define	SLH_VOLUP					15	//	ÍâÅÌ
-#define	SLH_VOLDOWN					16	//	ÄÚÅÌ
-#define	SLH_DIFFPERCENT_MIN5		17	//	Îå·ÖÖÓÕÇ·ù%
-#define	SLH_SELLBUYRATIO			18	//	Î¯±È%
-#define	SLH_SELLBUYDIFF				19	//	Î¯Á¿²î
-#define	SLH_BUYPRICE3				20	//	Âò¼ÛÈı
-#define	SLH_BUYPRICE2				21	//	Âò¼Û¶ş
-#define	SLH_BUYPRICE1				22	//	Âò¼ÛÒ»
-#define	SLH_SELLPRICE1				23	//	Âô¼ÛÒ»
-#define	SLH_SELLPRICE2				24	//	Âô¼Û¶ş
-#define	SLH_SELLPRICE3				25	//	Âô¼ÛÈı
-#define	SLH_BUYVOLUME3				26	//	ÂòÁ¿Èı
-#define	SLH_BUYVOLUME2				27	//	ÂòÁ¿¶ş
-#define	SLH_BUYVOLUME1				28	//	ÂòÁ¿Ò»
-#define	SLH_SELLVOLUME1				29	//	ÂôÁ¿Ò»
-#define	SLH_SELLVOLUME2				30	//	ÂôÁ¿¶ş
-#define	SLH_SELLVOLUME3				31	//	ÂôÁ¿Èı
+#define	SLH_CODE					1	//	è‚¡ç¥¨ä»£ç 
+#define	SLH_NAME					2	//	è‚¡ç¥¨åç§°
+	//	æŠ€æœ¯æ•°æ®
+#define	SLH_DATE					3	//	æ—¥æœŸ
+#define	SLH_LASTCLOSE				4	//	æ˜¨æ”¶
+#define	SLH_OPEN					5	//	ä»Šå¼€
+#define	SLH_CLOSE					6	//	æ”¶ç›˜ä»·
+#define	SLH_HIGH					7	//	æœ€é«˜ä»·
+#define	SLH_LOW						8	//	æœ€ä½ä»·
+#define	SLH_AVERAGE					9	//	å‡ä»·
+#define	SLH_DIFF					10	//	æ¶¨è·Œ
+#define	SLH_DIFFPERCENT				11	//	æ¶¨å¹…%
+#define	SLH_SCOPE					12	//	éœ‡å¹…%
+#define	SLH_VOLUME					13	//	æˆäº¤é‡
+#define	SLH_AMOUNT					14	//	æˆäº¤é¢
+#define	SLH_VOLUP					15	//	å¤–ç›˜
+#define	SLH_VOLDOWN					16	//	å†…ç›˜
+#define	SLH_DIFFPERCENT_MIN5		17	//	äº”åˆ†é’Ÿæ¶¨å¹…%
+#define	SLH_SELLBUYRATIO			18	//	å§”æ¯”%
+#define	SLH_SELLBUYDIFF				19	//	å§”é‡å·®
+#define	SLH_BUYPRICE3				20	//	ä¹°ä»·ä¸‰
+#define	SLH_BUYPRICE2				21	//	ä¹°ä»·äºŒ
+#define	SLH_BUYPRICE1				22	//	ä¹°ä»·ä¸€
+#define	SLH_SELLPRICE1				23	//	å–ä»·ä¸€
+#define	SLH_SELLPRICE2				24	//	å–ä»·äºŒ
+#define	SLH_SELLPRICE3				25	//	å–ä»·ä¸‰
+#define	SLH_BUYVOLUME3				26	//	ä¹°é‡ä¸‰
+#define	SLH_BUYVOLUME2				27	//	ä¹°é‡äºŒ
+#define	SLH_BUYVOLUME1				28	//	ä¹°é‡ä¸€
+#define	SLH_SELLVOLUME1				29	//	å–é‡ä¸€
+#define	SLH_SELLVOLUME2				30	//	å–é‡äºŒ
+#define	SLH_SELLVOLUME3				31	//	å–é‡ä¸‰
 
-	//	Ö÷Òª»ù±¾Ö¸±ê
-#define	SLH_REPORTTYPE				32	//	±¨±íÀàĞÍ
-#define	SLH_PE						33	//	ÊĞÓ¯ÂÊ
-#define	SLH_PNETASSET				34	//	ÊĞ¾»ÂÊ
-#define	SLH_PMAININCOME				35	//	ÊĞÏúÂÊ
-#define	SLH_RATIO_PCASH				36	//	¼Û¸ñ¾»ÏÖ½ğ±È
-#define	SLH_RATIO_CURRENCY			37	//	Á÷Í¨ÂÊ
-#define	SLH_RATIO_CHANGEHAND		38	//	»»ÊÖÂÊ
-#define	SLH_RATIO_VOLUME			39	//	Á¿±È
-#define	SLH_RS						40	//	Ïà¶ÔÇ¿¶È
-#define	SLH_MARKETVALUE				41	//	×ÜÊĞÖµ
-#define	SLH_MARKETVALUEA			42	//	A¹ÉÊĞÖµ
-#define	SLH_MARKETVALUEB			43	//	B¹ÉÊĞÖµ
-	// ¡ï³¥Õ®ÄÜÁ¦
-#define	SLH_RATIO_LIQUIDITY			44	//	Á÷¶¯±ÈÂÊ
-#define	SLH_RATIO_QUICK				45	//	ËÙ¶¯±ÈÂÊ
-#define	SLH_VELOCITY_RECEIVABLES	46	//	Ó¦ÊÕÕÊ¿îÖÜÂÊ
-	// ¡ï¾­ÓªÄÜÁ¦
-#define	SLH_VELOCITY_MERCHANDISE	47	// ´æ»õÖÜ×ªÂÊ
-#define	SLH_MAIN_INCOME				48	// Ö÷ÓªÒµÎñÊÕÈë
-#define	SLH_CASH_PS					49	// Ã¿¹É¾»ÏÖ½ğÁ÷Á¿
-	// ¡ïÓ¯ÀûÄÜÁ¦
-#define	SLH_PROFIT_MARGIN			50	// Ö÷ÓªÒµÎñÀûÈóÂÊ
-#define	SLH_NETASSET_YIELD			51	// ¾»×Ê²úÊÕÒæÂÊ
-	// ¡ï×Ê±¾½á¹¹
-#define	SLH_DATE_BEGIN				52	//	ÉÏÊĞÈÕÆÚ
-#define	SLH_SHARE_COUNT_TOTAL		53	//	×Ü¹É±¾
-#define	SLH_SHARE_COUNT_A			54	//	Á÷Í¨A¹É
-#define	SLH_SHARE_COUNT_B			55	//	Á÷Í¨B¹É
-#define	SLH_SHARE_COUNT_H			56	//	Á÷Í¨H¹É
-#define	SLH_SHARE_COUNT_NATIONAL	57	//	¹úÓĞ¹É
-#define	SLH_SHARE_COUNT_CORP		58	//	·¨ÈË¹É
-#define	SLH_PROFIT_PSUD				59	// Ã¿¹ÉÎ´·ÖÅäÀûÈó
-#define	SLH_ASSET					60	// ×Ü×Ê²ú
-#define	SLH_RATIO_HOLDERRIGHT		61	// ¹É¶«È¨Òæ±ÈÂÊ
-#define	SLH_RATIO_LONGDEBT			62	// ³¤ÆÚ¸ºÕ®ÂÊ
-#define	SLH_RATIO_DEBT				63	// ×Ê²ú¸ºÕ®ÂÊ
-	// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
-#define	SLH_NETASSET_PS				64	// Ã¿¹É¾»×Ê²ú
-#define	SLH_NETASSET_PS_REGULATE	65	// µ÷ÕûÃ¿¹É¾»×Ê²ú
-#define	SLH_EPS						66	// Ã¿¹ÉÊÕÒæ
-#define	SLH_EPS_DEDUCT				67	// ¿Û³ıºóÃ¿¹ÉÊÕÒæ
-#define	SLH_NET_PROFIT				68	// ¾»ÀûÈó
-#define	SLH_MAIN_PROFIT				69	// Ö÷ÓªÒµÎñÀûÈó
-#define	SLH_TOTAL_PROFIT			70	// ÀûÈó×Ü¶î
-#define	SLH_PROFIT_INC				71	// Ö÷ÓªÀûÈóÔö³¤ÂÊ
-#define	SLH_INCOME_INC				72	// Ö÷ÓªÊÕÈëÔö³¤ÂÊ
-#define	SLH_ASSET_INC				73	// ×Ü×Ê²úÔö³¤ÂÊ
-#define	SLH_ANNGAINS_AVERAGE		74	// ÄêÆ½¾ùÊÕÒæÂÊ
-#define	SLH_ANNGAINS_STDDEV			75	// ÊÕÒæ±ê×¼²î
-#define	SLH_BETA					76	// ¦ÂÖµ
-#define	SLH_SHARP					77	// ÏÄÆÕ·çÏÕÖ¸Êı
-#define	SLH_TRADE					78	// ĞĞÒµ
-#define	SLH_PROVINCE				79	// Ê¡·İ
+	//	ä¸»è¦åŸºæœ¬æŒ‡æ ‡
+#define	SLH_REPORTTYPE				32	//	æŠ¥è¡¨ç±»å‹
+#define	SLH_PE						33	//	å¸‚ç›ˆç‡
+#define	SLH_PNETASSET				34	//	å¸‚å‡€ç‡
+#define	SLH_PMAININCOME				35	//	å¸‚é”€ç‡
+#define	SLH_RATIO_PCASH				36	//	ä»·æ ¼å‡€ç°é‡‘æ¯”
+#define	SLH_RATIO_CURRENCY			37	//	æµé€šç‡
+#define	SLH_RATIO_CHANGEHAND		38	//	æ¢æ‰‹ç‡
+#define	SLH_RATIO_VOLUME			39	//	é‡æ¯”
+#define	SLH_RS						40	//	ç›¸å¯¹å¼ºåº¦
+#define	SLH_MARKETVALUE				41	//	æ€»å¸‚å€¼
+#define	SLH_MARKETVALUEA			42	//	Aè‚¡å¸‚å€¼
+#define	SLH_MARKETVALUEB			43	//	Bè‚¡å¸‚å€¼
+	// â˜…å¿å€ºèƒ½åŠ›
+#define	SLH_RATIO_LIQUIDITY			44	//	æµåŠ¨æ¯”ç‡
+#define	SLH_RATIO_QUICK				45	//	é€ŸåŠ¨æ¯”ç‡
+#define	SLH_VELOCITY_RECEIVABLES	46	//	åº”æ”¶å¸æ¬¾å‘¨ç‡
+	// â˜…ç»è¥èƒ½åŠ›
+#define	SLH_VELOCITY_MERCHANDISE	47	// å­˜è´§å‘¨è½¬ç‡
+#define	SLH_MAIN_INCOME				48	// ä¸»è¥ä¸šåŠ¡æ”¶å…¥
+#define	SLH_CASH_PS					49	// æ¯è‚¡å‡€ç°é‡‘æµé‡
+	// â˜…ç›ˆåˆ©èƒ½åŠ›
+#define	SLH_PROFIT_MARGIN			50	// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦ç‡
+#define	SLH_NETASSET_YIELD			51	// å‡€èµ„äº§æ”¶ç›Šç‡
+	// â˜…èµ„æœ¬ç»“æ„
+#define	SLH_DATE_BEGIN				52	//	ä¸Šå¸‚æ—¥æœŸ
+#define	SLH_SHARE_COUNT_TOTAL		53	//	æ€»è‚¡æœ¬
+#define	SLH_SHARE_COUNT_A			54	//	æµé€šAè‚¡
+#define	SLH_SHARE_COUNT_B			55	//	æµé€šBè‚¡
+#define	SLH_SHARE_COUNT_H			56	//	æµé€šHè‚¡
+#define	SLH_SHARE_COUNT_NATIONAL	57	//	å›½æœ‰è‚¡
+#define	SLH_SHARE_COUNT_CORP		58	//	æ³•äººè‚¡
+#define	SLH_PROFIT_PSUD				59	// æ¯è‚¡æœªåˆ†é…åˆ©æ¶¦
+#define	SLH_ASSET					60	// æ€»èµ„äº§
+#define	SLH_RATIO_HOLDERRIGHT		61	// è‚¡ä¸œæƒç›Šæ¯”ç‡
+#define	SLH_RATIO_LONGDEBT			62	// é•¿æœŸè´Ÿå€ºç‡
+#define	SLH_RATIO_DEBT				63	// èµ„äº§è´Ÿå€ºç‡
+	// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
+#define	SLH_NETASSET_PS				64	// æ¯è‚¡å‡€èµ„äº§
+#define	SLH_NETASSET_PS_REGULATE	65	// è°ƒæ•´æ¯è‚¡å‡€èµ„äº§
+#define	SLH_EPS						66	// æ¯è‚¡æ”¶ç›Š
+#define	SLH_EPS_DEDUCT				67	// æ‰£é™¤åæ¯è‚¡æ”¶ç›Š
+#define	SLH_NET_PROFIT				68	// å‡€åˆ©æ¶¦
+#define	SLH_MAIN_PROFIT				69	// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦
+#define	SLH_TOTAL_PROFIT			70	// åˆ©æ¶¦æ€»é¢
+#define	SLH_PROFIT_INC				71	// ä¸»è¥åˆ©æ¶¦å¢é•¿ç‡
+#define	SLH_INCOME_INC				72	// ä¸»è¥æ”¶å…¥å¢é•¿ç‡
+#define	SLH_ASSET_INC				73	// æ€»èµ„äº§å¢é•¿ç‡
+#define	SLH_ANNGAINS_AVERAGE		74	// å¹´å¹³å‡æ”¶ç›Šç‡
+#define	SLH_ANNGAINS_STDDEV			75	// æ”¶ç›Šæ ‡å‡†å·®
+#define	SLH_BETA					76	// Î²å€¼
+#define	SLH_SHARP					77	// å¤æ™®é£é™©æŒ‡æ•°
+#define	SLH_TRADE					78	// è¡Œä¸š
+#define	SLH_PROVINCE				79	// çœä»½
 #define	SLH_MAX						79
 
 #define	SLH_INVALID					(UINT(-1))
@@ -125,21 +125,21 @@ typedef	struct	slh_data_t	{
 
 extern	SLH_DATA	slh_data_array[SLH_MAX+1];
 
-STKLIB_API	CSPString	AfxGetVariantName( UINT nVariantID, BOOL bWithParameter );	// ¸ù¾İ¹ÉÆ±ÁĞ±íÏîIDµÃµ½Ãû³Æ£¬bWithParameter±íÊ¾Ãû³ÆÖĞÊÇ·ñº¬ÓĞ²ÎÊı
-STKLIB_API	BOOL		AfxGetVariantNameArray( CSPStringArray & astr, BOOL bWithParameter );	// µÃµ½ËùÓĞ¹ÉÆ±ÁĞ±íÏîµÄÃû³Æ
-STKLIB_API	UINT		AfxGetVariantID( CSPString strName, BOOL bWithParameter );	// ¸ù¾İ¹ÉÆ±ÁĞ±íÏîÃû³ÆµÃµ½ID
-STKLIB_API	CSPString	AfxGetVariantVarName( int nVariantID );		// ¸ù¾İ¹ÉÆ±ÁĞ±íÏîIDµÃµ½Ê¹ÓÃÔÚ±í´ïÊ½ÖĞµÄ±äÁ¿Ãû³Æ
-STKLIB_API	CSPString	AfxGetVariantVarName( CSPString strName, BOOL bWithParameter );		// ¸ù¾İ¹ÉÆ±ÁĞ±íÏîÃû³ÆµÃµ½Ê¹ÓÃÔÚ±í´ïÊ½ÖĞµÄ±äÁ¿Ãû³Æ
+STKLIB_API	CSPString	AfxGetVariantName( UINT nVariantID, BOOL bWithParameter );	// æ ¹æ®è‚¡ç¥¨åˆ—è¡¨é¡¹IDå¾—åˆ°åç§°ï¼ŒbWithParameterè¡¨ç¤ºåç§°ä¸­æ˜¯å¦å«æœ‰å‚æ•°
+STKLIB_API	BOOL		AfxGetVariantNameArray( CSPStringArray & astr, BOOL bWithParameter );	// å¾—åˆ°æ‰€æœ‰è‚¡ç¥¨åˆ—è¡¨é¡¹çš„åç§°
+STKLIB_API	UINT		AfxGetVariantID( CSPString strName, BOOL bWithParameter );	// æ ¹æ®è‚¡ç¥¨åˆ—è¡¨é¡¹åç§°å¾—åˆ°ID
+STKLIB_API	CSPString	AfxGetVariantVarName( int nVariantID );		// æ ¹æ®è‚¡ç¥¨åˆ—è¡¨é¡¹IDå¾—åˆ°ä½¿ç”¨åœ¨è¡¨è¾¾å¼ä¸­çš„å˜é‡åç§°
+STKLIB_API	CSPString	AfxGetVariantVarName( CSPString strName, BOOL bWithParameter );		// æ ¹æ®è‚¡ç¥¨åˆ—è¡¨é¡¹åç§°å¾—åˆ°ä½¿ç”¨åœ¨è¡¨è¾¾å¼ä¸­çš„å˜é‡åç§°
 STKLIB_API	BOOL		AfxGetVariantValue(UINT nVariantID, CStockInfo &info, double * pValue,
-							   CStockContainer *pContainer );	// µÃµ½Ä³Ö»¹ÉÆ±µÄÏàÓ¦Öµ£¬µ¥Î»Óë¹ÉÆ±ÁĞ±íÊÓÍ¼ÖĞÏàÍ¬
+							   CStockContainer *pContainer );	// å¾—åˆ°æŸåªè‚¡ç¥¨çš„ç›¸åº”å€¼ï¼Œå•ä½ä¸è‚¡ç¥¨åˆ—è¡¨è§†å›¾ä¸­ç›¸åŒ
 STKLIB_API	int			AfxCompareVariantValue(int nVariantID, CStockInfo & info1, CStockInfo &info2,
-								   CStockContainer *pContainer );	// ±È½ÏÁ½Ö»¹ÉÆ±µÄÏàÓ¦Öµ
+								   CStockContainer *pContainer );	// æ¯”è¾ƒä¸¤åªè‚¡ç¥¨çš„ç›¸åº”å€¼
 STKLIB_API	CSPString	AfxGetVariantDispString(UINT nVariantID, CStockInfo &info,
-									CStockContainer *pContainer );		// µÃµ½Ä³Ö»¹ÉÆ±µÄÏàÓ¦ÖµµÄÏÔÊ¾×Ö´®
-STKLIB_API	COLORREF	AfxGetVariantColor( UINT nVariantID, CStockInfo &info );	// µÃµ½Ä³Ö»¹ÉÆ±µÄÏàÓ¦ÖµµÄÏÔÊ¾ÑÕÉ«
+									CStockContainer *pContainer );		// å¾—åˆ°æŸåªè‚¡ç¥¨çš„ç›¸åº”å€¼çš„æ˜¾ç¤ºå­—ä¸²
+STKLIB_API	COLORREF	AfxGetVariantColor( UINT nVariantID, CStockInfo &info );	// å¾—åˆ°æŸåªè‚¡ç¥¨çš„ç›¸åº”å€¼çš„æ˜¾ç¤ºé¢œè‰²
 
 /***
-	±í´ïÊ½£¬¿ÉÒÔ°üº¬±äÁ¿
+	è¡¨è¾¾å¼ï¼Œå¯ä»¥åŒ…å«å˜é‡
 */
 class STKLIB_API CExpress  
 {
@@ -171,7 +171,7 @@ protected:
 };
 
 /***
-	ĞÂ½¨Ö¸±ê£¬°üº¬º¬ÓĞ±äÁ¿µÄ±í´ïÊ½£¬ÔÚ¹ÉÆ±ÁĞ±íÉÏÏÔÊ¾ÎªÒ»ÁĞ
+	æ–°å»ºæŒ‡æ ‡ï¼ŒåŒ…å«å«æœ‰å˜é‡çš„è¡¨è¾¾å¼ï¼Œåœ¨è‚¡ç¥¨åˆ—è¡¨ä¸Šæ˜¾ç¤ºä¸ºä¸€åˆ—
 */
 class STKLIB_API CIndex : public CExpress
 {
@@ -204,7 +204,7 @@ protected:
 //template class __declspec(dllexport)	CSPArray<CIndex, CIndex &>;
 typedef	CSPArray<CIndex, CIndex &>	CIndexArray;
 /***
-	ĞÂ½¨Ö¸±êÊı×é
+	æ–°å»ºæŒ‡æ ‡æ•°ç»„
 */
 class STKLIB_API CIndexContainer : public CIndexArray
 {

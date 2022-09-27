@@ -42,7 +42,7 @@ typedef struct{
 }VARSTRU;
 
 /***
-	表达式分析类，可以有变量
+	琛ㄨ揪寮忓垎鏋愮被锛屽彲浠ユ湁鍙橀噺
 */
 class STKLIB_API CMathParser
 {

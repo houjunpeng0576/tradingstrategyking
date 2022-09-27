@@ -35,9 +35,9 @@
 //+ Noentry ~BoyerMoore
 
 /***
-	¿ìËÙ²éÕÒËã·¨Àà¶¨Òå£¬ÓÃ·¨ÈçÏÂ£º
-	CString	strToFind	=	"Òª²éÕÒµÄ×Ö·û´®";
-	CString	strSrc		=	"Ô´×Ö·û´®";
+	å¿«é€ŸæŸ¥æ‰¾ç®—æ³•ç±»å®šä¹‰ï¼Œç”¨æ³•å¦‚ä¸‹ï¼š
+	CString	strToFind	=	"è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²";
+	CString	strSrc		=	"æºå­—ç¬¦ä¸²";
 	BoyerMoore moore( strToFind );
 	LONG value = moore.GetNumberAfter( strSrc, strSrc.GetLength(), 0 );
 	LONG date  = moore.GetDateAfter( strSrc, strSrc.GetLength(), 0 );

@@ -23,66 +23,66 @@ extern "C"
 #pragma pack(1)
 
 typedef struct techuser_info_t {
-	int		m_nStructSize;		// ���ֽ�Ϊ��λ��ʾ�ı��ṹ��С
-	char	m_szName[64];		// ָ�����ƣ���'\0'Ϊ��β�����磺���ָ��
-	char	m_szShortName[16];	// ָ���ƣ���'\0'Ϊ��β�����磺KDJ
+	int		m_nStructSize;		// 以字节为单位表示的本结构大小
+	char	m_szName[64];		// 指标名称，以'\0'为结尾，例如：随机指标
+	char	m_szShortName[16];	// 指标简称，以'\0'为结尾，例如：KDJ
 	
-	int		m_nLineCount;		// ָ���߸����������߸��ݸñ���ȷ�����÷��صļ�������ֵ�Ƿ���Ч
-								// ���磺m_nLineCount = 3���� m_dValue1, m_dValue2, m_dValue3��Ч
-								// m_nLineCount Ӧ����1��5֮��
-	char	m_aszLineName[5][8];// ÿ���ߵ����ƣ�ǰm_nLineCount����Ч��ע��ÿ������Ӧ��'\0'Ϊ��β��
-								// �������Ʋ��ܳ���7���ֽ�
+	int		m_nLineCount;		// 指标线个数，调用者根据该变量确定调用返回的计算所得值是否有效
+								// 例如：m_nLineCount = 3，则 m_dValue1, m_dValue2, m_dValue3有效
+								// m_nLineCount 应介于1至5之间
+	char	m_aszLineName[5][8];// 每条线的名称，前m_nLineCount个有效，注意每个名称应以'\0'为结尾，
+								// 即：名称不能超过7个字节
 	
-	int		m_bAutoMA;			// ��m_nLineCount = 1 ʱ����ֵ��Ч��m_bAutoMA = true ʱ���Զ�����
-								// ƽ����
-	int		m_nMADays;			// �Զ�����ƽ����ʱ�ľ�������
+	int		m_bAutoMA;			// 当m_nLineCount = 1 时，该值有效，m_bAutoMA = true 时，自动加入
+								// 平均线
+	int		m_nMADays;			// 自动计算平均线时的均线日期
 
-	int		m_itsGoldenFork;	// ���ָ�� m_nLineCount = 2 ���ߡ�m_nLineCount = 1���Զ�����ƽ��
-								// ��ʱ����λ��淢���������ź�
-	int		m_itsDeadFork;		// ����ͬ�ϣ���λ����ʱ�������ź�
+	int		m_itsGoldenFork;	// 如果指标 m_nLineCount = 2 或者　m_nLineCount = 1并自动计算平均
+								// 线时，低位金叉发出的买卖信号
+	int		m_itsDeadFork;		// 条件同上，高位死叉时的买卖信号
 	
-	/* ��ע������ m_szName, m_szShortName, m_nLineCount���븳ֵ */
+	/* 备注：其中 m_szName, m_szShortName, m_nLineCount必须赋值 */
 } TECHUSER_INFO, *PTECHUSER_INFO;
 
 typedef struct calculate_info_t {
-	int		m_nStructSize;		// ���ֽ�Ϊ��λ��ʾ�ı��ṹ��С
-	CStock *	m_pStock;		// CStockָ�룬����ȫ����Ʊ����
-	CStockInfo *m_pStockInfo;	// CStockInfoָ�룬������Ʊ������Ϣ���ݣ���ָ��ʵ��ָ��
+	int		m_nStructSize;		// 以字节为单位表示的本结构大小
+	CStock *	m_pStock;		// CStock指针，包含全部股票数据
+	CStockInfo *m_pStockInfo;	// CStockInfo指针，包含股票基本信息数据，该指针实际指向
 								// m_pStock->m_stockinfo
-	CKData *	m_pKData;		// CKDataָ�룬����Ҫ�����K ���������飬��ָ��ʵ��ָ��m_pStock��
-								// ��ӦK �����ڳ�Ա������K �������Լ��Ƿ�Ȩ���Ѿ�������ϣ�ֱ��
-								// ʹ�ü���
-	int			m_nIndex;		// ָ��ǰҪ����ָ���K ��λ�õ���ţ�����pKData�е����
-	int		m_bUseLast;			// ��ǰֵ�Ƿ�Ϊ�ϴμ�������ֵ�����m_bUseLast=TRUE����m_dValue1,
-								// m_dValue2,...Ϊ�ϴε��ø�ָ��ļ�������ֵ
+	CKData *	m_pKData;		// CKData指针，包含要计算的K 线数据数组，该指针实际指向m_pStock的
+								// 相应K 线周期成员变量，K 线周期以及是否复权等已经处理完毕，直接
+								// 使用即可
+	int			m_nIndex;		// 指向当前要计算指标的K 线位置的序号，即在pKData中的序号
+	int		m_bUseLast;			// 当前值是否为上次计算所得值，如果m_bUseLast=TRUE，则m_dValue1,
+								// m_dValue2,...为上次调用该指标的计算所得值
 
-	// ����Ϊ���㷵��ֵ
-	double	m_dValue1;			// ��������ָ����1ֵ
-	double	m_dValue2;			// ��������ָ����2ֵ
-	double	m_dValue3;			// ��������ָ����3ֵ
-	double	m_dValue4;			// ��������ָ����4ֵ
-	double	m_dValue5;			// ��������ָ����5ֵ
-	int		m_nSignal;			// �����źţ�����ITS_MIN��ITS_MAX֮��
+	// 以下为计算返回值
+	double	m_dValue1;			// 计算所得指标线1值
+	double	m_dValue2;			// 计算所得指标线2值
+	double	m_dValue3;			// 计算所得指标线3值
+	double	m_dValue4;			// 计算所得指标线4值
+	double	m_dValue5;			// 计算所得指标线5值
+	int		m_nSignal;			// 买卖信号，介于ITS_MIN与ITS_MAX之间
 } CALCULATE_INFO, *PCALCULATE_INFO;
 
 #pragma pack()
 
 #ifndef	ITS_MIN
-	// �����ź�
+	// 买卖信号
 	#define	ITS_MIN				-15
-	#define	ITS_SELLINTENSE		-15	//	ǿ������
-	#define	ITSG_SELLINTENSE	-13	//	����
-	#define	ITS_SELL			-10	//	����
-	#define	ITSG_SELL			-8	//	����
-	#define	ITS_SELLFEEBLE		-5	//	΢������
-	#define	ITSG_SELLFEEBLE		-3	//	����
-	#define	ITS_NOTHING			0	//	��
-	#define	ITSG_BUYFEEBLE		3	//	����
-	#define	ITS_BUYFEEBLE		5	//	΢�����
-	#define	ITSG_BUY			8	//	����
-	#define	ITS_BUY				10	//	���
-	#define	ITSG_BUYINTENSE		13	//	����
-	#define	ITS_BUYINTENSE		15	//	ǿ�����
+	#define	ITS_SELLINTENSE		-15	//	强烈卖出
+	#define	ITSG_SELLINTENSE	-13	//	门限
+	#define	ITS_SELL			-10	//	卖出
+	#define	ITSG_SELL			-8	//	门限
+	#define	ITS_SELLFEEBLE		-5	//	微弱卖出
+	#define	ITSG_SELLFEEBLE		-3	//	门限
+	#define	ITS_NOTHING			0	//	无
+	#define	ITSG_BUYFEEBLE		3	//	门限
+	#define	ITS_BUYFEEBLE		5	//	微弱买进
+	#define	ITSG_BUY			8	//	门限
+	#define	ITS_BUY				10	//	买进
+	#define	ITSG_BUYINTENSE		13	//	门限
+	#define	ITS_BUYINTENSE		15	//	强烈买进
 	#define	ITS_MAX				15
 #endif
 

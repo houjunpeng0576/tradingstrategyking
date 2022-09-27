@@ -93,7 +93,7 @@ _STOCK_INLINE BOOL CKData::DateAt(int nIndex,
 	return TRUE;
 }
 _STOCK_INLINE float	CKData::MaindataAt(int nIndex) const
-// µÃµ½CKDataµÄnIndexÈÕµÄÖ÷Êý¾Ý£¬¸ù¾ÝÖ÷Êý¾ÝÀàÐÍ²»Í¬£¬·µ»ØÖµ¿ÉÄÜÊÇ¿ªÅÌ¼Û¡¢ÊÕÅÌ¼Û»òÕßÆ½¾ù¼Û
+// å¾—åˆ°CKDataçš„nIndexæ—¥çš„ä¸»æ•°æ®ï¼Œæ ¹æ®ä¸»æ•°æ®ç±»åž‹ä¸åŒï¼Œè¿”å›žå€¼å¯èƒ½æ˜¯å¼€ç›˜ä»·ã€æ”¶ç›˜ä»·æˆ–è€…å¹³å‡ä»·
 {
 	SP_ASSERT(nIndex >= 0 && nIndex < m_nSize);
 	if( nIndex < 0 || nIndex >= m_nSize )
@@ -107,7 +107,7 @@ _STOCK_INLINE float	CKData::MaindataAt(int nIndex) const
 		double	average	=	((double)(m_pData[nIndex].m_fAmount)) / m_pData[nIndex].m_fVolume;
 		while( average < m_pData[nIndex].m_fLow && nCount < 10 )	{	average	*=	10;	nCount ++;	}
 		while( average > m_pData[nIndex].m_fHigh && nCount < 20 )	{	average	/=	10;	nCount ++;	}
-		if( average < m_pData[nIndex].m_fLow )		//	ËµÃ÷ÊÇÖ¸Êý
+		if( average < m_pData[nIndex].m_fLow )		//	è¯´æ˜Žæ˜¯æŒ‡æ•°
 			average	=	(m_pData[nIndex].m_fOpen+m_pData[nIndex].m_fHigh+m_pData[nIndex].m_fLow+m_pData[nIndex].m_fClose)/4;
 		return (float)average;
 	}

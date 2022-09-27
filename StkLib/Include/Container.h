@@ -23,7 +23,7 @@ typedef	struct	variant_savevalue_t	{
 	BOOL	bNoValue;
 }VARIANT_SAVEVALUE;
 
-// Ê¹ÓÃÏÂ¾ä£¬½«ÊÓ°üº¬Container.hµÄexeÓ¦ÓÃ³ÌĞòÊä³öº¯Êı£¬ÆäËûÏàËÆÓï¾äÀàËÆ
+// ä½¿ç”¨ä¸‹å¥ï¼Œå°†è§†åŒ…å«Container.hçš„exeåº”ç”¨ç¨‹åºè¾“å‡ºå‡½æ•°ï¼Œå…¶ä»–ç›¸ä¼¼è¯­å¥ç±»ä¼¼
 // template class __declspec(dllexport)	CSPArray<CStockInfo, CStockInfo &>;
 typedef	CSPArray<CStockInfo, CStockInfo &>	CStockInfoArray;
 
@@ -31,8 +31,8 @@ class	CStrategy;
 #include "../Src/SPLock.h"
 
 /***
-	¹ÉÆ±ĞÅÏ¢Êı×éÀà¡£
-	ÓĞÒ»¸ö¹ÉÆ±ĞÅÏ¢Êı×éµÄÈ«¾Ö¶ÔÏóAfxGetStockContainer()±£´æËùÓĞ¹ÉÆ±µÄĞÅÏ¢
+	è‚¡ç¥¨ä¿¡æ¯æ•°ç»„ç±»ã€‚
+	æœ‰ä¸€ä¸ªè‚¡ç¥¨ä¿¡æ¯æ•°ç»„çš„å…¨å±€å¯¹è±¡AfxGetStockContainer()ä¿å­˜æ‰€æœ‰è‚¡ç¥¨çš„ä¿¡æ¯
 */
 
 class STKLIB_API CStockContainer : public CStockInfoArray
@@ -121,7 +121,7 @@ protected:
 	CSPString	m_strDomain;
 
 	int			m_nCurrentStock;
-	CSPString	m_strCurrentStockCode;	// µ±m_nCurrentStock==-1Ê±£¬¼´µ±Ç°¹ÉÆ±²»ÔÚContainerÊı×éÖ®ÄÚ£¬Ôò¼ÇÂ¼ÆäStockCode
+	CSPString	m_strCurrentStockCode;	// å½“m_nCurrentStock==-1æ—¶ï¼Œå³å½“å‰è‚¡ç¥¨ä¸åœ¨Containeræ•°ç»„ä¹‹å†…ï¼Œåˆ™è®°å½•å…¶StockCode
 
 	CStockInfo	m_infoAverage;
 	CStockInfo	m_infoWeightAverage;
@@ -135,7 +135,7 @@ protected:
 };
 
 /***
-	°å¿éÀà£¬°üº¬°å¿éÃû³Æ¡¢°å¿éÖĞµÄ¹ÉÆ±´úÂë
+	æ¿å—ç±»ï¼ŒåŒ…å«æ¿å—åç§°ã€æ¿å—ä¸­çš„è‚¡ç¥¨ä»£ç 
 */
 class STKLIB_API CDomain : public CSPStringArray
 {
@@ -157,7 +157,7 @@ public:
 //template class __declspec(dllexport)	CSPArray<CDomain, CDomain &>;
 typedef	CSPArray<CDomain, CDomain &>	CDomainArray;
 /***
-	°å¿éÊı×éÀà
+	æ¿å—æ•°ç»„ç±»
 */
 class STKLIB_API CDomainContainer : public CDomainArray
 {

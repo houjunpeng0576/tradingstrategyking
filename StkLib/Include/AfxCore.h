@@ -46,59 +46,59 @@ STKLIB_API	CSPString	AfxGetFilePath( CSPString strDir, CSPString strFileTitle );
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-// ÒÔÏÂº¯ÊıÊµÏÖÌåÔÚ Strings.cpp
+// ä»¥ä¸‹å‡½æ•°å®ç°ä½“åœ¨ Strings.cpp
 
 STKLIB_API	CSPString	AfxGetKTypeString( int ktype );
 STKLIB_API	CSPString	AfxGetMaindataTypeString( int type );
 
-STKLIB_API	CSPString	AfxGetSTTName( UINT nTech );		// ¸ø¶¨¼¼ÊõÖ¸±êÎ¨Ò»±àºÅ£¬µÃµ½Ö¸±êÖĞÎÄÃû³Æ
-STKLIB_API	CSPString	AfxGetSTTShortName( UINT nTech );	// ¸ø¶¨¼¼ÊõÖ¸±êÎ¨Ò»±àºÅ£¬µÃµ½Ö¸±êÓ¢ÎÄ¼ò³Æ
-STKLIB_API	CSPString	AfxGetSTTFullName( UINT nTech );	// ¸ø¶¨¼¼ÊõÖ¸±êÎ¨Ò»±àºÅ£¬µÃµ½Ö¸±êÖĞÎÄÃû³Æ+Ó¢ÎÄ¼ò³Æ
-STKLIB_API	CSPString	AfxGetSTTClassName( UINT nTech );	// ¸ø¶¨¼¼ÊõÖ¸±êÎ¨Ò»±àºÅ£¬µÃµ½Ö¸±êËùÊô·ÖÀà£¬Èç£ºÇ÷ÊÆÀà¡¢ÄÜÁ¿Àà
-STKLIB_API	CSPString	AfxGetIntensityString( int nIntensity );	// ¸ø¶¨ÂòÂôĞÅºÅÖµ£¬µÃµ½ÖĞÎÄËµÃ÷
-STKLIB_API	CSPString	AfxGetIntensityCodeString( UINT nCode );	// ¸ø¶¨ÂòÂôĞÅºÅÀíÓÉËµÃ÷Öµ£¬µÃµ½ÖĞÎÄËµÃ÷
+STKLIB_API	CSPString	AfxGetSTTName( UINT nTech );		// ç»™å®šæŠ€æœ¯æŒ‡æ ‡å”¯ä¸€ç¼–å·ï¼Œå¾—åˆ°æŒ‡æ ‡ä¸­æ–‡åç§°
+STKLIB_API	CSPString	AfxGetSTTShortName( UINT nTech );	// ç»™å®šæŠ€æœ¯æŒ‡æ ‡å”¯ä¸€ç¼–å·ï¼Œå¾—åˆ°æŒ‡æ ‡è‹±æ–‡ç®€ç§°
+STKLIB_API	CSPString	AfxGetSTTFullName( UINT nTech );	// ç»™å®šæŠ€æœ¯æŒ‡æ ‡å”¯ä¸€ç¼–å·ï¼Œå¾—åˆ°æŒ‡æ ‡ä¸­æ–‡åç§°+è‹±æ–‡ç®€ç§°
+STKLIB_API	CSPString	AfxGetSTTClassName( UINT nTech );	// ç»™å®šæŠ€æœ¯æŒ‡æ ‡å”¯ä¸€ç¼–å·ï¼Œå¾—åˆ°æŒ‡æ ‡æ‰€å±åˆ†ç±»ï¼Œå¦‚ï¼šè¶‹åŠ¿ç±»ã€èƒ½é‡ç±»
+STKLIB_API	CSPString	AfxGetIntensityString( int nIntensity );	// ç»™å®šä¹°å–ä¿¡å·å€¼ï¼Œå¾—åˆ°ä¸­æ–‡è¯´æ˜
+STKLIB_API	CSPString	AfxGetIntensityCodeString( UINT nCode );	// ç»™å®šä¹°å–ä¿¡å·ç†ç”±è¯´æ˜å€¼ï¼Œå¾—åˆ°ä¸­æ–‡è¯´æ˜
 
-STKLIB_API	CSPString	AfxGetSLHTitle( UINT nSLH );		// ¸ø¶¨¹ÉÆ±ÁĞ±íÁĞºÅ£¬·µ»ØÁĞÃû³Æ
-STKLIB_API	CSPString	AfxGetSLHDescript( UINT nSLH );		// ¸ø¶¨¹ÉÆ±ÁĞ±íÁĞºÅ£¬·µ»ØÁĞËµÃ÷
+STKLIB_API	CSPString	AfxGetSLHTitle( UINT nSLH );		// ç»™å®šè‚¡ç¥¨åˆ—è¡¨åˆ—å·ï¼Œè¿”å›åˆ—åç§°
+STKLIB_API	CSPString	AfxGetSLHDescript( UINT nSLH );		// ç»™å®šè‚¡ç¥¨åˆ—è¡¨åˆ—å·ï¼Œè¿”å›åˆ—è¯´æ˜
 
-STKLIB_API	void	AfxGetAllDistrict( CSPStringArray & astr );	// »ñµÃËùÓĞ¹ú¼ÒºÍµØÇøÃû³ÆÁĞ±í
+STKLIB_API	void	AfxGetAllDistrict( CSPStringArray & astr );	// è·å¾—æ‰€æœ‰å›½å®¶å’Œåœ°åŒºåç§°åˆ—è¡¨
 
 #define		ACCE_MIN	1
-#define		ACCE_01		1	// ÈÈ¼üF1
-#define		ACCE_02		2	// ÈÈ¼üF2
-#define		ACCE_03		3	// ÈÈ¼üF3
-#define		ACCE_04		4	// ÈÈ¼üF4
-#define		ACCE_05		5	// ÈÈ¼üF5
-#define		ACCE_06		6	// ÈÈ¼üF6
-#define		ACCE_07		7	// ÈÈ¼üF7
-#define		ACCE_08		8	// ÈÈ¼üF8
-#define		ACCE_09		9	// ÈÈ¼üF9
-#define		ACCE_10		10	// ÈÈ¼üF10
-#define		ACCE_1		11	// ÉÏA±¨¼Û
-#define		ACCE_2		12	// ÉÏB±¨¼Û
-#define		ACCE_3		13	// ÉîA±¨¼Û
-#define		ACCE_4		14	// ÉîB±¨¼Û
-#define		ACCE_5		15	// ÉÏÕ®±¨¼Û
-#define		ACCE_6		16	// ÉîÕ®±¨¼Û
-#define		ACCE_61		17	// ÉÏAÕÇµø
-#define		ACCE_62		18	// ÉÏBÕÇµø
-#define		ACCE_63		19	// ÉîAÕÇµø
-#define		ACCE_64		20	// ÉîBÕÇµø
-#define		ACCE_65		21	// ÉÏÕ®ÕÇµø
-#define		ACCE_66		22	// ÉîÕ®ÕÇµø
-#define		ACCE_71		23	// ÉÏÖ¤ĞÅÏ¢
-#define		ACCE_72		24	// ÉîÖ¤ĞÅÏ¢
-#define		ACCE_73		25	// È¯ÉÌĞÅÏ¢
-#define		ACCE_81		26	// ÉÏA×ÛºÏ
-#define		ACCE_82		27	// ÉÏB×ÛºÏ
-#define		ACCE_83		28	// ÉîA×ÛºÏ
-#define		ACCE_84		29	// ÉîB×ÛºÏ
-#define		ACCE_85		30	// ÉÏÕ®×ÛºÏ
-#define		ACCE_86		31	// ÉîÕ®×ÛºÏ
-#define		ACCE_LBDK	32	// ÏÔÊ¾·ÖÊ±ĞĞÇéÁ¿±È¶à¿ÕÖ¸±ê
-#define		ACCE_MMLD	33	// ÏÔÊ¾·ÖÊ±ĞĞÇéÂòÂôÁ¦µÀÖ¸±ê
+#define		ACCE_01		1	// çƒ­é”®F1
+#define		ACCE_02		2	// çƒ­é”®F2
+#define		ACCE_03		3	// çƒ­é”®F3
+#define		ACCE_04		4	// çƒ­é”®F4
+#define		ACCE_05		5	// çƒ­é”®F5
+#define		ACCE_06		6	// çƒ­é”®F6
+#define		ACCE_07		7	// çƒ­é”®F7
+#define		ACCE_08		8	// çƒ­é”®F8
+#define		ACCE_09		9	// çƒ­é”®F9
+#define		ACCE_10		10	// çƒ­é”®F10
+#define		ACCE_1		11	// ä¸ŠAæŠ¥ä»·
+#define		ACCE_2		12	// ä¸ŠBæŠ¥ä»·
+#define		ACCE_3		13	// æ·±AæŠ¥ä»·
+#define		ACCE_4		14	// æ·±BæŠ¥ä»·
+#define		ACCE_5		15	// ä¸Šå€ºæŠ¥ä»·
+#define		ACCE_6		16	// æ·±å€ºæŠ¥ä»·
+#define		ACCE_61		17	// ä¸ŠAæ¶¨è·Œ
+#define		ACCE_62		18	// ä¸ŠBæ¶¨è·Œ
+#define		ACCE_63		19	// æ·±Aæ¶¨è·Œ
+#define		ACCE_64		20	// æ·±Bæ¶¨è·Œ
+#define		ACCE_65		21	// ä¸Šå€ºæ¶¨è·Œ
+#define		ACCE_66		22	// æ·±å€ºæ¶¨è·Œ
+#define		ACCE_71		23	// ä¸Šè¯ä¿¡æ¯
+#define		ACCE_72		24	// æ·±è¯ä¿¡æ¯
+#define		ACCE_73		25	// åˆ¸å•†ä¿¡æ¯
+#define		ACCE_81		26	// ä¸ŠAç»¼åˆ
+#define		ACCE_82		27	// ä¸ŠBç»¼åˆ
+#define		ACCE_83		28	// æ·±Aç»¼åˆ
+#define		ACCE_84		29	// æ·±Bç»¼åˆ
+#define		ACCE_85		30	// ä¸Šå€ºç»¼åˆ
+#define		ACCE_86		31	// æ·±å€ºç»¼åˆ
+#define		ACCE_LBDK	32	// æ˜¾ç¤ºåˆ†æ—¶è¡Œæƒ…é‡æ¯”å¤šç©ºæŒ‡æ ‡
+#define		ACCE_MMLD	33	// æ˜¾ç¤ºåˆ†æ—¶è¡Œæƒ…ä¹°å–åŠ›é“æŒ‡æ ‡
 #define		ACCE_MAX	33
-STKLIB_API	CSPString	AfxGetAccelerator( UINT nAcce, int nCharLeft = 8 );	// ¸ø¶¨¿ì½İ¼ü±àºÅ£¬·µ»Ø¿ì½İ¼ü¼°ÆäÖĞÎÄÃû³Æ
+STKLIB_API	CSPString	AfxGetAccelerator( UINT nAcce, int nCharLeft = 8 );	// ç»™å®šå¿«æ·é”®ç¼–å·ï¼Œè¿”å›å¿«æ·é”®åŠå…¶ä¸­æ–‡åç§°
 
 
 // End

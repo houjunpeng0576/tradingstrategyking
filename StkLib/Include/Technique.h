@@ -12,82 +12,82 @@
 #define	__STKLIB_TECHNIQUE_H__
 
 /* The Folowing Is Stock Technique Analysis Identify Number */
-/* ¼¼ÊõÖ¸±êÎ¨Ò»±àºÅ */
+/* æŠ€æœ¯æŒ‡æ ‡å”¯ä¸€ç¼–å· */
 #define	STT_MIN			1
-// KÏßÊôĞÔÀà
+// Kçº¿å±æ€§ç±»
 #define	STT_KLINE_MIN	1
-#define	STT_MA			1		// ÒÆ¶¯Æ½¾ùÏßMA
-#define	STT_BBI			2		// ¶à¿ÕÖ¸±êBBI
-#define	STT_BOLL		3		// ²¼ÁÖ´øBOLL
-#define	STT_PV			4		// »ãÖ¤¾ù¼ÛÏßP/V
-#define	STT_SAR			5		// Í£Ëğµã×ªÏòÖ¸±êSAR
-#define	STT_DJ			6		// µş¼ÓÍ¼DJ
-#define	STT_CW			7		// ³ïÂë·Ö²¼Í¼CW
+#define	STT_MA			1		// ç§»åŠ¨å¹³å‡çº¿MA
+#define	STT_BBI			2		// å¤šç©ºæŒ‡æ ‡BBI
+#define	STT_BOLL		3		// å¸ƒæ—å¸¦BOLL
+#define	STT_PV			4		// æ±‡è¯å‡ä»·çº¿P/V
+#define	STT_SAR			5		// åœæŸç‚¹è½¬å‘æŒ‡æ ‡SAR
+#define	STT_DJ			6		// å åŠ å›¾DJ
+#define	STT_CW			7		// ç­¹ç åˆ†å¸ƒå›¾CW
 #define	STT_KLINE_MAX	7
 
-// Ç÷ÊÆÀà
+// è¶‹åŠ¿ç±»
 #define	STT_TREND_MIN	8
-#define	STT_MACD		8		// Ö¸ÊıÆ½»¬ÒìÍ¬ÒÆ¶¯Æ½¾ùÏßMACD
-#define	STT_MIKE		9		// Âó¿ËÖ¸±êMIKE
-#define	STT_PSY			10		// ĞÄÀíÏßPSY
+#define	STT_MACD		8		// æŒ‡æ•°å¹³æ»‘å¼‚åŒç§»åŠ¨å¹³å‡çº¿MACD
+#define	STT_MIKE		9		// éº¦å…‹æŒ‡æ ‡MIKE
+#define	STT_PSY			10		// å¿ƒç†çº¿PSY
 #define	STT_TREND_MAX	10
 
-// ÄÜÁ¿Àà
+// èƒ½é‡ç±»
 #define	STT_ENERGY_MIN	11
-#define	STT_VOLUME		11		// ³É½»Á¿
-#define	STT_NVI			12		// ¸º³É½»Á¿Ö¸±êNVI
-#define	STT_PVI			13		// Õı³É½»Á¿Ö¸±êPVI
-#define	STT_VR			14		// ÈİÁ¿±ÈÂÊVR
-#define	STT_VROC		15		// ³É½»Á¿±ä¶¯ÂÊÖ¸±êVROC
-#define	STT_OBV			16		// ÄÜÁ¿ÏßOBV
-#define	STT_MOBV		17		// Ö÷Á¦½ø³öMOBV
-#define	STT_MFI			18		// ×Ê½ğÁ÷¶¯Ö¸ÊıMFI
-#define	STT_VMACD		19		// Á¿Ö¸ÊıÆ½»¬ÒìÍ¬ÒÆ¶¯Æ½¾ùÏßVMACD
-#define	STT_WVAD		20		// ÍşÁ®±äÒìÀëÉ¢Á¿WVAD
-#define	STT_EMV			21		// ¼òÒ×²¨¶¯Ö¸±êEMV
-#define	STT_VRSI		22		// Á¿Ïà¶ÔÇ¿ÈõÖ¸±êVRSI
-#define	STT_NVRSI		23		// ĞÂÁ¿Ïà¶ÔÇ¿ÈõÖ¸±êVRSI
-#define	STT_AD			24		// ¾Û/É¢Ö¸±êA/D
-#define	STT_CI			25		// ÀÛ»ıÖ¸ÊıCI
+#define	STT_VOLUME		11		// æˆäº¤é‡
+#define	STT_NVI			12		// è´Ÿæˆäº¤é‡æŒ‡æ ‡NVI
+#define	STT_PVI			13		// æ­£æˆäº¤é‡æŒ‡æ ‡PVI
+#define	STT_VR			14		// å®¹é‡æ¯”ç‡VR
+#define	STT_VROC		15		// æˆäº¤é‡å˜åŠ¨ç‡æŒ‡æ ‡VROC
+#define	STT_OBV			16		// èƒ½é‡çº¿OBV
+#define	STT_MOBV		17		// ä¸»åŠ›è¿›å‡ºMOBV
+#define	STT_MFI			18		// èµ„é‡‘æµåŠ¨æŒ‡æ•°MFI
+#define	STT_VMACD		19		// é‡æŒ‡æ•°å¹³æ»‘å¼‚åŒç§»åŠ¨å¹³å‡çº¿VMACD
+#define	STT_WVAD		20		// å¨å»‰å˜å¼‚ç¦»æ•£é‡WVAD
+#define	STT_EMV			21		// ç®€æ˜“æ³¢åŠ¨æŒ‡æ ‡EMV
+#define	STT_VRSI		22		// é‡ç›¸å¯¹å¼ºå¼±æŒ‡æ ‡VRSI
+#define	STT_NVRSI		23		// æ–°é‡ç›¸å¯¹å¼ºå¼±æŒ‡æ ‡VRSI
+#define	STT_AD			24		// èš/æ•£æŒ‡æ ‡A/D
+#define	STT_CI			25		// ç´¯ç§¯æŒ‡æ•°CI
 #define	STT_ENERGY_MAX	25
 
-// °Ú¶¯Àà
+// æ‘†åŠ¨ç±»
 #define	STT_SWING_MIN	26
-#define	STT_KDJ			26		// Ëæ»úÖ¸±êKDJ
-#define	STT_R			27		// ÍşÁ®Ö¸±êR
-#define	STT_RSI			28		// Ïà¶ÔÇ¿ÈõÖ¸±ê
-#define	STT_BIAS		29		// ¹ÔÀëÂÊBIAS
-#define	STT_MTM			30		// ¶¯Á¿Ö¸±êMTM
-#define	STT_DMI			31		// ¶¯ÏòÖ¸±êDMI
-#define	STT_ROC			32		// ±ä¶¯ÂÊÖ¸±êROC
-#define	STT_CCI			33		// Ë³ÊÆÍ¨µÀÖ¸±êCCI
-#define	STT_CV			34		// ¼ÑÇìÖ¸±êCV
-#define	STT_ARBR		35		// ÈËÆøÒâÔ¸Ö¸±êARBR
-#define	STT_CR			36		// ÖĞ¼äÒâÔ¸Ö¸±êCR
-#define	STT_OSC			37		// °Ú¶¯Á¿OSC
-#define	STT_UOS			38		// ¼«°Ú¶¯Ö¸±êUOS
-#define	STT_MAOSC		39		// ÒÆ¶¯Æ½¾ù°Ú¶¯Á¿MAOSC
-#define	STT_36BIAS		40		// 3¼õ6ÈÕ¹ÔÀë3-6BIAS
-#define	STT_DPO			41		// È¥ÊÆ¼Û¸ñ°Ú¶¯Ö¸ÊıDPO
-#define	STT_KST			42		// È·È»Ö¸±êKST
+#define	STT_KDJ			26		// éšæœºæŒ‡æ ‡KDJ
+#define	STT_R			27		// å¨å»‰æŒ‡æ ‡R
+#define	STT_RSI			28		// ç›¸å¯¹å¼ºå¼±æŒ‡æ ‡
+#define	STT_BIAS		29		// ä¹–ç¦»ç‡BIAS
+#define	STT_MTM			30		// åŠ¨é‡æŒ‡æ ‡MTM
+#define	STT_DMI			31		// åŠ¨å‘æŒ‡æ ‡DMI
+#define	STT_ROC			32		// å˜åŠ¨ç‡æŒ‡æ ‡ROC
+#define	STT_CCI			33		// é¡ºåŠ¿é€šé“æŒ‡æ ‡CCI
+#define	STT_CV			34		// ä½³åº†æŒ‡æ ‡CV
+#define	STT_ARBR		35		// äººæ°”æ„æ„¿æŒ‡æ ‡ARBR
+#define	STT_CR			36		// ä¸­é—´æ„æ„¿æŒ‡æ ‡CR
+#define	STT_OSC			37		// æ‘†åŠ¨é‡OSC
+#define	STT_UOS			38		// ææ‘†åŠ¨æŒ‡æ ‡UOS
+#define	STT_MAOSC		39		// ç§»åŠ¨å¹³å‡æ‘†åŠ¨é‡MAOSC
+#define	STT_36BIAS		40		// 3å‡6æ—¥ä¹–ç¦»3-6BIAS
+#define	STT_DPO			41		// å»åŠ¿ä»·æ ¼æ‘†åŠ¨æŒ‡æ•°DPO
+#define	STT_KST			42		// ç¡®ç„¶æŒ‡æ ‡KST
 #define	STT_SWING_MAX	42
 
-// ÆäËûÀà
+// å…¶ä»–ç±»
 #define	STT_OTHER_MIN	43
-#define	STT_REI			43		// ·¶Î§ÅòÕÍÖ¸ÊıREI
-#define	STT_DMKI		44		// µÏÂí¿Ë¶ûÖ¸±êDMKI
-#define	STT_PCNT		45		// ·ù¶È±ÈPCNT
-#define	STT_HLC			46		// ·ù¶È·ÖÎöHLC
-#define	STT_CDP			47		// ÄæÊÆ²Ù×÷Ö¸±êCDP
-#define	STT_ASI			48		// ÀÛ»ı°Ú¶¯Ö¸±êASI
-#define	STT_ATR			49		// ¾ù·ùÖ¸±êATR
+#define	STT_REI			43		// èŒƒå›´è†¨èƒ€æŒ‡æ•°REI
+#define	STT_DMKI		44		// è¿ªé©¬å…‹å°”æŒ‡æ ‡DMKI
+#define	STT_PCNT		45		// å¹…åº¦æ¯”PCNT
+#define	STT_HLC			46		// å¹…åº¦åˆ†æHLC
+#define	STT_CDP			47		// é€†åŠ¿æ“ä½œæŒ‡æ ‡CDP
+#define	STT_ASI			48		// ç´¯ç§¯æ‘†åŠ¨æŒ‡æ ‡ASI
+#define	STT_ATR			49		// å‡å¹…æŒ‡æ ‡ATR
 #define	STT_OTHER_MAX	49
 
 #define	STT_CLK_MIN		50
-#define	STT_CYO			50		// ÖÜÆÚ°Ú¶¯Á¿CYO
-#define	STT_DCYO		51		// È¥ÔëÖÜÆÚ°Ú¶¯Á¿DCYO
-#define	STT_HSL			52		// Ïà¶Ô»»ÊÖÂÊHSL
-#define	STT_DPER		53		// È¥ÊÆ°Ù·Ö±ÈÖ¸±êDPER
+#define	STT_CYO			50		// å‘¨æœŸæ‘†åŠ¨é‡CYO
+#define	STT_DCYO		51		// å»å™ªå‘¨æœŸæ‘†åŠ¨é‡DCYO
+#define	STT_HSL			52		// ç›¸å¯¹æ¢æ‰‹ç‡HSL
+#define	STT_DPER		53		// å»åŠ¿ç™¾åˆ†æ¯”æŒ‡æ ‡DPER
 #define	STT_CLK_MAX		53
 
 #define	STT_MAX			53
@@ -96,47 +96,47 @@
 
 #define	STT_INVALID		DWORD(-1)
 
-// Ö¸±êÀà±ğ
+// æŒ‡æ ‡ç±»åˆ«
 #define	STT_CLASS_MIN		1
-#define	STT_CLASS_KLINE		1	// KÏßµş¼ÓÀà
-#define	STT_CLASS_TREND		2	// Ç÷ÊÆÀà
-#define	STT_CLASS_ENERGY	3	// ÄÜÁ¿Àà
-#define	STT_CLASS_SWING		4	// °Ú¶¯Àà
-#define	STT_CLASS_OTHER		5	// ÆäËüÀà
-#define	STT_CLASS_CLK		6	// ²ßÂÔÎªÍõÀà
-#define	STT_CLASS_USER		7	// Íâ¹ÒÖ¸±êÀà
+#define	STT_CLASS_KLINE		1	// Kçº¿å åŠ ç±»
+#define	STT_CLASS_TREND		2	// è¶‹åŠ¿ç±»
+#define	STT_CLASS_ENERGY	3	// èƒ½é‡ç±»
+#define	STT_CLASS_SWING		4	// æ‘†åŠ¨ç±»
+#define	STT_CLASS_OTHER		5	// å…¶å®ƒç±»
+#define	STT_CLASS_CLK		6	// ç­–ç•¥ä¸ºç‹ç±»
+#define	STT_CLASS_USER		7	// å¤–æŒ‚æŒ‡æ ‡ç±»
 #define	STT_CLASS_MAX		7
 
-// ÂòÂôĞÅºÅ
+// ä¹°å–ä¿¡å·
 #define	ITS_MIN				-15
-#define	ITS_SELLINTENSE		-15	// Ç¿ÁÒÂô³ö
-#define	ITSG_SELLINTENSE	-13	// ÃÅÏŞ
-#define	ITS_SELL			-10	// Âô³ö
-#define	ITSG_SELL			-8	// ÃÅÏŞ
-#define	ITS_SELLFEEBLE		-5	// Î¢ÈõÂô³ö
-#define	ITSG_SELLFEEBLE		-3	// ÃÅÏŞ
-#define	ITS_NOTHING			0	// ÎŞ
-#define	ITSG_BUYFEEBLE		3	// ÃÅÏŞ
-#define	ITS_BUYFEEBLE		5	// Î¢ÈõÂò½ø
-#define	ITSG_BUY			8	// ÃÅÏŞ
-#define	ITS_BUY				10	// Âò½ø
-#define	ITSG_BUYINTENSE		13	// ÃÅÏŞ
-#define	ITS_BUYINTENSE		15	// Ç¿ÁÒÂò½ø
+#define	ITS_SELLINTENSE		-15	// å¼ºçƒˆå–å‡º
+#define	ITSG_SELLINTENSE	-13	// é—¨é™
+#define	ITS_SELL			-10	// å–å‡º
+#define	ITSG_SELL			-8	// é—¨é™
+#define	ITS_SELLFEEBLE		-5	// å¾®å¼±å–å‡º
+#define	ITSG_SELLFEEBLE		-3	// é—¨é™
+#define	ITS_NOTHING			0	// æ— 
+#define	ITSG_BUYFEEBLE		3	// é—¨é™
+#define	ITS_BUYFEEBLE		5	// å¾®å¼±ä¹°è¿›
+#define	ITSG_BUY			8	// é—¨é™
+#define	ITS_BUY				10	// ä¹°è¿›
+#define	ITSG_BUYINTENSE		13	// é—¨é™
+#define	ITS_BUYINTENSE		15	// å¼ºçƒˆä¹°è¿›
 #define	ITS_MAX				15
 
-// ÂòÂôĞÅºÅÀíÓÉ
+// ä¹°å–ä¿¡å·ç†ç”±
 #define	ITSC_MIN				1
-#define	ITSC_NOTHING			1	// ÎŞ
-#define	ITSC_DEVIATEONBOTTOM	2	// µ×±³Àë
-#define	ITSC_DEVIATEONTOP		3	// ¶¥±³Àë
-#define	ITSC_GOLDENFORK			4	// ½ğ²æ
-#define	ITSC_DEADFORK			5	// ËÀ²æ
-#define	ITSC_LONG				6	// ¶àÍ·
-#define	ITSC_SHORT				7	// ¿ÕÍ·
-#define	ITSC_OVERBOUGHT			8	// ³¬Âò
-#define	ITSC_OVERSOLD			9	// ³¬Âô
-#define	ITSC_SUPPORT			10	// Ö§³ÅÎ»
-#define	ITSC_RESISTANCE			11	// ×èÁ¦Î»
+#define	ITSC_NOTHING			1	// æ— 
+#define	ITSC_DEVIATEONBOTTOM	2	// åº•èƒŒç¦»
+#define	ITSC_DEVIATEONTOP		3	// é¡¶èƒŒç¦»
+#define	ITSC_GOLDENFORK			4	// é‡‘å‰
+#define	ITSC_DEADFORK			5	// æ­»å‰
+#define	ITSC_LONG				6	// å¤šå¤´
+#define	ITSC_SHORT				7	// ç©ºå¤´
+#define	ITSC_OVERBOUGHT			8	// è¶…ä¹°
+#define	ITSC_OVERSOLD			9	// è¶…å–
+#define	ITSC_SUPPORT			10	// æ”¯æ’‘ä½
+#define	ITSC_RESISTANCE			11	// é˜»åŠ›ä½
 #define	ITSC_MAX				11
 
 #define	ITS_ISSELL(x)			(x<0)
@@ -149,7 +149,7 @@
 
 
 /***
-	Ò»Ğ©ºê¶¨Òå£¬Ö÷ÒªÊÇ¼¼ÊõÖ¸±ê¼ÆËãÖĞ³£ÓÃµÄÒ»Ğ©´úÂë
+	ä¸€äº›å®å®šä¹‰ï¼Œä¸»è¦æ˜¯æŠ€æœ¯æŒ‡æ ‡è®¡ç®—ä¸­å¸¸ç”¨çš„ä¸€äº›ä»£ç 
 */
 #define	STT_ASSERT_GETMINMAXINFO( m_pKData, nStart, nEnd )	\
 	SP_ASSERT( m_pKData && nStart >= 0 && nStart < m_pKData->GetSize() && nEnd >= 0 && nEnd < m_pKData->GetSize() );	\
@@ -181,19 +181,19 @@
 
 
 /***
-	Ò»Ğ©·´¸´Ê¹ÓÃµÄ´úÂë£¬ÓÃº¯Êı´úÌæ£¬µÃµ½¼¼ÊõÖ¸±êÔÚÖ¸¶¨·¶Î§ÄÚµÄ×î´ó×îĞ¡Öµ
+	ä¸€äº›åå¤ä½¿ç”¨çš„ä»£ç ï¼Œç”¨å‡½æ•°ä»£æ›¿ï¼Œå¾—åˆ°æŠ€æœ¯æŒ‡æ ‡åœ¨æŒ‡å®šèŒƒå›´å†…çš„æœ€å¤§æœ€å°å€¼
 */
 class	CTechnique;
-BOOL AfxGetMinMaxInfo( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech, CSPDWordArray & adwDays );	// ¼¼ÊõÖ¸±êÓĞ²»Í¬ÈÕÆÚ×÷Îª²ÎÊı
-BOOL AfxGetMinMaxInfo1( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// ¼¼ÊõÖ¸±êÓĞ1¸ö×îÖÕÖµ
-BOOL AfxGetMinMaxInfo2( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// ¼¼ÊõÖ¸±êÓĞ2¸ö×îÖÕÖµ
-BOOL AfxGetMinMaxInfo3( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// ¼¼ÊõÖ¸±êÓĞ3¸ö×îÖÕÖµ
-BOOL AfxGetMinMaxInfo4( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// ¼¼ÊõÖ¸±êÓĞ4¸ö×îÖÕÖµ
-BOOL AfxGetMinMaxInfo5( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// ¼¼ÊõÖ¸±êÓĞ5¸ö×îÖÕÖµ
-DWORD	AfxGetMaxDays( CSPDWordArray & adw );	// Êı×éadwµÄ×î´óÖµ
+BOOL AfxGetMinMaxInfo( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech, CSPDWordArray & adwDays );	// æŠ€æœ¯æŒ‡æ ‡æœ‰ä¸åŒæ—¥æœŸä½œä¸ºå‚æ•°
+BOOL AfxGetMinMaxInfo1( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// æŠ€æœ¯æŒ‡æ ‡æœ‰1ä¸ªæœ€ç»ˆå€¼
+BOOL AfxGetMinMaxInfo2( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// æŠ€æœ¯æŒ‡æ ‡æœ‰2ä¸ªæœ€ç»ˆå€¼
+BOOL AfxGetMinMaxInfo3( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// æŠ€æœ¯æŒ‡æ ‡æœ‰3ä¸ªæœ€ç»ˆå€¼
+BOOL AfxGetMinMaxInfo4( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// æŠ€æœ¯æŒ‡æ ‡æœ‰4ä¸ªæœ€ç»ˆå€¼
+BOOL AfxGetMinMaxInfo5( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech );	// æŠ€æœ¯æŒ‡æ ‡æœ‰5ä¸ªæœ€ç»ˆå€¼
+DWORD	AfxGetMaxDays( CSPDWordArray & adw );	// æ•°ç»„adwçš„æœ€å¤§å€¼
 
 /**
-	¼¼ÊõÖ¸±ê»ùÀà
+	æŠ€æœ¯æŒ‡æ ‡åŸºç±»
 */
 class STKLIB_API CTechnique
 {
@@ -203,55 +203,55 @@ public:
 	CTechnique( CKData * pKData );
 	virtual ~CTechnique();
 
-	void SetKData( CKData * pKData );	// Éè¶¨KÏßÊı¾İ
+	void SetKData( CKData * pKData );	// è®¾å®šKçº¿æ•°æ®
 	CKData * GetKData( );
-	virtual	void	Clear( );			// Çå³ı
-	virtual	void	ClearLastIntensity( );	// Çå³ıÉÏ´ÎÂòÂôĞÅºÅ
-	virtual	BOOL	PrepareCache( int nStart, int nEnd, BOOL bForceRecalculate );	// ¼ÆËãºÃÊı¾İ£¬·ÅÈë»º³åÇø
+	virtual	void	Clear( );			// æ¸…é™¤
+	virtual	void	ClearLastIntensity( );	// æ¸…é™¤ä¸Šæ¬¡ä¹°å–ä¿¡å·
+	virtual	BOOL	PrepareCache( int nStart, int nEnd, BOOL bForceRecalculate );	// è®¡ç®—å¥½æ•°æ®ï¼Œæ”¾å…¥ç¼“å†²åŒº
 
 protected:
 	BOOL	LoadFromCache( int nIndex, double * pValue1,
-				double * pValue2 = NULL, double * pValue3 = NULL, double * pValue4 = NULL, double * pValue5 = NULL );	// ´Ó»º³åÇø¶ÁÈë½á¹û
+				double * pValue2 = NULL, double * pValue3 = NULL, double * pValue4 = NULL, double * pValue5 = NULL );	// ä»ç¼“å†²åŒºè¯»å…¥ç»“æœ
 	BOOL	StoreToCache( int nIndex, double * pValue1,
-				double * pValue2 = NULL, double * pValue3 = NULL, double * pValue4 = NULL, double * pValue5 = NULL );	// ½«½á¹û±£´æÖÁ»º³åÇø
+				double * pValue2 = NULL, double * pValue3 = NULL, double * pValue4 = NULL, double * pValue5 = NULL );	// å°†ç»“æœä¿å­˜è‡³ç¼“å†²åŒº
 
 	// Intensity Utility
-	BOOL	IntensityPrepare( int nIndex, UINT * pnCode, int nMaxDays, int nMinMaxDays, double *pdLiminalLow, double *pdLiminalHigh, double dGateLow = 0.3, double dGateHigh = 0.7 );		// ×¼±¸Êı¾İ£¬µÃµ½½Ï´óÖµºÍ½ÏĞ¡Öµ
-	BOOL	IntensityPreparePrice( int nIndex, UINT * pnCode, int nMaxDays, int nMinMaxDays, double *pdLiminalLow, double *pdLiminalHigh, double dGateLow = 0.3, double dGateHigh = 0.7 );	// ×¼±¸Êı¾İ£¬µÃµ½¼Û¸ñ½Ï´óÖµºÍ½ÏĞ¡Öµ
-	BOOL	IsNewValue( int nIndex, BOOL bTopOrBottom, int nDays, double * pdValue1, double * pdValue2 );	// ÊÇ·ñ´´ĞÂ¸ß»òÕß´´ĞÂµÍ
-	BOOL	IsDeviateOnBottom( int nIndex, double * pdValue1, double * pdValue2 );	// ÊÇ·ñµ×±³Àë
-	BOOL	IsDeviateOnTop( int nIndex, double * pdValue1, double * pdValue2 );		// ÊÇ·ñ¶¥±³Àë
-	BOOL	IsGoldenFork( int nIndex, double * pdValue1, double * pdValue2 );		// ÊÇ·ñ½ğ²æ
-	BOOL	IsDeadFork( int nIndex, double * pdValue1, double * pdValue2 );			// ÊÇ·ñËÀ²æ
-	int		GetForkSignal( int nIndex, CSPDWordArray & adwDays, UINT itsGoldenFork, UINT itsDeadFork,  UINT * pnCode );	// µÃµ½½ğ²æ»òÕßËÀ²æĞÅºÅ
-	int		GetForkSignal( int nIndex, UINT itsGoldenFork, UINT itsDeadFork, UINT *pnCode );		// µÃµ½½ğ²æ»òÕßËÀ²æĞÅºÅ
-	int		GetForkSignal(int nIndex, double * pdValue1, double * pdValue2, UINT itsGoldenFork, UINT itsDeadFork, UINT *pnCode );	// µÃµ½½ğ²æËÀ²æĞÅºÅ
-	int		GetTrendIntensity(int nIndex, CSPDWordArray & adwDays, UINT itsLong, UINT itsShort, UINT * pnCode );	// µÃµ½Ç÷ÊÆĞÅºÅ
-	int		GetTrendIntensity1( int nIndex, UINT itsLong, UINT itsShort, UINT *pnCode );	// µÃµ½Ç÷ÊÆĞÅºÅ
-	int		GetTrendIntensity2( int nIndex, UINT itsLong, UINT itsShort, UINT *pnCode );	// µÃµ½Ç÷ÊÆĞÅºÅ
-	int		GetTrendIntensity(int nIndex, double * pdValue1, double * pdValue2, UINT itsLong, UINT itsShort, UINT *pnCode );	// µÃµ½Ç÷ÊÆĞÅºÅ
+	BOOL	IntensityPrepare( int nIndex, UINT * pnCode, int nMaxDays, int nMinMaxDays, double *pdLiminalLow, double *pdLiminalHigh, double dGateLow = 0.3, double dGateHigh = 0.7 );		// å‡†å¤‡æ•°æ®ï¼Œå¾—åˆ°è¾ƒå¤§å€¼å’Œè¾ƒå°å€¼
+	BOOL	IntensityPreparePrice( int nIndex, UINT * pnCode, int nMaxDays, int nMinMaxDays, double *pdLiminalLow, double *pdLiminalHigh, double dGateLow = 0.3, double dGateHigh = 0.7 );	// å‡†å¤‡æ•°æ®ï¼Œå¾—åˆ°ä»·æ ¼è¾ƒå¤§å€¼å’Œè¾ƒå°å€¼
+	BOOL	IsNewValue( int nIndex, BOOL bTopOrBottom, int nDays, double * pdValue1, double * pdValue2 );	// æ˜¯å¦åˆ›æ–°é«˜æˆ–è€…åˆ›æ–°ä½
+	BOOL	IsDeviateOnBottom( int nIndex, double * pdValue1, double * pdValue2 );	// æ˜¯å¦åº•èƒŒç¦»
+	BOOL	IsDeviateOnTop( int nIndex, double * pdValue1, double * pdValue2 );		// æ˜¯å¦é¡¶èƒŒç¦»
+	BOOL	IsGoldenFork( int nIndex, double * pdValue1, double * pdValue2 );		// æ˜¯å¦é‡‘å‰
+	BOOL	IsDeadFork( int nIndex, double * pdValue1, double * pdValue2 );			// æ˜¯å¦æ­»å‰
+	int		GetForkSignal( int nIndex, CSPDWordArray & adwDays, UINT itsGoldenFork, UINT itsDeadFork,  UINT * pnCode );	// å¾—åˆ°é‡‘å‰æˆ–è€…æ­»å‰ä¿¡å·
+	int		GetForkSignal( int nIndex, UINT itsGoldenFork, UINT itsDeadFork, UINT *pnCode );		// å¾—åˆ°é‡‘å‰æˆ–è€…æ­»å‰ä¿¡å·
+	int		GetForkSignal(int nIndex, double * pdValue1, double * pdValue2, UINT itsGoldenFork, UINT itsDeadFork, UINT *pnCode );	// å¾—åˆ°é‡‘å‰æ­»å‰ä¿¡å·
+	int		GetTrendIntensity(int nIndex, CSPDWordArray & adwDays, UINT itsLong, UINT itsShort, UINT * pnCode );	// å¾—åˆ°è¶‹åŠ¿ä¿¡å·
+	int		GetTrendIntensity1( int nIndex, UINT itsLong, UINT itsShort, UINT *pnCode );	// å¾—åˆ°è¶‹åŠ¿ä¿¡å·
+	int		GetTrendIntensity2( int nIndex, UINT itsLong, UINT itsShort, UINT *pnCode );	// å¾—åˆ°è¶‹åŠ¿ä¿¡å·
+	int		GetTrendIntensity(int nIndex, double * pdValue1, double * pdValue2, UINT itsLong, UINT itsShort, UINT *pnCode );	// å¾—åˆ°è¶‹åŠ¿ä¿¡å·
 
 public:
 	// Attributes
-	virtual	void	SetDefaultParameters( );		// Éè¶¨È±Ê¡²ÎÊı
-	void	AttachParameters( CTechnique & src );	// Ö¸¶¨²ÎÊıÓësrcÏàÍ¬
-	virtual	BOOL	IsValidParameters( );			// ²ÎÊıÊÇ·ñºÏ·¨
+	virtual	void	SetDefaultParameters( );		// è®¾å®šç¼ºçœå‚æ•°
+	void	AttachParameters( CTechnique & src );	// æŒ‡å®šå‚æ•°ä¸srcç›¸åŒ
+	virtual	BOOL	IsValidParameters( );			// å‚æ•°æ˜¯å¦åˆæ³•
 
 	// Creations
-	static	CTechnique *	CreateTechnique( UINT nTech, CKData * pKData );	// ´´½¨CTechnique¶ÔÏó
+	static	CTechnique *	CreateTechnique( UINT nTech, CKData * pKData );	// åˆ›å»ºCTechniqueå¯¹è±¡
 	
 	// Operations
-	virtual	int		GetSignal( int nIndex, UINT * pnCode = NULL );	// µÃµ½ÂòÂôĞÅºÅ
-	virtual	int		GetIntensity( int nIndex, UINT * pnCode = NULL, BOOL bTraceBack = TRUE );	// µÃµ½ÂòÂôÇ÷ÊÆĞÅºÅ
-	virtual	int		GetIntensityTraceback( int nIndex, UINT * pnCode = NULL );					// µÃµ½ÂòÂôÇ÷ÊÆĞÅºÅ
-	virtual	BOOL	GetMinMaxInfo( int nStart, int nEnd, double *pdMin, double *pdMax );		// µÃµ½×î´ó×îĞ¡Öµ
-	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );			// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );		// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	Calculate( double * pValue1, double * pValue2, int nIndex, BOOL bUseLast );		// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, int nIndex, BOOL bUseLast );		// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, double * pValue4, int nIndex, BOOL bUseLast );		// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, double * pValue4, double * pValue5, int nIndex, BOOL bUseLast );		// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	CalculateMA( double * pValue, double * pMA, int nIndex, BOOL bUseLast, int nMADays );		// ¼ÆËãÖ¸±êÖµºÍ¾ùÖµ
+	virtual	int		GetSignal( int nIndex, UINT * pnCode = NULL );	// å¾—åˆ°ä¹°å–ä¿¡å·
+	virtual	int		GetIntensity( int nIndex, UINT * pnCode = NULL, BOOL bTraceBack = TRUE );	// å¾—åˆ°ä¹°å–è¶‹åŠ¿ä¿¡å·
+	virtual	int		GetIntensityTraceback( int nIndex, UINT * pnCode = NULL );					// å¾—åˆ°ä¹°å–è¶‹åŠ¿ä¿¡å·
+	virtual	BOOL	GetMinMaxInfo( int nStart, int nEnd, double *pdMin, double *pdMax );		// å¾—åˆ°æœ€å¤§æœ€å°å€¼
+	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );			// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );		// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	Calculate( double * pValue1, double * pValue2, int nIndex, BOOL bUseLast );		// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, int nIndex, BOOL bUseLast );		// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, double * pValue4, int nIndex, BOOL bUseLast );		// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, double * pValue4, double * pValue5, int nIndex, BOOL bUseLast );		// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	CalculateMA( double * pValue, double * pMA, int nIndex, BOOL bUseLast, int nMADays );		// è®¡ç®—æŒ‡æ ‡å€¼å’Œå‡å€¼
 
 protected:
 	CKData	*	m_pKData;
@@ -273,7 +273,7 @@ protected:
 	UINT		m_nLastIntensityCode;
 };
 
-// KÏß
+// Kçº¿
 class STKLIB_API CKLine : public CTechnique
 {
 public:
@@ -295,8 +295,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-// KÏßÊôĞÔÀà
-// ÒÆ¶¯Æ½¾ùÏßMA
+// Kçº¿å±æ€§ç±»
+// ç§»åŠ¨å¹³å‡çº¿MA
 class STKLIB_API CMA : public CTechnique
 {
 public:
@@ -329,7 +329,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );
 };
 
-// ¶à¿ÕÖ¸±êBBI
+// å¤šç©ºæŒ‡æ ‡BBI
 class STKLIB_API CBBI : public CTechnique
 {
 public:
@@ -358,7 +358,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ²¼ÁÖ´øBOLL
+// å¸ƒæ—å¸¦BOLL
 class STKLIB_API CBOLL : public CTechnique
 {
 public:
@@ -386,7 +386,7 @@ public:
 	virtual	BOOL	Calculate( double * pdMA, double * pdUp, double * pdDown, int nIndex, BOOL bUseLast );
 };
 
-// »ãÖ¤¾ù¼ÛÏßP/V
+// æ±‡è¯å‡ä»·çº¿P/V
 class STKLIB_API CPV : public CTechnique
 {
 public:
@@ -409,7 +409,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// Í£Ëğµã×ªÏòÖ¸±êSAR
+// åœæŸç‚¹è½¬å‘æŒ‡æ ‡SAR
 class STKLIB_API CSAR : public CTechnique
 {
 public:
@@ -448,7 +448,7 @@ protected:
 	double			m_dCurLow;
 };
 
-// µş¼ÓÍ¼DJ
+// å åŠ å›¾DJ
 class STKLIB_API CDJ : public CTechnique
 {
 public:
@@ -477,7 +477,7 @@ public:
 	// Operations
 };
 
-// ³ïÂë·Ö²¼Í¼CW
+// ç­¹ç åˆ†å¸ƒå›¾CW
 class STKLIB_API CCW : public CTechnique
 {
 public:
@@ -519,8 +519,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-// Ç÷ÊÆÀà
-// Ö¸ÊıÆ½»¬ÒìÍ¬ÒÆ¶¯Æ½¾ùÏßMACD
+// è¶‹åŠ¿ç±»
+// æŒ‡æ•°å¹³æ»‘å¼‚åŒç§»åŠ¨å¹³å‡çº¿MACD
 class STKLIB_API CMACD : public CTechnique
 {
 public:
@@ -551,7 +551,7 @@ public:
 					int nIndex, BOOL bUseLast );
 };
 
-// Âó¿ËÖ¸±êMIKE
+// éº¦å…‹æŒ‡æ ‡MIKE
 class STKLIB_API CMIKE : public CTechnique
 {
 public:
@@ -574,7 +574,7 @@ public:
 							double *pWS, double *pMS, double *pSS, int nIndex );
 };
 
-// ĞÄÀíÏßPSY
+// å¿ƒç†çº¿PSY
 class STKLIB_API CPSY : public CTechnique
 {
 public:
@@ -601,8 +601,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-// ÄÜÁ¿Àà
-// ³É½»Á¿
+// èƒ½é‡ç±»
+// æˆäº¤é‡
 class STKLIB_API CVOLUME : public CTechnique
 {
 public:
@@ -630,7 +630,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );
 };
 
-// ¸º³É½»Á¿Ö¸±êNVI
+// è´Ÿæˆäº¤é‡æŒ‡æ ‡NVI
 class STKLIB_API CNVI : public CTechnique
 {
 public:
@@ -656,7 +656,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double *pMA, int nIndex, BOOL bUseLast );
 };
 
-// Õı³É½»Á¿Ö¸±êPVI
+// æ­£æˆäº¤é‡æŒ‡æ ‡PVI
 class STKLIB_API CPVI : public CTechnique
 {
 public:
@@ -682,7 +682,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double *pMA, int nIndex, BOOL bUseLast );
 };
 
-// ÈİÁ¿±ÈÂÊVR
+// å®¹é‡æ¯”ç‡VR
 class STKLIB_API CVR : public CTechnique
 {
 public:
@@ -708,7 +708,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ³É½»Á¿±ä¶¯ÂÊÖ¸±êVROC
+// æˆäº¤é‡å˜åŠ¨ç‡æŒ‡æ ‡VROC
 class STKLIB_API CVROC : public CTechnique
 {
 public:
@@ -736,7 +736,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// ÄÜÁ¿ÏßOBV
+// èƒ½é‡çº¿OBV
 class STKLIB_API COBV : public CTechnique
 {
 public:
@@ -761,7 +761,7 @@ public:
 	virtual	BOOL	Calculate( double * pdOBV, int nIndex, BOOL bUseLast );
 };
 
-// Ö÷Á¦½ø³öMOBV
+// ä¸»åŠ›è¿›å‡ºMOBV
 class STKLIB_API CMOBV : public COBV
 {
 public:
@@ -788,7 +788,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, int nIndex, BOOL bUseLast );
 };
 
-// ×Ê½ğÁ÷¶¯Ö¸ÊıMFI
+// èµ„é‡‘æµåŠ¨æŒ‡æ•°MFI
 class STKLIB_API CMFI : public CTechnique
 {
 public:
@@ -814,7 +814,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// Á¿Ö¸ÊıÆ½»¬ÒìÍ¬ÒÆ¶¯Æ½¾ùÏßVMACD
+// é‡æŒ‡æ•°å¹³æ»‘å¼‚åŒç§»åŠ¨å¹³å‡çº¿VMACD
 class STKLIB_API CVMACD : public CMACD
 {
 public:
@@ -830,7 +830,7 @@ public:
 					int nIndex, BOOL bUseLast );
 };
 
-// ÍşÁ®±äÒìÀëÉ¢Á¿WVAD
+// å¨å»‰å˜å¼‚ç¦»æ•£é‡WVAD
 class STKLIB_API CWVAD : public CTechnique
 {
 public:
@@ -856,7 +856,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ¼òÒ×²¨¶¯Ö¸±êEMV
+// ç®€æ˜“æ³¢åŠ¨æŒ‡æ ‡EMV
 class STKLIB_API CEMV : public CTechnique
 {
 public:
@@ -884,7 +884,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// Á¿Ïà¶ÔÇ¿ÈõÖ¸±êVRSI
+// é‡ç›¸å¯¹å¼ºå¼±æŒ‡æ ‡VRSI
 class STKLIB_API CVRSI : public CTechnique
 {
 public:
@@ -912,7 +912,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ĞÂÁ¿Ïà¶ÔÇ¿ÈõÖ¸±êVRSI
+// æ–°é‡ç›¸å¯¹å¼ºå¼±æŒ‡æ ‡VRSI
 class STKLIB_API CNVRSI : public CVRSI
 {
 public:
@@ -926,7 +926,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ¾Û/É¢Ö¸±êA/D
+// èš/æ•£æŒ‡æ ‡A/D
 class STKLIB_API CAD : public CTechnique
 {
 public:
@@ -950,7 +950,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ÀÛ»ıÖ¸ÊıCI
+// ç´¯ç§¯æŒ‡æ•°CI
 class STKLIB_API CCI : public CTechnique
 {
 public:
@@ -974,8 +974,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-// °Ú¶¯Àà
-// Ëæ»úÖ¸±êKDJ
+// æ‘†åŠ¨ç±»
+// éšæœºæŒ‡æ ‡KDJ
 class STKLIB_API CKDJ : public CTechnique
 {
 public:
@@ -1011,7 +1011,7 @@ public:
 	virtual	BOOL	Calculate( double *pValue1, double *pValue2, double *pValue3, int nIndex, BOOL bUseLast );
 };
 
-// ÍşÁ®Ö¸±êR
+// å¨å»‰æŒ‡æ ‡R
 class STKLIB_API CR : public CTechnique
 {
 public:
@@ -1035,7 +1035,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// Ïà¶ÔÇ¿ÈõÖ¸±ê
+// ç›¸å¯¹å¼ºå¼±æŒ‡æ ‡
 class STKLIB_API CRSI : public CTechnique
 {
 public:
@@ -1062,7 +1062,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );
 };
 
-// ¹ÔÀëÂÊBIAS
+// ä¹–ç¦»ç‡BIAS
 class STKLIB_API CBIAS : public CTechnique
 {
 public:
@@ -1088,7 +1088,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ¶¯Á¿Ö¸±êMTM
+// åŠ¨é‡æŒ‡æ ‡MTM
 class STKLIB_API CMTM : public CTechnique
 {
 public:
@@ -1116,7 +1116,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double *pMA, int nIndex, BOOL bUseLast );
 };
 
-// ¶¯ÏòÖ¸±êDMI
+// åŠ¨å‘æŒ‡æ ‡DMI
 class STKLIB_API CDMI : public CTechnique
 {
 public:
@@ -1146,7 +1146,7 @@ public:
 	virtual	BOOL	Calculate( double * pDIPlus, double * pDIMinus, double *pADX, double *pADXR, int nIndex, BOOL bUseLast );
 };
 
-// ±ä¶¯ÂÊÖ¸±êROC
+// å˜åŠ¨ç‡æŒ‡æ ‡ROC
 class STKLIB_API CROC : public CTechnique
 {
 public:
@@ -1174,7 +1174,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// Ë³ÊÆÍ¨µÀÖ¸±êCCI
+// é¡ºåŠ¿é€šé“æŒ‡æ ‡CCI
 class STKLIB_API CCCI : public CTechnique
 {
 public:
@@ -1203,7 +1203,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// ¼ÑÇìÖ¸±êCV
+// ä½³åº†æŒ‡æ ‡CV
 class STKLIB_API CCV : public CTechnique
 {
 public:
@@ -1230,7 +1230,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ÈËÆøÒâÔ¸Ö¸±êARBR
+// äººæ°”æ„æ„¿æŒ‡æ ‡ARBR
 class STKLIB_API CARBR : public CTechnique
 {
 public:
@@ -1258,7 +1258,7 @@ public:
 	virtual	BOOL	Calculate( double * pAR, double *pBR, int nIndex, BOOL bUseLast );
 };
 
-// ÖĞ¼äÒâÔ¸Ö¸±êCR
+// ä¸­é—´æ„æ„¿æŒ‡æ ‡CR
 class STKLIB_API CCR : public CTechnique
 {
 public:
@@ -1289,7 +1289,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pA, double * pB, double * pC, double * pD, int nIndex, BOOL bUseLast );
 };
 
-// °Ú¶¯Á¿OSC
+// æ‘†åŠ¨é‡OSC
 class STKLIB_API COSC : public CTechnique
 {
 public:
@@ -1317,7 +1317,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// ¼«°Ú¶¯Ö¸±êUOS
+// ææ‘†åŠ¨æŒ‡æ ‡UOS
 class STKLIB_API CUOS : public CTechnique
 {
 public:
@@ -1347,7 +1347,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// ÒÆ¶¯Æ½¾ù°Ú¶¯Á¿MAOSC
+// ç§»åŠ¨å¹³å‡æ‘†åŠ¨é‡MAOSC
 class STKLIB_API CMAOSC : public CTechnique
 {
 public:
@@ -1376,7 +1376,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// 3¼õ6ÈÕ¹ÔÀë3-6BIAS
+// 3å‡6æ—¥ä¹–ç¦»3-6BIAS
 class STKLIB_API C36BIAS : public CTechnique
 {
 public:
@@ -1401,7 +1401,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// È¥ÊÆ¼Û¸ñ°Ú¶¯Ö¸ÊıDPO
+// å»åŠ¿ä»·æ ¼æ‘†åŠ¨æŒ‡æ•°DPO
 class STKLIB_API CDPO : public CTechnique
 {
 public:
@@ -1429,7 +1429,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// È·È»Ö¸±êKST
+// ç¡®ç„¶æŒ‡æ ‡KST
 class STKLIB_API CKST : public CTechnique
 {
 public:
@@ -1458,8 +1458,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-// ÆäËûÀà
-// ·¶Î§ÅòÕÍÖ¸ÊıREI
+// å…¶ä»–ç±»
+// èŒƒå›´è†¨èƒ€æŒ‡æ•°REI
 class STKLIB_API CREI : public CTechnique
 {
 public:
@@ -1485,7 +1485,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// µÏÂí¿Ë¶ûÖ¸±êDMKI
+// è¿ªé©¬å…‹å°”æŒ‡æ ‡DMKI
 class STKLIB_API CDMKI : public CTechnique
 {
 public:
@@ -1511,7 +1511,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ·ù¶È±ÈPCNT
+// å¹…åº¦æ¯”PCNT
 class STKLIB_API CPCNT : public CTechnique
 {
 public:
@@ -1538,7 +1538,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// ·ù¶È·ÖÎöHLC
+// å¹…åº¦åˆ†æHLC
 class STKLIB_API CHLC : public CTechnique
 {
 public:
@@ -1566,7 +1566,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// ÄæÊÆ²Ù×÷Ö¸±êCDP
+// é€†åŠ¿æ“ä½œæŒ‡æ ‡CDP
 class STKLIB_API CCDP : public CTechnique
 {
 public:
@@ -1589,7 +1589,7 @@ public:
 	virtual	BOOL	Calculate( double * pAH, double * pNH, double * pAL, double * pNL, int nIndex, BOOL bUseLast );
 };
 
-// ÀÛ»ı°Ú¶¯Ö¸±êASI
+// ç´¯ç§¯æ‘†åŠ¨æŒ‡æ ‡ASI
 class STKLIB_API CASI : public CTechnique
 {
 public:
@@ -1615,7 +1615,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );
 };
 
-// ¾ù·ùÖ¸±êATR
+// å‡å¹…æŒ‡æ ‡ATR
 class STKLIB_API CATR : public CTechnique
 {
 public:
@@ -1642,8 +1642,8 @@ public:
 };
 
 /////////////////////////////////////////////////////////////////////////
-// ²ßÂÔÎªÍõÀà
-// ÖÜÆÚ°Ú¶¯Á¿CYO
+// ç­–ç•¥ä¸ºç‹ç±»
+// å‘¨æœŸæ‘†åŠ¨é‡CYO
 class STKLIB_API CCYO : public CTechnique
 {
 public:
@@ -1671,7 +1671,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// È¥ÔëÖÜÆÚ°Ú¶¯Á¿DCYO
+// å»å™ªå‘¨æœŸæ‘†åŠ¨é‡DCYO
 class STKLIB_API CDCYO : public CTechnique
 {
 public:
@@ -1699,7 +1699,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast );
 };
 
-// Ïà¶Ô»»ÊÖÂÊHSL
+// ç›¸å¯¹æ¢æ‰‹ç‡HSL
 class STKLIB_API CHSL : public CTechnique
 {
 public:
@@ -1731,7 +1731,7 @@ public:
 	virtual	BOOL	Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast );
 };
 
-// È¥ÊÆ°Ù·Ö±ÈÖ¸±êDPER
+// å»åŠ¿ç™¾åˆ†æ¯”æŒ‡æ ‡DPER
 class STKLIB_API CDPER : public CTechnique
 {
 public:
@@ -1763,7 +1763,7 @@ public:
 #define	TECHUSER_API
 #include "TechUser.h"
 
-// ÓÃ»§Íâ¹ÒÖ¸±ê
+// ç”¨æˆ·å¤–æŒ‚æŒ‡æ ‡
 class STKLIB_API CTechUser : public CTechnique
 {
 public:
@@ -1785,24 +1785,24 @@ public:
 	CSPString	GetLineName( int nLine );
 
 public:
-	virtual	void	Clear( );			// Çå³ı
+	virtual	void	Clear( );			// æ¸…é™¤
 
 public:
 	// Attributes
-	virtual	void	SetDefaultParameters( );		// Éè¶¨È±Ê¡²ÎÊı
-	void	AttachParameters( CTechUser & src );	// Ö¸¶¨²ÎÊıÓësrcÏàÍ¬
-	virtual	BOOL	IsValidParameters( );			// ²ÎÊıÊÇ·ñºÏ·¨
+	virtual	void	SetDefaultParameters( );		// è®¾å®šç¼ºçœå‚æ•°
+	void	AttachParameters( CTechUser & src );	// æŒ‡å®šå‚æ•°ä¸srcç›¸åŒ
+	virtual	BOOL	IsValidParameters( );			// å‚æ•°æ˜¯å¦åˆæ³•
 
 	// Operations
-	virtual	int		GetSignal( int nIndex, UINT * pnCode = NULL );	// µÃµ½ÂòÂôĞÅºÅ
-	virtual	int		GetIntensity( int nIndex, UINT * pnCode = NULL, BOOL bTraceBack = TRUE );	// µÃµ½ÂòÂôÇ÷ÊÆĞÅºÅ
-	virtual	int		GetIntensityTraceback( int nIndex, UINT * pnCode = NULL );					// µÃµ½ÂòÂôÇ÷ÊÆĞÅºÅ
-	virtual	BOOL	GetMinMaxInfo( int nStart, int nEnd, double *pdMin, double *pdMax );		// µÃµ½×î´ó×îĞ¡Öµ
-	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );					// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	Calculate( double * pValue1, double * pValue2, int nIndex, BOOL bUseLast );		// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, int nIndex, BOOL bUseLast );		// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, double * pValue4, int nIndex, BOOL bUseLast );		// ¼ÆËãÖ¸±êÖµ
-	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, double * pValue4, double * pValue5, int nIndex, BOOL bUseLast );		// ¼ÆËãÖ¸±êÖµ
+	virtual	int		GetSignal( int nIndex, UINT * pnCode = NULL );	// å¾—åˆ°ä¹°å–ä¿¡å·
+	virtual	int		GetIntensity( int nIndex, UINT * pnCode = NULL, BOOL bTraceBack = TRUE );	// å¾—åˆ°ä¹°å–è¶‹åŠ¿ä¿¡å·
+	virtual	int		GetIntensityTraceback( int nIndex, UINT * pnCode = NULL );					// å¾—åˆ°ä¹°å–è¶‹åŠ¿ä¿¡å·
+	virtual	BOOL	GetMinMaxInfo( int nStart, int nEnd, double *pdMin, double *pdMax );		// å¾—åˆ°æœ€å¤§æœ€å°å€¼
+	virtual	BOOL	Calculate( double * pValue, int nIndex, BOOL bUseLast );					// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	Calculate( double * pValue1, double * pValue2, int nIndex, BOOL bUseLast );		// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, int nIndex, BOOL bUseLast );		// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, double * pValue4, int nIndex, BOOL bUseLast );		// è®¡ç®—æŒ‡æ ‡å€¼
+	virtual	BOOL	Calculate( double * pValue1, double * pValue2, double * pValue3, double * pValue4, double * pValue5, int nIndex, BOOL bUseLast );		// è®¡ç®—æŒ‡æ ‡å€¼
 
 protected:
 	UINT			m_nTechUserID;

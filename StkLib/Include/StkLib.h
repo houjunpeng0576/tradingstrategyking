@@ -42,33 +42,33 @@
 	#define	STKLIB_API
 #endif
 
-// #define	CLKLAN_ENGLISH_US		// Ó¢ÎÄ°æ£¨ÃÀ¹ú£©
-// #define	CLKLAN_CHINESE_SIM		// ¼òÌåÖÐÎÄ°æ
+// #define	CLKLAN_ENGLISH_US		// è‹±æ–‡ç‰ˆï¼ˆç¾Žå›½ï¼‰
+// #define	CLKLAN_CHINESE_SIM		// ç®€ä½“ä¸­æ–‡ç‰ˆ
 // must define one
 #if !defined(CLKLAN_ENGLISH_US) && !defined(CLKLAN_CHINESE_SIM)
 	#define	CLKLAN_CHINESE_SIM
 #endif
 
 /**********************************************************************
- * OEM °æÇëÈ¥µô#define CLKVER_OEM Ç°µÄ×¢ÊÍ£¬²¢ÐÞ¸ÄÒÔÏÂ³£Á¿£¬ÖØÐÂ±àÒë
+ * OEM ç‰ˆè¯·åŽ»æŽ‰#define CLKVER_OEM å‰çš„æ³¨é‡Šï¼Œå¹¶ä¿®æ”¹ä»¥ä¸‹å¸¸é‡ï¼Œé‡æ–°ç¼–è¯‘
  */
 
-// #define	CLKVER_OEM		// OEM°æÈ¥µô¸ÃÐÐ×¢ÊÍ
+// #define	CLKVER_OEM		// OEMç‰ˆåŽ»æŽ‰è¯¥è¡Œæ³¨é‡Š
 
-#define	OEM_REGKEY_COMPANY	"Ninebulls-Stock Software"// ×¢²á±íÖÐµÄ¹«Ë¾´úºÅ
-#define	OEM_REGKEY_APP		"CLKingOEM"				// ×¢²á±íÖÐµÄÈí¼þ´úºÅ
+#define	OEM_REGKEY_COMPANY	"Ninebulls-Stock Software"// æ³¨å†Œè¡¨ä¸­çš„å…¬å¸ä»£å·
+#define	OEM_REGKEY_APP		"CLKingOEM"				// æ³¨å†Œè¡¨ä¸­çš„è½¯ä»¶ä»£å·
 
-#define	OEM_SUPPORT_MAILTO	"support@ninebulls.com"	// ¼¼ÊõÖ§³ÖÓÊÏäµØÖ·
-#define	OEM_SERVER_DOMAIN	"www.ninebulls.com"		// ¹«Ë¾ÍøÕ¾µØÖ·£¬
-													// ×¢£ºÈí¼þÖÐÀúÊ·Êý¾ÝÏÂÔØÒª´Ó¸ÃÍøÖ·ÏÂÔØ
+#define	OEM_SUPPORT_MAILTO	"support@ninebulls.com"	// æŠ€æœ¯æ”¯æŒé‚®ç®±åœ°å€
+#define	OEM_SERVER_DOMAIN	"www.ninebulls.com"		// å…¬å¸ç½‘ç«™åœ°å€ï¼Œ
+													// æ³¨ï¼šè½¯ä»¶ä¸­åŽ†å²æ•°æ®ä¸‹è½½è¦ä»Žè¯¥ç½‘å€ä¸‹è½½
 
-#define	OEM_SEED_STD1		"dc./x"					// ±ê×¼°æ×¢²á»úÖÖ×Ó1
-#define	OEM_SEED_STD2		"sfk%c"					// ±ê×¼°æ×¢²á»úÖÖ×Ó2
-#define	OEM_SEED_PROF1		"78cd2"					// ×¨Òµ°æ×¢²á»úÖÖ×Ó1
-#define	OEM_SEED_PROF2		"d6$3#"					// ×¨Òµ°æ×¢²á»úÖÖ×Ó2
+#define	OEM_SEED_STD1		"dc./x"					// æ ‡å‡†ç‰ˆæ³¨å†Œæœºç§å­1
+#define	OEM_SEED_STD2		"sfk%c"					// æ ‡å‡†ç‰ˆæ³¨å†Œæœºç§å­2
+#define	OEM_SEED_PROF1		"78cd2"					// ä¸“ä¸šç‰ˆæ³¨å†Œæœºç§å­1
+#define	OEM_SEED_PROF2		"d6$3#"					// ä¸“ä¸šç‰ˆæ³¨å†Œæœºç§å­2
 
 /*
- * OEM °æ½áÊø
+ * OEM ç‰ˆç»“æŸ
 **********************************************************************/
 
 #include	"SpPlat.h"

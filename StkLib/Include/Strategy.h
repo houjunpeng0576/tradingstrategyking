@@ -22,7 +22,7 @@
 /////////////////////////////////////////////////////////////////////////////
 // CRateParam
 /***
-	½»Ò×Ë°·ÑÉèÖÃÀà
+	äº¤æ˜“ç¨è´¹è®¾ç½®ç±»
 */
 class STKLIB_API CRateParam
 {
@@ -66,7 +66,7 @@ public:
 STKLIB_API	CSPString	AfxGetLogicString( int nLogic );
 STKLIB_API	CSPString	AfxGetStoreDivString( int nStoreDiv );
 /***
-	²ßÂÔÄ£Äâ²Ù×÷Ìõ¼şÀà
+	ç­–ç•¥æ¨¡æ‹Ÿæ“ä½œæ¡ä»¶ç±»
 */
 class STKLIB_API COpParam
 {
@@ -118,7 +118,7 @@ public:
 	double	m_dSellMulti;
 	CSPTimeContainer	m_atmBegin;
 	CSPTimeContainer	m_atmEnd;
-	long	m_nStartAmount;		//	Ôª
+	long	m_nStartAmount;		//	å…ƒ
 	int		m_nStoreDiv;
 
 	BOOL	m_bStopLosing;
@@ -148,7 +148,7 @@ typedef	struct stockown_t	{
 typedef	CSPArray< STOCKOWN, STOCKOWN & >	CStockOwnArray;
 
 /***
-	ÓµÓĞ¹ÉÆ±Êı×é
+	æ‹¥æœ‰è‚¡ç¥¨æ•°ç»„
 */
 class STKLIB_API CStockOwnContainer : public CStockOwnArray
 {
@@ -166,13 +166,13 @@ public:
 /////////////////////////////////////////////////////////////////////////////
 // oprecord_t
 
-// ²Ù×÷ÀàĞÍ
-#define	STRATEGY_OPTYPE_BUY			0x01	// ÂòÈë
-#define	STRATEGY_OPTYPE_SELL		0x02	// Âô³ö
-#define	STRATEGY_OPTYPE_ADDSTOCK	0x03	// Ìí¼Ó¹ÉÆ±
-#define	STRATEGY_OPTYPE_REMOVESTOCK	0x04	// ÒÆ³ı¹ÉÆ±
-#define	STRATEGY_OPTYPE_ADDCASH		0x05	// Ìí¼Ó×Ê½ğ
-#define	STRATEGY_OPTYPE_REMOVECASH	0x06	// È¡×ß×Ê½ğ
+// æ“ä½œç±»å‹
+#define	STRATEGY_OPTYPE_BUY			0x01	// ä¹°å…¥
+#define	STRATEGY_OPTYPE_SELL		0x02	// å–å‡º
+#define	STRATEGY_OPTYPE_ADDSTOCK	0x03	// æ·»åŠ è‚¡ç¥¨
+#define	STRATEGY_OPTYPE_REMOVESTOCK	0x04	// ç§»é™¤è‚¡ç¥¨
+#define	STRATEGY_OPTYPE_ADDCASH		0x05	// æ·»åŠ èµ„é‡‘
+#define	STRATEGY_OPTYPE_REMOVECASH	0x06	// å–èµ°èµ„é‡‘
 
 STKLIB_API	CSPString	AfxGetStrategyOpTypeString( long lOpType );
 
@@ -191,7 +191,7 @@ typedef	struct oprecord_t	{
 //template class __declspec(dllexport)	CSPArray< OPRECORD, OPRECORD & >;
 typedef	CSPArray< OPRECORD, OPRECORD & >	COpRecordArray;
 /***
-	²Ù×÷¼ÇÂ¼Êı×é
+	æ“ä½œè®°å½•æ•°ç»„
 */
 class STKLIB_API COpRecordContainer : public COpRecordArray
 {
@@ -224,7 +224,7 @@ typedef	struct assetserial_t	{
 //template class __declspec(dllexport)	CSPArray< ASSETSERIAL, ASSETSERIAL & >;
 typedef	CSPArray< ASSETSERIAL, ASSETSERIAL & >	CAssetSerialArray;
 /***
-	×Ê²úÊı×é
+	èµ„äº§æ•°ç»„
 */
 class STKLIB_API CAssetSerialContainer : public CAssetSerialArray
 {
@@ -246,7 +246,7 @@ public:
 //////////////////////////////////////////////////////////////////////
 // CTechStock
 /***
-	Ò»Ö»´ı²Ù×÷µÄ¹ÉÆ±£¬°üº¬¹ÉÆ±µÄĞÅÏ¢£¬KÏßÊı¾İ£¬³¤ÖÜÆÚKÏßÊı¾İ£¬ËùĞè¼¼ÊõÖ¸±ê£¬ËùĞè³¤ÖÜÆÚ¼¼ÊõÖ¸±ê
+	ä¸€åªå¾…æ“ä½œçš„è‚¡ç¥¨ï¼ŒåŒ…å«è‚¡ç¥¨çš„ä¿¡æ¯ï¼ŒKçº¿æ•°æ®ï¼Œé•¿å‘¨æœŸKçº¿æ•°æ®ï¼Œæ‰€éœ€æŠ€æœ¯æŒ‡æ ‡ï¼Œæ‰€éœ€é•¿å‘¨æœŸæŠ€æœ¯æŒ‡æ ‡
 */
 class STKLIB_API CTechStock
 {
@@ -264,11 +264,11 @@ public:
 	BOOL	GetClosePrice( CSPTime tmCur, double *pdPrice );
 	BOOL	GetCloseDiffPercent( CSPTime tmCur, double *pdDiffPercent );
 
-	CStockInfo		m_info;			// ¹ÉÆ±ĞÅÏ¢
-	CKData			m_kdata;		// ËùĞèKÏßÊı¾İ
-	CKData			m_kdataLong;	// ³¤ÖÜÆÚKÏßÊı¾İ
-	CSPPtrArray		m_techs;		// ËùĞè¼¼ÊõÖ¸±ê
-	CSPPtrArray		m_techsLong;	// ËùĞè³¤ÖÜÆÚ¼¼ÊõÖ¸±ê
+	CStockInfo		m_info;			// è‚¡ç¥¨ä¿¡æ¯
+	CKData			m_kdata;		// æ‰€éœ€Kçº¿æ•°æ®
+	CKData			m_kdataLong;	// é•¿å‘¨æœŸKçº¿æ•°æ®
+	CSPPtrArray		m_techs;		// æ‰€éœ€æŠ€æœ¯æŒ‡æ ‡
+	CSPPtrArray		m_techsLong;	// æ‰€éœ€é•¿å‘¨æœŸæŠ€æœ¯æŒ‡æ ‡
 
 protected:
 	BOOL	m_bAutoDelete;
@@ -277,7 +277,7 @@ protected:
 //template class __declspec(dllexport)	CSPArray< CTechStock, CTechStock & >;
 typedef	CSPArray< CTechStock, CTechStock & >	CTechStockArray;
 /***
-	CTechStockÊı×é
+	CTechStockæ•°ç»„
 */
 class STKLIB_API CTechStockContainer : public CTechStockArray
 {
@@ -322,7 +322,7 @@ typedef BOOL (CALLBACK* SIMULATION_CALLBACK)(DWORD dwType, DWORD dwValue, LPCTST
 #define	STRATEGY_BASEF_YIELD		10000.
 
 /***
-	²ßÂÔ
+	ç­–ç•¥
 */
 class STKLIB_API CStrategy
 {
@@ -341,7 +341,7 @@ public:
 	virtual	void	OnRealOpViewed( );
 
 protected:
-	// ´æÅÌÎÄ¼şÂ·¾¶ºÍÃû³Æ£¬²»Ğ´µ½²ßÂÔÎÄ¼şÖĞ
+	// å­˜ç›˜æ–‡ä»¶è·¯å¾„å’Œåç§°ï¼Œä¸å†™åˆ°ç­–ç•¥æ–‡ä»¶ä¸­
 	CSPString	m_strPathName;
 
 // Attributes
@@ -437,48 +437,48 @@ public:
 protected:
 	// Properties
 	DWORD			m_dwFileVersion;
-	CSPString		m_strName;		// ²ßÂÔÃû³Æ
-	CSPString		m_strDescript;	// ²ßÂÔËµÃ÷
+	CSPString		m_strName;		// ç­–ç•¥åç§°
+	CSPString		m_strDescript;	// ç­–ç•¥è¯´æ˜
 
 	// Stocks
-	CDomain			m_stocks;		// ²ßÂÔ±¸Ñ¡¹ÉÆ±
+	CDomain			m_stocks;		// ç­–ç•¥å¤‡é€‰è‚¡ç¥¨
 
 	// Rate
-	CRateParam		m_rate;			// ½»Ò×·ÑÓÃ
+	CRateParam		m_rate;			// äº¤æ˜“è´¹ç”¨
 	
 	// Tech parameters
-	CTechParameters	m_paramBuy;			// ÂòÈëÖ¸±ê¹æÔò
-	CTechParameters	m_paramSell;		// Âô³öÖ¸±ê¹æÔò
-	CTechParameters	m_paramLongTrend;	// ³¤ÆÚÖ¸±ê¹æÔò
-	CTechParameters	m_paramIndexTrend;	// Ö¸ÊıÖ¸±ê¹æÔò
-	CSPDWordArray	m_anTechsBuy;		// ÂòÈëÒÀ¾İµÄÖ¸±ê
-	CSPDWordArray	m_anTechsSell;		// Âô³öÒÀ¾İµÄÖ¸±ê
-	CSPDWordArray	m_anTechsLongTrend;	// ³¤ÖÜÆÚÇ÷ÊÆÒÀ¾İµÄÖ¸±ê
-	CSPDWordArray	m_anTechsIndexTrend;// Ö¸ÊıÇ÷ÊÆÒÀ¾İµÄÖ¸±ê
+	CTechParameters	m_paramBuy;			// ä¹°å…¥æŒ‡æ ‡è§„åˆ™
+	CTechParameters	m_paramSell;		// å–å‡ºæŒ‡æ ‡è§„åˆ™
+	CTechParameters	m_paramLongTrend;	// é•¿æœŸæŒ‡æ ‡è§„åˆ™
+	CTechParameters	m_paramIndexTrend;	// æŒ‡æ•°æŒ‡æ ‡è§„åˆ™
+	CSPDWordArray	m_anTechsBuy;		// ä¹°å…¥ä¾æ®çš„æŒ‡æ ‡
+	CSPDWordArray	m_anTechsSell;		// å–å‡ºä¾æ®çš„æŒ‡æ ‡
+	CSPDWordArray	m_anTechsLongTrend;	// é•¿å‘¨æœŸè¶‹åŠ¿ä¾æ®çš„æŒ‡æ ‡
+	CSPDWordArray	m_anTechsIndexTrend;// æŒ‡æ•°è¶‹åŠ¿ä¾æ®çš„æŒ‡æ ‡
 
 	// Operate Parameters
-	COpParam		m_opparam;		// ²Ù×÷¹æÔò
+	COpParam		m_opparam;		// æ“ä½œè§„åˆ™
 
 	// Simulation
-	int				m_SimuCurrentStatus;	// Not Same as Real, ÆğÊ¼£¬ÕıÔÚ½øĞĞ£¬ÔİÍ££¬Íê³É
-	CSPTime			m_SimuCurrentTime;		// Ä£Äâµ±Ç°Ê±¼ä
-	double			m_SimuCurrentCash;		// Ä£Äâµ±Ç°×Ê½ğ
-	CStockOwnContainer	m_SimuStockOwn;		// Ä£Äâµ±Ç°ÓµÓĞ¹ÉÆ±
-	COpRecordContainer	m_SimuOpRecord;		// Ä£Äâ¼ÇÂ¼
-	COpRecordContainer	m_SimuNextOp;		// Ä£ÄâÏÂÒ»²½²Ù×÷
-	CAssetSerialContainer	m_SimuAssetSerial;	// Ä£Äâ×Ê²úÖµĞòÁĞ
+	int				m_SimuCurrentStatus;	// Not Same as Real, èµ·å§‹ï¼Œæ­£åœ¨è¿›è¡Œï¼Œæš‚åœï¼Œå®Œæˆ
+	CSPTime			m_SimuCurrentTime;		// æ¨¡æ‹Ÿå½“å‰æ—¶é—´
+	double			m_SimuCurrentCash;		// æ¨¡æ‹Ÿå½“å‰èµ„é‡‘
+	CStockOwnContainer	m_SimuStockOwn;		// æ¨¡æ‹Ÿå½“å‰æ‹¥æœ‰è‚¡ç¥¨
+	COpRecordContainer	m_SimuOpRecord;		// æ¨¡æ‹Ÿè®°å½•
+	COpRecordContainer	m_SimuNextOp;		// æ¨¡æ‹Ÿä¸‹ä¸€æ­¥æ“ä½œ
+	CAssetSerialContainer	m_SimuAssetSerial;	// æ¨¡æ‹Ÿèµ„äº§å€¼åºåˆ—
 
 	// Real Operate
-	CSPTime			m_RealBeginTime;		//	Not Same as Simu£¬ÊµÕ½ÆğÊ¼Ê±¼ä
-	CSPTime			m_RealCurrentTime;		// ÊµÕ½µ±Ç°Ê±¼ä
-	double			m_RealCurrentCash;		// ÊµÕ½µ±Ç°×Ê½ğ
-	CStockOwnContainer	m_RealStockOwn;		// ÊµÕ½µ±Ç°ÓµÓĞ¹ÉÆ±
-	COpRecordContainer	m_RealOpRecord;		// ÊµÕ½²Ù×÷¼ÇÂ¼
-	COpRecordContainer	m_RealNextOp;		// ÊµÕ½ÏÂÒ»²½²Ù×÷
-	CAssetSerialContainer	m_RealAssetSerial;	// ÊµÕ½×Ê²úÖµĞòÁĞ
+	CSPTime			m_RealBeginTime;		//	Not Same as Simuï¼Œå®æˆ˜èµ·å§‹æ—¶é—´
+	CSPTime			m_RealCurrentTime;		// å®æˆ˜å½“å‰æ—¶é—´
+	double			m_RealCurrentCash;		// å®æˆ˜å½“å‰èµ„é‡‘
+	CStockOwnContainer	m_RealStockOwn;		// å®æˆ˜å½“å‰æ‹¥æœ‰è‚¡ç¥¨
+	COpRecordContainer	m_RealOpRecord;		// å®æˆ˜æ“ä½œè®°å½•
+	COpRecordContainer	m_RealNextOp;		// å®æˆ˜ä¸‹ä¸€æ­¥æ“ä½œ
+	CAssetSerialContainer	m_RealAssetSerial;	// å®æˆ˜èµ„äº§å€¼åºåˆ—
 
 	// Cache Data, Not Saved
-	CTechStockContainer	m_techstocks;		// ±¸Ñ¡¹ÉÆ±£¬°üº¬ĞÅÏ¢¡¢Êı¾İ¡¢¼¼ÊõÖ¸±êµÈ
+	CTechStockContainer	m_techstocks;		// å¤‡é€‰è‚¡ç¥¨ï¼ŒåŒ…å«ä¿¡æ¯ã€æ•°æ®ã€æŠ€æœ¯æŒ‡æ ‡ç­‰
 };
 
 #endif // __STKLIB_STRATEGY_H__

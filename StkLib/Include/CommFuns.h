@@ -11,7 +11,7 @@
 #define	__STKLIB_COMMFUNS_H__
 
 /***
-	¼ÆËãÆ½¾ùÊÕÒæÂÊºÍ¦ÂÖµµÄº¯Êı½Ó¿Ú¡£
+	è®¡ç®—å¹³å‡æ”¶ç›Šç‡å’ŒÎ²å€¼çš„å‡½æ•°æ¥å£ã€‚
 */
 BOOL CalculateYieldYear( CKData & kday, double * paverage, double * pstddev, long ldays, int nDayCurrent = -1 );
 BOOL CalculateYieldDay( CKData & kday, double * paverage, double * pstddev, long ldays, int nDayCurrent = -1 );
