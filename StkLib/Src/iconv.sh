@@ -1,4 +1,4 @@
-for i in `find ./ -type f -regextype posix-extended -regex ".*\.(h|cpp)"`
+for i in `find ./ -type f -regextype posix-extended -regex ".*\.(h|cpp|inl)"`
 do
 #file ${i} | awk -F ', ' '{print $i $2}'
 #continue
