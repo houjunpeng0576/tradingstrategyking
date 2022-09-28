@@ -839,7 +839,7 @@ BOOL CKData::GetDiff( double * pValue, DWORD dateCur, int nDays )
 	if( nDays > nIndex )
 		return FALSE;
 
-	// ¼ì²éÊÇ·ñÊÇÏàÁÚ³É½»ÈÕ
+	// æ£€æŸ¥æ˜¯å¦æ˜¯ç›¸é‚»æˆäº¤æ—¥
 	if( !IsAdjacentDays( nIndex, nDays ) )
 		return FALSE;
 
@@ -863,7 +863,7 @@ BOOL CKData::GetDiffPercent( double * pValue, DWORD dateCur, int nDays )
 	if( nDays > nIndex )
 		return FALSE;
 
-	// ¼ì²éÊÇ·ñÊÇÏàÁÚ³É½»ÈÕ
+	// æ£€æŸ¥æ˜¯å¦æ˜¯ç›¸é‚»æˆäº¤æ—¥
 	if( !IsAdjacentDays( nIndex, nDays ) )
 		return FALSE;
 
@@ -887,7 +887,7 @@ BOOL CKData::GetScope( double * pValue, DWORD dateCur, int nDays )
 	if( nDays > nIndex )
 		return FALSE;
 
-	// ¼ì²éÊÇ·ñÊÇÏàÁÚ³É½»ÈÕ
+	// æ£€æŸ¥æ˜¯å¦æ˜¯ç›¸é‚»æˆäº¤æ—¥
 	if( !IsAdjacentDays( nIndex, nDays ) )
 		return FALSE;
 
@@ -931,7 +931,7 @@ BOOL CKData::GetVolumeSum( double * pValue, DWORD dateCur, int nDays )
 	if( nDays > nIndex )
 		return FALSE;
 
-	// ¼ì²éÊÇ·ñÊÇÏàÁÚ³É½»ÈÕ
+	// æ£€æŸ¥æ˜¯å¦æ˜¯ç›¸é‚»æˆäº¤æ—¥
 	if( !IsAdjacentDays( nIndex, nDays ) )
 		return FALSE;
 
@@ -967,7 +967,7 @@ BOOL CKData::GetRatioVolume( double * pValue, DWORD dateCur, int nDays )
 	if( nDays > nIndex )
 		return FALSE;
 
-	// ¼ì²éÊÇ·ñÊÇÏàÁÚ³É½»ÈÕ
+	// æ£€æŸ¥æ˜¯å¦æ˜¯ç›¸é‚»æˆäº¤æ—¥
 	if( !IsAdjacentDays( nIndex, nDays ) )
 		return FALSE;
 
@@ -1006,7 +1006,7 @@ BOOL CKData::GetRS( double * pValue, DWORD dateCur, int nDays )
 	if( nDays > nIndex )
 		return FALSE;
 
-	// ¼ì²éÊÇ·ñÊÇÏàÁÚ³É½»ÈÕ
+	// æ£€æŸ¥æ˜¯å¦æ˜¯ç›¸é‚»æˆäº¤æ—¥
 	if( !IsAdjacentDays( nIndex, nDays ) )
 		return FALSE;
 

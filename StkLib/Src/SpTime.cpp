@@ -308,7 +308,7 @@ BOOL CSPTime::InTradeTime( time_t tm, int nInflateSeconds )
 {
 	CSPTime	t(tm);
 
-	// 周六周日
+	// 鍛ㄥ叚鍛ㄦ棩
 	if( 7 == t.GetDayOfWeek() )
 		return FALSE;
 	else if( 1 == t.GetDayOfWeek() )
@@ -460,7 +460,7 @@ struct tm* CSPTime::GetLocalTm(struct tm* ptm) const
 {
 	time_t	time_temp = m_time;
 	if( m_time > 0 )
-		time_temp = m_time+28800;	// 北京时间
+		time_temp = m_time+28800;	// 鍖椾含鏃堕棿
 
 	if (ptm != NULL)
 	{

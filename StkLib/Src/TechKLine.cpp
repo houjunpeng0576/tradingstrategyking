@@ -56,7 +56,7 @@ void CKLine::Clear( )
 }
 
 /***
-	µÃµ½KÏß¼Û¸ñµÄ´ÓnStartµ½nEndµÄ×îĞ¡ÖµºÍ×î´óÖµ
+	å¾—åˆ°Kçº¿ä»·æ ¼çš„ä»nStartåˆ°nEndçš„æœ€å°å€¼å’Œæœ€å¤§å€¼
 */
 BOOL CKLine::GetMinMaxInfo( int nStart, int nEnd, double *pdMin, double *pdMax )
 {
@@ -138,11 +138,11 @@ void CMA::Clear( )
 
 int CMA::GetSignal( int nIndex, UINT * pnCode )
 {
-	// ½ğ²æ»òÕßËÀ²æ
+	// é‡‘å‰æˆ–è€…æ­»å‰
 	int	nSignal	=	GetForkSignal( nIndex, m_adwMADays, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( ITS_ISBUY(nSignal) || ITS_ISSELL(nSignal) )
 		return nSignal;
-	// Ç÷ÊÆ
+	// è¶‹åŠ¿
 	return GetTrendIntensity( nIndex, m_adwMADays, m_itsLong, m_itsShort, pnCode );
 }
 
@@ -153,13 +153,13 @@ BOOL CMA::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	Á½ÖÖ£º
+	ä¸¤ç§ï¼š
 	1. MA
-	    MA = nÈÕÊÕÅÌ¼ÛµÄÆ½¾ùÖµ	
+	    MA = næ—¥æ”¶ç›˜ä»·çš„å¹³å‡å€¼	
 	2. EXPMA
 	    EXPMA(1) = CLOSE(1)
-		EXPMA(i) = (1-¦Á)EXPMA(i-1) + ¦ÁCLOSE(i)
-		ÆäÖĞ ¦Á = 2 / (n+1)
+		EXPMA(i) = (1-Î±)EXPMA(i-1) + Î±CLOSE(i)
+		å…¶ä¸­ Î± = 2 / (n+1)
 */
 BOOL CMA::Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast )
 {
@@ -276,12 +276,12 @@ int CBBI::GetSignal( int nIndex, UINT * pnCode )
 	double	dLastClose	=	m_pKData->ElementAt(nIndex-1).m_fClose;
 
 	if( dNowClose < dLiminalLow && dLastLow < dBBILast && dNowLow > dBBINow )
-	{	// µÍÎ»Ç÷ÊÆÏòÉÏ
+	{	// ä½ä½è¶‹åŠ¿å‘ä¸Š
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dNowClose > dLiminalHigh && dLastHigh > dBBILast && dNowHigh < dBBINow )
-	{	// ¸ßÎ»Ç÷ÊÆÏòÏÂ
+	{	// é«˜ä½è¶‹åŠ¿å‘ä¸‹
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -295,7 +295,7 @@ BOOL CBBI::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	BBI = 4 ¸ö ²»Í¬ÈÕÆÚµÄMA µÄÆ½¾ùÖµ
+	BBI = 4 ä¸ª ä¸åŒæ—¥æœŸçš„MA çš„å¹³å‡å€¼
 */
 BOOL CBBI::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -389,12 +389,12 @@ int CBOLL::GetSignal( int nIndex, UINT * pnCode )
 	double	dClose	=	m_pKData->ElementAt(nIndex).m_fClose;
 
 	if( dClose < dDown )
-	{	// µøÆÆÖ§³ÅÎ»
+	{	// è·Œç ´æ”¯æ’‘ä½
 		if( pnCode )	*pnCode	=	ITSC_SUPPORT;
 		return m_itsSupport;
 	}
 	if( dClose > dUp )
-	{	// ÕÇ¹ı×èÁ¦Î»
+	{	// æ¶¨è¿‡é˜»åŠ›ä½
 		if( pnCode )	*pnCode	=	ITSC_RESISTANCE;
 		return m_itsResistance;
 	}
@@ -408,8 +408,8 @@ BOOL CBOLL::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	²¼ÁÖ´øÊÇÒÔ¹É¼ÛÆ½¾ùÏßMAÎªÖĞĞÄÏß£¬ÉÏ·½×èÁ¦ÏßMA+¦ÁSnºÍÏÂ·½Ö§³ÅÏßMA-¦ÁSnÖ®¼äµÄ´ø×´ÇøÓò
-	ÆäÖĞ SnÎªnÈÕÊÕÅÌ¼ÛµÄ±ê×¼²î
+	å¸ƒæ—å¸¦æ˜¯ä»¥è‚¡ä»·å¹³å‡çº¿MAä¸ºä¸­å¿ƒçº¿ï¼Œä¸Šæ–¹é˜»åŠ›çº¿MA+Î±Snå’Œä¸‹æ–¹æ”¯æ’‘çº¿MA-Î±Snä¹‹é—´çš„å¸¦çŠ¶åŒºåŸŸ
+	å…¶ä¸­ Snä¸ºnæ—¥æ”¶ç›˜ä»·çš„æ ‡å‡†å·®
 */
 BOOL CBOLL::Calculate( double * pdMA, double * pdUp, double * pdDown, int nIndex, BOOL bUseLast )
 {
@@ -486,7 +486,7 @@ void CPV::Clear( )
 int CPV::GetSignal( int nIndex, UINT * pnCode )
 {
 	if( pnCode )	*pnCode	=	ITSC_NOTHING;
-	// ÎŞÂòÂôĞÅºÅ
+	// æ— ä¹°å–ä¿¡å·
 	return	ITS_NOTHING;
 }
 
@@ -497,7 +497,7 @@ BOOL CPV::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	PV¾ÍÊÇµ±ÈÕ³É½»¾ù¼Û£¬³É½»¶î³ıÒÔ³É½»Á¿
+	PVå°±æ˜¯å½“æ—¥æˆäº¤å‡ä»·ï¼Œæˆäº¤é¢é™¤ä»¥æˆäº¤é‡
 */
 BOOL CPV::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -514,7 +514,7 @@ BOOL CPV::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 	double	average	=	((double)(kd.m_fAmount)) / kd.m_fVolume;
 	while( average < kd.m_fLow && nCount < 10 )	{	average	*=	10;	nCount ++;	}
 	while( average > kd.m_fHigh && nCount < 20 )	{	average	/=	10;	nCount ++;	}
-	if( average < kd.m_fLow )		//	ËµÃ÷ÊÇÖ¸Êı
+	if( average < kd.m_fLow )		//	è¯´æ˜æ˜¯æŒ‡æ•°
 		average	=	(kd.m_fOpen+kd.m_fHigh+kd.m_fLow+kd.m_fClose)/4;
 
 	double	dPV	=	average;
@@ -659,12 +659,12 @@ int CSAR::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( m_bTurn && !m_bCurUp )
-	{	// ·´×ªÏòÉÏ
+	{	// åè½¬å‘ä¸Š
 		if( pnCode )	*pnCode	=	ITSC_LONG;
 		return m_itsBuy;
 	}
 	if( m_bTurn && m_bCurUp )
-	{	// ·´×ªÏòÏÂ
+	{	// åè½¬å‘ä¸‹
 		if( pnCode )	*pnCode	=	ITSC_SHORT;
 		return m_itsSell;
 	}
@@ -678,20 +678,20 @@ BOOL CSAR::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	¼ÆËãSARÖµ
-	ÏÈÑ¡¶¨Ê±¼ä£¬ÅĞ¶Ï¼Û¸ñÊÇÔÚÉÏÕÇ»¹ÊÇÔÚÏÂµø¡£
-	ÈôÊÇ¿´ÕÇ£¬Ôò½ø³¡µÚÒ»ÌìµÄSAR±ØĞëÊÇ½üÆÚÄÚµÄ×îµÍ¼Û£¬ÊÇ¿´µø Ôò½ø³¡µÚÒ»ÌìµÄSAR±ØĞëÊÇ½üÆÚÄÚµÄ×î¸ß¼Û¡£
-	±¾´¦ÎªÈ±Ê¡¶¨ÒåÎª¿´ÕÇ¡£
+	è®¡ç®—SARå€¼
+	å…ˆé€‰å®šæ—¶é—´ï¼Œåˆ¤æ–­ä»·æ ¼æ˜¯åœ¨ä¸Šæ¶¨è¿˜æ˜¯åœ¨ä¸‹è·Œã€‚
+	è‹¥æ˜¯çœ‹æ¶¨ï¼Œåˆ™è¿›åœºç¬¬ä¸€å¤©çš„SARå¿…é¡»æ˜¯è¿‘æœŸå†…çš„æœ€ä½ä»·ï¼Œæ˜¯çœ‹è·Œ åˆ™è¿›åœºç¬¬ä¸€å¤©çš„SARå¿…é¡»æ˜¯è¿‘æœŸå†…çš„æœ€é«˜ä»·ã€‚
+	æœ¬å¤„ä¸ºç¼ºçœå®šä¹‰ä¸ºçœ‹æ¶¨ã€‚
 
-	½ø³¡µÚ¶şÌìµÄSARÔòÎªµÚÒ»ÌìµÄ×î¸ß¼Û£¨¿´ÕÇÊ±£©»ò×îµÍ¼Û£¨¿´µøÊ±£©ÓëµÚÒ»ÌìµÄSARµÄ²î¾à³ËÉÏµ÷ÕûÏµÊı£¬
-	ÔÙ¼ÓÉÏµÚÒ»ÌìµÄSAR¾Í¿ÉÇóµÃ¡£
-	°´Öğ²½µİÍÆµÄ·½·¨£¬Ã¿ÈÕµÄSAR¿É¹éÄÉÈçÏÂ£º SAR£¨N£©= SAR£¨N-1£©+ AF * [ EP£¨N-1£©-SAR£¨N-1£©]
-	ÆäÖĞSAR£¨N£©ÎªµÚNÈÕµÄSARÖµ£¬AFÊÇµ÷ÕûÏµÊı£¬EPÎª¼«µã¼Û
+	è¿›åœºç¬¬äºŒå¤©çš„SARåˆ™ä¸ºç¬¬ä¸€å¤©çš„æœ€é«˜ä»·ï¼ˆçœ‹æ¶¨æ—¶ï¼‰æˆ–æœ€ä½ä»·ï¼ˆçœ‹è·Œæ—¶ï¼‰ä¸ç¬¬ä¸€å¤©çš„SARçš„å·®è·ä¹˜ä¸Šè°ƒæ•´ç³»æ•°ï¼Œ
+	å†åŠ ä¸Šç¬¬ä¸€å¤©çš„SARå°±å¯æ±‚å¾—ã€‚
+	æŒ‰é€æ­¥é€’æ¨çš„æ–¹æ³•ï¼Œæ¯æ—¥çš„SARå¯å½’çº³å¦‚ä¸‹ï¼š SARï¼ˆNï¼‰= SARï¼ˆN-1ï¼‰+ AF * [ EPï¼ˆN-1ï¼‰-SARï¼ˆN-1ï¼‰]
+	å…¶ä¸­SARï¼ˆNï¼‰ä¸ºç¬¬Næ—¥çš„SARå€¼ï¼ŒAFæ˜¯è°ƒæ•´ç³»æ•°ï¼ŒEPä¸ºæç‚¹ä»·
 	
-	µÚÒ»¸öµ÷ÕûÏµÊıAFÎª0.02£¬ÈôÃ¿¸ôÒ»ÌìµÄ×î¸ß¼Û±ÈÇ°Ò»ÌìµÄ×î¸ß¼Û»¹¸ß£¬ÔòAFµİÔö0.02£¬ÈôÎ´´´ĞÂ¸ß£¬
-ÔòAFÑØÓÃÇ°Ò»ÌìµÄÊıÖµ£¬µ«µ÷ÕûÏµÊı×î¸ß²»³¬¹ı0.2¡£
-	ÈôÊÇÂò½øÆÚ¼ä£¬¼ÆËã³öÄ³ÈÕµÄSAR±Èµ±ÈÕ»òÇ°Ò»ÈÕµÄ×îµÍ¼Û»¹¸ß£¬ÔòÓ¦ÒÔµ±ÈÕ»òÕßÇ°Ò»ÈÕµÄ×îµÍ¼ÛÎªÄ³ÈÕÖ®SAR£¬
-Âô³öÆÚ¼äÒ²¶ÔÓ¦·ş´ÓÀàËÆÔ­Ôò¡£
+	ç¬¬ä¸€ä¸ªè°ƒæ•´ç³»æ•°AFä¸º0.02ï¼Œè‹¥æ¯éš”ä¸€å¤©çš„æœ€é«˜ä»·æ¯”å‰ä¸€å¤©çš„æœ€é«˜ä»·è¿˜é«˜ï¼Œåˆ™AFé€’å¢0.02ï¼Œè‹¥æœªåˆ›æ–°é«˜ï¼Œ
+åˆ™AFæ²¿ç”¨å‰ä¸€å¤©çš„æ•°å€¼ï¼Œä½†è°ƒæ•´ç³»æ•°æœ€é«˜ä¸è¶…è¿‡0.2ã€‚
+	è‹¥æ˜¯ä¹°è¿›æœŸé—´ï¼Œè®¡ç®—å‡ºæŸæ—¥çš„SARæ¯”å½“æ—¥æˆ–å‰ä¸€æ—¥çš„æœ€ä½ä»·è¿˜é«˜ï¼Œåˆ™åº”ä»¥å½“æ—¥æˆ–è€…å‰ä¸€æ—¥çš„æœ€ä½ä»·ä¸ºæŸæ—¥ä¹‹SARï¼Œ
+å–å‡ºæœŸé—´ä¹Ÿå¯¹åº”æœä»ç±»ä¼¼åŸåˆ™ã€‚
 */
 BOOL CSAR::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -771,7 +771,7 @@ void CDJ::Clear( )
 }
 
 /***
-	KÏßµş¼ÓÍ¼£¬×¼±¸µş¼ÓKÏßµÄÊı¾İ
+	Kçº¿å åŠ å›¾ï¼Œå‡†å¤‡å åŠ Kçº¿çš„æ•°æ®
 */
 BOOL CDJ::PrepareStockData(CStDatabase * pDatabase, const char * szCodeOrg,
 						   int nCurKType, int nCurKFormat, int nCurMaindataType,
@@ -833,7 +833,7 @@ void CCW::Clear( )
 }
 
 /***
-	¸ù¾İ»»ÊÖÂÊm_dChangeHandºÍÖÕÖ¹ÈÕ£¬¼ÆËãÆğÊ¼ÈÕ
+	æ ¹æ®æ¢æ‰‹ç‡m_dChangeHandå’Œç»ˆæ­¢æ—¥ï¼Œè®¡ç®—èµ·å§‹æ—¥
 */
 BOOL CCW::GetRange( int & nStart, int & nEnd, CStockInfo & info )
 {
@@ -900,7 +900,7 @@ BOOL CCW::GetMinMaxInfo(int nStart, int nEnd, double dMinPrice, double dMaxPrice
 }
 
 /***
-	³ïÂë·Ö²¼Í¼£¬¼ÆËã¼Û¸ñÇø¼ä°üÀ¨dPriceµÄÈÕÏßµÄ³É½»Á¿
+	ç­¹ç åˆ†å¸ƒå›¾ï¼Œè®¡ç®—ä»·æ ¼åŒºé—´åŒ…æ‹¬dPriceçš„æ—¥çº¿çš„æˆäº¤é‡
 */
 BOOL CCW::CalculateCW( double *pdVolume, int nStart, int nEnd, double dPrice, double dStep )
 {
@@ -913,12 +913,12 @@ BOOL CCW::CalculateCW( double *pdVolume, int nStart, int nEnd, double dPrice, do
 		if( kd.m_fHigh-kd.m_fLow > 1e-4
 			&& kd.m_fLow < dPrice && kd.m_fHigh > dPrice )
 		{
-			// ¾ùÔÈ·Ö²¼ dVolAve
+			// å‡åŒ€åˆ†å¸ƒ dVolAve
 			double	dVolAve = kd.m_fVolume;
 			if( dStep < kd.m_fHigh-kd.m_fLow )
 				dVolAve	=	kd.m_fVolume * dStep / (kd.m_fHigh-kd.m_fLow);
 
-			// Èı½Ç·Ö²¼
+			// ä¸‰è§’åˆ†å¸ƒ
 			double	dFactor	=	min(dPrice-kd.m_fLow, kd.m_fHigh-dPrice);
 			dVolume	+=	dVolAve * dFactor * 4 / (kd.m_fHigh-kd.m_fLow);
 		}
@@ -930,7 +930,7 @@ BOOL CCW::CalculateCW( double *pdVolume, int nStart, int nEnd, double dPrice, do
 }
 
 /***
-	³ïÂë·Ö²¼Í¼¼ÆËã£¬¼ÆËã³ïÂë·Ö²¼
+	ç­¹ç åˆ†å¸ƒå›¾è®¡ç®—ï¼Œè®¡ç®—ç­¹ç åˆ†å¸ƒ
 */
 BOOL CCW::CalculateCW(	int nStart, int nEnd, CStockInfo & info, double dStep,
 						CSPDWordArray & adwPrice, CSPDWordArray & adwVolume,
@@ -988,7 +988,7 @@ BOOL CCW::CalculateCW(	int nStart, int nEnd, CStockInfo & info, double dStep,
 }
 
 /***
-	³ïÂë·Ö²¼Í¼¼ÆËã£¬¼ÆËã×î½ünDaysÌìÄÚµÄ³ïÂë·Ö²¼
+	ç­¹ç åˆ†å¸ƒå›¾è®¡ç®—ï¼Œè®¡ç®—æœ€è¿‘nDayså¤©å†…çš„ç­¹ç åˆ†å¸ƒ
 */
 BOOL CCW::CalculateRecentCW(int nEnd, int nDays, CStockInfo & info, double dStep,
 						CSPDWordArray & adwPrice, CSPDWordArray & adwVolume,
@@ -1007,7 +1007,7 @@ BOOL CCW::CalculateRecentCW(int nEnd, int nDays, CStockInfo & info, double dStep
 }
 
 /***
-	³ïÂë·Ö²¼Í¼¼ÆËã£¬¼ÆËãnDaysÌìÇ°ÄÚµÄ³ïÂë·Ö²¼
+	ç­¹ç åˆ†å¸ƒå›¾è®¡ç®—ï¼Œè®¡ç®—nDayså¤©å‰å†…çš„ç­¹ç åˆ†å¸ƒ
 */
 BOOL CCW::CalculatePastCW(int nEnd, int nDays, CStockInfo & info, double dStep,
 						CSPDWordArray & adwPrice, CSPDWordArray & adwVolume,
@@ -1049,7 +1049,7 @@ BOOL CCW::CalculatePastCW(int nEnd, int nDays, CStockInfo & info, double dStep,
 }
 
 /***
-	³ïÂë·Ö²¼Í¼Í³¼Æ£¬»ñÀû±ÈÀıÍ³¼Æ
+	ç­¹ç åˆ†å¸ƒå›¾ç»Ÿè®¡ï¼Œè·åˆ©æ¯”ä¾‹ç»Ÿè®¡
 */
 BOOL CCW::StatGainPercent( double *pdGainPercent, CSPDWordArray &adwPrice, CSPDWordArray &adwVolume, double dPriceSel )
 {
@@ -1071,7 +1071,7 @@ BOOL CCW::StatGainPercent( double *pdGainPercent, CSPDWordArray &adwPrice, CSPDW
 }
 
 /***
-	³ïÂë·Ö²¼Í¼Í³¼Æ£¬Æ½¾ù³É±¾Í³¼Æ
+	ç­¹ç åˆ†å¸ƒå›¾ç»Ÿè®¡ï¼Œå¹³å‡æˆæœ¬ç»Ÿè®¡
 */
 BOOL CCW::StatCostAverage( double *pdCostAve, CSPDWordArray &adwPrice, CSPDWordArray &adwVolume )
 {
@@ -1092,7 +1092,7 @@ BOOL CCW::StatCostAverage( double *pdCostAve, CSPDWordArray &adwPrice, CSPDWordA
 }
 	
 /***
-	³ïÂë·Ö²¼Í¼Í³¼Æ£¬¼¯ÖĞ¶ÈÍ³¼Æ
+	ç­¹ç åˆ†å¸ƒå›¾ç»Ÿè®¡ï¼Œé›†ä¸­åº¦ç»Ÿè®¡
 */
 BOOL CCW::StatMass( double *pdLower, double *pdUpper, double *pdMassPrice, CSPDWordArray &adwPrice, CSPDWordArray &adwVolume, double dMassVol )
 {

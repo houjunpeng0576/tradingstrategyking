@@ -624,8 +624,8 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 
 		float	w	=	info.m_fShare_count_total;
 
-		/* Æ½¾ùÖµ *********************************************************************/
-		// ¡ï¼¼ÊõÊı¾İ
+		/* å¹³å‡å€¼ *********************************************************************/
+		// â˜…æŠ€æœ¯æ•°æ®
 		int	m = 0, n = 0;
 		if( info.m_fLast > 1e-4 )
 		{
@@ -704,7 +704,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 			}
 		}
 
-		// ¡ï³¥Õ®ÄÜÁ¦
+		// â˜…å¿å€ºèƒ½åŠ›
 		m++;	n++;
 		if( fabs(info.m_fRatio_liquidity) > 1e-4 )
 		{
@@ -724,7 +724,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 			wave.m_fVelocity_receivables=	( wave.m_fVelocity_receivables * wdc[n] + info.m_fVelocity_receivables * w )/(wdc[n]+w);	wdc[n]	+=	w;
 		}
 
-		// ¡ï¾­ÓªÄÜÁ¦
+		// â˜…ç»è¥èƒ½åŠ›
 		m++;	n++;
 		if( fabs(info.m_fVelocity_merchandise) > 1e-4 )
 		{
@@ -743,7 +743,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 			wave.m_fCash_ps				=	( wave.m_fCash_ps * wdc[n] + factor * info.m_fCash_ps * w )/(wdc[n]+w);		wdc[n]	+=	w;
 		}
 
-		// ¡ïÓ¯ÀûÄÜÁ¦
+		// â˜…ç›ˆåˆ©èƒ½åŠ›
 		m++;	n++;
 		if( fabs(info.m_fProfit_margin) > 1e-4 )
 		{
@@ -757,7 +757,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 			wave.m_fNetasset_yield	=	( wave.m_fNetasset_yield * wdc[n] + factor * info.m_fNetasset_yield * w )/(wdc[n]+w);	wdc[n]	+=	w;
 		}
 
-		// ¡ï×Ê±¾½á¹¹
+		// â˜…èµ„æœ¬ç»“æ„
 		m++;	n++;
 		if( info.m_fShare_count_total > 1e-4 )
 		{
@@ -818,7 +818,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 			wave.m_fRatio_debt			=	( wave.m_fRatio_debt * wdc[n] + info.m_fRatio_debt * w )/(wdc[n]+w);	wdc[n]	+=	w;
 		}
 
-		// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
+		// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
 		m++;	n++;
 		if( fabs(info.m_fNetasset_ps) > 1e-4 )
 		{
@@ -859,7 +859,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 			ave.m_fTotal_profit	=	( ave.m_fTotal_profit * dc[m] + factor*info.m_fTotal_profit )/(dc[m]+1);dc[m]	+=	1;
 		}
 
-		// ¡ïÔö³¤ÂÊ
+		// â˜…å¢é•¿ç‡
 		m++;	n++;
 		ave.m_fProfit_inc	=	( ave.m_fProfit_inc * dc[m] + info.m_fProfit_inc )/(dc[m]+1);			dc[m]	+=	1;
 		wave.m_fProfit_inc	=	( wave.m_fProfit_inc * wdc[n] + info.m_fProfit_inc * w )/(wdc[n]+w);	wdc[n]	+=	w;
@@ -872,7 +872,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 		ave.m_fAsset_inc	=	( ave.m_fAsset_inc * dc[m] + info.m_fAsset_inc )/(dc[m]+1);			dc[m]	+=	1;
 		wave.m_fAsset_inc	=	( wave.m_fAsset_inc * wdc[n] + info.m_fAsset_inc * w )/(wdc[n]+w);	wdc[n]	+=	w;
 
-		// ¡ï¼¼ÊõÊı¾İÍ³¼ÆÖµ
+		// â˜…æŠ€æœ¯æ•°æ®ç»Ÿè®¡å€¼
 		m++;	n++;
 		if( fabs(STKLIB_DATA_INVALID - info.m_fYield_average) > 1e-4 )
 		{
@@ -892,7 +892,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 			wave.m_fBeite	=	( wave.m_fBeite * wdc[n] + info.m_fBeite * w )/(wdc[n]+w);	wdc[n]	+=	w;
 		}
 
-		// KÏßÊı¾İ
+		// Kçº¿æ•°æ®
 		m++;	n++;
 		if( 0 == nCount )
 		{
@@ -902,7 +902,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 		for( int k=info.m_kdata.GetSize()-1; k>=0; k-- )
 		{
 			KDATA	&	kdInfo	=	info.m_kdata.ElementAt(k);
-			// Æ½¾ùÖµ
+			// å¹³å‡å€¼
 			int	nIndex = k;
 			if( nIndex >= m_infoAverage.m_kdata.GetSize() || m_infoAverage.m_kdata.ElementAt(nIndex).m_date != kdInfo.m_date )
 				nIndex	=	m_infoAverage.m_kdata.GetIndexByDate(kdInfo.m_date);
@@ -923,7 +923,7 @@ BOOL CStockContainer::SetAverage( PROGRESS_CALLBACK fnCallback, void *cookie, in
 			kdAve.m_fVolume	=	(kdAve.m_fVolume * dc[m] + kdInfo.m_fVolume)/(dc[m]+1);
 			kdAve.m_fAmount	=	(kdAve.m_fAmount * dc[m] + kdInfo.m_fAmount)/(dc[m]+1);
 
-			// ¼ÓÈ¨Æ½¾ùÖµ
+			// åŠ æƒå¹³å‡å€¼
 			nIndex = k;
 			if( nIndex >= m_infoWeightAverage.m_kdata.GetSize() || m_infoWeightAverage.m_kdata.ElementAt(nIndex).m_date != kdInfo.m_date )
 				nIndex	=	m_infoWeightAverage.m_kdata.GetIndexByDate(kdInfo.m_date);
@@ -1072,11 +1072,11 @@ BOOL CStockContainer::GetMultiSortIDArray( CSPDWordArray & adwSortID, LONG lStoc
 		{
 			CStockInfo & info	=	ElementAt(i);
 
-			// ¹ÉÆ±ÀàĞÍ
+			// è‚¡ç¥¨ç±»å‹
 			if( info.GetType() != lStockType )
 				continue;
 
-			// Èç¹û¼Ó¹ı£¬Ôò¼ÌĞøÑ°ÕÒÏÂÒ»¸ö
+			// å¦‚æœåŠ è¿‡ï¼Œåˆ™ç»§ç»­å¯»æ‰¾ä¸‹ä¸€ä¸ª
 			int k;
 			for( k=0; k<adwSortID.GetSize(); k++ )
 			{
@@ -1086,7 +1086,7 @@ BOOL CStockContainer::GetMultiSortIDArray( CSPDWordArray & adwSortID, LONG lStoc
 			if( k != adwSortID.GetSize() )
 				continue;
 
-			// ÅĞ¶Ï´óĞ¡
+			// åˆ¤æ–­å¤§å°
 			double	dValue	=	0;
 			if( AfxGetVariantValue( nSLH, info, &dValue, NULL ) )
 			{
@@ -1174,7 +1174,7 @@ void CStockContainer::SetVariantSaveValue( double Value, UINT nVariantID, CStock
 			m_aptrSaveValueArray.SetAt( nIndex, pArray );
 		}
 		
-		// Èç¹ûÒÑ¾­´æÔÚ£¬¸²¸ÇÖ®
+		// å¦‚æœå·²ç»å­˜åœ¨ï¼Œè¦†ç›–ä¹‹
 		for( int j=0; j<pArray->GetSize(); j++ )
 		{
 			VARIANT_SAVEVALUE * pSave = (VARIANT_SAVEVALUE *) pArray->GetAt(j);
@@ -1186,7 +1186,7 @@ void CStockContainer::SetVariantSaveValue( double Value, UINT nVariantID, CStock
 			}
 		}
 		
-		// ¼ÓÈëĞÂµÄ
+		// åŠ å…¥æ–°çš„
 		VARIANT_SAVEVALUE * pSaveValue = new VARIANT_SAVEVALUE;
 		pSaveValue->nVariantID	=	nVariantID;
 		pSaveValue->Value		=	Value;
@@ -1601,13 +1601,13 @@ BOOL CDomainContainer::Load( LPCTSTR lpszFileName )
 
 			if( rString.GetLength() > 0 )
 			{
-				if( domain.m_strName.IsEmpty() )	// ĞÂ°æ¿éÃû³Æ
+				if( domain.m_strName.IsEmpty() )	// æ–°ç‰ˆå—åç§°
 					domain.m_strName	=	rString;
 				else
 					domain.AddStock( rString );
 			}
 			else
-			{	// °æ¿é½áÊø
+			{	// ç‰ˆå—ç»“æŸ
 				if( !domain.m_strName.IsEmpty() )
 					AddDomain( domain );
 				domain.m_strName.Empty();

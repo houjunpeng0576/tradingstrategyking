@@ -267,67 +267,67 @@ void CStockInfo::ResolveTypeAndMarket( )
 	DWORD	dwMarket = CStock::marketUnknown;
 	if( strlen(m_szCode) > 0 )
 	{
-		if( strcmp(m_szCode,"000001") >= 0 && strcmp(m_szCode,"000999") <= 0 )		// ÉîÛÚA¹É
+		if( strcmp(m_szCode,"000001") >= 0 && strcmp(m_szCode,"000999") <= 0 )		// æ·±åœ³Aè‚¡
 		{	type = CStock::typeszA;			dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"002001") >= 0 && strcmp(m_szCode,"002999") <= 0 )	// ÉîÛÚÖÐÐ¡ÆóÒµ
+		else if( strcmp(m_szCode,"002001") >= 0 && strcmp(m_szCode,"002999") <= 0 )	// æ·±åœ³ä¸­å°ä¼ä¸š
 		{	type = CStock::typeszMsmall;			dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"200001") >= 0 && strcmp(m_szCode,"200999") <= 0 )	// ÉîÛÚB¹É
+		else if( strcmp(m_szCode,"200001") >= 0 && strcmp(m_szCode,"200999") <= 0 )	// æ·±åœ³Bè‚¡
 		{	type = CStock::typeszB;			dwMarket = CStock::marketSZSE;	}
-		else if( strncmp(m_szCode,"600",3) == 0 )	// ÉÏº£A¹É
+		else if( strncmp(m_szCode,"600",3) == 0 )	// ä¸Šæµ·Aè‚¡
 		{	type = CStock::typeshA;			dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"500",3) == 0 )	// ÉÏº£»ù½ð
+		else if( strncmp(m_szCode,"500",3) == 0 )	// ä¸Šæµ·åŸºé‡‘
 		{	type = CStock::typeshA;			dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"900",3) == 0 )	// ÉÏº£B¹É
+		else if( strncmp(m_szCode,"900",3) == 0 )	// ä¸Šæµ·Bè‚¡
 		{	type = CStock::typeshB;			dwMarket = CStock::marketSHSE;	}
 
-		else if( strcmp(m_szCode,"001001") >= 0 && strcmp(m_szCode,"001199") <= 0 )	// ÉîÛÚÆóÒµÕ®È¯
+		else if( strcmp(m_szCode,"001001") >= 0 && strcmp(m_szCode,"001199") <= 0 )	// æ·±åœ³ä¼ä¸šå€ºåˆ¸
 		{	type = CStock::typeszBond;		dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"001200") >= 0 && strcmp(m_szCode,"001899") <= 0 )	// ÉîÛÚ¹úÕ®»Ø¹º
+		else if( strcmp(m_szCode,"001200") >= 0 && strcmp(m_szCode,"001899") <= 0 )	// æ·±åœ³å›½å€ºå›žè´­
 		{	type = CStock::typeszBond;		dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"001900") >= 0 && strcmp(m_szCode,"001999") <= 0 )	// ÉîÛÚ¹úÕ®ÏÖ»õ
+		else if( strcmp(m_szCode,"001900") >= 0 && strcmp(m_szCode,"001999") <= 0 )	// æ·±åœ³å›½å€ºçŽ°è´§
 		{	type = CStock::typeszBond;		dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"030001") >= 0 && strcmp(m_szCode,"038999") <= 0 )	// ÉîÛÚA¹ÉÈ¨Ö¤
+		else if( strcmp(m_szCode,"030001") >= 0 && strcmp(m_szCode,"038999") <= 0 )	// æ·±åœ³Aè‚¡æƒè¯
 		{	type = CStock::typeszRight;		dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"003001") >= 0 && strcmp(m_szCode,"003999") <= 0 )	// ÉîÛÚ×ªÅäÈÏ¹º
+		else if( strcmp(m_szCode,"003001") >= 0 && strcmp(m_szCode,"003999") <= 0 )	// æ·±åœ³è½¬é…è®¤è´­
 		{	type = CStock::typeszAdmeasure;	dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"009001") >= 0 && strcmp(m_szCode,"009999") <= 0 )	// ÉîÛÚÐÂ¹ÉÅäÊÛ
+		else if( strcmp(m_szCode,"009001") >= 0 && strcmp(m_szCode,"009999") <= 0 )	// æ·±åœ³æ–°è‚¡é…å”®
 		{	type = CStock::typeszAdmeasure;	dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"005001") >= 0 && strcmp(m_szCode,"005999") <= 0 )	// ÉîÛÚ¿É×ª»»Õ®È¯
+		else if( strcmp(m_szCode,"005001") >= 0 && strcmp(m_szCode,"005999") <= 0 )	// æ·±åœ³å¯è½¬æ¢å€ºåˆ¸
 		{	type = CStock::typeszBond;		dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"006001") >= 0 && strcmp(m_szCode,"006999") <= 0 )	// ÉîÛÚ¹úÕ®ÆÚ»õ
+		else if( strcmp(m_szCode,"006001") >= 0 && strcmp(m_szCode,"006999") <= 0 )	// æ·±åœ³å›½å€ºæœŸè´§
 		{	type = CStock::typeszBond;		dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"004601") >= 0 && strcmp(m_szCode,"004699") <= 0 )	// ÉîÛÚÖ¤È¯Í¶×Ê»ù½ð
+		else if( strcmp(m_szCode,"004601") >= 0 && strcmp(m_szCode,"004699") <= 0 )	// æ·±åœ³è¯åˆ¸æŠ•èµ„åŸºé‡‘
 		{	type = CStock::typeszA;			dwMarket = CStock::marketSZSE;	}
-		else if( strcmp(m_szCode,"008001") >= 0 && strcmp(m_szCode,"008999") <= 0 )	// ÉîÛÚÅä¹ÉÈÏ¹º
+		else if( strcmp(m_szCode,"008001") >= 0 && strcmp(m_szCode,"008999") <= 0 )	// æ·±åœ³é…è‚¡è®¤è´­
 		{	type = CStock::typeszAdmeasure;	dwMarket = CStock::marketSZSE;	}
 
-		else if( strncmp(m_szCode,"001",3) == 0 )	// ÉÏº£¹úÕ®ÏÖ»õ
+		else if( strncmp(m_szCode,"001",3) == 0 )	// ä¸Šæµ·å›½å€ºçŽ°è´§
 		{	type = CStock::typeshBond;		dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"110",3) == 0 || strncmp(m_szCode,"120",3) == 0 )	// ÉÏº£ÆóÒµÕ®È¯
+		else if( strncmp(m_szCode,"110",3) == 0 || strncmp(m_szCode,"120",3) == 0 )	// ä¸Šæµ·ä¼ä¸šå€ºåˆ¸
 		{	type = CStock::typeshBond;		dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"310",3) == 0 )	// ÉÏº£¹úÕ®ÆÚ»õ
+		else if( strncmp(m_szCode,"310",3) == 0 )	// ä¸Šæµ·å›½å€ºæœŸè´§
 		{	type = CStock::typeshBond;		dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"580",3) == 0 )	// ÉÏº£A¹ÉÈ¨Ö¤
+		else if( strncmp(m_szCode,"580",3) == 0 )	// ä¸Šæµ·Aè‚¡æƒè¯
 		{	type = CStock::typeshRight;		dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"710",3) == 0 )	// ÉÏº£×ªÅä¹É
+		else if( strncmp(m_szCode,"710",3) == 0 )	// ä¸Šæµ·è½¬é…è‚¡
 		{	type = CStock::typeshAdmeasure;	dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"711",3) == 0 )	// ÉÏº£×ªÅä¹ÉÔÙ×ªÅä¹É
+		else if( strncmp(m_szCode,"711",3) == 0 )	// ä¸Šæµ·è½¬é…è‚¡å†è½¬é…è‚¡
 		{	type = CStock::typeshAdmeasure;	dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"730",3) == 0 )	// ÉÏº£ÐÂ¹ÉÉê¹º
+		else if( strncmp(m_szCode,"730",3) == 0 )	// ä¸Šæµ·æ–°è‚¡ç”³è´­
 		{	type = CStock::typeshAdmeasure;	dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"737",3) == 0 )	// ÉÏº£ÐÂ¹ÉÅäÊÛ
+		else if( strncmp(m_szCode,"737",3) == 0 )	// ä¸Šæµ·æ–°è‚¡é…å”®
 		{	type = CStock::typeshAdmeasure;	dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"201",3) == 0 )	// ÉÏº£¹úÕ®»Ø¹º	
+		else if( strncmp(m_szCode,"201",3) == 0 )	// ä¸Šæµ·å›½å€ºå›žè´­	
 		{	type = CStock::typeshBond;		dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"129",3) == 0 || strncmp(m_szCode,"100",3) == 0 )	// ÉÏº£¿É×ª»»Õ®È¯
+		else if( strncmp(m_szCode,"129",3) == 0 || strncmp(m_szCode,"100",3) == 0 )	// ä¸Šæµ·å¯è½¬æ¢å€ºåˆ¸
 		{	type = CStock::typeshBond;		dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"700",3) == 0 )	// ÉÏº£Åä¹É
+		else if( strncmp(m_szCode,"700",3) == 0 )	// ä¸Šæµ·é…è‚¡
 		{	type = CStock::typeshAdmeasure;	dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"701",3) == 0 )	// ÉÏº£×ªÅä¹ÉÔÙÅä¹É
+		else if( strncmp(m_szCode,"701",3) == 0 )	// ä¸Šæµ·è½¬é…è‚¡å†é…è‚¡
 		{	type = CStock::typeshAdmeasure;	dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"720",3) == 0 )	// ÉÏº£ºìÀû
+		else if( strncmp(m_szCode,"720",3) == 0 )	// ä¸Šæµ·çº¢åˆ©
 		{	type = CStock::typeshBonus;		dwMarket = CStock::marketSHSE;	}
-		else if( strncmp(m_szCode,"735",3) == 0 )	// ÉÏº£ÐÂ»ù½ðÉê¹º
+		else if( strncmp(m_szCode,"735",3) == 0 )	// ä¸Šæµ·æ–°åŸºé‡‘ç”³è´­
 		{	type = CStock::typeshAdmeasure;	dwMarket = CStock::marketSHSE;	}
 	}
 
@@ -627,11 +627,11 @@ BOOL CStockInfo::StatBaseIndex( DWORD dwDate )
 	m_fIncome_inc			=	block.m_fIncome_inc;
 	m_fAsset_inc			=	block.m_fAsset_inc;
 
-	/* ÒÔÏÂÍ³¼ÆÖµÓÀÔ¶Ö»È¡×î½üÒ»ÆÚÊýÖµ
-	//	¡ï¼¼ÊõÊý¾ÝÍ³¼ÆÖµ
-	LONG		m_fYield_average;		// Æ½¾ùÊÕÒæÂÊ% 0.001
-	LONG		m_fYield_stddev;		// ÊÕÒæ±ê×¼²î% 0.001
-	LONG		m_fBeite;				// ¦ÂÖµ 0.001
+	/* ä»¥ä¸‹ç»Ÿè®¡å€¼æ°¸è¿œåªå–æœ€è¿‘ä¸€æœŸæ•°å€¼
+	//	â˜…æŠ€æœ¯æ•°æ®ç»Ÿè®¡å€¼
+	LONG		m_fYield_average;		// å¹³å‡æ”¶ç›ŠçŽ‡% 0.001
+	LONG		m_fYield_stddev;		// æ”¶ç›Šæ ‡å‡†å·®% 0.001
+	LONG		m_fBeite;				// Î²å€¼ 0.001
 	*/
 	BASEDATA	& blkLatest	=	m_basedata.ElementAt(m_basedata.GetSize()-1);
 	m_fYield_average		=	blkLatest.m_fYield_average;
@@ -734,7 +734,7 @@ BOOL CStockInfo::GetAverage( double *pValue )
 		double	average	=	((double)(m_fAmount)) / m_fVolume;
 		while( average < m_fLow && nCount < 10 )	{	average	*=	10;	nCount ++;	}
 		while( average > m_fHigh && nCount < 20 )	{	average	/=	10;	nCount ++; }
-		if( average < m_fLow )		//	ËµÃ÷ÊÇÖ¸Êý
+		if( average < m_fLow )		//	è¯´æ˜Žæ˜¯æŒ‡æ•°
 			average	=	(m_fOpen+m_fHigh+m_fLow+m_fClose)/4;
 		if( pValue )
 			*pValue	=	average;
@@ -794,7 +794,7 @@ BOOL CStockInfo::GetPE( double * pValue )
 	{
 		double	close_price_rmb	=	m_fClose;
 		if( CStock::typeshB == m_type )
-			close_price_rmb	=	/*m_fErate_dollar * */m_fClose;	// ±¸×¢,´ÓÍ¨´ïÐÅµÃµ½µÄ»ù±¾×ÊÁÏÊý¾ÝÊÇ¾­¹ý»ãÂÊ»»ËãµÄ.
+			close_price_rmb	=	/*m_fErate_dollar * */m_fClose;	// å¤‡æ³¨,ä»Žé€šè¾¾ä¿¡å¾—åˆ°çš„åŸºæœ¬èµ„æ–™æ•°æ®æ˜¯ç»è¿‡æ±‡çŽ‡æ¢ç®—çš„.
 		else if( CStock::typeszB == m_type )
 			close_price_rmb	=	/*m_fErate_hkdollar * */m_fClose;
 		if( pValue )
@@ -810,7 +810,7 @@ BOOL CStockInfo::GetPNetAsset( double *pValue )
 	{
 		double	close_price_rmb	=	m_fClose;
 		if( CStock::typeshB == m_type )
-			close_price_rmb	=	/*m_fErate_dollar * */m_fClose;	// ±¸×¢,´ÓÍ¨´ïÐÅµÃµ½µÄ»ù±¾×ÊÁÏÊý¾ÝÊÇ¾­¹ý»ãÂÊ»»ËãµÄ.
+			close_price_rmb	=	/*m_fErate_dollar * */m_fClose;	// å¤‡æ³¨,ä»Žé€šè¾¾ä¿¡å¾—åˆ°çš„åŸºæœ¬èµ„æ–™æ•°æ®æ˜¯ç»è¿‡æ±‡çŽ‡æ¢ç®—çš„.
 		else if( CStock::typeszB == m_type )
 			close_price_rmb	=	/*m_fErate_hkdollar * */m_fClose;
 
@@ -829,7 +829,7 @@ BOOL CStockInfo::GetPMainIncome( double * pValue )
 	{
 		double	close_price_rmb	=	m_fClose;
 		if( CStock::typeshB == m_type )
-			close_price_rmb	=	/*m_fErate_dollar * */m_fClose;	// ±¸×¢,´ÓÍ¨´ïÐÅµÃµ½µÄ»ù±¾×ÊÁÏÊý¾ÝÊÇ¾­¹ý»ãÂÊ»»ËãµÄ.
+			close_price_rmb	=	/*m_fErate_dollar * */m_fClose;	// å¤‡æ³¨,ä»Žé€šè¾¾ä¿¡å¾—åˆ°çš„åŸºæœ¬èµ„æ–™æ•°æ®æ˜¯ç»è¿‡æ±‡çŽ‡æ¢ç®—çš„.
 		else if( CStock::typeszB == m_type )
 			close_price_rmb	=	/*m_fErate_hkdollar * */m_fClose;
 
@@ -852,7 +852,7 @@ BOOL CStockInfo::GetRatioPCash( double * pValue )
 	{
 		double	close_price_rmb	=	m_fClose;
 		if( CStock::typeshB == m_type )
-			close_price_rmb	=	/*m_fErate_dollar * */m_fClose;	// ±¸×¢,´ÓÍ¨´ïÐÅµÃµ½µÄ»ù±¾×ÊÁÏÊý¾ÝÊÇ¾­¹ý»ãÂÊ»»ËãµÄ.
+			close_price_rmb	=	/*m_fErate_dollar * */m_fClose;	// å¤‡æ³¨,ä»Žé€šè¾¾ä¿¡å¾—åˆ°çš„åŸºæœ¬èµ„æ–™æ•°æ®æ˜¯ç»è¿‡æ±‡çŽ‡æ¢ç®—çš„.
 		else if( CStock::typeszB == m_type )
 			close_price_rmb	=	/*m_fErate_hkdollar * */m_fClose;
 
@@ -1014,7 +1014,7 @@ BOOL CStockInfo::GetXiapu( double * pValue )
 	{
 		if( pValue )
 			*pValue	=	100. * (m_fYield_average-3) / m_fYield_stddev;
-		//                                       ^^^^ ÊÐ³¡ÎÞ·çÏÕÀûÂÊ3%
+		//                                       ^^^^ å¸‚åœºæ— é£Žé™©åˆ©çŽ‡3%
 		return TRUE;
 	}
 	return FALSE;
@@ -1517,31 +1517,31 @@ void CStock::Clear( )
 	SetKDataTypes( );
 }
 
-// Í¶×Ê¼ÒÍòÄÜÒýÇæÖ¤È¯ÊÐ³¡
+// æŠ•èµ„å®¶ä¸‡èƒ½å¼•æ“Žè¯åˆ¸å¸‚åœº
 /*
-#define  SH_MARKET_EX   'HS'  // ÉÏº£Ö¤È¯
-#define  SZ_MARKET_EX   'ZS'  // ÉîÛÚÖ¤È¯
-#define  CZ_MARKET_EX   'ZC'  // Ö£ÖÝÉÌÆ·
-#define  DL_MARKET_EX   'LD'  // ´óÁ¬ÉÌÆ·
-#define  SF_MARKET_EX   'FS'  // ÉÏº£ÉÌÆ·
-#define  SM_MARKET_EX   'MS'  // ÉÏº£½ðÊô
-#define  CE_MARKET_EX   'EC'  // ÑÇÖÞÖ¸Êý
-#define  CB_MARKET_EX   'BC'  // £Ã£Â£Ï£Ô
-#define  CC_MARKET_EX   'CC'  // ÈíÉÌÆ·
-#define  MC_MARKET_EX   'CM'  // £Ã £Í £Ø
-#define  IM_MARKET_EX   'MI'  // Íâ»ãÆÚ»õ
-#define  LM_MARKET_EX   'ML'  // £Ì £Í £Å
-#define  NY_MARKET_EX   'YN'  // £Î£Ù£Ó£Å
-#define  AI_MARKET_EX   'IA'  // ÑÇÖÞÆÚÖ¸
-#define  WH_MARKET_EX   'HW'  // Íâ»ã½»Ò×
-#define  XH_MARKET_EX   'HX'  // Å·ÃÀÖ¸Êý
-#define  CM_MARKET_EX   'MC'  // £Ã £Í £Å
-#define  NF_MARKET_EX   'FN'  // Å·ÃÀÆÚÖ¸
-#define  NM_MARKET_EX   'MN'  // Ê¯ÓÍ²úÆ·
-#define  LC_MARKET_EX   'CL'  // °ÍÀèÓÍ×Ñ
-#define  LI_MARKET_EX   'IL'  // ÂíÀ´Î÷ÑÇ
-#define  SI_MARKET_EX   'IS'  // ÎÂÄá²®¸ñ
-#define  HS_MARKET_EX   'SH'  // £È £Ó £É
-#define  HK_MARKET_EX   'HK'  // Ïã¸Û¹ÉÆ±
-#define  ZJ_MARKET_EX   'JZ'  // £Ú£Ê£Æ£Å
+#define  SH_MARKET_EX   'HS'  // ä¸Šæµ·è¯åˆ¸
+#define  SZ_MARKET_EX   'ZS'  // æ·±åœ³è¯åˆ¸
+#define  CZ_MARKET_EX   'ZC'  // éƒ‘å·žå•†å“
+#define  DL_MARKET_EX   'LD'  // å¤§è¿žå•†å“
+#define  SF_MARKET_EX   'FS'  // ä¸Šæµ·å•†å“
+#define  SM_MARKET_EX   'MS'  // ä¸Šæµ·é‡‘å±ž
+#define  CE_MARKET_EX   'EC'  // äºšæ´²æŒ‡æ•°
+#define  CB_MARKET_EX   'BC'  // ï¼£ï¼¢ï¼¯ï¼´
+#define  CC_MARKET_EX   'CC'  // è½¯å•†å“
+#define  MC_MARKET_EX   'CM'  // ï¼£ ï¼­ ï¼¸
+#define  IM_MARKET_EX   'MI'  // å¤–æ±‡æœŸè´§
+#define  LM_MARKET_EX   'ML'  // ï¼¬ ï¼­ ï¼¥
+#define  NY_MARKET_EX   'YN'  // ï¼®ï¼¹ï¼³ï¼¥
+#define  AI_MARKET_EX   'IA'  // äºšæ´²æœŸæŒ‡
+#define  WH_MARKET_EX   'HW'  // å¤–æ±‡äº¤æ˜“
+#define  XH_MARKET_EX   'HX'  // æ¬§ç¾ŽæŒ‡æ•°
+#define  CM_MARKET_EX   'MC'  // ï¼£ ï¼­ ï¼¥
+#define  NF_MARKET_EX   'FN'  // æ¬§ç¾ŽæœŸæŒ‡
+#define  NM_MARKET_EX   'MN'  // çŸ³æ²¹äº§å“
+#define  LC_MARKET_EX   'CL'  // å·´é»Žæ²¹ç±½
+#define  LI_MARKET_EX   'IL'  // é©¬æ¥è¥¿äºš
+#define  SI_MARKET_EX   'IS'  // æ¸©å°¼ä¼¯æ ¼
+#define  HS_MARKET_EX   'SH'  // ï¼¨ ï¼³ ï¼©
+#define  HK_MARKET_EX   'HK'  // é¦™æ¸¯è‚¡ç¥¨
+#define  ZJ_MARKET_EX   'JZ'  // ï¼ºï¼ªï¼¦ï¼¥
 */

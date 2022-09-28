@@ -339,7 +339,7 @@ BOOL CReport::GetMMLDMinMaxInfo( double *pdMin, double *pdMax )
 	}
 
 	if( dMax < 500 )
-		dMax	=	500;	// ×îÐ¡Îª5ÊÖ
+		dMax	=	500;	// æœ€å°ä¸º5æ‰‹
 
 	if( pdMin )	*pdMin	=	dMin;
 	if( pdMax )	*pdMax	=	dMax;

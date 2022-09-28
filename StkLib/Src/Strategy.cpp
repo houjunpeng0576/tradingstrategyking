@@ -32,7 +32,7 @@ CRateParam::CRateParam( )
 	SetDefault( );
 }
 
-// ½»Ò×·ÑÓÃ²ÎÊıÊÇ·ñºÏ·¨
+// äº¤æ˜“è´¹ç”¨å‚æ•°æ˜¯å¦åˆæ³•
 BOOL CRateParam::IsValid( )
 {
 	return (m_dShaa >= 0 && m_dShaa < 0.1
@@ -43,7 +43,7 @@ BOOL CRateParam::IsValid( )
 		&& m_dSznfund >= 0 && m_dSznfund < 0.1 );
 }
 
-// È±Ê¡½»Ò×·ÑÓÃ
+// ç¼ºçœäº¤æ˜“è´¹ç”¨
 void CRateParam::SetDefault( )
 {
 	m_dShaa		=	0.003;
@@ -54,7 +54,7 @@ void CRateParam::SetDefault( )
 	m_dSznfund	=	0.001;
 }
 
-// ±£´æ½»Ò×·ÑÓÃÖÁÎÄ¼ş
+// ä¿å­˜äº¤æ˜“è´¹ç”¨è‡³æ–‡ä»¶
 void CRateParam::Serialize( CSPArchive &ar )
 {
 	if( ar.IsStoring( ) )
@@ -77,7 +77,7 @@ void CRateParam::Serialize( CSPArchive &ar )
 	}
 }
 
-// ¸ù¾İ¹ÉÆ±Ñ¡Ôñ½»Ò×·ÑÂÊ
+// æ ¹æ®è‚¡ç¥¨é€‰æ‹©äº¤æ˜“è´¹ç‡
 double CRateParam::GetRate( CStockInfo & info )
 {
 	LONG	stocktype	=	info.GetType();
@@ -100,7 +100,7 @@ double CRateParam::GetRate( CStockInfo & info )
 /////////////////////////////////////////////////////////////////////////////
 // COpParam
 
-// Âß¼­×Ö·û´®£¬È«²¿Ö¸±ê ÈÎÒ»Ö¸±ê
+// é€»è¾‘å­—ç¬¦ä¸²ï¼Œå…¨éƒ¨æŒ‡æ ‡ ä»»ä¸€æŒ‡æ ‡
 CSPString AfxGetLogicString( int nLogic )
 {
 	switch( nLogic )
@@ -113,7 +113,7 @@ CSPString AfxGetLogicString( int nLogic )
 	return "";
 }
 
-// ²ÖÎ»×Ö·û´®
+// ä»“ä½å­—ç¬¦ä¸²
 CSPString AfxGetStoreDivString( int nStoreDiv )
 {
 	switch( nStoreDiv )
@@ -139,7 +139,7 @@ COpParam::COpParam( )
 	SetDefault( );
 }
 
-// ²Ù×÷Ìõ¼şÊÇ·ñºÏ·¨
+// æ“ä½œæ¡ä»¶æ˜¯å¦åˆæ³•
 BOOL COpParam::IsValid( )
 {
 	if( CKData::ktypeDay != m_nKType && CKData::ktypeWeek != m_nKType && CKData::ktypeMonth != m_nKType )
@@ -178,7 +178,7 @@ BOOL COpParam::IsValid( )
 	return TRUE;
 }
 
-// È±Ê¡²Ù×÷Ìõ¼ş
+// ç¼ºçœæ“ä½œæ¡ä»¶
 void COpParam::SetDefault( )
 {
 	m_nKType		=	CKData::ktypeDay;
@@ -207,7 +207,7 @@ void COpParam::SetDefault( )
 	m_nKTypeIndex	=	CKData::ktypeWeek;
 }
 
-// Éè¶¨²»ºÏ·¨µÄ²Ù×÷Ìõ¼şÎªÈ±Ê¡Öµ
+// è®¾å®šä¸åˆæ³•çš„æ“ä½œæ¡ä»¶ä¸ºç¼ºçœå€¼
 void COpParam::SetDefaultOfInvalidMember( )
 {
 	if( CKData::ktypeDay != m_nKType && CKData::ktypeWeek != m_nKType && CKData::ktypeMonth != m_nKType )
@@ -251,7 +251,7 @@ void COpParam::SetDefaultOfInvalidMember( )
 		m_nKTypeIndex		=	CKData::ktypeWeek;
 }
 
-// ±£´æ»òÕß¶ÁÈ¡Ó²ÅÌÎÄ¼ş
+// ä¿å­˜æˆ–è€…è¯»å–ç¡¬ç›˜æ–‡ä»¶
 void COpParam::Serialize( CSPArchive &ar )
 {
 	if( ar.IsStoring( ) )
@@ -304,7 +304,7 @@ void COpParam::Serialize( CSPArchive &ar )
 	}
 }
 
-// ¸ø¶¨Ê±¼äÊÇ²»ÊÇÔÚÄ£ÄâÊ±¼äÄÚ
+// ç»™å®šæ—¶é—´æ˜¯ä¸æ˜¯åœ¨æ¨¡æ‹Ÿæ—¶é—´å†…
 BOOL COpParam::IsInTimeZones( CSPTime tm )
 {
 	for( int i=0; i<m_atmBegin.GetSize() && i<m_atmEnd.GetSize(); i++ )
@@ -315,7 +315,7 @@ BOOL COpParam::IsInTimeZones( CSPTime tm )
 	return FALSE;
 }
 
-// »ñÈ¡Ä£Äâ¿ªÊ¼Ê±¼ä
+// è·å–æ¨¡æ‹Ÿå¼€å§‹æ—¶é—´
 CSPTime COpParam::GetBeginTime( )
 {
 	if( m_atmBegin.GetSize() > 0 )
@@ -323,7 +323,7 @@ CSPTime COpParam::GetBeginTime( )
 	return CSPTime::GetCurrentTime();
 }
 
-// »ñÈ¡Ä£Äâ½áÊøÊ±¼ä
+// è·å–æ¨¡æ‹Ÿç»“æŸæ—¶é—´
 CSPTime COpParam::GetEndTime( )
 {
 	if( m_atmEnd.GetSize() > 0 )
@@ -331,7 +331,7 @@ CSPTime COpParam::GetEndTime( )
 	return CSPTime::GetCurrentTime();
 }
 
-// »ñÈ¡ÏÂÒ»¸ö½»Ò×Ê±¼ä
+// è·å–ä¸‹ä¸€ä¸ªäº¤æ˜“æ—¶é—´
 BOOL COpParam::GetNextTradeTime( CSPTime tmNow, CSPTime &tmNext )
 {
 	CSPTime	sptime( tmNow.GetTime() );
@@ -345,7 +345,7 @@ BOOL COpParam::GetNextTradeTime( CSPTime tmNow, CSPTime &tmNext )
 	return FALSE;
 }
 
-// »ñÈ¡µ±Ç°Ä£Äâ½ø¶È
+// è·å–å½“å‰æ¨¡æ‹Ÿè¿›åº¦
 DWORD COpParam::GetProgress( CSPTime tmNow, DWORD dwProgressMax )
 {
 	// TIMEZONES
@@ -366,13 +366,13 @@ DWORD COpParam::GetProgress( CSPTime tmNow, DWORD dwProgressMax )
 /////////////////////////////////////////////////////////////////////////////
 // CStockOwnContainer
 
-// ÓµÓĞ¹ÉÆ±Êı×é£¬¼ÓÈë¹ÉÆ±
+// æ‹¥æœ‰è‚¡ç¥¨æ•°ç»„ï¼ŒåŠ å…¥è‚¡ç¥¨
 BOOL CStockOwnContainer::AddStock( CStockInfo & info, DWORD dwShare, double dBuyPrice )
 {
 	if( dwShare <= 0 )
 		return FALSE;
 
-	// Èç¹ûÒÑ¾­ÓĞÁË£¬¸Ä±äÊıÁ¿
+	// å¦‚æœå·²ç»æœ‰äº†ï¼Œæ”¹å˜æ•°é‡
 	for( int i=0; i<GetSize(); i++ )
 	{
 		STOCKOWN	&	own	=	ElementAt(i);
@@ -386,7 +386,7 @@ BOOL CStockOwnContainer::AddStock( CStockInfo & info, DWORD dwShare, double dBuy
 			return TRUE;
 		}
 	}
-	// ¼ÓÈëĞÂµÄ
+	// åŠ å…¥æ–°çš„
 	STOCKOWN	ownnew;
 	memset( &ownnew, 0, sizeof(ownnew) );
 	strncpy( ownnew.szCode, info.GetStockCode(), min(sizeof(ownnew.szCode)-1,strlen(info.GetStockCode())) );
@@ -396,7 +396,7 @@ BOOL CStockOwnContainer::AddStock( CStockInfo & info, DWORD dwShare, double dBuy
 	return ( Add(ownnew) >= 0 );
 }
 
-// ÓµÓĞ¹ÉÆ±Êı×é£¬ÒÆ³ı¹ÉÆ±
+// æ‹¥æœ‰è‚¡ç¥¨æ•°ç»„ï¼Œç§»é™¤è‚¡ç¥¨
 BOOL CStockOwnContainer::RemoveStock( CStockInfo & info, DWORD dwShare )
 {
 	for( int i=0; i<GetSize(); i++ )
@@ -415,7 +415,7 @@ BOOL CStockOwnContainer::RemoveStock( CStockInfo & info, DWORD dwShare )
 	return FALSE;
 }
 
-// ÓµÓĞ¹ÉÆ±Êı×é£¬ÊÇ·ñÓĞÕâ¸ö¹ÉÆ±£¬Èç¹ûÓĞ£¬·µ»ØÖÁlpOwn
+// æ‹¥æœ‰è‚¡ç¥¨æ•°ç»„ï¼Œæ˜¯å¦æœ‰è¿™ä¸ªè‚¡ç¥¨ï¼Œå¦‚æœæœ‰ï¼Œè¿”å›è‡³lpOwn
 BOOL CStockOwnContainer::HasThisStock( CStockInfo & info, LPSTOCKOWN lpOwn )
 {
 	for( int i=0; i<GetSize(); i++ )
@@ -433,7 +433,7 @@ BOOL CStockOwnContainer::HasThisStock( CStockInfo & info, LPSTOCKOWN lpOwn )
 
 /////////////////////////////////////////////////////////////////////////////
 // COpRecordContainer
-// ²Ù×÷ÃèÊö
+// æ“ä½œæè¿°
 CSPString	AfxGetStrategyOpTypeString( long lOpType )
 {
 	CSPString	strOp;
@@ -452,7 +452,7 @@ CSPString	AfxGetStrategyOpTypeString( long lOpType )
 	return strOp;
 }
 
-// ²Ù×÷¼ÇÂ¼Êı×é£¬¼ÓÈë¼ÇÂ¼
+// æ“ä½œè®°å½•æ•°ç»„ï¼ŒåŠ å…¥è®°å½•
 int COpRecordContainer::AddRecord(long lOpType, CSPTime tm, const char *szCode,
 								   DWORD dwShare, double dSharePrice, double dRateCost )
 {
@@ -473,7 +473,7 @@ int COpRecordContainer::AddRecord(long lOpType, CSPTime tm, const char *szCode,
 	return Add( record );
 }
 
-// ²Ù×÷¼ÇÂ¼Êı×é£¬¼ÓÈë¼ÇÂ¼£¬¼ÇÂ¼ÖĞÈç¹ûÒÑ¾­ÓĞ¸Ã¹ÉÆ±µÄ¼ÇÂ¼£¬¸ü¸ÄÎªÏÖÔÚµÄĞÅÏ¢
+// æ“ä½œè®°å½•æ•°ç»„ï¼ŒåŠ å…¥è®°å½•ï¼Œè®°å½•ä¸­å¦‚æœå·²ç»æœ‰è¯¥è‚¡ç¥¨çš„è®°å½•ï¼Œæ›´æ”¹ä¸ºç°åœ¨çš„ä¿¡æ¯
 int COpRecordContainer::AddRecordUniqueStock(long lOpType, CSPTime tm, const char *szCode,
 								   DWORD dwShare, double dSharePrice, double dRateCost )
 {
@@ -509,7 +509,7 @@ int COpRecordContainer::AddRecordUniqueStock(long lOpType, CSPTime tm, const cha
 	return Add( record );
 }
 
-// ²Ù×÷¼ÇÂ¼Êı×é£¬µÃµ½ÂòÈë¼ÇÂ¼Êı
+// æ“ä½œè®°å½•æ•°ç»„ï¼Œå¾—åˆ°ä¹°å…¥è®°å½•æ•°
 int COpRecordContainer::GetBuyRecordCount()
 {
 	int	nCount	=	0;
@@ -522,7 +522,7 @@ int COpRecordContainer::GetBuyRecordCount()
 	return nCount;
 }
 
-// ²Ù×÷¼ÇÂ¼Êı×é£¬ÊÇ·ñÓĞszCode¹ÉÆ±µÄÂòÈë¼ÇÂ¼
+// æ“ä½œè®°å½•æ•°ç»„ï¼Œæ˜¯å¦æœ‰szCodeè‚¡ç¥¨çš„ä¹°å…¥è®°å½•
 BOOL COpRecordContainer::HasBuyStock( const char * szCode )
 {
 	if( NULL == szCode || strlen(szCode) < 0 )
@@ -540,7 +540,7 @@ BOOL COpRecordContainer::HasBuyStock( const char * szCode )
 	return FALSE;
 }
 
-// ²Ù×÷¼ÇÂ¼Êı×é£¬Í³¼Æ½á¹û£º²Ù×÷´ÎÊı£¬³É¹¦´ÎÊı£¬×î´óÊÕÒæ£¬×îµÍÊÕÒæ
+// æ“ä½œè®°å½•æ•°ç»„ï¼Œç»Ÿè®¡ç»“æœï¼šæ“ä½œæ¬¡æ•°ï¼ŒæˆåŠŸæ¬¡æ•°ï¼Œæœ€å¤§æ”¶ç›Šï¼Œæœ€ä½æ”¶ç›Š
 BOOL COpRecordContainer::StatResults( int *pnTimes, int *pnVictoryTimes, double *pdYieldMax, double *pdYieldMin )
 {
 	int	nTimes = 0, nVictoryTimes = 0;
@@ -552,12 +552,12 @@ BOOL COpRecordContainer::StatResults( int *pnTimes, int *pnVictoryTimes, double 
 		if( STRATEGY_OPTYPE_BUY != record.lOpType )
 			continue;
 
-		// ²éÕÒµ±Ç°ÂòÈë²Ù×÷µÄ¶ÔÓ¦Âô³ö²Ù×÷
+		// æŸ¥æ‰¾å½“å‰ä¹°å…¥æ“ä½œçš„å¯¹åº”å–å‡ºæ“ä½œ
 		for( int j=i+1; j<GetSize(); j++ )
 		{
 			OPRECORD & record2	=	ElementAt(j);
 			if( STRATEGY_OPTYPE_SELL == record2.lOpType && 0 == strncmp(record.szCode,record2.szCode,sizeof(record.szCode)) )
-			{	// Èç¹ûÊÇÂô³ö²Ù×÷£¬¸ù¾İÂòÈë¼Û¸ñºÍÂô³ö¼Û¸ñ¼ÆËãÊÕÒæÂÊ
+			{	// å¦‚æœæ˜¯å–å‡ºæ“ä½œï¼Œæ ¹æ®ä¹°å…¥ä»·æ ¼å’Œå–å‡ºä»·æ ¼è®¡ç®—æ”¶ç›Šç‡
 				if( record.dwShare > 0 && record2.dwShare > 0 )
 				{
 					double	dBuy	=	record.dSharePrice + record.dRateCost/record.dwShare;
@@ -585,7 +585,7 @@ BOOL COpRecordContainer::StatResults( int *pnTimes, int *pnVictoryTimes, double 
 
 //////////////////////////////////////////////////////////////////////
 // CAssetSerialContainer 
-// ×Ê²úĞòÁĞÊı×é£¬°´Ê±¼äÅÅĞò²åÈë
+// èµ„äº§åºåˆ—æ•°ç»„ï¼ŒæŒ‰æ—¶é—´æ’åºæ’å…¥
 BOOL CAssetSerialContainer::SortInsert( ASSETSERIAL serial )
 {
 	BOOL	bAdded	=	FALSE;
@@ -611,7 +611,7 @@ BOOL CAssetSerialContainer::SortInsert( ASSETSERIAL serial )
 	return TRUE;
 }
 
-// ×Ê²úĞòÁĞÊı×é£¬»ñµÃ×Ê²úĞòÁĞ±ê×¼²î
+// èµ„äº§åºåˆ—æ•°ç»„ï¼Œè·å¾—èµ„äº§åºåˆ—æ ‡å‡†å·®
 BOOL CAssetSerialContainer::GetStdDev( double *pdStdDev, double *pdXiapu )
 {
 	if( GetSize() <= 0 )
@@ -677,7 +677,7 @@ CTechStock::~CTechStock( )
 	Clear( );
 }
 
-// Çå³ıÄÚ´æ
+// æ¸…é™¤å†…å­˜
 void CTechStock::Clear( )
 {
 	if( m_bAutoDelete )
@@ -699,7 +699,7 @@ void CTechStock::Clear( )
 	m_techsLong.RemoveAll();
 }
 
-// Ö¸¶¨ÈÕÆÚ£¬Ö¸¶¨²Ù×÷£¬Ö¸¶¨Î¯ÍĞ¼Û¸ñ£¬µÃµ½¹ÉÆ±µÄ³É½»¼Û¸ñ
+// æŒ‡å®šæ—¥æœŸï¼ŒæŒ‡å®šæ“ä½œï¼ŒæŒ‡å®šå§”æ‰˜ä»·æ ¼ï¼Œå¾—åˆ°è‚¡ç¥¨çš„æˆäº¤ä»·æ ¼
 BOOL CTechStock::GetPriceOK( long lOpType, CSPTime tmCur, DWORD dwShare, double dSharePrice, double *pdPriceOK )
 {
 	double	dPriceOK = dSharePrice;
@@ -736,7 +736,7 @@ BOOL CTechStock::GetPriceOK( long lOpType, CSPTime tmCur, DWORD dwShare, double 
 	return TRUE;
 }
 
-// Ö¸¶¨ÈÕÆÚÊÇ·ñÍ£ÅÆ
+// æŒ‡å®šæ—¥æœŸæ˜¯å¦åœç‰Œ
 BOOL CTechStock::IsStopTrading( CSPTime tmCur )
 {
 	CSPTime	sptimeCur(tmCur.GetTime());
@@ -760,7 +760,7 @@ BOOL CTechStock::IsStopTrading( CSPTime tmCur )
 	return FALSE;
 }
 
-// µÃµ½¹ÉÆ±µÄÊÕÅÌ¼Û
+// å¾—åˆ°è‚¡ç¥¨çš„æ”¶ç›˜ä»·
 BOOL CTechStock::GetClosePrice( CSPTime tmCur, double *pdPrice )
 {
 	CSPTime	sptimeCur(tmCur.GetTime());
@@ -777,7 +777,7 @@ BOOL CTechStock::GetClosePrice( CSPTime tmCur, double *pdPrice )
 	return TRUE;
 }
 
-// µÃµ½¹ÉÆ±µÄÊÕÅÌ¼ÛÕÇ·ù%
+// å¾—åˆ°è‚¡ç¥¨çš„æ”¶ç›˜ä»·æ¶¨å¹…%
 BOOL CTechStock::GetCloseDiffPercent( CSPTime tmCur, double *pdDiffPercent )
 {
 	if( pdDiffPercent ) *pdDiffPercent = 0;
@@ -829,9 +829,9 @@ void CTechStockContainer::Clear( )
 	RemoveAll();
 }
 
-// ¸ø¶¨CTechStock£¬ÈÕÆÚtmCur£¬×Ê½ğdCash£¬½»Ò×·ÑÂÊrate£¬²Ù×÷Ìõ¼şopparam£¬
-// ÏÖÔÚÓµÓĞ¹ÉÆ±ÊıÁ¿nOwnedStockCount£¬¼ÆËãĞèÒªÂòÈëµÄ¹ÉÆ±ÊıÁ¿ºÍÎ¯ÍĞ¼Û¸ñ¼°Î¯ÍĞÊ±¼ä£¬
-// Èç¹û²»ĞèÒªÂòÈë£¬·µ»ØFALSE
+// ç»™å®šCTechStockï¼Œæ—¥æœŸtmCurï¼Œèµ„é‡‘dCashï¼Œäº¤æ˜“è´¹ç‡rateï¼Œæ“ä½œæ¡ä»¶opparamï¼Œ
+// ç°åœ¨æ‹¥æœ‰è‚¡ç¥¨æ•°é‡nOwnedStockCountï¼Œè®¡ç®—éœ€è¦ä¹°å…¥çš„è‚¡ç¥¨æ•°é‡å’Œå§”æ‰˜ä»·æ ¼åŠå§”æ‰˜æ—¶é—´ï¼Œ
+// å¦‚æœä¸éœ€è¦ä¹°å…¥ï¼Œè¿”å›FALSE
 BOOL CTechStockContainer::GetShouldBuyShare( CTechStock & techstock, CSPTime tmCur, double dCash, CRateParam &rate, COpParam &opparam, int nOwnedStockCount,
 									CSPTime *ptmOp, DWORD *pdwShare, double *pdSharePrice )
 {
@@ -841,26 +841,26 @@ BOOL CTechStockContainer::GetShouldBuyShare( CTechStock & techstock, CSPTime tmC
 
 	CSPTime	sptimeCur(tmCur.GetTime());
 	DWORD	dwDate	=	sptimeCur.ToStockTimeDay();
-	int nIndex = techstock.m_kdata.GetIndexByDate( dwDate );	// µÃµ½nIndex£¬Ö¸Ïòtechstock.m_kdataÊı×éµÄµ±Ç°ÈÕÆÚÎ»ÖÃ
+	int nIndex = techstock.m_kdata.GetIndexByDate( dwDate );	// å¾—åˆ°nIndexï¼ŒæŒ‡å‘techstock.m_kdataæ•°ç»„çš„å½“å‰æ—¥æœŸä½ç½®
 	if( -1 == nIndex )
 		return FALSE;
-	double	dPriceNow	=	techstock.m_kdata.ElementAt(nIndex).m_fClose;	// µ±Ç°¼Û
+	double	dPriceNow	=	techstock.m_kdata.ElementAt(nIndex).m_fClose;	// å½“å‰ä»·
 
-	// ÂòÈëÅĞ¶Ï
+	// ä¹°å…¥åˆ¤æ–­
 	BOOL	bBuy	=	TRUE;
-	if( COpParam::logicOr == opparam.m_nBuyLogic )	// È«²¿Ìõ¼ş»¹ÊÇÈÎÒ»Ìõ¼ş
+	if( COpParam::logicOr == opparam.m_nBuyLogic )	// å…¨éƒ¨æ¡ä»¶è¿˜æ˜¯ä»»ä¸€æ¡ä»¶
 		bBuy	=	FALSE;
-	for( int i=0; i<techstock.m_techs.GetSize(); i++ )	// Ã¿Ò»¸öÉè¶¨Ö¸±ê£¬·Ö±ğÅĞ¶Ï
+	for( int i=0; i<techstock.m_techs.GetSize(); i++ )	// æ¯ä¸€ä¸ªè®¾å®šæŒ‡æ ‡ï¼Œåˆ†åˆ«åˆ¤æ–­
 	{
-		CTechnique * pTech	=	(CTechnique *)techstock.m_techs.ElementAt(i);	// ¼¼ÊõÖ¸±ê
+		CTechnique * pTech	=	(CTechnique *)techstock.m_techs.ElementAt(i);	// æŠ€æœ¯æŒ‡æ ‡
 		SP_ASSERT( NULL != pTech );
 		if( NULL == pTech )
 			continue;
 
-		int nIntensity	=	pTech->GetSignal( nIndex );		// µ±Ç°ÂòÂôĞÅºÅ
+		int nIntensity	=	pTech->GetSignal( nIndex );		// å½“å‰ä¹°å–ä¿¡å·
 		if( COpParam::logicOr == opparam.m_nBuyLogic )
 		{
-			if( nIntensity >= opparam.m_nBuyLimit )			// ÂòÂôĞÅºÅÊÇ·ñ´ïµ½ËùĞèÌõ¼ş
+			if( nIntensity >= opparam.m_nBuyLimit )			// ä¹°å–ä¿¡å·æ˜¯å¦è¾¾åˆ°æ‰€éœ€æ¡ä»¶
 				bBuy	=	TRUE;
 		}
 		else
@@ -873,8 +873,8 @@ BOOL CTechStockContainer::GetShouldBuyShare( CTechStock & techstock, CSPTime tmC
 	// Long and Index Trend
 	if( bBuy )
 	{
-		// Èç¹û¼¼ÊõÖ¸±êÅĞ¶ÏÎªÂòÈë£¬ÅĞ¶ÏÊÇ·ñÂú×ã³¤ÖÜÆÚÇ÷ÊÆºÍÖ¸ÊıÇ÷ÊÆ
-		if( opparam.m_bLongTrend )	// ³¤ÖÜÆÚÇ÷ÊÆ
+		// å¦‚æœæŠ€æœ¯æŒ‡æ ‡åˆ¤æ–­ä¸ºä¹°å…¥ï¼Œåˆ¤æ–­æ˜¯å¦æ»¡è¶³é•¿å‘¨æœŸè¶‹åŠ¿å’ŒæŒ‡æ•°è¶‹åŠ¿
+		if( opparam.m_bLongTrend )	// é•¿å‘¨æœŸè¶‹åŠ¿
 		{
 			int	nIndexLong	=	techstock.m_kdataLong.GetAboutIndexByDate( dwDate );
 			if( opparam.m_nKTypeLong > opparam.m_nKType )
@@ -888,13 +888,13 @@ BOOL CTechStockContainer::GetShouldBuyShare( CTechStock & techstock, CSPTime tmC
 					if( NULL == pTech )
 						continue;
 					pTech->ClearLastIntensity();
-					int nIntensity	=	pTech->GetIntensity( nIndexLong );	// µÃµ½µ±Ç°Ç÷ÊÆ
+					int nIntensity	=	pTech->GetIntensity( nIndexLong );	// å¾—åˆ°å½“å‰è¶‹åŠ¿
 					if( !ITS_ISBUY(nIntensity) )
 						bBuy	=	FALSE;
 				}
 			}
 		}
-		if( opparam.m_bIndexTrend )	// Ö¸ÊıÇ÷ÊÆ
+		if( opparam.m_bIndexTrend )	// æŒ‡æ•°è¶‹åŠ¿
 		{
 			int	nIndexIndex	=	m_kdataIndex.GetAboutIndexByDate( dwDate );
 			if( opparam.m_nKTypeIndex > opparam.m_nKType )
@@ -916,25 +916,25 @@ BOOL CTechStockContainer::GetShouldBuyShare( CTechStock & techstock, CSPTime tmC
 		}
 	}
 
-	if( bBuy )	// È·¶¨ÂòÈëÁË
+	if( bBuy )	// ç¡®å®šä¹°å…¥äº†
 	{
-		if( !opparam.GetNextTradeTime(tmCur, tmOp) )	// ²Ù×÷ÈÕÆÚ£¬ÏÂÒ»¸ö½»Ò×ÈÕ
+		if( !opparam.GetNextTradeTime(tmCur, tmOp) )	// æ“ä½œæ—¥æœŸï¼Œä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥
 			return FALSE;
 
-		if( opparam.m_nStoreDiv-nOwnedStockCount <= 0 )	// ¹ÉÆ±ÒÑ¾­¹»¶àÁË£¬²»ÄÜÔÙÂòÈëĞÂµÄÁË
+		if( opparam.m_nStoreDiv-nOwnedStockCount <= 0 )	// è‚¡ç¥¨å·²ç»å¤Ÿå¤šäº†ï¼Œä¸èƒ½å†ä¹°å…¥æ–°çš„äº†
 			return FALSE;
-		double	dUseCash	=	dCash / (opparam.m_nStoreDiv-nOwnedStockCount);	// ĞèÊ¹ÓÃ×Ê½ğ
+		double	dUseCash	=	dCash / (opparam.m_nStoreDiv-nOwnedStockCount);	// éœ€ä½¿ç”¨èµ„é‡‘
 
 		if( dCash < dUseCash )
-			dUseCash	=	dCash;	// ×Ê½ğ²»¹»£¬ÔòÓĞ¶àÉÙÓÃ¶àÉÙ
+			dUseCash	=	dCash;	// èµ„é‡‘ä¸å¤Ÿï¼Œåˆ™æœ‰å¤šå°‘ç”¨å¤šå°‘
 
 		dSharePrice		=	opparam.m_dBuyMulti * dPriceNow;
 		double	dTemp	=	dSharePrice * ( 1 + rate.GetRate( techstock.m_info ) );
 		if( fabs(dTemp) < 1e-4 || dUseCash < 1e-4 )
 			return FALSE;
 
-		dwShare		=	(DWORD)( dUseCash / dTemp );	// ÂòÈë¹ÉÊı
-		dwShare		=	( dwShare / 100 ) * 100;		// È¡Õû
+		dwShare		=	(DWORD)( dUseCash / dTemp );	// ä¹°å…¥è‚¡æ•°
+		dwShare		=	( dwShare / 100 ) * 100;		// å–æ•´
 		if( 0 == dwShare )
 			return FALSE;
 
@@ -947,9 +947,9 @@ BOOL CTechStockContainer::GetShouldBuyShare( CTechStock & techstock, CSPTime tmC
 	return FALSE;
 }
 
-// ¸ø¶¨CTechStock£¬ÈÕÆÚtmCur£¬×Ê½ğdCash£¬ÓµÓĞ¹ÉÆ±own(º¬ÓĞÂòÈëÊ±¼Û¸ñ)£¬²Ù×÷Ìõ¼şopparam£¬
-// ÏÖÔÚÓµÓĞ¹ÉÆ±ÊıÁ¿nOwnedStockCount£¬¼ÆËãĞèÒªÂô³öµÄ¹ÉÆ±ÊıÁ¿ºÍÎ¯ÍĞ¼Û¸ñ¼°Î¯ÍĞÊ±¼ä£¬
-// Èç¹û²»ĞèÒªÂô³ö£¬·µ»ØFALSE
+// ç»™å®šCTechStockï¼Œæ—¥æœŸtmCurï¼Œèµ„é‡‘dCashï¼Œæ‹¥æœ‰è‚¡ç¥¨own(å«æœ‰ä¹°å…¥æ—¶ä»·æ ¼)ï¼Œæ“ä½œæ¡ä»¶opparamï¼Œ
+// ç°åœ¨æ‹¥æœ‰è‚¡ç¥¨æ•°é‡nOwnedStockCountï¼Œè®¡ç®—éœ€è¦å–å‡ºçš„è‚¡ç¥¨æ•°é‡å’Œå§”æ‰˜ä»·æ ¼åŠå§”æ‰˜æ—¶é—´ï¼Œ
+// å¦‚æœä¸éœ€è¦å–å‡ºï¼Œè¿”å›FALSE
 BOOL CTechStockContainer::GetShouldSellShare( CTechStock & techstock, CSPTime tmCur, STOCKOWN & own, COpParam &opparam,
 									CSPTime *ptmOp, DWORD *pdwShare, double *pdSharePrice )
 {
@@ -959,26 +959,26 @@ BOOL CTechStockContainer::GetShouldSellShare( CTechStock & techstock, CSPTime tm
 
 	CSPTime	sptimeCur(tmCur.GetTime());
 	DWORD	dwDate	=	sptimeCur.ToStockTimeDay();
-	int nIndex = techstock.m_kdata.GetIndexByDate( dwDate );	// µÃµ½nIndex£¬Ö¸Ïòtechstock.m_kdataÊı×éµÄµ±Ç°ÈÕÆÚÎ»ÖÃ
+	int nIndex = techstock.m_kdata.GetIndexByDate( dwDate );	// å¾—åˆ°nIndexï¼ŒæŒ‡å‘techstock.m_kdataæ•°ç»„çš„å½“å‰æ—¥æœŸä½ç½®
 	if( -1 == nIndex )
 		return FALSE;
-	double	dPriceNow	=	techstock.m_kdata.ElementAt(nIndex).m_fClose;	// µ±Ç°¼Û
+	double	dPriceNow	=	techstock.m_kdata.ElementAt(nIndex).m_fClose;	// å½“å‰ä»·
 
-	// Âô³öÅĞ¶Ï
+	// å–å‡ºåˆ¤æ–­
 	BOOL	bSell	=	FALSE;
-	if( COpParam::logicAnd == opparam.m_nSellLogic )	// È«²¿Ìõ¼ş»¹ÊÇÈÎÒ»Ìõ¼ş
+	if( COpParam::logicAnd == opparam.m_nSellLogic )	// å…¨éƒ¨æ¡ä»¶è¿˜æ˜¯ä»»ä¸€æ¡ä»¶
 		bSell	=	TRUE;
-	for( int i=0; i<techstock.m_techs.GetSize(); i++ )	// Ã¿Ò»¸ö¼¼ÊõÖ¸±ê£¬·Ö±ğÅĞ¶Ï
+	for( int i=0; i<techstock.m_techs.GetSize(); i++ )	// æ¯ä¸€ä¸ªæŠ€æœ¯æŒ‡æ ‡ï¼Œåˆ†åˆ«åˆ¤æ–­
 	{
 		CTechnique * pTech	=	(CTechnique *)techstock.m_techs.ElementAt(i);
 		SP_ASSERT( NULL != pTech );
 		if( NULL == pTech )
 			continue;
 
-		int nIntensity	=	pTech->GetSignal( nIndex );		// µ±Ç°ÂòÂôĞÅºÅ
+		int nIntensity	=	pTech->GetSignal( nIndex );		// å½“å‰ä¹°å–ä¿¡å·
 		if( COpParam::logicAnd == opparam.m_nSellLogic )
 		{
-			if( nIntensity > opparam.m_nSellLimit )			// ÂòÂôĞÅºÅÊÇ·ñ´ïµ½ËùĞèÌõ¼ş
+			if( nIntensity > opparam.m_nSellLimit )			// ä¹°å–ä¿¡å·æ˜¯å¦è¾¾åˆ°æ‰€éœ€æ¡ä»¶
 				bSell	=	FALSE;
 		}
 		else
@@ -988,15 +988,15 @@ BOOL CTechStockContainer::GetShouldSellShare( CTechStock & techstock, CSPTime tm
 		}
 	}
 
-	// StopLosing and StopProfit Ö¹ËğºÍÖ¹Ó®
-	if( opparam.m_bStopLosing && dPriceNow < own.dBuyPrice * (1-opparam.m_dStopLosing) )	// Ö¹Ëğ
+	// StopLosing and StopProfit æ­¢æŸå’Œæ­¢èµ¢
+	if( opparam.m_bStopLosing && dPriceNow < own.dBuyPrice * (1-opparam.m_dStopLosing) )	// æ­¢æŸ
 		bSell	=	TRUE;
-	if( opparam.m_bStopProfit && dPriceNow > own.dBuyPrice * (1+opparam.m_dStopProfit) )	// Ö¹Ó®
+	if( opparam.m_bStopProfit && dPriceNow > own.dBuyPrice * (1+opparam.m_dStopProfit) )	// æ­¢èµ¢
 		bSell	=	TRUE;
 
-	if( bSell )	// È·¶¨Âô³öÁË
+	if( bSell )	// ç¡®å®šå–å‡ºäº†
 	{
-		if( !opparam.GetNextTradeTime(tmCur, tmOp) )	// ²Ù×÷ÈÕÆÚ£¬ÏÂÒ»¸ö½»Ò×ÈÕ
+		if( !opparam.GetNextTradeTime(tmCur, tmOp) )	// æ“ä½œæ—¥æœŸï¼Œä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥
 			return FALSE;
 		dwShare			=	own.dwShare;
 		dSharePrice		=	opparam.m_dSellMulti * dPriceNow;
@@ -1010,7 +1010,7 @@ BOOL CTechStockContainer::GetShouldSellShare( CTechStock & techstock, CSPTime tm
 	return FALSE;
 }
 
-// µÃµ½Ä³Ö»¹ÉÆ±szCodeÔÚÈÕÆÚtmCurµÄÊÕÅÌ¼Û
+// å¾—åˆ°æŸåªè‚¡ç¥¨szCodeåœ¨æ—¥æœŸtmCurçš„æ”¶ç›˜ä»·
 BOOL CTechStockContainer::GetClosePrice( const char * szCode, CSPTime tmCur, double * pdPrice )
 {
 	if( NULL == szCode || strlen(szCode) <= 0 || GetSize() <= 0 )
@@ -1028,7 +1028,7 @@ BOOL CTechStockContainer::GetClosePrice( const char * szCode, CSPTime tmCur, dou
 	return FALSE;
 }
 
-// µÃµ½Ä³ÈÕµÄ×Ü×Ê²ú
+// å¾—åˆ°æŸæ—¥çš„æ€»èµ„äº§
 BOOL CTechStockContainer::GetSumAsset( CSPTime tmCur, CStockOwnContainer &container, double * pdAsset )
 {
 	if( GetSize() <= 0 )
@@ -1048,7 +1048,7 @@ BOOL CTechStockContainer::GetSumAsset( CSPTime tmCur, CStockOwnContainer &contai
 	return TRUE;
 }
 
-// µÃµ½ÏÂÒ»¸öÓĞ³É½»Á¿µÄ½»Ò×ÈÕ
+// å¾—åˆ°ä¸‹ä¸€ä¸ªæœ‰æˆäº¤é‡çš„äº¤æ˜“æ—¥
 BOOL CTechStockContainer::GetNextExistTradeTime( CSPTime tmCur, CSPTime & tmNext )
 {
 	CSPTime	sptime(tmCur.GetTime());
@@ -1077,7 +1077,7 @@ BOOL CTechStockContainer::GetNextExistTradeTime( CSPTime tmCur, CSPTime & tmNext
 /////////////////////////////////////////////////////////////////////////////
 // CStrategy
 
-// ¸ø¶¨²ßÂÔÎÄ¼ş£¬µÃµ½²ßÂÔÃû³Æ
+// ç»™å®šç­–ç•¥æ–‡ä»¶ï¼Œå¾—åˆ°ç­–ç•¥åç§°
 CSPString CStrategy::GetName( LPCTSTR lpszPath )
 {
 	if( NULL == lpszPath || strlen(lpszPath) <= 0 )
@@ -1119,7 +1119,7 @@ CStrategy::~CStrategy()
 	ClearCache( );
 }
 
-// ´ò¿ª²ßÂÔÎÄ¼ş
+// æ‰“å¼€ç­–ç•¥æ–‡ä»¶
 BOOL CStrategy::OpenStrategyFile( LPCTSTR lpszPathName, LPSTR lpErr, UINT nMaxSize )
 {
 	CSPFile	file;
@@ -1169,7 +1169,7 @@ BOOL CStrategy::SaveStrategyFile( LPCTSTR lpszPathName )
 /////////////////////////////////////////////////////////////////////////////
 // CStrategy serialization
 
-// ÎÄ¼ş±£´æºÍ¶ÁÈ¡
+// æ–‡ä»¶ä¿å­˜å’Œè¯»å–
 BOOL CStrategy::Serialize(CSPArchive& ar, LPSTR lpErr, UINT nMaxSize )
 {
 	if( lpErr && nMaxSize>0 )
@@ -1304,49 +1304,49 @@ CSPString CStrategy::GetPathName( )
 	return m_strPathName;
 }
 
-// Éè¶¨²ßÂÔÃû³Æ
+// è®¾å®šç­–ç•¥åç§°
 void CStrategy::SetName( LPCTSTR lpszName )
 {
 	m_strName	=	lpszName;
 }
-// µÃµ½²ßÂÔÃû³Æ
+// å¾—åˆ°ç­–ç•¥åç§°
 CSPString	CStrategy::GetName( )
 {
 	if( m_strName.IsEmpty() )
 		return GetPathName();
 	return m_strName;
 }
-// Éè¶¨²ßÂÔÃèÊö
+// è®¾å®šç­–ç•¥æè¿°
 void CStrategy::SetDescript( LPCTSTR lpszDescript )
 {
 		m_strDescript	=	lpszDescript;
 }
-// µÃµ½²ßÂÔÃèÊö
+// å¾—åˆ°ç­–ç•¥æè¿°
 CSPString	CStrategy::GetDescript( )
 {
 	return m_strDescript;
 }
-// µÃµ½²ßÂÔ±»Ñ¡¹ÉÆ±
+// å¾—åˆ°ç­–ç•¥è¢«é€‰è‚¡ç¥¨
 CSPStringArray & CStrategy::GetStocks( )
 {
 	return m_stocks;
 }
-// Éè¶¨²ßÂÔ±¸Ñ¡¹ÉÆ±
+// è®¾å®šç­–ç•¥å¤‡é€‰è‚¡ç¥¨
 void CStrategy::SetStocks( CSPStringArray & astr )
 {
 	m_stocks.Copy( astr );
 }
-// ¼ÓÈë²ßÂÔ±¸Ñ¡¹ÉÆ±
+// åŠ å…¥ç­–ç•¥å¤‡é€‰è‚¡ç¥¨
 void CStrategy::AddStock( LPCTSTR lpszCode )
 {
 	m_stocks.AddStock( lpszCode );
 }
-// ÒÆ³ı²ßÂÔ±¸Ñ¡¹ÉÆ±
+// ç§»é™¤ç­–ç•¥å¤‡é€‰è‚¡ç¥¨
 void CStrategy::RemoveStock( LPCTSTR lpszCode )
 {
 	m_stocks.RemoveStock( lpszCode );
 }
-// µÃµ½²ßÂÔµÄÒ»°ãĞÔÃèÊöÎÄ×Ö
+// å¾—åˆ°ç­–ç•¥çš„ä¸€èˆ¬æ€§æè¿°æ–‡å­—
 CSPString CStrategy::GetStockTechString( )
 {
 	int	nStockShowCount = 3, nTechShowCount = 10;
@@ -1386,7 +1386,7 @@ CSPString CStrategy::GetStockTechString( )
 	
 	return strStock + strTech;
 }
-// ½»Ò×·ÑÂÊ¡¢²Ù×÷Ìõ¼şµÈ
+// äº¤æ˜“è´¹ç‡ã€æ“ä½œæ¡ä»¶ç­‰
 CRateParam &	CStrategy::GetRateParam( )			{	return m_rate;			}
 COpParam &		CStrategy::GetOpParam( )				{	return m_opparam;		}
 CTechParameters & CStrategy::GetTechParametersBuy( )	{	return m_paramBuy;		}
@@ -1400,7 +1400,7 @@ CSPDWordArray &	CStrategy::GetSelectedTechsIndexTrend( )	{	return m_anTechsIndex
 
 /////////////////////////////////////////////////////////////////////////
 // Cache
-// ×¼±¸Êı¾İ£¬¶ÁÈ¡KÏßÊı¾İ£¬³¤ÖÜÆÚKÏßÊı¾İ£¬Éú³É¼¼ÊõÖ¸±ê¶ÔÏó
+// å‡†å¤‡æ•°æ®ï¼Œè¯»å–Kçº¿æ•°æ®ï¼Œé•¿å‘¨æœŸKçº¿æ•°æ®ï¼Œç”ŸæˆæŠ€æœ¯æŒ‡æ ‡å¯¹è±¡
 BOOL CStrategy::PrepareData( SIMULATION_CALLBACK fnCallback, void * cookie )
 {
 	if( m_techstocks.GetSize() == m_stocks.GetSize() )
@@ -1409,7 +1409,7 @@ BOOL CStrategy::PrepareData( SIMULATION_CALLBACK fnCallback, void * cookie )
 	ClearCache( );
 
 	// m_techstocks.m_kdataIndex m_techstocks.m_infoIndex
-	if( m_opparam.m_bIndexTrend )	// Ö¸ÊıKÏßÊı¾İ
+	if( m_opparam.m_bIndexTrend )	// æŒ‡æ•°Kçº¿æ•°æ®
 	{
 		CStockInfo	infoIndex;
 		if( AfxGetStockContainer().GetStockInfo( STKLIB_CODE_MAIN, &infoIndex ) )
@@ -1436,7 +1436,7 @@ BOOL CStrategy::PrepareData( SIMULATION_CALLBACK fnCallback, void * cookie )
 	
 	m_techstocks.SetSize( m_stocks.GetSize() );
 	int	nStockCount	=	0;
-	for( int i=0; i<m_stocks.GetSize(); i++ )	// ¶ÁÈ¡Ã¿Ò»Ö»±¸Ñ¡¹ÉÆ±µÄÊı¾İ
+	for( int i=0; i<m_stocks.GetSize(); i++ )	// è¯»å–æ¯ä¸€åªå¤‡é€‰è‚¡ç¥¨çš„æ•°æ®
 	{
 		CStockInfo	info;
 		if( AfxGetStockContainer().GetStockInfo( m_stocks.ElementAt(i), &info ) )
@@ -1497,7 +1497,7 @@ BOOL CStrategy::PrepareData( SIMULATION_CALLBACK fnCallback, void * cookie )
 	return ( m_techstocks.GetSize() == m_stocks.GetSize() );
 }
 
-// Çå³ıÃ¿¸öÖ¸±ê±£´æµÄÉÏ´ÎÇ÷ÊÆÖµ
+// æ¸…é™¤æ¯ä¸ªæŒ‡æ ‡ä¿å­˜çš„ä¸Šæ¬¡è¶‹åŠ¿å€¼
 void CStrategy::ClearLastIntensity( )
 {
 	for( int i=0; i<m_techstocks.GetSize(); i++ )
@@ -1525,7 +1525,7 @@ CTechStockContainer & CStrategy::GetTechStockContainer( )
 
 ////////////////////////////////////////////////////////////////////////
 // Simulation
-// ²ßÂÔÄ£Äâ£ºÖØĞÂÉè¶¨
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šé‡æ–°è®¾å®š
 void CStrategy::SimuReset( )
 {
 	SimuSetStatusInit( );
@@ -1538,7 +1538,7 @@ void CStrategy::SimuReset( )
 
 	SP_ASSERT( m_opparam.IsValid() );
 }
-// ²ßÂÔÄ£Äâ£º½øÈëÏÂÒ»¸ö½»Ò×ÈÕ
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šè¿›å…¥ä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥
 BOOL CStrategy::SimuGotoNextTime( )
 {
 	CSPTime	tmNext;
@@ -1550,17 +1550,17 @@ BOOL CStrategy::SimuGotoNextTime( )
 	}
 	return FALSE;
 }
-// ²ßÂÔÄ£Äâ£ºÄ£ÄâµÄµ±Ç°Ê±¼ä
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šæ¨¡æ‹Ÿçš„å½“å‰æ—¶é—´
 CSPTime CStrategy::SimuGetCurrentTime( )
 {
 	return m_SimuCurrentTime;
 }
-// ²ßÂÔÄ£Äâ£ºÄ£ÄâµÄµ±Ç°×Ê½ğ
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šæ¨¡æ‹Ÿçš„å½“å‰èµ„é‡‘
 double CStrategy::SimuGetCurrentCash( )
 {
 	return m_SimuCurrentCash;
 }
-// ²ßÂÔÄ£Äâ£º²Ù×÷Ö´ĞĞ£¬bTimeStrict±íÊ¾ÊÇ·ñÑÏ¸ñ×ñÊØ¼Æ»®Ê±¼ä
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šæ“ä½œæ‰§è¡Œï¼ŒbTimeStrictè¡¨ç¤ºæ˜¯å¦ä¸¥æ ¼éµå®ˆè®¡åˆ’æ—¶é—´
 BOOL CStrategy::SimuOperate( OPRECORD record, BOOL bTimeStrict )
 {
 	if( ! m_opparam.IsInTimeZones( record.time ) )
@@ -1575,7 +1575,7 @@ BOOL CStrategy::SimuOperate( OPRECORD record, BOOL bTimeStrict )
 
 	double	dAmount		=	record.dwShare * record.dSharePrice;
 	double	dRateCost	=	record.dRateCost;
-	if( STRATEGY_OPTYPE_BUY == record.lOpType )			// ÂòÈë
+	if( STRATEGY_OPTYPE_BUY == record.lOpType )			// ä¹°å…¥
 	{
 		if( m_SimuCurrentCash < dAmount+dRateCost )
 			return FALSE;
@@ -1583,27 +1583,27 @@ BOOL CStrategy::SimuOperate( OPRECORD record, BOOL bTimeStrict )
 			return FALSE;
 		m_SimuCurrentCash	-=	(dAmount+dRateCost);
 	}
-	else if( STRATEGY_OPTYPE_SELL == record.lOpType )	// Âô³ö
+	else if( STRATEGY_OPTYPE_SELL == record.lOpType )	// å–å‡º
 	{
 		if( !m_SimuStockOwn.RemoveStock( info, record.dwShare ) )
 			return FALSE;
 		m_SimuCurrentCash	+=	(dAmount-dRateCost);
 	}
-	else if( STRATEGY_OPTYPE_ADDSTOCK == record.lOpType )// Ìí¼Ó¹ÉÆ±
+	else if( STRATEGY_OPTYPE_ADDSTOCK == record.lOpType )// æ·»åŠ è‚¡ç¥¨
 	{
 		if( !m_SimuStockOwn.AddStock( info, record.dwShare, record.dSharePrice ) )
 			return FALSE;
 	}
-	else if( STRATEGY_OPTYPE_REMOVESTOCK == record.lOpType )// ÒÆ³ı¹ÉÆ±
+	else if( STRATEGY_OPTYPE_REMOVESTOCK == record.lOpType )// ç§»é™¤è‚¡ç¥¨
 	{
 		if( !m_SimuStockOwn.RemoveStock( info, record.dwShare ) )
 			return FALSE;
 	}
-	else if( STRATEGY_OPTYPE_ADDCASH == record.lOpType )	// Ìí¼Ó×Ê½ğ
+	else if( STRATEGY_OPTYPE_ADDCASH == record.lOpType )	// æ·»åŠ èµ„é‡‘
 	{
 		m_SimuCurrentCash	+=	record.dSharePrice;
 	}
-	else if( STRATEGY_OPTYPE_REMOVECASH == record.lOpType ) // ÒÆ³ı×Ê½ğ
+	else if( STRATEGY_OPTYPE_REMOVECASH == record.lOpType ) // ç§»é™¤èµ„é‡‘
 	{
 		if( m_SimuCurrentCash < record.dSharePrice )
 			return FALSE;
@@ -1616,36 +1616,36 @@ BOOL CStrategy::SimuOperate( OPRECORD record, BOOL bTimeStrict )
 	m_SimuOpRecord.Add( record );
 	return TRUE;
 }
-// ²ßÂÔÄ£Äâ£º²Ù×÷¼ÇÂ¼
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šæ“ä½œè®°å½•
 COpRecordContainer & CStrategy::SimuGetOpRecord( )
 {
 	return m_SimuOpRecord;
 }
-// ²ßÂÔÄ£Äâ£ºÏÂÒ»²½²Ù×÷
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šä¸‹ä¸€æ­¥æ“ä½œ
 COpRecordContainer & CStrategy::SimuGetNextOp( )
 {
 	return m_SimuNextOp;
 }
-// ²ßÂÔÄ£Äâ£ºµ±Ç°ÓµÓĞ¹ÉÆ±
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šå½“å‰æ‹¥æœ‰è‚¡ç¥¨
 CStockOwnContainer & CStrategy::SimuGetStockOwn( )
 {
 	return m_SimuStockOwn;
 }
-// ²ßÂÔÄ£Äâ£º×Ü×Ê²úĞòÁĞ
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šæ€»èµ„äº§åºåˆ—
 CAssetSerialContainer & CStrategy::SimuGetAssetSerial( )
 {
 	return m_SimuAssetSerial;
 }
-// ²ßÂÔÄ£Äâ£ºµ±Ç°½ø¶È
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šå½“å‰è¿›åº¦
 DWORD CStrategy::SimuGetCurrentProgress( DWORD dwProgressMax )
 {
 	return m_opparam.GetProgress( m_SimuCurrentTime, dwProgressMax );
 }
-// ²ßÂÔÄ£Äâ£º¸ø¶¨Ê±¼äµÄ×Ü×Ê²ú
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šç»™å®šæ—¶é—´çš„æ€»èµ„äº§
 double CStrategy::SimuGetAsset( CSPTime tmCur )
 {
 	double	dAsset	=	0;
-	if( m_techstocks.GetSumAsset( tmCur, m_SimuStockOwn, &dAsset ) )	// ¼ÆËã×Ü×Ê²ú
+	if( m_techstocks.GetSumAsset( tmCur, m_SimuStockOwn, &dAsset ) )	// è®¡ç®—æ€»èµ„äº§
 	{
 		dAsset	+=	m_SimuCurrentCash;
 
@@ -1666,16 +1666,16 @@ double CStrategy::SimuGetAsset( CSPTime tmCur )
 				return serial.dAsset;
 		}
 	}
-	return m_opparam.m_nStartAmount;	// ³õÊ¼×Ü×Ê²ú
+	return m_opparam.m_nStartAmount;	// åˆå§‹æ€»èµ„äº§
 }
-// ²ßÂÔÄ£Äâ£ºµ±Ç°ÊÕÒæ
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šå½“å‰æ”¶ç›Š
 double CStrategy::SimuGetCurrentYield( )
 {
 	if( m_opparam.m_nStartAmount > 0 )
 		return STRATEGY_BASEF_YIELD * SimuGetAsset(m_SimuCurrentTime) / m_opparam.m_nStartAmount;
 	return STRATEGY_BASEF_YIELD;
 }
-// ²ßÂÔÄ£Äâ£ºµ±Ç°Ö¸ÊıÉÏÕÇ¶àÉÙ
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šå½“å‰æŒ‡æ•°ä¸Šæ¶¨å¤šå°‘
 double CStrategy::SimuGetCurrentYieldIndexPercent( )
 {
 	CSPTime	sptmBegin( m_opparam.GetBeginTime().GetTime() );
@@ -1697,15 +1697,15 @@ double CStrategy::SimuGetCurrentYieldIndexPercent( )
 
 	return dYield;
 }
-// ²ßÂÔÄ£Äâ£ºµ±Ç°ÊÕÒæ°Ù·ÖÊı
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šå½“å‰æ”¶ç›Šç™¾åˆ†æ•°
 double CStrategy::SimuGetCurrentYieldPercent( )
 {
 	return ( SimuGetCurrentYield() - STRATEGY_BASEF_YIELD ) / STRATEGY_BASEF_YIELD;
 }
-// ²ßÂÔÄ£Äâ£ºÖ´ĞĞÏÂÒ»²½²Ù×÷¼Æ»®
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šæ‰§è¡Œä¸‹ä¸€æ­¥æ“ä½œè®¡åˆ’
 BOOL CStrategy::SimuOperateNextop( CSPTime tmCur, COpRecordContainer & nextop, CTechStock & techstock )
 {
-	for( int j=0; j<nextop.GetSize(); j++ )	// Ã¿¸ö¼Æ»®ÒÀ´ÎÖ´ĞĞ
+	for( int j=0; j<nextop.GetSize(); j++ )	// æ¯ä¸ªè®¡åˆ’ä¾æ¬¡æ‰§è¡Œ
 	{
 		OPRECORD &	record	=	nextop.ElementAt(j);
 		if( STRATEGY_OPTYPE_BUY != record.lOpType && STRATEGY_OPTYPE_SELL != record.lOpType )
@@ -1714,23 +1714,23 @@ BOOL CStrategy::SimuOperateNextop( CSPTime tmCur, COpRecordContainer & nextop, C
 		if( tmCur.GetTime() >= record.time
 			&& techstock.m_info.IsEqualTo( CStock::marketUnknown, record.szCode ) )
 		{
-			if( techstock.IsStopTrading(tmCur) )	// Í£ÅÆÂğ
+			if( techstock.IsStopTrading(tmCur) )	// åœç‰Œå—
 			{
 				CSPTime	tmNext;
 				if( m_opparam.GetNextTradeTime(tmCur, tmNext) )
-					record.time	=	tmNext.GetTime();	// ÏÂ´ÎÔÙÖ´ĞĞ
+					record.time	=	tmNext.GetTime();	// ä¸‹æ¬¡å†æ‰§è¡Œ
 				continue;
 			}
 
 			double	dPriceOK	=	record.dSharePrice;
-			if( techstock.GetPriceOK( record.lOpType, tmCur, record.dwShare, record.dSharePrice, &dPriceOK ) )	// ³É½»¼Û
+			if( techstock.GetPriceOK( record.lOpType, tmCur, record.dwShare, record.dSharePrice, &dPriceOK ) )	// æˆäº¤ä»·
 			{
 				record.time			=	tmCur.GetTime();
 				record.dSharePrice	=	dPriceOK;
 				record.dRateCost	=	record.dwShare * record.dSharePrice * m_rate.GetRate(techstock.m_info);
 				SimuOperate( record );
 			}
-			else if( STRATEGY_OPTYPE_SELL == record.lOpType )	// Èç¹ûÊÇÂô³ö¶øÃ»ÓĞ³É¹¦£¬ÔòË³ÑÓÏÂÒ»¸ö½»Ò×ÈÕ£¬Ö±ÖÁÂô³ö
+			else if( STRATEGY_OPTYPE_SELL == record.lOpType )	// å¦‚æœæ˜¯å–å‡ºè€Œæ²¡æœ‰æˆåŠŸï¼Œåˆ™é¡ºå»¶ä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥ï¼Œç›´è‡³å–å‡º
 			{
 				CSPTime	tmNext;
 				if( m_opparam.GetNextTradeTime(tmCur, tmNext) )
@@ -1745,11 +1745,11 @@ BOOL CStrategy::SimuOperateNextop( CSPTime tmCur, COpRecordContainer & nextop, C
 	}
 	return TRUE;
 }
-// ²ßÂÔÄ£Äâ£ºÄ£ÄâÔËĞĞ
+// ç­–ç•¥æ¨¡æ‹Ÿï¼šæ¨¡æ‹Ÿè¿è¡Œ
 BOOL CStrategy::SimuRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 {
 	// TIMEZONES
-	// ×¼±¸Êı¾İ
+	// å‡†å¤‡æ•°æ®
 	if( !PrepareData( fnCallback, cookie ) )
 		return FALSE;
 
@@ -1760,37 +1760,37 @@ BOOL CStrategy::SimuRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 	CSPTime	tmOp;				// Temp Data
 
 	do	{
-		CSPTime	tmCur	=	SimuGetCurrentTime();	// Ä£Äâµ±Ç°Ê±¼ä
+		CSPTime	tmCur	=	SimuGetCurrentTime();	// æ¨¡æ‹Ÿå½“å‰æ—¶é—´
 
 		// Process
-		for( int i=0; i<m_techstocks.GetSize(); i++ )	// Ã¿Ö»¹ÉÆ±ÒÀ´ÎÅĞ¶Ï
+		for( int i=0; i<m_techstocks.GetSize(); i++ )	// æ¯åªè‚¡ç¥¨ä¾æ¬¡åˆ¤æ–­
 		{
 			CTechStock & techstock	=	m_techstocks.ElementAt(i);
 
 			// Operate
-			SimuOperateNextop( tmCur, m_SimuNextOp, techstock );	// Ö´ĞĞ½ñÌìµÄ²Ù×÷¼Æ»®
+			SimuOperateNextop( tmCur, m_SimuNextOp, techstock );	// æ‰§è¡Œä»Šå¤©çš„æ“ä½œè®¡åˆ’
 
 			// Judge Whether to operate, if yes, save to nextop
 			STOCKOWN	own;
 			memset( &own, 0, sizeof(own) );
-			if( m_SimuStockOwn.HasThisStock( techstock.m_info, &own ) )	// Èç¹ûÒÑ¾­ÓĞÕâÖ§¹ÉÆ±£¬ÅĞ¶ÏÊÇ·ñÂô³ö
+			if( m_SimuStockOwn.HasThisStock( techstock.m_info, &own ) )	// å¦‚æœå·²ç»æœ‰è¿™æ”¯è‚¡ç¥¨ï¼Œåˆ¤æ–­æ˜¯å¦å–å‡º
 			{
 				if( m_techstocks.GetShouldSellShare( techstock, tmCur, own, m_opparam, &tmOp, &dwShare, &dSharePrice ) )
-				{	// Èç¹ûÒªÂô³ö£¬¼ÓÈëÏÂÒ»²½²Ù×÷¼Æ»®£¬ÏÂÒ»¸ö½»Ò×ÈÕÖ´ĞĞ
+				{	// å¦‚æœè¦å–å‡ºï¼ŒåŠ å…¥ä¸‹ä¸€æ­¥æ“ä½œè®¡åˆ’ï¼Œä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥æ‰§è¡Œ
 					m_SimuNextOp.AddRecordUniqueStock( STRATEGY_OPTYPE_SELL, tmOp, techstock.m_info.GetStockCode(), dwShare, dSharePrice, dwShare*dSharePrice*m_rate.GetRate(techstock.m_info) );
 				}
 			}
-			else	// ÅĞ¶ÏÊÇ·ñÂòÈë
+			else	// åˆ¤æ–­æ˜¯å¦ä¹°å…¥
 			{
 				if( m_techstocks.GetShouldBuyShare( techstock, tmCur, m_SimuCurrentCash, m_rate , m_opparam, m_SimuStockOwn.GetSize(), &tmOp, &dwShare, &dSharePrice )
 					&& ( m_SimuStockOwn.GetSize() + m_SimuNextOp.GetBuyRecordCount() < m_opparam.m_nStoreDiv || m_SimuNextOp.HasBuyStock(techstock.m_info.GetStockCode()) ) )
-				{	// Èç¹ûÒªÂòÈë£¬¼ÓÈëÏÂÒ»²½²Ù×÷¼Æ»®£¬ÏÂÒ»¸ö½»Ò×ÈÕÖ´ĞĞ
+				{	// å¦‚æœè¦ä¹°å…¥ï¼ŒåŠ å…¥ä¸‹ä¸€æ­¥æ“ä½œè®¡åˆ’ï¼Œä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥æ‰§è¡Œ
 					m_SimuNextOp.AddRecordUniqueStock( STRATEGY_OPTYPE_BUY, tmOp, techstock.m_info.GetStockCode(), dwShare, dSharePrice, dwShare*dSharePrice*m_rate.GetRate(techstock.m_info) );
 				}
 			}
 		}
 
-		// ½ø¶ÈÏÔÊ¾
+		// è¿›åº¦æ˜¾ç¤º
 		DWORD	dwProgress	=	SimuGetCurrentProgress( STRATEGY_MAX_PROGRESS );
 		double	dYield		=	SimuGetCurrentYield( );
 		if( fnCallback && !fnCallback( SIMULATION_PROGRESS, dwProgress, NULL, cookie ) )
@@ -1798,7 +1798,7 @@ BOOL CStrategy::SimuRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 		if( fnCallback && !fnCallback( SIMULATION_YIELD, (DWORD)dYield, NULL, cookie ) )
 			return FALSE;
 
-	} while( SimuGotoNextTime() );	// Ä£ÄâµÄÏÂÒ»¸ö½»Ò×ÈÕ
+	} while( SimuGotoNextTime() );	// æ¨¡æ‹Ÿçš„ä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥
 
 	if( fnCallback )
 		fnCallback( SIMULATION_PROGRESS, STRATEGY_MAX_PROGRESS, NULL, cookie );
@@ -1807,7 +1807,7 @@ BOOL CStrategy::SimuRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 
 ////////////////////////////////////////////////////////////////////////
 // Real
-// ²ßÂÔÊµÕ½£ºÖØĞÂÉè¶¨
+// ç­–ç•¥å®æˆ˜ï¼šé‡æ–°è®¾å®š
 void CStrategy::RealReset( )
 {
 	CSPTime	tmLatest	=	CSPTime::GetCurrentTime();
@@ -1822,7 +1822,7 @@ void CStrategy::RealReset( )
 
 	SP_ASSERT( m_opparam.IsValid() );
 }
-// ²ßÂÔÊµÕ½£ºÏÂÒ»¸ö½»Ò×Ê±¼ä
+// ç­–ç•¥å®æˆ˜ï¼šä¸‹ä¸€ä¸ªäº¤æ˜“æ—¶é—´
 BOOL CStrategy::RealGotoNextTime( )
 {
 	CSPTime	tmNext;
@@ -1833,22 +1833,22 @@ BOOL CStrategy::RealGotoNextTime( )
 	}
 	return FALSE;
 }
-// ²ßÂÔÊµÕ½£º¿ªÊ¼Ê±¼ä
+// ç­–ç•¥å®æˆ˜ï¼šå¼€å§‹æ—¶é—´
 CSPTime CStrategy::RealGetBeginTime( )
 {
 	return m_RealBeginTime;
 }
-// ²ßÂÔÊµÕ½£ºµ±Ç°Ê±¼ä
+// ç­–ç•¥å®æˆ˜ï¼šå½“å‰æ—¶é—´
 CSPTime CStrategy::RealGetCurrentTime( )
 {
 	return m_RealCurrentTime;
 }
-// ²ßÂÔÊµÕ½£ºµ±Ç°×Ê½ğ
+// ç­–ç•¥å®æˆ˜ï¼šå½“å‰èµ„é‡‘
 double CStrategy::RealGetCurrentCash( )
 {
 	return m_RealCurrentCash;
 }
-// ²ßÂÔÊµÕ½£ºÖ´ĞĞÒ»¸ö²Ù×÷
+// ç­–ç•¥å®æˆ˜ï¼šæ‰§è¡Œä¸€ä¸ªæ“ä½œ
 BOOL CStrategy::RealOperate( OPRECORD record, BOOL bTimeStrict )
 {
 	if( bTimeStrict && m_RealOpRecord.GetSize() > 0 && record.time < m_RealOpRecord.ElementAt(m_RealOpRecord.GetSize()-1).time )
@@ -1861,7 +1861,7 @@ BOOL CStrategy::RealOperate( OPRECORD record, BOOL bTimeStrict )
 
 	double	dAmount		=	record.dwShare * record.dSharePrice;
 	double	dRateCost	=	record.dRateCost;
-	if( STRATEGY_OPTYPE_BUY == record.lOpType )	// ÂòÈë
+	if( STRATEGY_OPTYPE_BUY == record.lOpType )	// ä¹°å…¥
 	{
 		if( m_RealCurrentCash < dAmount+dRateCost )
 			return FALSE;
@@ -1869,27 +1869,27 @@ BOOL CStrategy::RealOperate( OPRECORD record, BOOL bTimeStrict )
 			return FALSE;
 		m_RealCurrentCash	-=	(dAmount+dRateCost);
 	}
-	else if( STRATEGY_OPTYPE_SELL == record.lOpType )	// Âô³ö
+	else if( STRATEGY_OPTYPE_SELL == record.lOpType )	// å–å‡º
 	{
 		if( !m_RealStockOwn.RemoveStock( info, record.dwShare ) )
 			return FALSE;
 		m_RealCurrentCash	+=	(dAmount-dRateCost);
 	}
-	else if( STRATEGY_OPTYPE_ADDSTOCK == record.lOpType )	// Ìí¼Ó¹ÉÆ±
+	else if( STRATEGY_OPTYPE_ADDSTOCK == record.lOpType )	// æ·»åŠ è‚¡ç¥¨
 	{
 		if( !m_RealStockOwn.AddStock( info, record.dwShare, record.dSharePrice ) )
 			return FALSE;
 	}
-	else if( STRATEGY_OPTYPE_REMOVESTOCK == record.lOpType )	// ÒÆ³ı¹ÉÆ±
+	else if( STRATEGY_OPTYPE_REMOVESTOCK == record.lOpType )	// ç§»é™¤è‚¡ç¥¨
 	{
 		if( !m_RealStockOwn.RemoveStock( info, record.dwShare ) )
 			return FALSE;
 	}
-	else if( STRATEGY_OPTYPE_ADDCASH == record.lOpType )		// ¼ÓÈë×Ê½ğ
+	else if( STRATEGY_OPTYPE_ADDCASH == record.lOpType )		// åŠ å…¥èµ„é‡‘
 	{
 		m_RealCurrentCash	+=	record.dSharePrice;
 	}
-	else if( STRATEGY_OPTYPE_REMOVECASH == record.lOpType )	// ÒÆ³ı×Ê½ğ
+	else if( STRATEGY_OPTYPE_REMOVECASH == record.lOpType )	// ç§»é™¤èµ„é‡‘
 	{
 		if( m_RealCurrentCash < record.dSharePrice )
 			return FALSE;
@@ -1902,27 +1902,27 @@ BOOL CStrategy::RealOperate( OPRECORD record, BOOL bTimeStrict )
 	m_RealOpRecord.Add( record );
 	return TRUE;
 }
-// ²ßÂÔÊµÕ½£º²Ù×÷¼ÇÂ¼
+// ç­–ç•¥å®æˆ˜ï¼šæ“ä½œè®°å½•
 COpRecordContainer & CStrategy::RealGetOpRecord( )
 {
 	return m_RealOpRecord;
 }
-// ²ßÂÔÊµÕ½£ºÏÂÒ»²½²Ù×÷¼Æ»®
+// ç­–ç•¥å®æˆ˜ï¼šä¸‹ä¸€æ­¥æ“ä½œè®¡åˆ’
 COpRecordContainer & CStrategy::RealGetNextOp( )
 {
 	return m_RealNextOp;
 }
-// ²ßÂÔÊµÕ½£ºµ±Ç°ÓµÓĞ¹ÉÆ±
+// ç­–ç•¥å®æˆ˜ï¼šå½“å‰æ‹¥æœ‰è‚¡ç¥¨
 CStockOwnContainer & CStrategy::RealGetStockOwn( )
 {
 	return m_RealStockOwn;
 }
-// ²ßÂÔÊµÕ½£º×Ü×Ê²úĞòÁĞ
+// ç­–ç•¥å®æˆ˜ï¼šæ€»èµ„äº§åºåˆ—
 CAssetSerialContainer & CStrategy::RealGetAssetSerial( )
 {
 	return m_RealAssetSerial;
 }
-// ²ßÂÔÊµÕ½£ºµÃµ½Ö¸¶¨ÈÕÆÚµÄ×Ü×Ê²ú
+// ç­–ç•¥å®æˆ˜ï¼šå¾—åˆ°æŒ‡å®šæ—¥æœŸçš„æ€»èµ„äº§
 double CStrategy::RealGetAsset( CSPTime tmCur )
 {
 	double	dAsset	=	0;
@@ -1950,14 +1950,14 @@ double CStrategy::RealGetAsset( CSPTime tmCur )
 	}
 	return m_opparam.m_nStartAmount;
 }
-// ²ßÂÔÊµÕ½£ºµ±Ç°ÊÕÒæ
+// ç­–ç•¥å®æˆ˜ï¼šå½“å‰æ”¶ç›Š
 double CStrategy::RealGetCurrentYield( )
 {
 	if( m_opparam.m_nStartAmount > 0 )
 		return STRATEGY_BASEF_YIELD * RealGetAsset(RealGetCurrentTime()) / m_opparam.m_nStartAmount;
 	return STRATEGY_BASEF_YIELD;
 }
-// ²ßÂÔÊµÕ½£ºµ±Ç°Ö¸ÊıÉÏÕÇ°Ù·Ö±È
+// ç­–ç•¥å®æˆ˜ï¼šå½“å‰æŒ‡æ•°ä¸Šæ¶¨ç™¾åˆ†æ¯”
 double CStrategy::RealGetCurrentYieldIndexPercent( )
 {
 	CSPTime	sptmBegin( RealGetBeginTime().GetTime() );
@@ -1979,15 +1979,15 @@ double CStrategy::RealGetCurrentYieldIndexPercent( )
 
 	return dYield;
 }
-// ²ßÂÔÊµÕ½£ºµ±Ç°ÊÕÒæ°Ù·Ö±È
+// ç­–ç•¥å®æˆ˜ï¼šå½“å‰æ”¶ç›Šç™¾åˆ†æ¯”
 double CStrategy::RealGetCurrentYieldPercent( )
 {
 	return ( RealGetCurrentYield() - STRATEGY_BASEF_YIELD ) / STRATEGY_BASEF_YIELD;
 }
-// ²ßÂÔÊµÕ½£ºÖ´ĞĞ²Ù×÷¼Æ»®
+// ç­–ç•¥å®æˆ˜ï¼šæ‰§è¡Œæ“ä½œè®¡åˆ’
 BOOL CStrategy::RealOperateNextop( CSPTime tmCur, COpRecordContainer & nextop, CTechStock & techstock )
 {
-	for( int j=0; j<nextop.GetSize(); j++ )	// ÒÀ´ÎÖ´ĞĞÃ¿Ò»¸ö¼Æ»®
+	for( int j=0; j<nextop.GetSize(); j++ )	// ä¾æ¬¡æ‰§è¡Œæ¯ä¸€ä¸ªè®¡åˆ’
 	{
 		OPRECORD &	record	=	nextop.ElementAt(j);
 		if( STRATEGY_OPTYPE_BUY != record.lOpType && STRATEGY_OPTYPE_SELL != record.lOpType )
@@ -2003,7 +2003,7 @@ BOOL CStrategy::RealOperateNextop( CSPTime tmCur, COpRecordContainer & nextop, C
 				continue;
 			}
 
-			if( techstock.IsStopTrading(tmCur) )	// Í£ÅÆ£¬×ªÈëÏÂÒ»¸ö½»Ò×ÈÕµÄ¼Æ»®ÖĞ
+			if( techstock.IsStopTrading(tmCur) )	// åœç‰Œï¼Œè½¬å…¥ä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥çš„è®¡åˆ’ä¸­
 			{
 				CSPTime	tmNext;
 				if( m_opparam.GetNextTradeTime(tmCur, tmNext) )
@@ -2012,14 +2012,14 @@ BOOL CStrategy::RealOperateNextop( CSPTime tmCur, COpRecordContainer & nextop, C
 			}
 
 			double	dPriceOK	=	record.dSharePrice;
-			if( techstock.GetPriceOK( record.lOpType, tmCur, record.dwShare, record.dSharePrice, &dPriceOK ) )	// ³É½»¼Û¸ñ
+			if( techstock.GetPriceOK( record.lOpType, tmCur, record.dwShare, record.dSharePrice, &dPriceOK ) )	// æˆäº¤ä»·æ ¼
 			{
 				record.time			=	tmCur.GetTime();
 				record.dSharePrice	=	dPriceOK;
 				record.dRateCost	=	record.dwShare * record.dSharePrice * m_rate.GetRate(techstock.m_info);
 				RealOperate( record );
 			}
-			else if( STRATEGY_OPTYPE_SELL == record.lOpType )	// Èç¹ûÊÇÂô³ö²»³É¹¦£¬×ªÈëÏÂÒ»¸ö½»Ò×ÈÕ£¬Ö±ÖÁÂô³ö³É¹¦
+			else if( STRATEGY_OPTYPE_SELL == record.lOpType )	// å¦‚æœæ˜¯å–å‡ºä¸æˆåŠŸï¼Œè½¬å…¥ä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥ï¼Œç›´è‡³å–å‡ºæˆåŠŸ
 			{
 				CSPTime	tmNext;
 				if( m_opparam.GetNextTradeTime(tmCur, tmNext) )
@@ -2034,11 +2034,11 @@ BOOL CStrategy::RealOperateNextop( CSPTime tmCur, COpRecordContainer & nextop, C
 	}
 	return TRUE;
 }
-// ²ßÂÔÊµÕ½£ºÖ´ĞĞ
+// ç­–ç•¥å®æˆ˜ï¼šæ‰§è¡Œ
 BOOL CStrategy::RealRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 {
 	// TIMEZONES
-	// ×¼±¸Êı¾İ
+	// å‡†å¤‡æ•°æ®
 	if( !PrepareData( fnCallback, cookie ) )
 		return FALSE;
 
@@ -2049,36 +2049,36 @@ BOOL CStrategy::RealRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 	CSPTime	tmOp;				// Temp Data
 
 	do	{
-		CSPTime	tmCur	=	RealGetCurrentTime();	// µ±Ç°ÈÕÆÚ
+		CSPTime	tmCur	=	RealGetCurrentTime();	// å½“å‰æ—¥æœŸ
 
 		// Process
-		for( int i=0; i<m_techstocks.GetSize(); i++ )	// Ã¿Ö»¹ÉÆ±ÒÀ´ÎÅĞ¶Ï
+		for( int i=0; i<m_techstocks.GetSize(); i++ )	// æ¯åªè‚¡ç¥¨ä¾æ¬¡åˆ¤æ–­
 		{
 			CTechStock & techstock	=	m_techstocks.ElementAt(i);
 
 			// Operate
-			RealOperateNextop( tmCur, m_RealNextOp, techstock );	// Ö´ĞĞ½ñÈÕ²Ù×÷¼Æ»®
+			RealOperateNextop( tmCur, m_RealNextOp, techstock );	// æ‰§è¡Œä»Šæ—¥æ“ä½œè®¡åˆ’
 
 			// Judge Whether to operate, if yes, save to nextop
 			STOCKOWN	own;
 			memset( &own, 0, sizeof(own) );
-			if( m_RealStockOwn.HasThisStock( techstock.m_info, &own ) )	// Èç¹ûÓĞÕâÖ§¹ÉÆ±£¬ÅĞ¶ÏÊÇ·ñÂô³ö
+			if( m_RealStockOwn.HasThisStock( techstock.m_info, &own ) )	// å¦‚æœæœ‰è¿™æ”¯è‚¡ç¥¨ï¼Œåˆ¤æ–­æ˜¯å¦å–å‡º
 			{
 				if( m_techstocks.GetShouldSellShare( techstock, tmCur, own, m_opparam, &tmOp, &dwShare, &dSharePrice ) )
-				{	// Èç¹ûÂô³ö£¬¼ÓÈë²Ù×÷¼Æ»®ÖĞ
+				{	// å¦‚æœå–å‡ºï¼ŒåŠ å…¥æ“ä½œè®¡åˆ’ä¸­
 					m_RealNextOp.AddRecordUniqueStock( STRATEGY_OPTYPE_SELL, tmOp, techstock.m_info.GetStockCode(), dwShare, dSharePrice, dwShare*dSharePrice*m_rate.GetRate(techstock.m_info) );
 				}
 			}
-			else	// ÅĞ¶ÏÊÇ·ñÂòÈë
+			else	// åˆ¤æ–­æ˜¯å¦ä¹°å…¥
 			{
 				if( m_techstocks.GetShouldBuyShare( techstock, tmCur, m_RealCurrentCash, m_rate , m_opparam, m_RealStockOwn.GetSize(), &tmOp, &dwShare, &dSharePrice )
 					&& ( m_RealStockOwn.GetSize() + m_RealNextOp.GetBuyRecordCount() < m_opparam.m_nStoreDiv || m_RealNextOp.HasBuyStock(techstock.m_info.GetStockCode()) ) )
-				{	// Èç¹ûÂòÈë£¬¼ÓÈë²Ù×÷¼Æ»®ÖĞ
+				{	// å¦‚æœä¹°å…¥ï¼ŒåŠ å…¥æ“ä½œè®¡åˆ’ä¸­
 					m_RealNextOp.AddRecordUniqueStock( STRATEGY_OPTYPE_BUY, tmOp, techstock.m_info.GetStockCode(), dwShare, dSharePrice, dwShare*dSharePrice*m_rate.GetRate(techstock.m_info) );
 				}
 			}
 
-			// ½ø¶ÈÏÔÊ¾
+			// è¿›åº¦æ˜¾ç¤º
 			DWORD	dwProgress	=	(DWORD)((i+1)*STRATEGY_MAX_PROGRESS/m_techstocks.GetSize());
 			if( fnCallback && !fnCallback( SIMULATION_PROGRESS, dwProgress, NULL, cookie ) )
 				return FALSE;
@@ -2086,19 +2086,19 @@ BOOL CStrategy::RealRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 
 		RealGetAsset( RealGetCurrentTime() );
 
-	} while( RealGotoNextTime() );	// ÏÂÒ»¸ö½»Ò×ÈÕ
+	} while( RealGotoNextTime() );	// ä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥
 
 	if( fnCallback )
 		fnCallback( SIMULATION_PROGRESS, STRATEGY_MAX_PROGRESS, NULL, cookie );
 	return TRUE;
 }
-// ²ßÂÔÊµÕ½£º¼ÓÈë²Ù×÷¼ÇÂ¼£¬Èç¹û³É¹¦£¬Í¬Ê±ÒªÉ¾³ı¼ÓÈëÈÕºóµÄËùÓĞ²Ù×÷
+// ç­–ç•¥å®æˆ˜ï¼šåŠ å…¥æ“ä½œè®°å½•ï¼Œå¦‚æœæˆåŠŸï¼ŒåŒæ—¶è¦åˆ é™¤åŠ å…¥æ—¥åçš„æ‰€æœ‰æ“ä½œ
 BOOL CStrategy::RealAddOpRecordStrict( OPRECORD record )
 {
 	COpRecordContainer recordbk;
 	recordbk.Copy( m_RealOpRecord );
 
-	// ÖØĞÂÖ´ĞĞ²Ù×÷¼ÇÂ¼£¬µ½¼ÓÈëĞÂ²Ù×÷ÈÕÎªÖ¹
+	// é‡æ–°æ‰§è¡Œæ“ä½œè®°å½•ï¼Œåˆ°åŠ å…¥æ–°æ“ä½œæ—¥ä¸ºæ­¢
 	BOOL	bOK	=	TRUE;
 	m_RealCurrentCash	=	m_opparam.m_nStartAmount;
 	m_RealOpRecord.RemoveAll();
@@ -2112,7 +2112,7 @@ BOOL CStrategy::RealAddOpRecordStrict( OPRECORD record )
 	}
 	
 	if( bOK && RealOperate( record ) )
-	{	// ¼ÓÈë³É¹¦£¬ÖØĞÂ¼ÆËã×Ü×Ê²úĞòÁĞ
+	{	// åŠ å…¥æˆåŠŸï¼Œé‡æ–°è®¡ç®—æ€»èµ„äº§åºåˆ—
 		for( int i=m_RealAssetSerial.GetSize()-1; i>=0; i-- )
 		{
 			ASSETSERIAL	serial	=	m_RealAssetSerial.ElementAt(i);
@@ -2124,7 +2124,7 @@ BOOL CStrategy::RealAddOpRecordStrict( OPRECORD record )
 	}
 	else
 	{
-		// ¼ÓÈëÊ§°Ü£¬È«²¿ÖØÀ´£¬»Ö¸´Ô­Ñù
+		// åŠ å…¥å¤±è´¥ï¼Œå…¨éƒ¨é‡æ¥ï¼Œæ¢å¤åŸæ ·
 		m_RealCurrentCash	=	m_opparam.m_nStartAmount;
 		m_RealOpRecord.RemoveAll();
 		m_RealNextOp.RemoveAll();
@@ -2137,7 +2137,7 @@ BOOL CStrategy::RealAddOpRecordStrict( OPRECORD record )
 		return FALSE;
 	}
 }
-// ²ßÂÔÊµÕ½£ºÉ¾³ı²Ù×÷¼ÇÂ¼£¬Èç¹û³É¹¦£¬Í¬Ê±ÒªÉ¾³ıÈÕºóµÄËùÓĞ²Ù×÷
+// ç­–ç•¥å®æˆ˜ï¼šåˆ é™¤æ“ä½œè®°å½•ï¼Œå¦‚æœæˆåŠŸï¼ŒåŒæ—¶è¦åˆ é™¤æ—¥åçš„æ‰€æœ‰æ“ä½œ
 BOOL CStrategy::RealDeleteOpRecordStrict( int nRecord )
 {
 	if( nRecord < 0 || nRecord >= m_RealOpRecord.GetSize() )
@@ -2150,7 +2150,7 @@ BOOL CStrategy::RealDeleteOpRecordStrict( int nRecord )
 	COpRecordContainer recordbk;
 	recordbk.Copy( m_RealOpRecord );
 
-	// ÖØĞÂÖ´ĞĞ²Ù×÷¼ÇÂ¼£¬µ½É¾³ıÈÕÎªÖ¹
+	// é‡æ–°æ‰§è¡Œæ“ä½œè®°å½•ï¼Œåˆ°åˆ é™¤æ—¥ä¸ºæ­¢
 	BOOL	bOK	=	TRUE;
 	m_RealCurrentCash	=	m_opparam.m_nStartAmount;
 	m_RealOpRecord.RemoveAll();
@@ -2164,7 +2164,7 @@ BOOL CStrategy::RealDeleteOpRecordStrict( int nRecord )
 	}
 	
 	if( bOK )
-	{	// ³É¹¦É¾³ı£¬ÖØĞÂ¼ÆËã×Ü×Ê²úĞòÁĞ
+	{	// æˆåŠŸåˆ é™¤ï¼Œé‡æ–°è®¡ç®—æ€»èµ„äº§åºåˆ—
 		for( int i=m_RealAssetSerial.GetSize()-1; i>=0; i-- )
 		{
 			ASSETSERIAL	serial	=	m_RealAssetSerial.ElementAt(i);
@@ -2176,7 +2176,7 @@ BOOL CStrategy::RealDeleteOpRecordStrict( int nRecord )
 	}
 	else
 	{
-		// É¾³ıÊ§°Ü£¬»Ö¸´Ô­Ñù
+		// åˆ é™¤å¤±è´¥ï¼Œæ¢å¤åŸæ ·
 		m_RealCurrentCash	=	m_opparam.m_nStartAmount;
 		m_RealOpRecord.RemoveAll();
 		m_RealNextOp.RemoveAll();

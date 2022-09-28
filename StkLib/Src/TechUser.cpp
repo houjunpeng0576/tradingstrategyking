@@ -260,12 +260,12 @@ int CTechUser::GetSignal( int nIndex, UINT * pnCode )
 
 		int	nSignal	=	GetForkSignal( nIndex, m_techuserinfo.m_itsGoldenFork, m_techuserinfo.m_itsDeadFork, pnCode );
 		if( dValue1 < dLiminalLow && nSignal == ITS_BUY )
-		{	// 低位金叉
+		{	// 浣庝綅閲戝弶
 			if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 			return ITS_BUY;
 		}
 		if( dValue1 > dLiminalHigh && nSignal == ITS_SELL )
-		{	// 高位死叉
+		{	// 楂樹綅姝诲弶
 			if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 			return ITS_SELL;
 		}
@@ -290,7 +290,7 @@ int CTechUser::GetSignal( int nIndex, UINT * pnCode )
 	return nSignal;
 }
 
-// 得到趋势信号
+// 寰楀埌瓒嬪娍淇″彿
 int CTechUser::GetIntensity( int nIndex, UINT * pnCode, BOOL bTraceBack )
 {
 	return CTechnique::GetIntensity( nIndex, pnCode, bTraceBack );

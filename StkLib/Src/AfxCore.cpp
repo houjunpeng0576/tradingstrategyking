@@ -228,7 +228,7 @@ BOOL AfxPrepareStockData( CStDatabase * pDatabase, CStock &stock, int nKType, in
 	kday.ChangeCurFormat( nKFormat, AfxGetProfile().GetAutoResumeDRBegin(), AfxGetProfile().GetAutoResumeDRLimit() );
 	if( CKData::ktypeWeek == nKType || CKData::ktypeMonth == nKType )
 	{
-		// 周线和月线不能ChangeCurFormat(...)
+		// 鍛ㄧ嚎鍜屾湀绾夸笉鑳紺hangeCurFormat(...)
 		if( CKData::formatOriginal == nKFormat )
 			stock.PrepareData( CStock::dataK, nKType, bReload );
 		else

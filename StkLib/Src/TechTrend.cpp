@@ -88,32 +88,32 @@ int CMACD::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( IsDeviateOnBottom( nIndex, m_pdCache3, m_pdCache4 ) )
-	{	// µ×±³Àë
+	{	// åº•èƒŒç¦»
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONBOTTOM;
 		return m_itsDeviateOnBottom;
 	}
 	if( IsDeviateOnTop( nIndex, m_pdCache3, m_pdCache4 ) )
-	{	// ¶¥±³Àë
+	{	// é¡¶èƒŒç¦»
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONTOP;
 		return m_itsDeviateOnTop;
 	}
 	if( dDIF < dLiminalLow && dDEA < dLiminalLow && IsGoldenFork( nIndex, m_pdCache3, m_pdCache4 ) )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dDIF > dLiminalHigh && dDEA > dLiminalHigh && IsDeadFork( nIndex, m_pdCache3, m_pdCache4 ) )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
 	if( dDIF < dLiminalLow && dDEA < dLiminalLow )
-	{	// µÍÎ»
+	{	// ä½ä½
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dDIF > dLiminalHigh && dDEA > dLiminalHigh )
-	{	// ¸ßÎ»
+	{	// é«˜ä½
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -122,11 +122,11 @@ int CMACD::GetSignal( int nIndex, UINT * pnCode )
 }
 
 /***
-	EMA  = ¶ÌÆÚÒÆ¶¯¾ùÖµ
-	EMA2 = ³¤ÆÚÒÆ¶¯¾ùÖµ
-	DIF  = ¶ÌÆÚÒÆ¶¯¾ùÖµ - ³¤ÆÚÒÆ¶¯¾ùÖµ
-	DEA  = DIFµÄÒÆ¶¯Æ½»¬Öµ
-	Öù×´ÏßÖµ = DIF - DEA
+	EMA  = çŸ­æœŸç§»åŠ¨å‡å€¼
+	EMA2 = é•¿æœŸç§»åŠ¨å‡å€¼
+	DIF  = çŸ­æœŸç§»åŠ¨å‡å€¼ - é•¿æœŸç§»åŠ¨å‡å€¼
+	DEA  = DIFçš„ç§»åŠ¨å¹³æ»‘å€¼
+	æŸ±çŠ¶çº¿å€¼ = DIF - DEA
 */
 BOOL CMACD::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 {
@@ -256,14 +256,14 @@ void CMIKE::Clear( )
 }
 
 /***
-	H:×î¸ß¼Û	L:×îµÍ¼Û	C:ÊÕÅÌ¼Û
-	TP £½ (H£«L£«C)¡Â3
-	µÚÒ»ÌõÕ­Í¨µÀµÄÉÏÏÂÏŞ¼ÆËãÈçÏÂ£º
-		Èõ×èÁ¦WR£½TP£«(TP£­L)		ÈõÖ§³ÅWS£½TP£­(H£­TP)
-	µÚ¶şÌõÍ¨µÀµÄÉÏÏÂÏŞ¼ÆËãÈçÏÂ£º
-		ÖĞ×èÁ¦MR£½TP£«(H£­L)		ÖĞÖ§³ÅMS£½TP£­(H£­L)
-	µÚÈıÌõÀ«Í¨µÀµÄÉÏÏÂÏŞ¼ÆËãÈçÏÂ£º
-		Ç¿×èÁ¦SR£½H£«(H£­L)			Ç¿Ö§³ÅSS£½L£­(H£­L)
+	H:æœ€é«˜ä»·	L:æœ€ä½ä»·	C:æ”¶ç›˜ä»·
+	TP ï¼ (Hï¼‹Lï¼‹C)Ã·3
+	ç¬¬ä¸€æ¡çª„é€šé“çš„ä¸Šä¸‹é™è®¡ç®—å¦‚ä¸‹ï¼š
+		å¼±é˜»åŠ›WRï¼TPï¼‹(TPï¼L)		å¼±æ”¯æ’‘WSï¼TPï¼(Hï¼TP)
+	ç¬¬äºŒæ¡é€šé“çš„ä¸Šä¸‹é™è®¡ç®—å¦‚ä¸‹ï¼š
+		ä¸­é˜»åŠ›MRï¼TPï¼‹(Hï¼L)		ä¸­æ”¯æ’‘MSï¼TPï¼(Hï¼L)
+	ç¬¬ä¸‰æ¡é˜”é€šé“çš„ä¸Šä¸‹é™è®¡ç®—å¦‚ä¸‹ï¼š
+		å¼ºé˜»åŠ›SRï¼Hï¼‹(Hï¼L)			å¼ºæ”¯æ’‘SSï¼Lï¼(Hï¼L)
 */
 BOOL CMIKE::CalculateMIKE(	double *pWR, double *pMR, double *pSR,
 							double *pWS, double *pMS, double *pSS, int nIndex )
@@ -358,12 +358,12 @@ int CPSY::GetSignal( int nIndex, UINT * pnCode )
 		|| !Calculate( &dPSY, nIndex, FALSE ) )
 		return ITS_NOTHING;
 	if( dPSY < 30 && dPSY >= dPSYLast )
-	{	// ³¬Âô
+	{	// è¶…å–
 		if( pnCode )	*pnCode	=	ITSC_OVERSOLD;
 		return m_itsSold;
 	}
 	if( dPSY > 70 && dPSY <= dPSYLast )
-	{	// ³¬Âò
+	{	// è¶…ä¹°
 		if( pnCode )	*pnCode	=	ITSC_OVERBOUGHT;
 		return m_itsBought;
 	}
@@ -379,8 +379,8 @@ BOOL CPSY::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	        NÈÕÄÚÉÏÕÇµÄÌìÊı
-	PSY = ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª ¡Á 100
+	        Næ—¥å†…ä¸Šæ¶¨çš„å¤©æ•°
+	PSY = â€”â€”â€”â€”â€”â€”â€”â€”â€”â€” Ã— 100
 	              N
 */
 BOOL CPSY::Calculate( double * pValue, int nIndex, BOOL bUseLast )

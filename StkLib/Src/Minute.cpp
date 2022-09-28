@@ -426,7 +426,7 @@ BOOL CMinute::GetLBDKMinMaxInfo( double dVolAverage, double *pdMin, double *pdMa
 		if( dCurrent > dMax )	dMax	=	dCurrent;
 	}
 
-	if( dMax < 1e-4 )	// 数据为零，缺省dMax=1
+	if( dMax < 1e-4 )	// 鏁版嵁涓洪浂锛岀己鐪乨Max=1
 		dMax	=	1;
 	if( pdMin )	*pdMin	=	dMin;
 	if( pdMax )	*pdMax	=	dMax;

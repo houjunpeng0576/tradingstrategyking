@@ -23,8 +23,8 @@ static char THIS_FILE[] = __FILE__;
 
 //////////////////////////////////////////////////////////////////
 // GetMinMaxInfo
-// Ò»Ğ©·´¸´Ê¹ÓÃµÄ´úÂë£¬ÓÃº¯Êı´úÌæ£¬µÃµ½¼¼ÊõÖ¸±êÔÚÖ¸¶¨·¶Î§ÄÚµÄ×î´ó×îĞ¡Öµ
-// ¼¼ÊõÖ¸±êÓĞ²»Í¬ÈÕÆÚ×÷Îª²ÎÊı
+// ä¸€äº›åå¤ä½¿ç”¨çš„ä»£ç ï¼Œç”¨å‡½æ•°ä»£æ›¿ï¼Œå¾—åˆ°æŠ€æœ¯æŒ‡æ ‡åœ¨æŒ‡å®šèŒƒå›´å†…çš„æœ€å¤§æœ€å°å€¼
+// æŠ€æœ¯æŒ‡æ ‡æœ‰ä¸åŒæ—¥æœŸä½œä¸ºå‚æ•°
 BOOL AfxGetMinMaxInfo( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech, CSPDWordArray & adwDays )
 {
 	SP_ASSERT( pTech );
@@ -56,7 +56,7 @@ BOOL AfxGetMinMaxInfo( int nStart, int nEnd, double *pdMin, double *pdMax, CTech
 	return !bFirst;
 }
 
-// ¼¼ÊõÖ¸±êÓĞ1¸ö×îÖÕÖµ
+// æŠ€æœ¯æŒ‡æ ‡æœ‰1ä¸ªæœ€ç»ˆå€¼
 BOOL AfxGetMinMaxInfo1( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech )
 {
 	SP_ASSERT( pTech );
@@ -68,7 +68,7 @@ BOOL AfxGetMinMaxInfo1( int nStart, int nEnd, double *pdMin, double *pdMax, CTec
 	BOOL	bFirst	=	TRUE;
 	for( int k=nStart; k<=nEnd; k++ )
 	{
-		if( pTech->Calculate( &dValue, k, !bFirst ) )	// ¼¼ÊõÖ¸±êÓĞ1¸ö×îÖÕÖµ
+		if( pTech->Calculate( &dValue, k, !bFirst ) )	// æŠ€æœ¯æŒ‡æ ‡æœ‰1ä¸ªæœ€ç»ˆå€¼
 		{
 			if( bFirst || dValue < dMin )	dMin	=	dValue;
 			if( bFirst || dValue > dMax )	dMax	=	dValue;
@@ -85,7 +85,7 @@ BOOL AfxGetMinMaxInfo1( int nStart, int nEnd, double *pdMin, double *pdMax, CTec
 	return !bFirst;
 }
 
-// ¼¼ÊõÖ¸±êÓĞ2¸ö×îÖÕÖµ
+// æŠ€æœ¯æŒ‡æ ‡æœ‰2ä¸ªæœ€ç»ˆå€¼
 BOOL AfxGetMinMaxInfo2( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech )
 {
 	SP_ASSERT( pTech );
@@ -97,7 +97,7 @@ BOOL AfxGetMinMaxInfo2( int nStart, int nEnd, double *pdMin, double *pdMax, CTec
 	BOOL	bFirst	=	TRUE;
 	for( int k=nStart; k<=nEnd; k++ )
 	{
-		if( pTech->Calculate( &dValue1, &dValue2, k, !bFirst ) )	// ¼¼ÊõÖ¸±êÓĞ2¸ö×îÖÕÖµ
+		if( pTech->Calculate( &dValue1, &dValue2, k, !bFirst ) )	// æŠ€æœ¯æŒ‡æ ‡æœ‰2ä¸ªæœ€ç»ˆå€¼
 		{
 			if( bFirst || dValue1 < dMin )	dMin	=	dValue1;
 			if( bFirst || dValue1 > dMax )	dMax	=	dValue1;
@@ -116,7 +116,7 @@ BOOL AfxGetMinMaxInfo2( int nStart, int nEnd, double *pdMin, double *pdMax, CTec
 	return !bFirst;
 }
 
-// ¼¼ÊõÖ¸±êÓĞ3¸ö×îÖÕÖµ
+// æŠ€æœ¯æŒ‡æ ‡æœ‰3ä¸ªæœ€ç»ˆå€¼
 BOOL AfxGetMinMaxInfo3( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech )
 {
 	SP_ASSERT( pTech );
@@ -128,7 +128,7 @@ BOOL AfxGetMinMaxInfo3( int nStart, int nEnd, double *pdMin, double *pdMax, CTec
 	BOOL	bFirst	=	TRUE;
 	for( int k=nStart; k<=nEnd; k++ )
 	{
-		if( pTech->Calculate( &dValue1, &dValue2, &dValue3, k, !bFirst ) )	// ¼¼ÊõÖ¸±êÓĞ3¸ö×îÖÕÖµ
+		if( pTech->Calculate( &dValue1, &dValue2, &dValue3, k, !bFirst ) )	// æŠ€æœ¯æŒ‡æ ‡æœ‰3ä¸ªæœ€ç»ˆå€¼
 		{
 			if( bFirst || dValue1 < dMin )	dMin	=	dValue1;
 			if( bFirst || dValue1 > dMax )	dMax	=	dValue1;
@@ -149,7 +149,7 @@ BOOL AfxGetMinMaxInfo3( int nStart, int nEnd, double *pdMin, double *pdMax, CTec
 	return !bFirst;
 }
 
-// ¼¼ÊõÖ¸±êÓĞ4¸ö×îÖÕÖµ
+// æŠ€æœ¯æŒ‡æ ‡æœ‰4ä¸ªæœ€ç»ˆå€¼
 BOOL AfxGetMinMaxInfo4( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech )
 {
 	SP_ASSERT( pTech );
@@ -161,7 +161,7 @@ BOOL AfxGetMinMaxInfo4( int nStart, int nEnd, double *pdMin, double *pdMax, CTec
 	BOOL	bFirst	=	TRUE;
 	for( int k=nStart; k<=nEnd; k++ )
 	{
-		if( pTech->Calculate( &dValue1, &dValue2, &dValue3, &dValue4, k, !bFirst ) )	// ¼¼ÊõÖ¸±êÓĞ4¸ö×îÖÕÖµ
+		if( pTech->Calculate( &dValue1, &dValue2, &dValue3, &dValue4, k, !bFirst ) )	// æŠ€æœ¯æŒ‡æ ‡æœ‰4ä¸ªæœ€ç»ˆå€¼
 		{
 			if( bFirst || dValue1 < dMin )	dMin	=	dValue1;
 			if( bFirst || dValue1 > dMax )	dMax	=	dValue1;
@@ -184,7 +184,7 @@ BOOL AfxGetMinMaxInfo4( int nStart, int nEnd, double *pdMin, double *pdMax, CTec
 	return !bFirst;
 }
 
-// ¼¼ÊõÖ¸±êÓĞ5¸ö×îÖÕÖµ
+// æŠ€æœ¯æŒ‡æ ‡æœ‰5ä¸ªæœ€ç»ˆå€¼
 BOOL AfxGetMinMaxInfo5( int nStart, int nEnd, double *pdMin, double *pdMax, CTechnique * pTech )
 {
 	SP_ASSERT( pTech );
@@ -196,7 +196,7 @@ BOOL AfxGetMinMaxInfo5( int nStart, int nEnd, double *pdMin, double *pdMax, CTec
 	BOOL	bFirst	=	TRUE;
 	for( int k=nStart; k<=nEnd; k++ )
 	{
-		if( pTech->Calculate( &dValue1, &dValue2, &dValue3, &dValue4, &dValue5, k, !bFirst ) )	// ¼¼ÊõÖ¸±êÓĞ5¸ö×îÖÕÖµ
+		if( pTech->Calculate( &dValue1, &dValue2, &dValue3, &dValue4, &dValue5, k, !bFirst ) )	// æŠ€æœ¯æŒ‡æ ‡æœ‰5ä¸ªæœ€ç»ˆå€¼
 		{
 			if( bFirst || dValue1 < dMin )	dMin	=	dValue1;
 			if( bFirst || dValue1 > dMax )	dMax	=	dValue1;
@@ -340,7 +340,7 @@ void CTechnique::ClearLastIntensity( )
 	m_nLastIntensityCode	=	ITSC_NOTHING;
 }
 
-// ×¼±¸»º³åÇø
+// å‡†å¤‡ç¼“å†²åŒº
 BOOL CTechnique::PrepareCache( int nStart, int nEnd, BOOL bForceRecalculate )
 {
 	SP_ASSERT( m_pKData );
@@ -357,7 +357,7 @@ BOOL CTechnique::PrepareCache( int nStart, int nEnd, BOOL bForceRecalculate )
 	return GetMinMaxInfo( nStart, nEnd, NULL, NULL );
 }
 
-// ´Ó»º³åÇøÖĞ¶ÁÈ¡¼ÆËãºÃµÄÊı¾İ
+// ä»ç¼“å†²åŒºä¸­è¯»å–è®¡ç®—å¥½çš„æ•°æ®
 BOOL CTechnique::LoadFromCache( int nIndex, double * pValue1, double * pValue2, double * pValue3, double * pValue4, double * pValue5 )
 {
 	if( m_nLength <= 0 || m_nIndexStart < 0
@@ -392,7 +392,7 @@ BOOL CTechnique::LoadFromCache( int nIndex, double * pValue1, double * pValue2, 
 	return TRUE;
 }
 
-// ½«¼ÆËãºÃµÄÊı¾İ±£´æÖÁ»º³åÇø
+// å°†è®¡ç®—å¥½çš„æ•°æ®ä¿å­˜è‡³ç¼“å†²åŒº
 BOOL CTechnique::StoreToCache( int nIndex, double * pValue1, double *pValue2, double *pValue3, double * pValue4, double * pValue5 )
 {
 	STT_ASSERT_CALCULATE1( m_pKData, nIndex );
@@ -510,7 +510,7 @@ BOOL CTechnique::StoreToCache( int nIndex, double * pValue1, double *pValue2, do
 	return TRUE;
 }
 
-// ×¼±¸Êı¾İ£¬µÃµ½½Ï´óÖµºÍ½ÏĞ¡Öµ
+// å‡†å¤‡æ•°æ®ï¼Œå¾—åˆ°è¾ƒå¤§å€¼å’Œè¾ƒå°å€¼
 BOOL CTechnique::IntensityPrepare( int nIndex, UINT * pnCode, int nMaxDays, int nMinMaxDays, double *pdLiminalLow, double *pdLiminalHigh, double dGateLow, double dGateHigh )
 {
 	if( pnCode )	*pnCode	=	ITSC_NOTHING;
@@ -530,7 +530,7 @@ BOOL CTechnique::IntensityPrepare( int nIndex, UINT * pnCode, int nMaxDays, int 
 	return TRUE;
 }
 
-// ×¼±¸Êı¾İ£¬µÃµ½¼Û¸ñ½Ï´óÖµºÍ½ÏĞ¡Öµ
+// å‡†å¤‡æ•°æ®ï¼Œå¾—åˆ°ä»·æ ¼è¾ƒå¤§å€¼å’Œè¾ƒå°å€¼
 BOOL CTechnique::IntensityPreparePrice( int nIndex, UINT * pnCode, int nMaxDays, int nMinMaxDays, double *pdLiminalLow, double *pdLiminalHigh, double dGateLow, double dGateHigh )
 {
 	if( pnCode )	*pnCode	=	ITSC_NOTHING;
@@ -550,7 +550,7 @@ BOOL CTechnique::IntensityPreparePrice( int nIndex, UINT * pnCode, int nMaxDays,
 	return TRUE;
 }
 
-// ÊÇ·ñ´´ĞÂ¸ß»òÕß´´ĞÂµÍ
+// æ˜¯å¦åˆ›æ–°é«˜æˆ–è€…åˆ›æ–°ä½
 BOOL CTechnique::IsNewValue( int nIndex, BOOL bTopOrBottom, int nDays, double * pdValue1, double * pdValue2 )
 {
 	SP_ASSERT( nDays > 3 );
@@ -630,7 +630,7 @@ BOOL CTechnique::IsNewValue( int nIndex, BOOL bTopOrBottom, int nDays, double * 
 	return FALSE;
 }
 
-// ÊÇ·ñµ×±³Àë
+// æ˜¯å¦åº•èƒŒç¦»
 BOOL CTechnique::IsDeviateOnBottom( int nIndex, double * pdValue1, double * pdValue2 )
 {
 	STT_ASSERT_CALCULATE1( m_pKData, nIndex );
@@ -644,7 +644,7 @@ BOOL CTechnique::IsDeviateOnBottom( int nIndex, double * pdValue1, double * pdVa
 	return TRUE;
 }
 
-// ÊÇ·ñ¶¥±³Àë
+// æ˜¯å¦é¡¶èƒŒç¦»
 BOOL CTechnique::IsDeviateOnTop( int nIndex, double * pdValue1, double * pdValue2 )
 {
 	STT_ASSERT_CALCULATE1( m_pKData, nIndex );
@@ -658,7 +658,7 @@ BOOL CTechnique::IsDeviateOnTop( int nIndex, double * pdValue1, double * pdValue
 	return TRUE;
 }
 
-// ÊÇ·ñ½ğ²æ
+// æ˜¯å¦é‡‘å‰
 BOOL CTechnique::IsGoldenFork( int nIndex, double * pdValue1, double * pdValue2 )
 {
 	SP_ASSERT( NULL != pdValue1 && NULL != pdValue2 );
@@ -676,7 +676,7 @@ BOOL CTechnique::IsGoldenFork( int nIndex, double * pdValue1, double * pdValue2 
 	return FALSE;
 }
 
-// ÊÇ·ñËÀ²æ
+// æ˜¯å¦æ­»å‰
 BOOL CTechnique::IsDeadFork( int nIndex, double * pdValue1, double * pdValue2 )
 {
 	SP_ASSERT( NULL != pdValue1 && NULL != pdValue2 );
@@ -694,7 +694,7 @@ BOOL CTechnique::IsDeadFork( int nIndex, double * pdValue1, double * pdValue2 )
 	return FALSE;
 }
 
-// µÃµ½½ğ²æ»òÕßËÀ²æĞÅºÅ
+// å¾—åˆ°é‡‘å‰æˆ–è€…æ­»å‰ä¿¡å·
 int CTechnique::GetForkSignal(int nIndex, CSPDWordArray & adwDays,
 								 UINT itsGoldenFork, UINT itsDeadFork, UINT * pnCode )
 {
@@ -757,7 +757,7 @@ int CTechnique::GetForkSignal(int nIndex, CSPDWordArray & adwDays,
 	return ITS_NOTHING;
 }
 
-// µÃµ½½ğ²æ»òÕßËÀ²æĞÅºÅ
+// å¾—åˆ°é‡‘å‰æˆ–è€…æ­»å‰ä¿¡å·
 int CTechnique::GetForkSignal( int nIndex, UINT itsGoldenFork, UINT itsDeadFork, UINT *pnCode )
 {
 	if( pnCode )	*pnCode	=	ITSC_NOTHING;
@@ -785,7 +785,7 @@ int CTechnique::GetForkSignal( int nIndex, UINT itsGoldenFork, UINT itsDeadFork,
 	return ITS_NOTHING;
 }
 
-// µÃµ½½ğ²æ»òÕßËÀ²æĞÅºÅ
+// å¾—åˆ°é‡‘å‰æˆ–è€…æ­»å‰ä¿¡å·
 int CTechnique::GetForkSignal(int nIndex, double * pdValue1, double * pdValue2,
 							  UINT itsGoldenFork, UINT itsDeadFork, UINT *pnCode )
 {
@@ -804,7 +804,7 @@ int CTechnique::GetForkSignal(int nIndex, double * pdValue1, double * pdValue2,
 	return ITS_NOTHING;
 }
 
-// µÃµ½Ç÷ÊÆĞÅºÅ
+// å¾—åˆ°è¶‹åŠ¿ä¿¡å·
 int CTechnique::GetTrendIntensity(int nIndex, CSPDWordArray & adwDays,
 								 UINT itsLong, UINT itsShort, UINT * pnCode )
 {
@@ -845,7 +845,7 @@ int CTechnique::GetTrendIntensity(int nIndex, CSPDWordArray & adwDays,
 	return nRet;
 }
 
-// µÃµ½Ç÷ÊÆĞÅºÅ
+// å¾—åˆ°è¶‹åŠ¿ä¿¡å·
 int CTechnique::GetTrendIntensity1( int nIndex, UINT itsLong, UINT itsShort, UINT *pnCode )
 {
 	if( pnCode )	*pnCode	=	ITSC_NOTHING;
@@ -870,7 +870,7 @@ int CTechnique::GetTrendIntensity1( int nIndex, UINT itsLong, UINT itsShort, UIN
 	return ITS_NOTHING;
 }
 
-// µÃµ½Ç÷ÊÆĞÅºÅ
+// å¾—åˆ°è¶‹åŠ¿ä¿¡å·
 int CTechnique::GetTrendIntensity2( int nIndex, UINT itsLong, UINT itsShort, UINT *pnCode )
 {
 	if( pnCode )	*pnCode	=	ITSC_NOTHING;
@@ -897,7 +897,7 @@ int CTechnique::GetTrendIntensity2( int nIndex, UINT itsLong, UINT itsShort, UIN
 	return ITS_NOTHING;
 }
 
-// µÃµ½Ç÷ÊÆĞÅºÅ
+// å¾—åˆ°è¶‹åŠ¿ä¿¡å·
 int CTechnique::GetTrendIntensity(int nIndex, double * pdValue1, double * pdValue2,
 							  UINT itsLong, UINT itsShort, UINT *pnCode )
 {
@@ -943,7 +943,7 @@ BOOL CTechnique::IsValidParameters( )
 	return FALSE;
 }
 
-// ´´½¨ĞÂµÄ¼¼ÊõÖ¸±ê¶ÔÏó
+// åˆ›å»ºæ–°çš„æŠ€æœ¯æŒ‡æ ‡å¯¹è±¡
 CTechnique * CTechnique::CreateTechnique( UINT nTech, CKData * pKData )
 {
 	CTechnique	*	pTech	=	NULL;
@@ -1014,14 +1014,14 @@ CTechnique * CTechnique::CreateTechnique( UINT nTech, CKData * pKData )
 	return pTech;
 }
 
-// µÃµ½ÂòÂôĞÅºÅ
+// å¾—åˆ°ä¹°å–ä¿¡å·
 int CTechnique::GetSignal( int nIndex, UINT * pnCode )
 {
 	if( pnCode )	*pnCode	=	ITSC_NOTHING;
 	return	ITS_NOTHING;
 }
 
-// µÃµ½Ç÷ÊÆĞÅºÅ
+// å¾—åˆ°è¶‹åŠ¿ä¿¡å·
 int CTechnique::GetIntensity( int nIndex, UINT * pnCode, BOOL bTraceBack )
 {
 	UINT	nCode	=	ITSC_NOTHING;
@@ -1116,7 +1116,7 @@ BOOL CTechnique::Calculate( double * pValue1, double * pValue2, double * pValue3
 	return FALSE;
 }
 
-// ¼ÆËãÖ¸±êÖµºÍ¾ùÖµ
+// è®¡ç®—æŒ‡æ ‡å€¼å’Œå‡å€¼
 BOOL CTechnique::CalculateMA( double * pValue, double * pMA, int nIndex, BOOL bUseLast, int nMADays )
 {
 	STT_ASSERT_CALCULATE1( m_pKData, nIndex );

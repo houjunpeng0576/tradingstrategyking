@@ -69,7 +69,7 @@ void CKDJ::Clear( )
 	CTechnique::Clear( );
 }
 
-// ¼ÆËãRSVÖµ
+// è®¡ç®—RSVå€¼
 BOOL CKDJ::CalculateRSV( double * pValue, int nIndex )
 {
 	STT_ASSERT_CALCULATE1( m_pKData, nIndex );
@@ -113,12 +113,12 @@ int CKDJ::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( dK < 25 && dD < 25 && IsGoldenFork(nIndex, m_pdCache1, m_pdCache2) )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dK > 75 && dD > 75 && IsDeadFork(nIndex, m_pdCache1, m_pdCache2) )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -131,15 +131,15 @@ BOOL CKDJ::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	AX = ½ñÌìµÄÊÕÅÌ¼Û - NÌìÖĞµÄ×îµÍ¼Û
-	BX = NÌìÖĞµÄ×î¸ß¼Û - NÌìÖĞµÄ×îµÍ¼Û
-	RSV = £¨AX ¡Â BX£©¡Á 100%
-	NK = K¼ÆËãÌìÊı£¬Ò»°ãÈ¡3
-	ND = D¼ÆËãÌìÊı£¬Ò»°ãÈ¡3
-	K = Ç°Ò»ÈÕK¡Á(NK-1)/NK + RSV¡Á1/NK 
-	D = Ç°Ò»ÈÕD¡Á(ND-1)/ND + K¡Á1/3
-	J = 3D £­ 2K £¨»ò J = 3K - 2D£©
-	µÚÒ»´Î¼ÆËãÊ±£¬Ç°Ò»ÈÕµÄK¡¢DÖµ½ÔÒÔ50´úÌæ¡£
+	AX = ä»Šå¤©çš„æ”¶ç›˜ä»· - Nå¤©ä¸­çš„æœ€ä½ä»·
+	BX = Nå¤©ä¸­çš„æœ€é«˜ä»· - Nå¤©ä¸­çš„æœ€ä½ä»·
+	RSV = ï¼ˆAX Ã· BXï¼‰Ã— 100%
+	NK = Kè®¡ç®—å¤©æ•°ï¼Œä¸€èˆ¬å–3
+	ND = Dè®¡ç®—å¤©æ•°ï¼Œä¸€èˆ¬å–3
+	K = å‰ä¸€æ—¥KÃ—(NK-1)/NK + RSVÃ—1/NK 
+	D = å‰ä¸€æ—¥DÃ—(ND-1)/ND + KÃ—1/3
+	J = 3D ï¼ 2K ï¼ˆæˆ– J = 3K - 2Dï¼‰
+	ç¬¬ä¸€æ¬¡è®¡ç®—æ—¶ï¼Œå‰ä¸€æ—¥çš„Kã€Då€¼çš†ä»¥50ä»£æ›¿ã€‚
 */
 BOOL CKDJ::Calculate( double *pValue1, double *pValue2, double *pValue3, int nIndex, BOOL bUseLast )
 {
@@ -261,7 +261,7 @@ int CR::GetSignal( int nIndex, UINT * pnCode )
 		return m_itsBought;
 	}
 */	
-	// ÎŞÂòÂôĞÅºÅ
+	// æ— ä¹°å–ä¿¡å·
 	return	ITS_NOTHING;
 }
 
@@ -274,9 +274,9 @@ BOOL CR::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 
 /***
 	            H - C
-	W%RÖ¸±êÖµ= ¡ª¡ª¡ª¡ª ¡Á100
+	W%RæŒ‡æ ‡å€¼= â€”â€”â€”â€” Ã—100
 	            H - L                
-	H = NÈÕÄÚ×î¸ß¼Û		L = NÈÕÄÚ×îµÍ¼Û		C = µ±ÌìÊÕÅÌ¼Û
+	H = Næ—¥å†…æœ€é«˜ä»·		L = Næ—¥å†…æœ€ä½ä»·		C = å½“å¤©æ”¶ç›˜ä»·
 */
 BOOL CR::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -378,17 +378,17 @@ int CRSI::GetSignal( int nIndex, UINT * pnCode )
 			|| !Calculate( &dRSI, nIndex, m_adwDays[k], FALSE ) )
 			return ITS_NOTHING;
 		if( dRSI < 20 )
-		{	// ³¬Âô
+		{	// è¶…å–
 			if( pnCode )	*pnCode	=	ITSC_OVERSOLD;
 			return m_itsSold;
 		}
 		if( dRSI < 40 && nForkSignal == m_itsGoldenFork )
-		{	// µÍÎ»½ğ²æ
+		{	// ä½ä½é‡‘å‰
 			if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 			return m_itsGoldenFork;
 		}
 		if( dRSI > 60 && nForkSignal == m_itsDeadFork )
-		{	// ¸ßÎ»ËÀ²æ
+		{	// é«˜ä½æ­»å‰
 			if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 			return m_itsDeadFork;
 		}
@@ -405,7 +405,7 @@ BOOL CRSI::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	RSI =£¨NÈÕÄÚÉÏÕÇ·ù¶ÈÀÛ¼Æ¡ÂNÈÕÄÚÉÏÕÇ¼°ÏÂµø·ù¶ÈÀÛ¼Æ£©¡Á100%
+	RSI =ï¼ˆNæ—¥å†…ä¸Šæ¶¨å¹…åº¦ç´¯è®¡Ã·Næ—¥å†…ä¸Šæ¶¨åŠä¸‹è·Œå¹…åº¦ç´¯è®¡ï¼‰Ã—100%
 */
 BOOL CRSI::Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast )
 {
@@ -488,12 +488,12 @@ int CBIAS::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( dBIAS < -10 )
-	{	// ³¬Âô
+	{	// è¶…å–
 		if( pnCode )	*pnCode	=	ITSC_OVERSOLD;
 		return m_itsSold;
 	}
 	if( dBIAS > 5 )
-	{	// ³¬Âò
+	{	// è¶…ä¹°
 		if( pnCode )	*pnCode	=	ITSC_OVERBOUGHT;
 		return m_itsBought;
 	}
@@ -507,9 +507,9 @@ BOOL CBIAS::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	              µ±ÈÕÊÕÅÌ¼Û-NÈÕÒÆ¶¯Æ½¾ùÖµ
-	NÈÕ¹ÔÀëÂÊ = ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª ¡Á100%
-	                   NÈÕÒÆ¶¯Æ½¾ùÖµ
+	              å½“æ—¥æ”¶ç›˜ä»·-Næ—¥ç§»åŠ¨å¹³å‡å€¼
+	Næ—¥ä¹–ç¦»ç‡ = â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€” Ã—100%
+	                   Næ—¥ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CBIAS::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -602,12 +602,12 @@ int CMTM::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( dMTM < dLiminalLow && dMA < dLiminalLow && IsGoldenFork( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dMTM > dLiminalHigh && dMA > dLiminalHigh && IsDeadFork( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -621,9 +621,9 @@ BOOL CMTM::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	MTM £½ C/Cn
-	ÆäÖĞ£ºCÎªµ±ÈÕÊÕÊĞ¼Û£¬CnÎª£ÎÈÕÇ°ÊÕÊĞ¼Û£¬
-	NÎªÉè¶¨²ÎÊı£¬Ò»°ãÑ¡Éè10ÈÕ£¬Òà¿ÉÔÚ6ÈÕÖÁ14ÈÕÖ®¼äÑ¡Ôñ¡£
+	MTM ï¼ C/Cn
+	å…¶ä¸­ï¼šCä¸ºå½“æ—¥æ”¶å¸‚ä»·ï¼ŒCnä¸ºï¼®æ—¥å‰æ”¶å¸‚ä»·ï¼Œ
+	Nä¸ºè®¾å®šå‚æ•°ï¼Œä¸€èˆ¬é€‰è®¾10æ—¥ï¼Œäº¦å¯åœ¨6æ—¥è‡³14æ—¥ä¹‹é—´é€‰æ‹©ã€‚
 */
 BOOL CMTM::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -707,11 +707,11 @@ void CDMI::Clear( )
 }
 
 /***
-	Çó³öÕæÕı²¨·ùTR£¬TRÊÇÏÂÁĞÈıÕßÖĞ¾ø¶ÔÖµ×î´óµÄÒ»¸ö£º
-		×òÊÕÅÌ-½ñ ×î¸ß¡¢×òÊÕÅÌ-½ñ×îµÍ¡¢½ñ×î¸ß-½ñ×îµÍ
+	æ±‚å‡ºçœŸæ­£æ³¢å¹…TRï¼ŒTRæ˜¯ä¸‹åˆ—ä¸‰è€…ä¸­ç»å¯¹å€¼æœ€å¤§çš„ä¸€ä¸ªï¼š
+		æ˜¨æ”¶ç›˜-ä»Š æœ€é«˜ã€æ˜¨æ”¶ç›˜-ä»Šæœ€ä½ã€ä»Šæœ€é«˜-ä»Šæœ€ä½
 	
-	+DM = ½ñ×î¸ß-×ò×î¸ß
-	-DM = ×ò×îµÍ-½ñ×îµÍ
+	+DM = ä»Šæœ€é«˜-æ˜¨æœ€é«˜
+	-DM = æ˜¨æœ€ä½-ä»Šæœ€ä½
 */
 BOOL CDMI::CalculateDM( double *pDMPlus, double *pDMMinus, double *pTR, int nIndex )
 {
@@ -737,14 +737,14 @@ BOOL CDMI::CalculateDM( double *pDMPlus, double *pDMMinus, double *pTR, int nInd
 }
 
 /***
-	TRn = NÌìTRÖ®ºÍ
-	+DMn = NÌì+DMÖ®ºÍ
-	-DMn = NÌì-DMÖ®ºÍ
-	+DI = £¨+DMn ¡Â TRn£©¡Á100
-	-DI = £¨-DMn ¡Â TRn£©¡Á100
-	DI²î = +DI-£¨-DI£©
-	DIºÍ = +DI+£¨-DI£©
-	DX = £¨DI²î¡ÂDIºÍ£©¡Á100
+	TRn = Nå¤©TRä¹‹å’Œ
+	+DMn = Nå¤©+DMä¹‹å’Œ
+	-DMn = Nå¤©-DMä¹‹å’Œ
+	+DI = ï¼ˆ+DMn Ã· TRnï¼‰Ã—100
+	-DI = ï¼ˆ-DMn Ã· TRnï¼‰Ã—100
+	DIå·® = +DI-ï¼ˆ-DIï¼‰
+	DIå’Œ = +DI+ï¼ˆ-DIï¼‰
+	DX = ï¼ˆDIå·®Ã·DIå’Œï¼‰Ã—100
 */
 BOOL CDMI::CalculateDIDX( double *pDIPlus, double *pDIMinus, double *pDX, int nIndex, int nDays )
 {
@@ -808,7 +808,7 @@ int CDMI::GetSignal( int nIndex, UINT * pnCode )
 		return m_itsDeadFork;
 	}
 */
-	// ÎŞÂòÂôĞÅºÅ
+	// æ— ä¹°å–ä¿¡å·
 	return	ITS_NOTHING;
 }
 
@@ -818,23 +818,23 @@ BOOL CDMI::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	Çó³öÕæÕı²¨·ùTR£¬TRÊÇÏÂÁĞÈıÕßÖĞ¾ø¶ÔÖµ×î´óµÄÒ»¸ö£º
-		×òÊÕÅÌ-½ñ ×î¸ß¡¢×òÊÕÅÌ-½ñ×îµÍ¡¢½ñ×î¸ß-½ñ×îµÍ
+	æ±‚å‡ºçœŸæ­£æ³¢å¹…TRï¼ŒTRæ˜¯ä¸‹åˆ—ä¸‰è€…ä¸­ç»å¯¹å€¼æœ€å¤§çš„ä¸€ä¸ªï¼š
+		æ˜¨æ”¶ç›˜-ä»Š æœ€é«˜ã€æ˜¨æ”¶ç›˜-ä»Šæœ€ä½ã€ä»Šæœ€é«˜-ä»Šæœ€ä½
 	
-	+DM = ½ñ×î¸ß-×ò×î¸ß
-	-DM = ×ò×îµÍ-½ñ×îµÍ
+	+DM = ä»Šæœ€é«˜-æ˜¨æœ€é«˜
+	-DM = æ˜¨æœ€ä½-ä»Šæœ€ä½
 
-	TRn = NÌìTRÖ®ºÍ
-	+DMn = NÌì+DMÖ®ºÍ
-	-DMn = NÌì-DMÖ®ºÍ
-	+DI = £¨+DMn ¡Â TRn£©¡Á100
-	-DI = £¨-DMn ¡Â TRn£©¡Á100
-	DI²î = +DI-£¨-DI£©
-	DIºÍ = +DI+£¨-DI£©
-	DX = £¨DI²î¡ÂDIºÍ£©¡Á100
+	TRn = Nå¤©TRä¹‹å’Œ
+	+DMn = Nå¤©+DMä¹‹å’Œ
+	-DMn = Nå¤©-DMä¹‹å’Œ
+	+DI = ï¼ˆ+DMn Ã· TRnï¼‰Ã—100
+	-DI = ï¼ˆ-DMn Ã· TRnï¼‰Ã—100
+	DIå·® = +DI-ï¼ˆ-DIï¼‰
+	DIå’Œ = +DI+ï¼ˆ-DIï¼‰
+	DX = ï¼ˆDIå·®Ã·DIå’Œï¼‰Ã—100
 
-	ADX = DXµÄÆ½»¬¾ùÖµ
-	ADXR = ADXµÄ¾ùÖµ
+	ADX = DXçš„å¹³æ»‘å‡å€¼
+	ADXR = ADXçš„å‡å€¼
 */
 BOOL CDMI::Calculate( double * pDIPlus, double * pDIMinus, double *pADX, double *pADXR, int nIndex, BOOL bUseLast )
 {
@@ -988,12 +988,12 @@ int CROC::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( dROC < dLiminalLow && dMA < dLiminalLow && IsGoldenFork( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dROC > dLiminalHigh && dMA > dLiminalHigh && IsDeadFork( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -1007,7 +1007,7 @@ BOOL CROC::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	ROC=£¨½ñÊÕÅÌ-Ç°NÈÕÊÕÅÌ£©¡ÂÇ°NÈÕµÄÊÕÅÌ¡Á100 
+	ROC=ï¼ˆä»Šæ”¶ç›˜-å‰Næ—¥æ”¶ç›˜ï¼‰Ã·å‰Næ—¥çš„æ”¶ç›˜Ã—100 
 */
 BOOL CROC::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -1096,12 +1096,12 @@ int CCCI::GetSignal( int nIndex, UINT * pnCode )
 	int	nForkSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 
 	if( dCCI < -100 && nForkSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dCCI > 100 && nForkSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -1115,9 +1115,9 @@ BOOL CCCI::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	TP = ÊÕÅÌ¼Û+ÊÕÅÌ¼Û+×î¸ß¼Û+×îµÍ¼Û
-	AÊÇTPµÄNÈÕ¾ùÖµ
-	DÊÇTPÓëAµÄÀë²î¾ùÖµ
+	TP = æ”¶ç›˜ä»·+æ”¶ç›˜ä»·+æœ€é«˜ä»·+æœ€ä½ä»·
+	Aæ˜¯TPçš„Næ—¥å‡å€¼
+	Dæ˜¯TPä¸Açš„ç¦»å·®å‡å€¼
 	CCI=(C-D)/(0.015D)
 */
 BOOL CCCI::Calculate( double * pValue, int nIndex, BOOL bUseLast )
@@ -1168,7 +1168,7 @@ BOOL CCCI::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	CCI ¼°Æä ÒÆ¶¯Æ½¾ùÖµ
+	CCI åŠå…¶ ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CCCI::Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast )
 {
@@ -1234,12 +1234,12 @@ int CCV::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( dLastLast < 0 && dLast < 0 && dNow < 0 && dLast <= dLastLast && dNow > dLast )
-	{	// ³¬Âô
+	{	// è¶…å–
 		if( pnCode )	*pnCode	=	ITSC_OVERSOLD;
 		return m_itsSold;
 	}
 	if( dLastLast > 0 && dLast > 0 && dNow > 0 && dLast >= dLastLast && dNow < dLast )
-	{	// ³¬Âò
+	{	// è¶…ä¹°
 		if( pnCode )	*pnCode	=	ITSC_OVERBOUGHT;
 		return m_itsBought;
 	}
@@ -1253,9 +1253,9 @@ BOOL CCV::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	A = ×î¸ß¼Û - ×îµÍ¼Û
-	MAHL	= AµÄm_nMAHLDaysÈÕÆ½¾ùÖµ
-	MAHLLast= m_nCVDaysÈÕÇ°µÄMAHL
+	A = æœ€é«˜ä»· - æœ€ä½ä»·
+	MAHL	= Açš„m_nMAHLDaysæ—¥å¹³å‡å€¼
+	MAHLLast= m_nCVDaysæ—¥å‰çš„MAHL
 	CCI		= 100 * (MAHL - MAHLLast) / MAHLLast;
 */
 BOOL CCV::Calculate( double * pValue, int nIndex, BOOL bUseLast )
@@ -1360,22 +1360,22 @@ int CARBR::GetSignal( int nIndex, UINT * pnCode )
 	int	nForkSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	
 	if( (dAR < 50 || dBR < 50 ) && nForkSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( (dAR > 180 || dBR > 300) && nForkSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
 	if( dAR < 50 )
-	{	// ³¬Âô
+	{	// è¶…å–
 		if( pnCode )	*pnCode	=	ITSC_OVERSOLD;
 		return m_itsSold;
 	}
 	if( dAR > 200 )
-	{	// ³¬Âò
+	{	// è¶…ä¹°
 		if( pnCode )	*pnCode	=	ITSC_OVERBOUGHT;
 		return m_itsBought;
 	}
@@ -1389,14 +1389,14 @@ BOOL CARBR::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	      £¨H-O£©nÌìÖ®ºÍ
-	AR = ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª ¡Á 100
-	      £¨O-L£©nÌìÖ®ºÍ
-	      £¨H-C£©nÌìÖ®ºÍ
-	BR = ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª ¡Á 100
-	      £¨C-L£©nÌìÖ®ºÍ
+	      ï¼ˆH-Oï¼‰nå¤©ä¹‹å’Œ
+	AR = â€”â€”â€”â€”â€”â€”â€”â€” Ã— 100
+	      ï¼ˆO-Lï¼‰nå¤©ä¹‹å’Œ
+	      ï¼ˆH-Cï¼‰nå¤©ä¹‹å’Œ
+	BR = â€”â€”â€”â€”â€”â€”â€”â€” Ã— 100
+	      ï¼ˆC-Lï¼‰nå¤©ä¹‹å’Œ
 
-	H£º×î¸ß¼Û	L£º×îµÍ¼Û	O£º¿ªÅÌ¼Û	C£ºÊÕÅÌ¼Û 
+	Hï¼šæœ€é«˜ä»·	Lï¼šæœ€ä½ä»·	Oï¼šå¼€ç›˜ä»·	Cï¼šæ”¶ç›˜ä»· 
 */
 BOOL CARBR::Calculate( double * pAR, double *pBR, int nIndex, BOOL bUseLast )
 {
@@ -1497,12 +1497,12 @@ int CCR::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( dCR < 40 )
-	{	// ³¬Âô
+	{	// è¶…å–
 		if( pnCode )	*pnCode	=	ITSC_OVERSOLD;
 		return m_itsSold;
 	}
 	if( dCR > 300 )
-	{	// ³¬Âò
+	{	// è¶…ä¹°
 		if( pnCode )	*pnCode	=	ITSC_OVERBOUGHT;
 		return m_itsBought;
 	}
@@ -1515,12 +1515,12 @@ BOOL CCR::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	MID = £¨¿ªÅÌ¼Û + ÊÕÅÌ¼Û + ×î¸ß¼Û + ×îµÍ¼Û£©¡Â 2
-	ÉÏÉıÖµ = ½ñ×î¸ß - ×òÈÕMID £¨¸ºÖµ¼ÇÎª0£©
-	ÏÂµøÖµ = ×òMID - ½ñ×îµÍ
-	       nÌìÉÏÉıÖµÖ®ºÍ
-	CR = ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª ¡Á 100
-	       nÌìÏÂµøÖµÖ®ºÍ
+	MID = ï¼ˆå¼€ç›˜ä»· + æ”¶ç›˜ä»· + æœ€é«˜ä»· + æœ€ä½ä»·ï¼‰Ã· 2
+	ä¸Šå‡å€¼ = ä»Šæœ€é«˜ - æ˜¨æ—¥MID ï¼ˆè´Ÿå€¼è®°ä¸º0ï¼‰
+	ä¸‹è·Œå€¼ = æ˜¨MID - ä»Šæœ€ä½
+	       nå¤©ä¸Šå‡å€¼ä¹‹å’Œ
+	CR = â€”â€”â€”â€”â€”â€”â€”â€” Ã— 100
+	       nå¤©ä¸‹è·Œå€¼ä¹‹å’Œ
 */
 BOOL CCR::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -1557,8 +1557,8 @@ BOOL CCR::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	A, B, C, D ·Ö±ğÊÇCRµÄNÈÕÆ½¾ùÖµ
-	N·Ö±ğÎªm_nMADaysA,m_nMADaysB,m_nMADaysC,m_nMADaysD
+	A, B, C, D åˆ†åˆ«æ˜¯CRçš„Næ—¥å¹³å‡å€¼
+	Nåˆ†åˆ«ä¸ºm_nMADaysA,m_nMADaysB,m_nMADaysC,m_nMADaysD
 */
 BOOL CCR::Calculate( double * pValue, double * pA, double * pB, double * pC, double * pD, int nIndex, BOOL bUseLast )
 {
@@ -1666,12 +1666,12 @@ int COSC::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( dOSC < dLiminalLow && nSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dOSC > dLiminalHigh && nSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -1685,7 +1685,7 @@ BOOL COSC::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	OSC = ½ñÈÕÊÕÅÌ¼Û/NÈÕÊÕÅÌ¼ÛÆ½¾ùÖµ
+	OSC = ä»Šæ—¥æ”¶ç›˜ä»·/Næ—¥æ”¶ç›˜ä»·å¹³å‡å€¼
 */
 BOOL COSC::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -1720,7 +1720,7 @@ BOOL COSC::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	¼ÆËãOSC¼°ÆäÒÆ¶¯Æ½¾ùÖµ
+	è®¡ç®—OSCåŠå…¶ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL COSC::Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast )
 {
@@ -1791,12 +1791,12 @@ int CUOS::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( dUOS < dLiminalLow && nSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dUOS > dLiminalHigh && nSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -1810,9 +1810,9 @@ BOOL CUOS::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	OSC1 = m_nDays1ÈÕOSC
-	OSC2 = m_nDays2ÈÕOSC
-	OSC3 = m_nDays3ÈÕOSC
+	OSC1 = m_nDays1æ—¥OSC
+	OSC2 = m_nDays2æ—¥OSC
+	OSC3 = m_nDays3æ—¥OSC
 	UOS = (OSC1+OSC2+OSC3)/3
 */
 BOOL CUOS::Calculate( double * pValue, int nIndex, BOOL bUseLast )
@@ -1840,7 +1840,7 @@ BOOL CUOS::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	¼ÆËãUOS¼°ÆäÒÆ¶¯Æ½¾ùÖµ
+	è®¡ç®—UOSåŠå…¶ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CUOS::Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast )
 {
@@ -1909,12 +1909,12 @@ int CMAOSC::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( dMAOSC < dLiminalLow && nSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dMAOSC > dLiminalHigh && nSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -1928,7 +1928,7 @@ BOOL CMAOSC::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	MAOSC = m_nDays1ÈÕÊÕÅÌ¼ÛÒÆ¶¯Æ½¾ùÖµ - m_nDays2ÈÕÊÕÅÌ¼ÛÒÆ¶¯Æ½¾ùÖµ
+	MAOSC = m_nDays1æ—¥æ”¶ç›˜ä»·ç§»åŠ¨å¹³å‡å€¼ - m_nDays2æ—¥æ”¶ç›˜ä»·ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CMAOSC::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -1960,7 +1960,7 @@ BOOL CMAOSC::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	¼ÆËãMAOSC¼°ÆäÒÆ¶¯Æ½¾ùÖµ
+	è®¡ç®—MAOSCåŠå…¶ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CMAOSC::Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast )
 {
@@ -2021,12 +2021,12 @@ int C36BIAS::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( d36BIAS < dLiminalLow )
-	{	// ³¬Âô
+	{	// è¶…å–
 		if( pnCode )	*pnCode	=	ITSC_OVERSOLD;
 		return m_itsSold;
 	}
 	if( d36BIAS > dLiminalHigh )
-	{	// ³¬Âò
+	{	// è¶…ä¹°
 		if( pnCode )	*pnCode	=	ITSC_OVERBOUGHT;
 		return m_itsBought;
 	}
@@ -2040,7 +2040,7 @@ BOOL C36BIAS::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	3-6BIAS = 3ÈÕÊÕÅÌ¼ÛÒÆ¶¯Æ½¾ùÖµ - 6ÈÕÊÕÅÌ¼ÛÒÆ¶¯Æ½¾ùÖµ
+	3-6BIAS = 3æ—¥æ”¶ç›˜ä»·ç§»åŠ¨å¹³å‡å€¼ - 6æ—¥æ”¶ç›˜ä»·ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL C36BIAS::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -2131,12 +2131,12 @@ int CDPO::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( dDPO < dLiminalLow && nSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dDPO > dLiminalHigh && nSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -2150,7 +2150,7 @@ BOOL CDPO::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	DPO = ½ñÈÕÊÕÅÌ¼Û - NÈÕÇ°µÄ£¨N+N£©ÈÕÆ½¾ùÊÕÅÌ¼Û
+	DPO = ä»Šæ—¥æ”¶ç›˜ä»· - Næ—¥å‰çš„ï¼ˆN+Nï¼‰æ—¥å¹³å‡æ”¶ç›˜ä»·
 */
 BOOL CDPO::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -2184,7 +2184,7 @@ BOOL CDPO::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	¼ÆËãDPO¼°ÆäÒÆ¶¯Æ½¾ùÖµ
+	è®¡ç®—DPOåŠå…¶ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CDPO::Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast )
 {
@@ -2258,12 +2258,12 @@ int CKST::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( dKST < dLiminalLow && nSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dKST > dLiminalHigh && nSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -2277,7 +2277,7 @@ BOOL CKST::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	       9ÈÕROC + 12ÈÕROC¡Á2 + 18ÈÕROC¡Á3 + 24ÈÕROC¡Á4
+	       9æ—¥ROC + 12æ—¥ROCÃ—2 + 18æ—¥ROCÃ—3 + 24æ—¥ROCÃ—4
 	KST = ------------------------------------------------
 	                           10
 */
@@ -2316,7 +2316,7 @@ BOOL CKST::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	¼ÆËãKST¼°ÆäÒÆ¶¯Æ½¾ùÖµ
+	è®¡ç®—KSTåŠå…¶ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CKST::Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast )
 {

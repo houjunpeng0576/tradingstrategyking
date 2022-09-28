@@ -54,12 +54,12 @@ BOOL CDayTrader::BuyIt( CSPTime tmCur, CTechStock & techstock )
 	strncpy( record.szCode, techstock.m_info.GetStockCode(),
 			 min(sizeof(record.szCode)-1,strlen(techstock.m_info.GetStockCode())) );
 
-	if( m_opparam.m_nStoreDiv-m_SimuStockOwn.GetSize() <= 0 )	// ¹ÉÆ±ÒÑ¾­¹»¶àÁË£¬²»ÄÜÔÙÂòÈëÐÂµÄÁË
+	if( m_opparam.m_nStoreDiv-m_SimuStockOwn.GetSize() <= 0 )	// è‚¡ç¥¨å·²ç»å¤Ÿå¤šäº†ï¼Œä¸èƒ½å†ä¹°å…¥æ–°çš„äº†
 		return FALSE;
-	double	dUseCash	=	m_SimuCurrentCash / (m_opparam.m_nStoreDiv-m_SimuStockOwn.GetSize());	// ÐèÊ¹ÓÃ×Ê½ð
+	double	dUseCash	=	m_SimuCurrentCash / (m_opparam.m_nStoreDiv-m_SimuStockOwn.GetSize());	// éœ€ä½¿ç”¨èµ„é‡‘
 
 	if( m_SimuCurrentCash < dUseCash )
-		dUseCash	=	m_SimuCurrentCash;	// ×Ê½ð²»¹»£¬ÔòÓÐ¶àÉÙÓÃ¶àÉÙ
+		dUseCash	=	m_SimuCurrentCash;	// èµ„é‡‘ä¸å¤Ÿï¼Œåˆ™æœ‰å¤šå°‘ç”¨å¤šå°‘
 
 	double dSharePrice = 0;
 	if( !techstock.GetClosePrice( tmCur, &dSharePrice ) )
@@ -68,8 +68,8 @@ BOOL CDayTrader::BuyIt( CSPTime tmCur, CTechStock & techstock )
 	if( fabs(dTemp) < 1e-4 || dUseCash < 1e-4 )
 		return FALSE;
 
-	DWORD	dwShare		=	(DWORD)( dUseCash / dTemp );	// ÂòÈë¹ÉÊý
-	dwShare		=	( dwShare / 100 ) * 100;		// È¡Õû
+	DWORD	dwShare		=	(DWORD)( dUseCash / dTemp );	// ä¹°å…¥è‚¡æ•°
+	dwShare		=	( dwShare / 100 ) * 100;		// å–æ•´
 	if( 0 == dwShare )
 		return FALSE;
 
@@ -100,7 +100,7 @@ BOOL CDayTrader::SellIt( CSPTime tmCur, CTechStock & techstock )
 	memset( &own, 0, sizeof(own) );
 	if( !m_SimuStockOwn.HasThisStock( techstock.m_info, &own ) )
 		return FALSE;
-	DWORD	dwShare		=	own.dwShare;	// Âô³ö¹ÉÊý
+	DWORD	dwShare		=	own.dwShare;	// å–å‡ºè‚¡æ•°
 
 	record.dwShare		=	dwShare;
 	record.dSharePrice	=	dSharePrice;
@@ -110,7 +110,7 @@ BOOL CDayTrader::SellIt( CSPTime tmCur, CTechStock & techstock )
 
 BOOL CDayTrader::SimuRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 {
-	// ×¼±¸Êý¾Ý
+	// å‡†å¤‡æ•°æ®
 	if( !PrepareData( fnCallback, cookie ) )
 		return FALSE;
 
@@ -129,25 +129,25 @@ BOOL CDayTrader::SimuRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 	double dGap = atof(szGap);
 
 	do	{
-		CSPTime	tmCur	=	SimuGetCurrentTime();	// Ä£Äâµ±Ç°Ê±¼ä
+		CSPTime	tmCur	=	SimuGetCurrentTime();	// æ¨¡æ‹Ÿå½“å‰æ—¶é—´
 
 		int nMaxDiffPercent = -1;
-		double dMaxDiffPercent = -100;	// ×î´óÕÇ·ù%
+		double dMaxDiffPercent = -100;	// æœ€å¤§æ¶¨å¹…%
 		int nMinDiffPercent = -1;
-		double dMinDiffPercent = 100;	// ×î´óµø·ù%
+		double dMinDiffPercent = 100;	// æœ€å¤§è·Œå¹…%
 
 		// Find
-		for( int i=0; i<m_techstocks.GetSize(); i++ )	// Ã¿Ö»¹ÉÆ±ÒÀ´ÎÅÐ¶Ï
+		for( int i=0; i<m_techstocks.GetSize(); i++ )	// æ¯åªè‚¡ç¥¨ä¾æ¬¡åˆ¤æ–­
 		{
 			CTechStock & techstock	=	m_techstocks.ElementAt(i);
 
-			if( techstock.IsStopTrading(tmCur) )	// Í£ÅÆÂð
+			if( techstock.IsStopTrading(tmCur) )	// åœç‰Œå—
 				continue;
 
 			// Judge Whether to operate, if yes, save to nextop
 			STOCKOWN	own;
 			memset( &own, 0, sizeof(own) );
-			if( m_SimuStockOwn.HasThisStock( techstock.m_info, &own ) )	// Èç¹ûÒÑ¾­ÓÐÕâÖ§¹ÉÆ±£¬ÅÐ¶ÏÊÇ·ñÂô³ö
+			if( m_SimuStockOwn.HasThisStock( techstock.m_info, &own ) )	// å¦‚æžœå·²ç»æœ‰è¿™æ”¯è‚¡ç¥¨ï¼Œåˆ¤æ–­æ˜¯å¦å–å‡º
 			{
 				if( m_SimuStockOwn.GetSize() >= m_opparam.m_nStoreDiv )
 				{
@@ -193,7 +193,7 @@ BOOL CDayTrader::SimuRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 			BuyIt( tmCur, m_techstocks.ElementAt(nMinDiffPercent) );
 
 
-		// ½ø¶ÈÏÔÊ¾
+		// è¿›åº¦æ˜¾ç¤º
 		DWORD	dwProgress	=	SimuGetCurrentProgress( STRATEGY_MAX_PROGRESS );
 		double	dYield		=	SimuGetCurrentYield( );
 		if( fnCallback && !fnCallback( SIMULATION_PROGRESS, dwProgress, NULL, cookie ) )
@@ -201,7 +201,7 @@ BOOL CDayTrader::SimuRun( SIMULATION_CALLBACK fnCallback, void * cookie )
 		if( fnCallback && !fnCallback( SIMULATION_YIELD, (DWORD)dYield, NULL, cookie ) )
 			return FALSE;
 
-	} while( SimuGotoNextTime() );	// Ä£ÄâµÄÏÂÒ»¸ö½»Ò×ÈÕ
+	} while( SimuGotoNextTime() );	// æ¨¡æ‹Ÿçš„ä¸‹ä¸€ä¸ªäº¤æ˜“æ—¥
 
 	if( fnCallback )
 		fnCallback( SIMULATION_PROGRESS, STRATEGY_MAX_PROGRESS, NULL, cookie );

@@ -136,7 +136,7 @@ BOOL UpdateStockInfoByREPORT( CStockInfo & info, REPORT * pReport )
 	if( !pReport )
 		return FALSE;
 
-	// ¹ÉÆ±ÊĞ³¡
+	// è‚¡ç¥¨å¸‚åœº
 	if( strlen(pReport->m_szCode) > 0 )
 		info.SetStockCode( pReport->m_dwMarket, pReport->m_szCode );
 	if( strlen(pReport->m_szName) > 0  )
@@ -152,7 +152,7 @@ BOOL UpdateStockInfoByREPORT( CStockInfo & info, REPORT * pReport )
 			info.SetType( CStock::typeshA );
 	}
 
-	// ³É½»ÂòÂô¼ÛÁ¿ĞÅÏ¢
+	// æˆäº¤ä¹°å–ä»·é‡ä¿¡æ¯
 	if( pReport->m_fLast > 1e-4 )	info.m_fLast		=	pReport->m_fLast;
 	info.m_fOpen		=	pReport->m_fOpen;
 	info.m_fHigh		=	pReport->m_fHigh;
@@ -182,7 +182,7 @@ BOOL UpdateStockInfoByREPORT( CStockInfo & info, REPORT * pReport )
 	info.m_fSellVolume[3]	=	pReport->m_fSellVolume[3];
 	info.m_fSellVolume[4]	=	pReport->m_fSellVolume[4];
 
-	// KÏßÊı¾İ¡¢ÈÕÆÚ
+	// Kçº¿æ•°æ®ã€æ—¥æœŸ
 	KDATA	kd;
 	UpdateKDATAByREPORT( kd, pReport );
 
@@ -193,7 +193,7 @@ BOOL UpdateStockInfoByREPORT( CStockInfo & info, REPORT * pReport )
 		info.m_kdata.Add( kd );
 	info.m_datetech	=	kd.m_date;
 
-	// ±£´æ
+	// ä¿å­˜
 	memcpy( &(info.m_reportLatest), pReport, sizeof(info.m_reportLatest) );
 	return TRUE;
 }
@@ -246,7 +246,7 @@ BOOL UpdateStockContainerByKData( CStockContainer &container, LPCTSTR lpszCode, 
 		CStockInfo	& info	=	container.ElementAt(id);
 		if( kdata.GetSize() > (int)AfxGetProfile().GetCacheDays() )
 		{
-			// Ö»Ê¹ÓÃAfxGetProfile().GetCacheDays()ÌìµÄÊı¾İ
+			// åªä½¿ç”¨AfxGetProfile().GetCacheDays()å¤©çš„æ•°æ®
 			CKData	temp( kdata.GetKType() );
 			for( int i=kdata.GetSize()-AfxGetProfile().GetCacheDays(); i<kdata.GetSize(); i++ )
 				temp.Add( kdata.ElementAt(i) );
@@ -256,7 +256,7 @@ BOOL UpdateStockContainerByKData( CStockContainer &container, LPCTSTR lpszCode, 
 			info.m_kdata.MergeKData( &kdata );
 
 		
-		// Ö¸ÊıÕÇµø¼ÒÊı
+		// æŒ‡æ•°æ¶¨è·Œå®¶æ•°
 		int nSize = info.m_kdata.GetSize();
 		if( nSize > 0 )
 		{

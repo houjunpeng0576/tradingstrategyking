@@ -86,12 +86,12 @@ int CCYO::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( dValue < dLiminalLow && nSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dValue > dLiminalHigh && nSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -106,7 +106,7 @@ BOOL CCYO::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	       9ÈÕMTM + 12ÈÕMTM¡Á2 + 18ÈÕMTM¡Á3 + 24ÈÕMTM¡Á4
+	       9æ—¥MTM + 12æ—¥MTMÃ—2 + 18æ—¥MTMÃ—3 + 24æ—¥MTMÃ—4
 	CYO = ------------------------------------------------
 	                           10
 */
@@ -148,7 +148,7 @@ BOOL CCYO::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	¼ÆËãCYO¼°ÆäÒÆ¶¯Æ½¾ùÖµ
+	è®¡ç®—CYOåŠå…¶ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CCYO::Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast )
 {
@@ -223,12 +223,12 @@ int CDCYO::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( dValue < dLiminalLow && nSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dValue > dLiminalHigh && nSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -243,10 +243,10 @@ BOOL CDCYO::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	       9ÈÕMTM + 12ÈÕMTM¡Á2 + 18ÈÕMTM¡Á3 + 24ÈÕMTM¡Á4
+	       9æ—¥MTM + 12æ—¥MTMÃ—2 + 18æ—¥MTMÃ—3 + 24æ—¥MTMÃ—4
 	CYO = ------------------------------------------------
 	                           10
-	DCYO = CYOµÄm_nMADaysÈÕÆ½¾ùÖµ
+	DCYO = CYOçš„m_nMADaysæ—¥å¹³å‡å€¼
 */
 BOOL CDCYO::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -298,7 +298,7 @@ BOOL CDCYO::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	¼ÆËãDCYO¼°ÆäÒÆ¶¯Æ½¾ùÖµ
+	è®¡ç®—DCYOåŠå…¶ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CDCYO::Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast )
 {
@@ -369,7 +369,7 @@ double CHSL::GetMainChangeHand( DWORD dwMarket, CKData & kdata, int nIndexKD )
 	}
 	else if( 0 == strcmp( STKLIB_CODE_MAINSZN, infoMain.GetStockCode() ) )
 	{
-		// ÉîÖ¤³ÉÖ¸
+		// æ·±è¯æˆæŒ‡
 		dCapitalValue	=	0.41 * 1e8 * (kdMain.m_fClose+kdMain.m_fOpen+kdMain.m_fHigh+kdMain.m_fLow)/4;
 	}
 
@@ -419,7 +419,7 @@ BOOL CHSL::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	Ïà¶Ô»»ÊÖÂÊ
+	ç›¸å¯¹æ¢æ‰‹ç‡
 */
 BOOL CHSL::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -432,7 +432,7 @@ BOOL CHSL::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 	double	dVolume = m_pKData->ElementAt(nIndex).m_fVolume;
 	if( m_stockinfo.IsValidStock() && m_stockinfo.GetRatioChangeHand( &dRatioChangeHand, dVolume ) )
 	{
-		// Ïà¶Ô»»ÊÖÂÊ
+		// ç›¸å¯¹æ¢æ‰‹ç‡
 		double	dMainChangeHand = GetMainChangeHand( m_stockinfo.GetMarket(), *m_pKData, nIndex );
 		double	dRelativeChangeHand = 1.0;
 		if( dMainChangeHand > 1e-6 )
@@ -456,7 +456,7 @@ BOOL CHSL::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	¼ÆËãHSL¼°ÆäÒÆ¶¯Æ½¾ùÖµ
+	è®¡ç®—HSLåŠå…¶ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CHSL::Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast )
 {
@@ -553,12 +553,12 @@ int CDPER::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( dValue < dLiminalLow && nSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dValue > dLiminalHigh && nSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -575,8 +575,8 @@ BOOL CDPER::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	A = ½ñÈÕÊÕÅÌ¼Û - £¨m_nDetrendDays+m_nDetrendDays£©ÈÕµÄÆ½¾ùÊÕÅÌ¼Û
-	       NÈÕÄÚAĞ¡ÓÚ½ñÈÕAµÄÌìÊı	
+	A = ä»Šæ—¥æ”¶ç›˜ä»· - ï¼ˆm_nDetrendDays+m_nDetrendDaysï¼‰æ—¥çš„å¹³å‡æ”¶ç›˜ä»·
+	       Næ—¥å†…Aå°äºä»Šæ—¥Açš„å¤©æ•°	
 	DPER = ----------------------
 	                N
 	
@@ -638,7 +638,7 @@ BOOL CDPER::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 }
 
 /***
-	¼ÆËãCYO¼°ÆäÒÆ¶¯Æ½¾ùÖµ
+	è®¡ç®—CYOåŠå…¶ç§»åŠ¨å¹³å‡å€¼
 */
 BOOL CDPER::Calculate( double * pValue, double * pMA, int nIndex, BOOL bUseLast )
 {

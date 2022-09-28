@@ -14,7 +14,7 @@
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ×Ö·û´®
+// å­—ç¬¦ä¸²
 extern	char	sz_stockname_fund[];
 extern	char	sz_stockname_bond[];
 extern	char	sz_stockname_index[];
@@ -22,7 +22,7 @@ extern	char	sz_stockname_bondindex[];
 extern	char	sz_stockname_bondindexcorp[];
 
 //////////////////////////////////////////////////////////////////////////////////
-// Ö¸±êÂòÂôĞÅºÅ×Ö·û´®
+// æŒ‡æ ‡ä¹°å–ä¿¡å·å­—ç¬¦ä¸²
 extern	char	its_sellintense[];
 extern	char	its_sell[];
 extern	char	its_sellfeeble[];
@@ -45,12 +45,12 @@ extern	char	itsc_resistance[];
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// Ö¸±ê×Ö·û´®
+// æŒ‡æ ‡å­—ç¬¦ä¸²
 
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ¹ÉÆ±ÁĞ±íÁĞÃû³Æ×Ö·û´®
+// è‚¡ç¥¨åˆ—è¡¨åˆ—åç§°å­—ç¬¦ä¸²
 extern	char	slh_hdrday[];
 extern	char	slh_avrcode[];
 extern	char	slh_avrname[];
@@ -59,7 +59,7 @@ extern	char	slh_wavrname[];
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ±í´ïÊ½´íÎóÌáÊ¾×Ö·û´®
+// è¡¨è¾¾å¼é”™è¯¯æç¤ºå­—ç¬¦ä¸²
 extern	char	express_errparserstack[];
 extern	char	express_errbadrange[];
 extern	char	express_errexpression[];
@@ -72,12 +72,12 @@ extern	char	express_errunknown[];
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ¹ÉÆ±°å¿é×Ö·û´®
+// è‚¡ç¥¨æ¿å—å­—ç¬¦ä¸²
 extern	char	domain_self[];
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ½çÃæÅäÉ«·½°¸×Ö·û´®
+// ç•Œé¢é…è‰²æ–¹æ¡ˆå­—ç¬¦ä¸²
 extern	char	colorclass_standard[];
 extern	char	colorclass_byzantinesque[];
 extern	char	colorclass_gothic[];
@@ -85,13 +85,13 @@ extern	char	colorclass_baroque[];
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ·şÎñÆ÷ËµÃ÷¡¢¼¼ÊõÖ§³Ö
+// æœåŠ¡å™¨è¯´æ˜ã€æŠ€æœ¯æ”¯æŒ
 extern	char	sz_mainserverinfo[];
 extern	char	sz_mailsubjectsupport[];
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ÖÜ
+// å‘¨
 extern	char	sz_sunday[];
 extern	char	sz_monday[];
 extern	char	sz_tuesday[];
@@ -101,21 +101,21 @@ extern	char	sz_friday[];
 extern	char	sz_saturday[];
 
 //////////////////////////////////////////////////////////////////////////////////
-// ±¨±íÀàĞÍ
+// æŠ¥è¡¨ç±»å‹
 extern	char	sz_reportQuarter[];
 extern	char	sz_reportMid[];
 extern	char	sz_reportQuarter3[];
 extern	char	sz_reportAnnals[];
 
 //////////////////////////////////////////////////////////////////////////////////
-// ×ÖÊı¾İ·û´®
+// å­—æ•°æ®ç¬¦ä¸²
 extern	char	db_errcreateselfdb[];
 extern	char	db_errrootpath[];
 extern	char	db_errqianlongpath[];
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ²ßÂÔ×Ö·û´®
+// ç­–ç•¥å­—ç¬¦ä¸²
 extern	char	strategy_logicand[];
 extern	char	strategy_logicor[];
 

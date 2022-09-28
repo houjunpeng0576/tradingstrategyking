@@ -78,13 +78,13 @@ int CVOLUME::GetSignal( int nIndex, UINT * pnCode )
 	int	nIntensity	=	GetTrendIntensity( nIndex, m_adwMADays, m_itsLong, m_itsShort, pnCode );
 	if( ITS_BUY == nIntensity
 		&& m_pKData->IsNewValue( nIndex, FALSE, ITS_DAYS_DEVIATE ) )
-	{	// µ×±³Àë£¬¹É¼Û´´ĞÂµÍ²¢ÇÒ³É½»Á¿Ç÷ÊÆÏòÉÏ
+	{	// åº•èƒŒç¦»ï¼Œè‚¡ä»·åˆ›æ–°ä½å¹¶ä¸”æˆäº¤é‡è¶‹åŠ¿å‘ä¸Š
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONBOTTOM;
 		return m_itsDeviateOnBottom;
 	}
 	if( ITS_SELL == nIntensity
 		&& m_pKData->IsNewValue( nIndex, TRUE, ITS_DAYS_DEVIATE ) )
-	{	// ¶¥±³Àë£¬¹É¼Û´´ĞÂ¸ß²¢ÇÒ³É½»Á¿Ç÷ÊÆÏòÏÂ
+	{	// é¡¶èƒŒç¦»ï¼Œè‚¡ä»·åˆ›æ–°é«˜å¹¶ä¸”æˆäº¤é‡è¶‹åŠ¿å‘ä¸‹
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONTOP;
 		return m_itsDeviateOnTop;
 	}
@@ -116,7 +116,7 @@ BOOL CVOLUME::GetMinMaxInfo(int nStart, int nEnd,
 }
 
 /***
-	¼ÆËãnDaysµÄÆ½¾ù³É½»Á¿
+	è®¡ç®—nDaysçš„å¹³å‡æˆäº¤é‡
 */
 BOOL CVOLUME::Calculate( double * pValue, int nIndex, int nDays, BOOL bUseLast )
 {
@@ -185,7 +185,7 @@ void CNVI::Clear( )
 int CNVI::GetSignal( int nIndex, UINT * pnCode )
 {
 	PrepareCache( 0, -1, FALSE );
-	// ½ğ²æËÀ²æ
+	// é‡‘å‰æ­»å‰
 	return GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 }
 
@@ -195,8 +195,8 @@ BOOL CNVI::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	NVI³õÖµ = 100
-	Èç¹û½ñÌì³É½»Á¿±È×òÈÕĞ¡ NVI = Ç°Ò»ÈÕNVI + 100 * ÕÇµø·ù ·ñÔò£¬NVI = Ç°Ò»ÌìNVI
+	NVIåˆå€¼ = 100
+	å¦‚æœä»Šå¤©æˆäº¤é‡æ¯”æ˜¨æ—¥å° NVI = å‰ä¸€æ—¥NVI + 100 * æ¶¨è·Œå¹… å¦åˆ™ï¼ŒNVI = å‰ä¸€å¤©NVI
 */
 BOOL CNVI::Calculate( double * pValue, double *pMA, int nIndex, BOOL bUseLast )
 {
@@ -291,7 +291,7 @@ void CPVI::Clear( )
 int CPVI::GetSignal( int nIndex, UINT * pnCode )
 {
 	PrepareCache( 0, -1, FALSE );
-	// ½ğ²æËÀ²æ
+	// é‡‘å‰æ­»å‰
 	return GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 }
 
@@ -301,8 +301,8 @@ BOOL CPVI::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	PVI³õÖµ100
-	Èç¹û½ñÌì³É½»Á¿±È×òÈÕ´ó PVI = Ç°Ò»ÈÕPVI + 100 * ÕÇµø·ù ·ñÔò£¬PVI = Ç°Ò»ÈÕPVI
+	PVIåˆå€¼100
+	å¦‚æœä»Šå¤©æˆäº¤é‡æ¯”æ˜¨æ—¥å¤§ PVI = å‰ä¸€æ—¥PVI + 100 * æ¶¨è·Œå¹… å¦åˆ™ï¼ŒPVI = å‰ä¸€æ—¥PVI
 */
 BOOL CPVI::Calculate( double * pValue, double *pMA, int nIndex, BOOL bUseLast )
 {
@@ -412,12 +412,12 @@ int CVR::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nIntensity	=	GetTrendIntensity1( nIndex, m_itsLong, m_itsShort, pnCode );
 	if( dVRNow < dLiminalLow && nIntensity == m_itsLong )
-	{	// µÍÎ»Ç÷ÊÆÏòÉÏ
+	{	// ä½ä½è¶‹åŠ¿å‘ä¸Š
 		if( pnCode )	*pnCode	=	ITSC_LONG;
 		return m_itsLong;
 	}
 	if( dVRNow > dLiminalHigh && nIntensity == m_itsShort )
-	{	// ¸ßÎ»Ç÷ÊÆÏòÏÂ
+	{	// é«˜ä½è¶‹åŠ¿å‘ä¸‹
 		if( pnCode )	*pnCode	=	ITSC_SHORT;
 		return m_itsShort;
 	}
@@ -430,9 +430,9 @@ BOOL CVR::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	     nÈÕÖĞÉÏÕÇÈÕ³É½»Á¿+1/2×î½ünÈÕ×Ü³É½»Á¿
-	VR = ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª---------¡ª- ¡Á100
-	     nÈÕÖĞÏÂµøÈÕ³É½»Á¿+1/2×î½ünÈÕ×Ü³É½»Á¿
+	     næ—¥ä¸­ä¸Šæ¶¨æ—¥æˆäº¤é‡+1/2æœ€è¿‘næ—¥æ€»æˆäº¤é‡
+	VR = â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”---------â€”- Ã—100
+	     næ—¥ä¸­ä¸‹è·Œæ—¥æˆäº¤é‡+1/2æœ€è¿‘næ—¥æ€»æˆäº¤é‡
 */
 BOOL CVR::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -523,12 +523,12 @@ int CVROC::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( IsDeviateOnBottom( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// µ×±³Àë
+	{	// åº•èƒŒç¦»
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONBOTTOM;
 		return m_itsDeviateOnBottom;
 	}
 	if( IsDeviateOnTop( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// ¶¥±³Àë
+	{	// é¡¶èƒŒç¦»
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONTOP;
 		return m_itsDeviateOnTop;
 	}
@@ -542,9 +542,9 @@ BOOL CVROC::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	          ½ñÈÕ³É½»Á¿-nÈÕÇ°³É½»Á¿
+	          ä»Šæ—¥æˆäº¤é‡-næ—¥å‰æˆäº¤é‡
 	VROC =   ---------------------- * 100
-	              ½ñÈÕ³É½»Á¿
+	              ä»Šæ—¥æˆäº¤é‡
 */
 BOOL CVROC::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -618,12 +618,12 @@ int COBV::GetSignal( int nIndex, UINT * pnCode )
 	PrepareCache( 0, -1, FALSE );
 
 	if( IsDeviateOnBottom( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// µ×±³Àë
+	{	// åº•èƒŒç¦»
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONBOTTOM;
 		return m_itsDeviateOnBottom;
 	}
 	if( IsDeviateOnTop( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// ¶¥±³Àë
+	{	// é¡¶èƒŒç¦»
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONTOP;
 		return m_itsDeviateOnTop;
 	}
@@ -637,9 +637,9 @@ BOOL COBV::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	µ±ÈÕÊÕÅÌ¼Û±ÈÇ°Ò»ÈÕÊÕÅÌ¼Û¸ß£¬Æä³É½»Á¿¼ÇÎªÕıÊı
-	µ±ÈÕÊÕÅÌ¼Û½ÏÇ°Ò»ÈÕÊÕÅÌ¼ÛµÍ£¬Æä³É½»Á¿¼ÇÎª¸ºÊı
-	ÀÛ¼ÆÃ¿ÈÕÖ®Õı»ò¸º³É½»Á¿£¬¼´µÃOBVÖµ
+	å½“æ—¥æ”¶ç›˜ä»·æ¯”å‰ä¸€æ—¥æ”¶ç›˜ä»·é«˜ï¼Œå…¶æˆäº¤é‡è®°ä¸ºæ­£æ•°
+	å½“æ—¥æ”¶ç›˜ä»·è¾ƒå‰ä¸€æ—¥æ”¶ç›˜ä»·ä½ï¼Œå…¶æˆäº¤é‡è®°ä¸ºè´Ÿæ•°
+	ç´¯è®¡æ¯æ—¥ä¹‹æ­£æˆ–è´Ÿæˆäº¤é‡ï¼Œå³å¾—OBVå€¼
 */
 BOOL COBV::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -748,13 +748,13 @@ int CMOBV::GetSignal( int nIndex, UINT * pnCode )
 
 	if( dPriceNow < dLiminalLow
 		&& ( IsGoldenFork( nIndex, m_pdCache1, m_pdCache2 ) || IsGoldenFork( nIndex, m_pdCache2, m_pdCache3 ) ) )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dPriceNow > dLiminalHigh
 		&& ( IsDeadFork( nIndex, m_pdCache1, m_pdCache2 ) || IsDeadFork( nIndex, m_pdCache2, m_pdCache3 ) ) )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -768,9 +768,9 @@ BOOL CMOBV::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	*pValue1  = µ±ÈÕOBV
-	*pValue2  = m_nDays1ÈÕOBVÆ½¾ùÖµ
-	*pValue3  = m_nDays2ÈÕOBVÆ½¾ùÖµ
+	*pValue1  = å½“æ—¥OBV
+	*pValue2  = m_nDays1æ—¥OBVå¹³å‡å€¼
+	*pValue3  = m_nDays2æ—¥OBVå¹³å‡å€¼
 */
 BOOL CMOBV::Calculate( double * pValue1, double * pValue2, double * pValue3, int nIndex, BOOL bUseLast )
 {
@@ -866,12 +866,12 @@ int CMFI::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( dValue <= 20 )
-	{	// µÍÎ»
+	{	// ä½ä½
 		if( pnCode )	*pnCode	=	ITSC_LONG;
 		return m_itsLong;
 	}
 	if( dValue >= 80 )
-	{	// ¸ßÎ»
+	{	// é«˜ä½
 		if( pnCode )	*pnCode	=	ITSC_SHORT;
 		return m_itsShort;
 	}
@@ -886,15 +886,15 @@ BOOL CMFI::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	PMF ºÍ NMF ÈçÏÂ¼ÆËã£º
+	PMF å’Œ NMF å¦‚ä¸‹è®¡ç®—ï¼š
 
-		TP = (High+Low+Close)/3   µ±ÈÕµÄÖĞ¼ä¼Û
+		TP = (High+Low+Close)/3   å½“æ—¥çš„ä¸­é—´ä»·
 
-		PMF = nÈÕÄÚ£¬TPÉÏÕÇÈÕµÄ (TP*³É½»Á¿) Ö®ºÍ¡£
-		NMF = nÈÕÄÚ£¬TPÏÂ½µÈÕµÄ (TP*³É½»Á¿) Ö®ºÍ¡£	
+		PMF = næ—¥å†…ï¼ŒTPä¸Šæ¶¨æ—¥çš„ (TP*æˆäº¤é‡) ä¹‹å’Œã€‚
+		NMF = næ—¥å†…ï¼ŒTPä¸‹é™æ—¥çš„ (TP*æˆäº¤é‡) ä¹‹å’Œã€‚	
 
 	MFI = 100 * PMF / (PMF + NMF)
-	±¸×¢£ºMR = PMF/NMF
+	å¤‡æ³¨ï¼šMR = PMF/NMF
 */
 BOOL CMFI::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -952,12 +952,12 @@ CVMACD::~CVMACD()
 }
 
 /***
-	³É½»Á¿µÄMACD
-	EMA  = ¶ÌÆÚÒÆ¶¯¾ùÖµ
-	EMA2 = ³¤ÆÚÒÆ¶¯¾ùÖµ
-	DIF  = ¶ÌÆÚÒÆ¶¯¾ùÖµ - ³¤ÆÚÒÆ¶¯¾ùÖµ
-	DEA  = DIFµÄÒÆ¶¯Æ½»¬Öµ
-	Öù×´ÏßÖµ = DIF - DEA
+	æˆäº¤é‡çš„MACD
+	EMA  = çŸ­æœŸç§»åŠ¨å‡å€¼
+	EMA2 = é•¿æœŸç§»åŠ¨å‡å€¼
+	DIF  = çŸ­æœŸç§»åŠ¨å‡å€¼ - é•¿æœŸç§»åŠ¨å‡å€¼
+	DEA  = DIFçš„ç§»åŠ¨å¹³æ»‘å€¼
+	æŸ±çŠ¶çº¿å€¼ = DIF - DEA
 */
 BOOL CVMACD::Calculate( double *pdEMA1, double *pdEMA2, double *pdDIF, double *pdDEA,
 					int nIndex, BOOL bUseLast )
@@ -987,7 +987,7 @@ BOOL CVMACD::Calculate( double *pdEMA1, double *pdEMA2, double *pdDIF, double *p
 		{
 			factor1		*=	((double)(m_nEMA1Days-1))/(m_nEMA1Days+1);
 			factor2		*=	((double)(m_nEMA2Days-1))/(m_nEMA2Days+1);
-			if( factor1 < 0.001 && factor2 < 0.001 )	// Ì«¾ÃÒÔÇ°µÄÊı¾İÓ°ÏìºÜĞ¡£¬ºöÂÔ²»¼Æ
+			if( factor1 < 0.001 && factor2 < 0.001 )	// å¤ªä¹…ä»¥å‰çš„æ•°æ®å½±å“å¾ˆå°ï¼Œå¿½ç•¥ä¸è®¡
 				break;
 		}
 		dEMA1New	=	m_pKData->ElementAt(k).m_fVolume;
@@ -1072,12 +1072,12 @@ int CWVAD::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( dNow < dLiminalLow )
-	{	// µÍÎ»
+	{	// ä½ä½
 		if( pnCode )	*pnCode	=	ITSC_LONG;
 		return m_itsLong;
 	}
 	if( dNow > dLiminalHigh  )
-	{	// ¸ßÎ»
+	{	// é«˜ä½
 		if( pnCode )	*pnCode	=	ITSC_SHORT;
 		return m_itsShort;
 	}
@@ -1091,10 +1091,10 @@ BOOL CWVAD::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	A = µ±ÌìÊÕÅÌ¼Û - µ±Ìì¿ªÅÌ¼Û
-	B = µ±Ìì×î¸ß¼Û - µ±Ìì×îµÍ¼Û
-	C = A¡ÂB¡ÁV(³É½»Á¿)
-	WVAD = ÀÛ¼ÆnÌìµÄCÖµ
+	A = å½“å¤©æ”¶ç›˜ä»· - å½“å¤©å¼€ç›˜ä»·
+	B = å½“å¤©æœ€é«˜ä»· - å½“å¤©æœ€ä½ä»·
+	C = AÃ·BÃ—V(æˆäº¤é‡)
+	WVAD = ç´¯è®¡nå¤©çš„Cå€¼
 */
 BOOL CWVAD::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -1185,12 +1185,12 @@ int CEMV::GetSignal( int nIndex, UINT * pnCode )
 
 	int	nSignal	=	GetForkSignal( nIndex, m_itsGoldenFork, m_itsDeadFork, pnCode );
 	if( dEMV < dLiminalLow && nSignal == m_itsGoldenFork )
-	{	// µÍÎ»½ğ²æ
+	{	// ä½ä½é‡‘å‰
 		if( pnCode )	*pnCode	=	ITSC_GOLDENFORK;
 		return m_itsGoldenFork;
 	}
 	if( dEMV > dLiminalHigh && nSignal == m_itsDeadFork )
-	{	// ¸ßÎ»ËÀ²æ
+	{	// é«˜ä½æ­»å‰
 		if( pnCode )	*pnCode	=	ITSC_DEADFORK;
 		return m_itsDeadFork;
 	}
@@ -1223,11 +1223,11 @@ BOOL CEMV::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	A = £¨½ñÌì×î¸ß + ½ñÌì×îµÍ£©¡Â 2
-	B = £¨Ç°Ò»Ìì×î¸ß + Ç°Ò»Ìì×îµÍ£©¡Â2
-	C = ½ñÌì×î¸ß - ½ñÌì×îµÍ
-	EM = £¨A-B£©¡ÁC¡Â½ñÌì³É½»¶î
-	EMV = ÀÛ¼ÆnÌìµÄEMÖµ
+	A = ï¼ˆä»Šå¤©æœ€é«˜ + ä»Šå¤©æœ€ä½ï¼‰Ã· 2
+	B = ï¼ˆå‰ä¸€å¤©æœ€é«˜ + å‰ä¸€å¤©æœ€ä½ï¼‰Ã·2
+	C = ä»Šå¤©æœ€é«˜ - ä»Šå¤©æœ€ä½
+	EM = ï¼ˆA-Bï¼‰Ã—CÃ·ä»Šå¤©æˆäº¤é¢
+	EMV = ç´¯è®¡nå¤©çš„EMå€¼
 */
 BOOL CEMV::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -1331,22 +1331,22 @@ int CVRSI::GetSignal( int nIndex, UINT * pnCode )
 		return ITS_NOTHING;
 
 	if( IsDeviateOnBottom( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// µ×±³Àë
+	{	// åº•èƒŒç¦»
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONBOTTOM;
 		return m_itsDeviateOnBottom;
 	}
 	if( IsDeviateOnTop( nIndex, m_pdCache1, m_pdCache2 ) )
-	{	// ¶¥±³Àë
+	{	// é¡¶èƒŒç¦»
 		if( pnCode )	*pnCode	=	ITSC_DEVIATEONTOP;
 		return m_itsDeviateOnTop;
 	}
 	if( dNow < dLiminalLow )
-	{	// ³¬Âô
+	{	// è¶…å–
 		if( pnCode )	*pnCode	=	ITSC_OVERSOLD;
 		return m_itsSold;
 	}
 	if( dNow > dLiminalHigh )
-	{	// ³¬Âò
+	{	// è¶…ä¹°
 		if( pnCode )	*pnCode	=	ITSC_OVERBOUGHT;
 		return m_itsBought;
 	}
@@ -1362,8 +1362,8 @@ BOOL CVRSI::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	VP = NÈÕÄÚ³É½»Á¿Ôö¼ÓÈÕµÄÆ½¾ù³É½»Á¿
-	VQ = NÈÕÄÚ³É½»Á¿¼õÉÙÈÕµÄÆ½¾ù³É½»Á¿
+	VP = Næ—¥å†…æˆäº¤é‡å¢åŠ æ—¥çš„å¹³å‡æˆäº¤é‡
+	VQ = Næ—¥å†…æˆäº¤é‡å‡å°‘æ—¥çš„å¹³å‡æˆäº¤é‡
 	VRSI = 100 * VP / (VP+VQ)
 */
 BOOL CVRSI::Calculate( double * pValue, int nIndex, BOOL bUseLast )
@@ -1428,8 +1428,8 @@ CNVRSI::~CNVRSI()
 }
 
 /***
-	VP = NÈÕÄÚ³É½»Á¿Ôö¼ÓÈÕµÄ×Ü³É½»Á¿
-	VQ = NÈÕÄÚ³É½»Á¿¼õÉÙÈÕµÄ×Ü³É½»Á¿
+	VP = Næ—¥å†…æˆäº¤é‡å¢åŠ æ—¥çš„æ€»æˆäº¤é‡
+	VQ = Næ—¥å†…æˆäº¤é‡å‡å°‘æ—¥çš„æ€»æˆäº¤é‡
 	VRSI = 100 * VP / (VP+VQ)
 */
 BOOL CNVRSI::Calculate( double * pValue, int nIndex, BOOL bUseLast )
@@ -1507,7 +1507,7 @@ void CAD::Clear( )
 int CAD::GetSignal( int nIndex, UINT * pnCode )
 {
 	if( pnCode )	*pnCode	=	ITSC_NOTHING;
-	// ÎŞÂòÂôĞÅºÅ
+	// æ— ä¹°å–ä¿¡å·
 	return	ITS_NOTHING;
 }
 
@@ -1517,10 +1517,10 @@ BOOL CAD::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	A = µ±ÈÕ×î¸ß¼Û - µ±ÈÕ×îµÍ¼Û
-	B = 2 * µ±ÈÕÊÕÅÌ¼Û - µ±ÈÕ×î¸ß¼Û - µ±ÈÕ×îµÍ¼Û
-	C = µ±ÈÕ³É½»Á¿ * B / A
-	AD = NÈÕÄÚCµÄ×ÜºÍ
+	A = å½“æ—¥æœ€é«˜ä»· - å½“æ—¥æœ€ä½ä»·
+	B = 2 * å½“æ—¥æ”¶ç›˜ä»· - å½“æ—¥æœ€é«˜ä»· - å½“æ—¥æœ€ä½ä»·
+	C = å½“æ—¥æˆäº¤é‡ * B / A
+	AD = Næ—¥å†…Cçš„æ€»å’Œ
 */
 BOOL CAD::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {
@@ -1592,7 +1592,7 @@ void CCI::Clear( )
 int CCI::GetSignal( int nIndex, UINT * pnCode )
 {
 	if( pnCode )	*pnCode	=	ITSC_NOTHING;
-	// ÎŞÂòÂôĞÅºÅ
+	// æ— ä¹°å–ä¿¡å·
 	return	ITS_NOTHING;
 }
 
@@ -1602,7 +1602,7 @@ BOOL CCI::GetMinMaxInfo(int nStart, int nEnd, double *pdMin, double *pdMax )
 }
 
 /***
-	CI = (µ±ÈÕÊÕÅÌ¼Û - µ±ÈÕ¿ªÅÌ¼Û)/(µ±ÈÕ×î¸ß¼Û - µ±ÈÕ×îµÍ¼Û)
+	CI = (å½“æ—¥æ”¶ç›˜ä»· - å½“æ—¥å¼€ç›˜ä»·)/(å½“æ—¥æœ€é«˜ä»· - å½“æ—¥æœ€ä½ä»·)
 */
 BOOL CCI::Calculate( double * pValue, int nIndex, BOOL bUseLast )
 {

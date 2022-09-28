@@ -453,7 +453,7 @@ int	CQianlong::LoadKDataCache( CStockContainer & container, PROGRESS_CALLBACK fn
 
 	UINT nCacheDays = AfxGetProfile().GetCacheDays();
 
-	// 读取行情缓存
+	// 璇诲彇琛屾儏缂撳瓨
 	SP_ASSERT( nProgStart <= nProgEnd );
 	int nCount = container.GetSize();
 	int	nCacheCount		= 0;
@@ -1130,7 +1130,7 @@ BOOL CQianlong::GetFileName( CSPString &sFileName, int nDataType,
 	if( NULL == pInfo || !pInfo->IsValidStock() )
 		return FALSE;
 
-	// 确定市场类型
+	// 纭畾甯傚満绫诲瀷
 	if( CStock::marketUnknown == pInfo->GetMarket() )
 		pInfo->ResolveTypeAndMarket( );
 

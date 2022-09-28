@@ -4,14 +4,14 @@
 /* Expression Evaluator v1.4 for Delphi                                     */
 /* (16 & 32 bits)                                                           */
 /*                                                                          */
-/* Copyright © 1997 by BitSoft Development, L.L.C.                          */
+/* Copyright  1997 by BitSoft Development, L.L.C.                          */
 /* All rights reserved                                                      */
 /*                                                                          */
 /* Web:     http://www.bitsoft.com                                          */
 /* E-mail:  info@bitsoft.com                                                */
 /* Support: tech-support@bitsoft.com                                        */
 /*--------------------------------------------------------------------------*/
-/* Portions Copyright © 1992 by Borland International, Inc.                 */
+/* Portions Copyright  1992 by Borland International, Inc.                 */
 /* All rights reserved                                                      */
 /*--------------------------------------------------------------------------*/
 /* This file is distributed as freeware and without warranties of any kind. */

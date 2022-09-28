@@ -35,9 +35,9 @@
 	#include	<windows.h>
 #endif
 
-#pragma warning (disable : 4251)	// warning C4251: ¡°CDJ::m_stockSha¡± : class¡°CStock¡±ĞèÒªÓĞ dll ½Ó¿ÚÓÉ class¡°CDJ¡±µÄ¿Í»§¶ËÊ¹ÓÃ 
+#pragma warning (disable : 4251)	// warning C4251: â€œCDJ::m_stockShaâ€ : classâ€œCStockâ€éœ€è¦æœ‰ dll æ¥å£ç”± classâ€œCDJâ€çš„å®¢æˆ·ç«¯ä½¿ç”¨ 
 #pragma warning (disable : 4275)	// warning C4275: non dll-interface class 'CSPArray<class CStockInfo,class CStockInfo &>' used as base for dll-interface class 'CStockContainer'
-#pragma warning (disable : 4996)	// warning C4996: ¡°strncpy¡±±»ÉùÃ÷Îª·ñ¾öµÄ
+#pragma warning (disable : 4996)	// warning C4996: â€œstrncpyâ€è¢«å£°æ˜ä¸ºå¦å†³çš„
 
 #include	<StkLib.h>
 #include	"SpDebug.h"

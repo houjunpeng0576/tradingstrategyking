@@ -3,268 +3,268 @@
 
 #pragma	pack(1)
 
-/* 2.0°æ²ÆÎñĞÅÏ¢Êı¾İ½á¹¹ dat\basetbl.dat
+/* 2.0ç‰ˆè´¢åŠ¡ä¿¡æ¯æ•°æ®ç»“æ„ dat\basetbl.dat
 
 typedef struct clk20_basedata_t {
 	LONG	type;								//	stock type
-	char	code[8];							// ´úÂë
-	char	domain[16+1];						// °å¿é
-	char	province[8+1];						// Ê¡·İ
+	char	code[8];							// ä»£ç 
+	char	domain[16+1];						// æ¿å—
+	char	province[8+1];						// çœä»½
 
-	DWORD	date;				 	// ÈÕÆÚ	Format is YYYYMMDD for base data
-	LONG	reporttype;				// ±¨¸æÀàĞÍ£ºÄê±¨¡¢ÖĞ±¨¡¢¼¾±¨
-	LONG	erate_dollar;			// µ±ÆÚÃÀÔª»ãÂÊ 0.001
-	LONG	erate_hkdollar;			// µ±ÆÚ¸Û±Ò»ãÂÊ 0.001
+	DWORD	date;				 	// æ—¥æœŸ	Format is YYYYMMDD for base data
+	LONG	reporttype;				// æŠ¥å‘Šç±»å‹ï¼šå¹´æŠ¥ã€ä¸­æŠ¥ã€å­£æŠ¥
+	LONG	erate_dollar;			// å½“æœŸç¾å…ƒæ±‡ç‡ 0.001
+	LONG	erate_hkdollar;			// å½“æœŸæ¸¯å¸æ±‡ç‡ 0.001
 
-	// ¡ï³¥Õ®ÄÜÁ¦
-	LONG	ratio_liquidity;		// Á÷¶¯±ÈÂÊ 0.001
-	LONG	ratio_quick;			// ËÙ¶¯±ÈÂÊ 0.001
-	LONG	velocity_receivables;	// Ó¦ÊÕÕÊ¿îÖÜÂÊ 0.001
-	// ¡ï¾­ÓªÄÜÁ¦
-	LONG	velocity_merchandise;	// ´æ»õÖÜ×ªÂÊ 0.001
-	LONG	main_income;			// Ö÷ÓªÒµÎñÊÕÈë 10000
-	LONG	cash_ps;				// Ã¿¹É¾»ÏÖ½ğÁ÷Á¿ 0.001
-	// ¡ïÓ¯ÀûÄÜÁ¦
-	LONG	profit_margin;			// Ö÷ÓªÒµÎñÀûÈóÂÊ % 0.001
-	LONG	netasset_yield;			// ¾»×Ê²úÊÕÒæÂÊ % 0.001
-	// ¡ï×Ê±¾½á¹¹
-	LONG	date_begin;				// ÉÏÊĞÈÕÆÚ Format is YYYYMMDD
-	LONG	share_count_total;		// ×Ü¹É±¾ 10000
-	LONG	share_count_a;			// Á÷Í¨A¹É 10000
-	LONG	share_count_b;			// Á÷Í¨B¹É 10000
-	LONG	share_count_h;			// Á÷Í¨H¹É 10000
-	LONG	share_count_national;	// ¹úÓĞ¹É 10000
-	LONG	share_count_corp;		// ·¨ÈË¹É 10000
-	LONG	profit_psud;			// Ã¿¹ÉÎ´·ÖÅäÀûÈó 0.001
-	LONG	asset;					// ×Ü×Ê²ú 10000
-	LONG	ratio_holderright;		// ¹É¶«È¨Òæ±ÈÂÊ 0.001
-	LONG	ratio_longdebt;			// ³¤ÆÚ¸ºÕ®ÂÊ 0.001
-	LONG	ratio_debt;				// ×Ê²ú¸ºÕ®ÂÊ 0.001
-	// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
-	LONG	netasset_ps;			// Ã¿¹É¾»×Ê²ú 0.001
-	LONG	netasset_ps_regulate;	// µ÷ÕûÃ¿¹É¾»×Ê²ú 0.001
-	LONG	eps;					// Ã¿¹ÉÊÕÒæ 0.001
-	LONG	eps_deduct;				// ¿Û³ıºóÃ¿¹ÉÊÕÒæ 0.001
-	LONG	net_profit;				// ¾»ÀûÈó 10000
-	LONG	main_profit;			// Ö÷ÓªÒµÎñÀûÈó 10000
-	LONG	total_profit;			// ÀûÈó×Ü¶î 10000
-	// ¡ïÔö³¤ÂÊ
-	LONG	profit_inc;				// Ö÷ÓªÀûÈóÔö³¤ÂÊ% 0.001
-	LONG	income_inc;				// Ö÷ÓªÊÕÈëÔö³¤ÂÊ% 0.001
-	LONG	asset_inc;				// ×Ü×Ê²úÔö³¤ÂÊ% 0.001
-	// ¡ï¼¼ÊõÊı¾İÍ³¼ÆÖµ
-	LONG	yield_average;			// Æ½¾ùÊÕÒæÂÊ% 0.001
-	LONG	yield_stddev;			// ÊÕÒæ±ê×¼²î% 0.001
-	LONG	beite;					// ¦ÂÖµ 0.001
+	// â˜…å¿å€ºèƒ½åŠ›
+	LONG	ratio_liquidity;		// æµåŠ¨æ¯”ç‡ 0.001
+	LONG	ratio_quick;			// é€ŸåŠ¨æ¯”ç‡ 0.001
+	LONG	velocity_receivables;	// åº”æ”¶å¸æ¬¾å‘¨ç‡ 0.001
+	// â˜…ç»è¥èƒ½åŠ›
+	LONG	velocity_merchandise;	// å­˜è´§å‘¨è½¬ç‡ 0.001
+	LONG	main_income;			// ä¸»è¥ä¸šåŠ¡æ”¶å…¥ 10000
+	LONG	cash_ps;				// æ¯è‚¡å‡€ç°é‡‘æµé‡ 0.001
+	// â˜…ç›ˆåˆ©èƒ½åŠ›
+	LONG	profit_margin;			// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦ç‡ % 0.001
+	LONG	netasset_yield;			// å‡€èµ„äº§æ”¶ç›Šç‡ % 0.001
+	// â˜…èµ„æœ¬ç»“æ„
+	LONG	date_begin;				// ä¸Šå¸‚æ—¥æœŸ Format is YYYYMMDD
+	LONG	share_count_total;		// æ€»è‚¡æœ¬ 10000
+	LONG	share_count_a;			// æµé€šAè‚¡ 10000
+	LONG	share_count_b;			// æµé€šBè‚¡ 10000
+	LONG	share_count_h;			// æµé€šHè‚¡ 10000
+	LONG	share_count_national;	// å›½æœ‰è‚¡ 10000
+	LONG	share_count_corp;		// æ³•äººè‚¡ 10000
+	LONG	profit_psud;			// æ¯è‚¡æœªåˆ†é…åˆ©æ¶¦ 0.001
+	LONG	asset;					// æ€»èµ„äº§ 10000
+	LONG	ratio_holderright;		// è‚¡ä¸œæƒç›Šæ¯”ç‡ 0.001
+	LONG	ratio_longdebt;			// é•¿æœŸè´Ÿå€ºç‡ 0.001
+	LONG	ratio_debt;				// èµ„äº§è´Ÿå€ºç‡ 0.001
+	// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
+	LONG	netasset_ps;			// æ¯è‚¡å‡€èµ„äº§ 0.001
+	LONG	netasset_ps_regulate;	// è°ƒæ•´æ¯è‚¡å‡€èµ„äº§ 0.001
+	LONG	eps;					// æ¯è‚¡æ”¶ç›Š 0.001
+	LONG	eps_deduct;				// æ‰£é™¤åæ¯è‚¡æ”¶ç›Š 0.001
+	LONG	net_profit;				// å‡€åˆ©æ¶¦ 10000
+	LONG	main_profit;			// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦ 10000
+	LONG	total_profit;			// åˆ©æ¶¦æ€»é¢ 10000
+	// â˜…å¢é•¿ç‡
+	LONG	profit_inc;				// ä¸»è¥åˆ©æ¶¦å¢é•¿ç‡% 0.001
+	LONG	income_inc;				// ä¸»è¥æ”¶å…¥å¢é•¿ç‡% 0.001
+	LONG	asset_inc;				// æ€»èµ„äº§å¢é•¿ç‡% 0.001
+	// â˜…æŠ€æœ¯æ•°æ®ç»Ÿè®¡å€¼
+	LONG	yield_average;			// å¹³å‡æ”¶ç›Šç‡% 0.001
+	LONG	yield_stddev;			// æ”¶ç›Šæ ‡å‡†å·®% 0.001
+	LONG	beite;					// Î²å€¼ 0.001
 
 	DWORD	reserved[4];
 }CLK20_BASEDATA, *PCLK20_BASEDATA;
 */
 
-// ³ıÈ¨Êı¾İ
+// é™¤æƒæ•°æ®
 typedef struct clk_drdata_t {
 	DWORD	date;
-	DWORD	bonus;			//	10ÅÉXÔª		/1000
-	DWORD	bonus_share;	//	10ËÍX¹É		/100
-	DWORD	ration_share;	//	10ÅäX¹É		/100
-	DWORD	ration_value;	//	Åä¹É¼Û		/1000
+	DWORD	bonus;			//	10æ´¾Xå…ƒ		/1000
+	DWORD	bonus_share;	//	10é€Xè‚¡		/100
+	DWORD	ration_share;	//	10é…Xè‚¡		/100
+	DWORD	ration_value;	//	é…è‚¡ä»·		/1000
 	DWORD	reserved;
 }CLK_DRDATA, * PCLK_DRDATA;
 
-// ·ÖÎö¼Ò¸ñÊ½³ıÈ¨Êı¾İ
+// åˆ†æå®¶æ ¼å¼é™¤æƒæ•°æ®
 typedef union fxj_drdata_t {
 	struct
 	{
 		DWORD	m_dwMagic;		// = -1
-		WORD	m_wMarket;		// SH ÉÏº£ SZ ÉîÛÚ
+		WORD	m_wMarket;		// SH ä¸Šæµ· SZ æ·±åœ³
 		char	m_szCode[6];
 		char	m_szReserved[8];
 	};
 	struct
 	{
 		time_t	m_time;
-		float	m_fGive;			// Ã¿¹ÉËÍ
-		float	m_fPei;				// Ã¿¹ÉÅä
-		float	m_fPeiPrice;		// Åä¹É¼Û,½öµ± m_fPei!=0.0f Ê±ÓĞĞ§
-		float	m_fProfit;			// Ã¿¹ÉºìÀû
+		float	m_fGive;			// æ¯è‚¡é€
+		float	m_fPei;				// æ¯è‚¡é…
+		float	m_fPeiPrice;		// é…è‚¡ä»·,ä»…å½“ m_fPei!=0.0f æ—¶æœ‰æ•ˆ
+		float	m_fProfit;			// æ¯è‚¡çº¢åˆ©
 	};
 }FXJ_DRDATA, * PFXJ_DRDATA;
 
-// Í¨´ïĞÅ¸ñÊ½²ÆÎñÊı¾İ
+// é€šè¾¾ä¿¡æ ¼å¼è´¢åŠ¡æ•°æ®
 #define	TDX_FHEADER_SIZE	0x521
 typedef struct tdx_basedata_t {
 	char	m_szMagic;
-	char	m_szMarket;						// ÊĞ³¡ '0' ÉîÛÚ '1' ÉÏº£
+	char	m_szMarket;						// å¸‚åœº '0' æ·±åœ³ '1' ä¸Šæµ·
 	char	m_szCode[6];
-	char	m_szDate_modified[8];			// ¸üĞÂÈÕÆÚ
-	char	m_szShare_count_total[14];		// ×Ü¹É±¾ 10000
-	char	m_szShare_count_national[14];	// ¹ú¼Ò¹É 10000
-	char	m_szShare_count_orig[14];		// ·¢Æğ¹É 10000
-	char	m_szShare_count_corp[14];		// ·¨ÈË¹É 10000
-	char	m_szShare_count_b[14];			// B¹É 10000
-	char	m_szShare_count_h[14];			// H¹É 10000
-	char	m_szShare_count_currency[14];	// Á÷Í¨¹É 10000
-	char	m_szShare_count_employ[14];		// Ö°¹¤¹É 10000
+	char	m_szDate_modified[8];			// æ›´æ–°æ—¥æœŸ
+	char	m_szShare_count_total[14];		// æ€»è‚¡æœ¬ 10000
+	char	m_szShare_count_national[14];	// å›½å®¶è‚¡ 10000
+	char	m_szShare_count_orig[14];		// å‘èµ·è‚¡ 10000
+	char	m_szShare_count_corp[14];		// æ³•äººè‚¡ 10000
+	char	m_szShare_count_b[14];			// Bè‚¡ 10000
+	char	m_szShare_count_h[14];			// Hè‚¡ 10000
+	char	m_szShare_count_currency[14];	// æµé€šè‚¡ 10000
+	char	m_szShare_count_employ[14];		// èŒå·¥è‚¡ 10000
 	char	m_szUnkown1[14];				// 
-	char	m_szAsset[14];					// ×Ü×Ê²ú 1000
-	char	m_szAsset_currency[14];			// Á÷¶¯×Ê²ú 1000
-	char	m_szAsset_capital[14];			// ¹Ì¶¨×Ê²ú 1000
-	char	m_szAsset_imma[14];				// ÎŞĞÎ×Ê²ú 1000
-	char	m_szInvest_long[14];			// ³¤ÆÚÍ¶×Ê 1000
-	char	m_szDebt_currency[14];			// Á÷¶¯¸ºÕ® 1000
-	char	m_szDebt_long[14];				// ³¤ÆÚ¸ºÕ® 1000
-	char	m_szAcc_fund[14];				// ¹«»ı½ğ 1000
-	char	m_szNet_asset[14];				// ¾»×Ê²ú 1000
-	char	m_szMain_income[14];			// Ö÷ÓªÊÕÈë 1000
-	char	m_szMain_profit[14];			// Ö÷ÓªÀûÒæ 1000
-	char	m_szOther_profit[14];			// ÆäËûÀûÒæ 1000
-	char	m_szBusiness_profit[14];		// ÓªÒµÀûÒæ 1000
-	char	m_szInvest_profit[14];			// Í¶×ÊÊÕÒæ 1000
-	char	m_szAllow_profit[14];			// ²¹ÌùÊÕÈë 1000
-	char	m_szOut_profit[14];				// ÒµÍâÊÕÖ§ 1000
-	char	m_szProfit_regulate[14];		// ËğÒæµ÷Õû 1000
-	char	m_szTotal_profit[14];			// ÀûÈó×Ü¶î 1000
-	char	m_szProfit_aftertax[14];		// Ë°ºóÀûÒæ 1000
-	char	m_szNet_profit[14];				// ¾»ÀûÒæ 1000
-	char	m_szProfit_ud[14];				// Î´·ÖÀûÈó 1000
-	char	m_szNet_asset_ps_regulate[14];	// Ã¿¹É¾»×Ê2
+	char	m_szAsset[14];					// æ€»èµ„äº§ 1000
+	char	m_szAsset_currency[14];			// æµåŠ¨èµ„äº§ 1000
+	char	m_szAsset_capital[14];			// å›ºå®šèµ„äº§ 1000
+	char	m_szAsset_imma[14];				// æ— å½¢èµ„äº§ 1000
+	char	m_szInvest_long[14];			// é•¿æœŸæŠ•èµ„ 1000
+	char	m_szDebt_currency[14];			// æµåŠ¨è´Ÿå€º 1000
+	char	m_szDebt_long[14];				// é•¿æœŸè´Ÿå€º 1000
+	char	m_szAcc_fund[14];				// å…¬ç§¯é‡‘ 1000
+	char	m_szNet_asset[14];				// å‡€èµ„äº§ 1000
+	char	m_szMain_income[14];			// ä¸»è¥æ”¶å…¥ 1000
+	char	m_szMain_profit[14];			// ä¸»è¥åˆ©ç›Š 1000
+	char	m_szOther_profit[14];			// å…¶ä»–åˆ©ç›Š 1000
+	char	m_szBusiness_profit[14];		// è¥ä¸šåˆ©ç›Š 1000
+	char	m_szInvest_profit[14];			// æŠ•èµ„æ”¶ç›Š 1000
+	char	m_szAllow_profit[14];			// è¡¥è´´æ”¶å…¥ 1000
+	char	m_szOut_profit[14];				// ä¸šå¤–æ”¶æ”¯ 1000
+	char	m_szProfit_regulate[14];		// æŸç›Šè°ƒæ•´ 1000
+	char	m_szTotal_profit[14];			// åˆ©æ¶¦æ€»é¢ 1000
+	char	m_szProfit_aftertax[14];		// ç¨ååˆ©ç›Š 1000
+	char	m_szNet_profit[14];				// å‡€åˆ©ç›Š 1000
+	char	m_szProfit_ud[14];				// æœªåˆ†åˆ©æ¶¦ 1000
+	char	m_szNet_asset_ps_regulate[14];	// æ¯è‚¡å‡€èµ„2
 	char	m_szUnknown2[3];				// 
 	char	m_szUnknown3[4];				// 
 	char	m_szUnknown4[2];				//
-	char	m_szDate_begin[8];				// ÉÏÊĞÈÕÆÚ
+	char	m_szDate_begin[8];				// ä¸Šå¸‚æ—¥æœŸ
 	char	m_szUnknown5[3];				// 
 	char	m_szUnknown6[11];				// 
 }TDX_BASEDATA, *PTDX_BASEDATA;
 
-// ·ÖÎö¼Ò¸ñÊ½²ÆÎñÊı¾İ
+// åˆ†æå®¶æ ¼å¼è´¢åŠ¡æ•°æ®
 #define	FXJ_FHEADER_SIZE	0x8
 typedef struct fxj_basedata_header_t {
 	DWORD	m_dwMagic1;	//	0x223FD90C;
 	DWORD	m_dwMagic2;	//	0x000000A6;
 }FXJ_BASEDATA_HEADER, *PFXJ_BASEDATA_HEADER;
 typedef struct fxj_basedata_t {
-	WORD	m_wMarket;						// ÊĞ³¡ 'ZS'" ÉîÛÚ 'HS' ÉÏº£
+	WORD	m_wMarket;						// å¸‚åœº 'ZS'" æ·±åœ³ 'HS' ä¸Šæµ·
 	WORD	m_wUnknown;
 	char	m_szCode[6];
 	float	m_fData[39];
 /*
 	m_fData[0]
 	m_fData[1]
-	m_fData[2]*10000	// ×Ü¹É±¾
-	m_fData[3]*10000	// ¹úÓĞ¹É
-	m_fData[4]*10000	// ·¢ÆğÈË·¨ÈË¹É
-	m_fData[5]*10000	// ·¨ÈË¹É
-	m_fData[6]*10000	// Á÷Í¨B¹É
-	m_fData[7]*10000	// Á÷Í¨H¹É
-	m_fData[8]*10000	// Á÷Í¨A¹É
+	m_fData[2]*10000	// æ€»è‚¡æœ¬
+	m_fData[3]*10000	// å›½æœ‰è‚¡
+	m_fData[4]*10000	// å‘èµ·äººæ³•äººè‚¡
+	m_fData[5]*10000	// æ³•äººè‚¡
+	m_fData[6]*10000	// æµé€šBè‚¡
+	m_fData[7]*10000	// æµé€šHè‚¡
+	m_fData[8]*10000	// æµé€šAè‚¡
 	m_fData[9]
 	m_fData[10]
-	m_fData[11]*1000	// ×Ü×Ê²ú
-	m_fData[12]*1000	// Á÷Í¨×Ê²ú
-	m_fData[13]*1000	// ¹Ì¶¨×Ê²ú
+	m_fData[11]*1000	// æ€»èµ„äº§
+	m_fData[12]*1000	// æµé€šèµ„äº§
+	m_fData[13]*1000	// å›ºå®šèµ„äº§
 	m_fData[14]
-	m_fData[15]*1000	// ³¤ÆÚÍ¶×Ê
-	m_fData[16]*1000	// Á÷Í¨¸ºÕ®
-	m_fData[17]*1000	// ³¤ÆÚ¸ºÕ®
-	m_fData[18]*1000	// ×Ê±¾¹«»ı½ğ
-	m_fData[19]			// ¹«»ı½ğ/¹É
-	m_fData[20]*1000	// ¹É¶«È¨Òæ
-	m_fData[21]*1000	// Ö÷ÓªÒµÎñÊÕÈë
-	m_fData[22]*1000	// Ö÷ÓªÒµÎñÀûÈó
-	m_fData[23]*1000	// ÆäËüÒµÎñÀûÈó
-	m_fData[24]*1000	// ÓªÒµÀûÒæ
-	m_fData[25]*1000	// Í¶×ÊÊÕÒæ
-	m_fData[29]*1000	// ÀûÈó×Ü¶î
+	m_fData[15]*1000	// é•¿æœŸæŠ•èµ„
+	m_fData[16]*1000	// æµé€šè´Ÿå€º
+	m_fData[17]*1000	// é•¿æœŸè´Ÿå€º
+	m_fData[18]*1000	// èµ„æœ¬å…¬ç§¯é‡‘
+	m_fData[19]			// å…¬ç§¯é‡‘/è‚¡
+	m_fData[20]*1000	// è‚¡ä¸œæƒç›Š
+	m_fData[21]*1000	// ä¸»è¥ä¸šåŠ¡æ”¶å…¥
+	m_fData[22]*1000	// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦
+	m_fData[23]*1000	// å…¶å®ƒä¸šåŠ¡åˆ©æ¶¦
+	m_fData[24]*1000	// è¥ä¸šåˆ©ç›Š
+	m_fData[25]*1000	// æŠ•èµ„æ”¶ç›Š
+	m_fData[29]*1000	// åˆ©æ¶¦æ€»é¢
 	m_fData[30]
-	m_fData[31]*1000	// ¾»ÀûÈó
-	m_fData[32]*1000	// Î´·ÖÅäÀûÈó
-	m_fData[33]			// Ã¿¹ÉÎ´·ÖÅäÀûÈó
-	m_fData[34]			// Ã¿¹ÉÊÕÒæ
-	m_fData[35]			// Ã¿¹É¾»×Ê²ú
-	m_fData[36]			// µ÷ÕûÃ¿¹É¾»×Ê²ú
-	m_fData[37]			// ¹É¶«È¨Òæ±ÈÂÊ
-	m_fData[38]			// ¾»×Ê²úÊÕÒæÂÊ %
+	m_fData[31]*1000	// å‡€åˆ©æ¶¦
+	m_fData[32]*1000	// æœªåˆ†é…åˆ©æ¶¦
+	m_fData[33]			// æ¯è‚¡æœªåˆ†é…åˆ©æ¶¦
+	m_fData[34]			// æ¯è‚¡æ”¶ç›Š
+	m_fData[35]			// æ¯è‚¡å‡€èµ„äº§
+	m_fData[36]			// è°ƒæ•´æ¯è‚¡å‡€èµ„äº§
+	m_fData[37]			// è‚¡ä¸œæƒç›Šæ¯”ç‡
+	m_fData[38]			// å‡€èµ„äº§æ”¶ç›Šç‡ %
 */
 }FXJ_BASEDATA, *PFXJ_BASEDATA;
 
-/*	ÊÊÓÃ¸÷ÖÖÊı¾İÀàĞÍ´æ´¢µÄÎÄ¼ş¸ñÊ½°üº¬Èı²¿·Ö
+/*	é€‚ç”¨å„ç§æ•°æ®ç±»å‹å­˜å‚¨çš„æ–‡ä»¶æ ¼å¼åŒ…å«ä¸‰éƒ¨åˆ†
 
-	1. ÎÄ¼şÍ·£ºCLK_FHEADER
+	1. æ–‡ä»¶å¤´ï¼šCLK_FHEADER
 
-	2. Ë÷ÒıÇø£º´óĞ¡Îª CLK_FHEADER.m_dwIndexRecordSize * CLK_FHADER.m_dwIndexRecordCount
-				·ÖÎª CLK_FHADER.m_dwIndexRecordCount ¸ö¿é£¬
-				Ã¿¿éÎª CLK_FHEADER.m_dwIndexRecordSize£¬¼´ CLK_INDEXRECORD
+	2. ç´¢å¼•åŒºï¼šå¤§å°ä¸º CLK_FHEADER.m_dwIndexRecordSize * CLK_FHADER.m_dwIndexRecordCount
+				åˆ†ä¸º CLK_FHADER.m_dwIndexRecordCount ä¸ªå—ï¼Œ
+				æ¯å—ä¸º CLK_FHEADER.m_dwIndexRecordSizeï¼Œå³ CLK_INDEXRECORD
 
-	3. Êı¾İÇø£º´óĞ¡ÎªCLK_FHEADER.m_dwBlockSize * CLK_FHEADER.m_dwBlockCount
-				·ÖÎª CLK_FHADER.m_dwBlockCount ¸ö Block£¬
-				Ã¿Ò» Block ÓĞÒ»¸ö CLK_BLOCKHEADER£¬ºÍ½ôËæÆäºóµÄ CLK_BLOCKHEADER.m_dwDataRecordCount ¸ö¹ÉÆ±Êı¾İ¼ÇÂ¼
-				Èç¹ûÒ»¸ö Block ²»ÄÜ¼ÇÂ¼¸Ã¹ÉÆ±È«²¿¼ÇÂ¼£¬Ôò CLK_BLOCKHEAHDRE.m_dwPosNextBlock Ö¸ÏòÏÂÒ»¸öÊı¾İ¿é
+	3. æ•°æ®åŒºï¼šå¤§å°ä¸ºCLK_FHEADER.m_dwBlockSize * CLK_FHEADER.m_dwBlockCount
+				åˆ†ä¸º CLK_FHADER.m_dwBlockCount ä¸ª Blockï¼Œ
+				æ¯ä¸€ Block æœ‰ä¸€ä¸ª CLK_BLOCKHEADERï¼Œå’Œç´§éšå…¶åçš„ CLK_BLOCKHEADER.m_dwDataRecordCount ä¸ªè‚¡ç¥¨æ•°æ®è®°å½•
+				å¦‚æœä¸€ä¸ª Block ä¸èƒ½è®°å½•è¯¥è‚¡ç¥¨å…¨éƒ¨è®°å½•ï¼Œåˆ™ CLK_BLOCKHEAHDRE.m_dwPosNextBlock æŒ‡å‘ä¸‹ä¸€ä¸ªæ•°æ®å—
 */
 
 #define	CLK_FHEADER_MAGIC		'FKLC'
 #define	CLK_FHEADER_VERMAJOR	'2003'
 #define	CLK_FHEADER_VERMINOR	'1002'
 
-// ×ÔÓĞÎÄ¼ş¸ñÊ½£¬ÎÄ¼şÍ·
+// è‡ªæœ‰æ–‡ä»¶æ ¼å¼ï¼Œæ–‡ä»¶å¤´
 typedef	struct clk_fheader
 {
-	// ÎÄ¼şĞÅÏ¢
+	// æ–‡ä»¶ä¿¡æ¯
 	DWORD	m_dwMagic;					// = CLK_FHEADER_MAGIC
 	DWORD	m_dwVerMajor;				// = CLK_FHEADER_VERMAJOR
 	DWORD	m_dwVerMinor;				// = CLK_FHEADER_VERMINOR
-	DWORD	m_dwReserved1;				// ±£Áô
-	DWORD	m_dwDataType;				// Êı¾İ·ÖÀàËµÃ÷£¬see CStock::DataType
-	DWORD	m_dwMarket;					// ÊĞ³¡£¬see CStock::StockMarket£¬Èç¹ûÎÄ¼ş°üº¬¶à¸öÊĞ³¡£¬Ôò=0ÎŞĞ§
-	time_t	m_time;						// ÎÄ¼ş×îºóĞŞ¸ÄÈÕÆÚ
+	DWORD	m_dwReserved1;				// ä¿ç•™
+	DWORD	m_dwDataType;				// æ•°æ®åˆ†ç±»è¯´æ˜ï¼Œsee CStock::DataType
+	DWORD	m_dwMarket;					// å¸‚åœºï¼Œsee CStock::StockMarketï¼Œå¦‚æœæ–‡ä»¶åŒ…å«å¤šä¸ªå¸‚åœºï¼Œåˆ™=0æ— æ•ˆ
+	time_t	m_time;						// æ–‡ä»¶æœ€åä¿®æ”¹æ—¥æœŸ
 
-	// Ë÷ÒıÇøĞÅÏ¢
-	DWORD	m_dwPosFirstIndex;			// Ë÷ÒıÇøÆğÊ¼Î»ÖÃ
-	DWORD	m_dwIndexRecordSize;		// Ë÷ÒıÇø¼ÇÂ¼µ¥Ôª×Ö½ÚÊı
-	DWORD	m_dwIndexRecordCount;		// Ë÷ÒıÇø¼ÇÂ¼µ¥Ôª¸öÊı
-	DWORD	m_dwStockCount;				// ±¾ÎÄ¼şË÷ÒıÇøÖĞµÄ×Ü¹ÉÆ±Êı
+	// ç´¢å¼•åŒºä¿¡æ¯
+	DWORD	m_dwPosFirstIndex;			// ç´¢å¼•åŒºèµ·å§‹ä½ç½®
+	DWORD	m_dwIndexRecordSize;		// ç´¢å¼•åŒºè®°å½•å•å…ƒå­—èŠ‚æ•°
+	DWORD	m_dwIndexRecordCount;		// ç´¢å¼•åŒºè®°å½•å•å…ƒä¸ªæ•°
+	DWORD	m_dwStockCount;				// æœ¬æ–‡ä»¶ç´¢å¼•åŒºä¸­çš„æ€»è‚¡ç¥¨æ•°
 
-	// Êı¾İÇøĞÅÏ¢£¬°üº¬m_dwBlockCount¸öBlock£¬Ã¿¸öBlock°üº¬m_dwBlockSize/m_dwDataRecordSize¸öDataRecord
-	DWORD	m_dwDataRecordSize;			// Êı¾İÇø¼ÇÂ¼×Ö½ÚÊı
-										// ¸ù¾İm_dwDataType£¬
+	// æ•°æ®åŒºä¿¡æ¯ï¼ŒåŒ…å«m_dwBlockCountä¸ªBlockï¼Œæ¯ä¸ªBlockåŒ…å«m_dwBlockSize/m_dwDataRecordSizeä¸ªDataRecord
+	DWORD	m_dwDataRecordSize;			// æ•°æ®åŒºè®°å½•å­—èŠ‚æ•°
+										// æ ¹æ®m_dwDataTypeï¼Œ
 										// = sizeof(REPORT)
 										// or = sizeof(MINUTE)
 										// or = sizeof(KDATA)
-	DWORD	m_dwRecordPerBlock;			// Ã¿¸öBlockµÄ¼ÇÂ¼Êı
-	DWORD	m_dwBlockSize;				// Êı¾İÇøBlockµ¥Ôª×Ö½ÚÊı£¬Ò»¸öBlockÓĞÒ»¸öBlockHeaderºÍÈô¸É¸öDataRecord
-	DWORD	m_dwPosFirstBlock;			// ÎÄ¼şÖĞµÚÒ»¸öBlockÎ»ÖÃ.
-	DWORD	m_dwPosFirstBlankBlock;		// ÎÄ¼şÖĞµÚÒ»¸ö¿ÕBlockµÄÎ»ÖÃ£¬ËùÓĞ¿ÕBlock×é³ÉÒ»¸öÁ´±í
+	DWORD	m_dwRecordPerBlock;			// æ¯ä¸ªBlockçš„è®°å½•æ•°
+	DWORD	m_dwBlockSize;				// æ•°æ®åŒºBlockå•å…ƒå­—èŠ‚æ•°ï¼Œä¸€ä¸ªBlockæœ‰ä¸€ä¸ªBlockHeaderå’Œè‹¥å¹²ä¸ªDataRecord
+	DWORD	m_dwPosFirstBlock;			// æ–‡ä»¶ä¸­ç¬¬ä¸€ä¸ªBlockä½ç½®.
+	DWORD	m_dwPosFirstBlankBlock;		// æ–‡ä»¶ä¸­ç¬¬ä¸€ä¸ªç©ºBlockçš„ä½ç½®ï¼Œæ‰€æœ‰ç©ºBlockç»„æˆä¸€ä¸ªé“¾è¡¨
 
-	DWORD	m_dwReserved2[4];			// ±£Áô
+	DWORD	m_dwReserved2[4];			// ä¿ç•™
 
-	char	m_szDescript[128];			// ÎÄ¼şËµÃ÷
-	char	m_szNextFileName[MAX_PATH];	// ÓĞÊ±ºò£¬Ò»¸öÎÄ¼ş²»ÄÜÌ«´ó£¬ÓĞ¶à¸öÎÄ¼ş£¬m_szNextFileNameÖ¸ÏòÏÂ
-										// Ò»¸öÍ¬ÀàĞÍÎÄ¼şµÄÏà¶ÔÄ¿Â¼£¬Ä¿Ç°Î´Ê¹ÓÃ
+	char	m_szDescript[128];			// æ–‡ä»¶è¯´æ˜
+	char	m_szNextFileName[MAX_PATH];	// æœ‰æ—¶å€™ï¼Œä¸€ä¸ªæ–‡ä»¶ä¸èƒ½å¤ªå¤§ï¼Œæœ‰å¤šä¸ªæ–‡ä»¶ï¼Œm_szNextFileNameæŒ‡å‘ä¸‹
+										// ä¸€ä¸ªåŒç±»å‹æ–‡ä»¶çš„ç›¸å¯¹ç›®å½•ï¼Œç›®å‰æœªä½¿ç”¨
 } CLK_FHEADER;
 
 #define	CLK_INDEXRECORD_MAGIC	'XDNI'
 
-// ×ÔÓĞÎÄ¼ş¸ñÊ½£¬¹ÉÆ±Ë÷Òı²¿·Öµ¥Ôª
+// è‡ªæœ‰æ–‡ä»¶æ ¼å¼ï¼Œè‚¡ç¥¨ç´¢å¼•éƒ¨åˆ†å•å…ƒ
 typedef	struct clk_indexrecord
 {
 	DWORD	m_dwMagic;					// = CLK_INDEXRECORD_MAGIC
-	DWORD	m_dwMarket;					// ¹ÉÆ±ÊĞ³¡ see CStock::StockMarket
-	char	m_szCode[STKLIB_MAX_CODE2];	// ¹ÉÆ±´úÂë
-	DWORD	m_dwPosFirstBlock;			// ±¾¹ÉÆ±µÚÒ»¸öBlockÆğÊ¼Î»ÖÃ£¬-1»ò0±íÊ¾ÎŞ
-	DWORD	m_dwDataRecordCountTotal;	// ±¾¹ÉÆ±Êı¾İ¼ÇÂ¼×ÜÊı
-	DWORD	m_dwReserved;				// ±£Áô
+	DWORD	m_dwMarket;					// è‚¡ç¥¨å¸‚åœº see CStock::StockMarket
+	char	m_szCode[STKLIB_MAX_CODE2];	// è‚¡ç¥¨ä»£ç 
+	DWORD	m_dwPosFirstBlock;			// æœ¬è‚¡ç¥¨ç¬¬ä¸€ä¸ªBlockèµ·å§‹ä½ç½®ï¼Œ-1æˆ–0è¡¨ç¤ºæ— 
+	DWORD	m_dwDataRecordCountTotal;	// æœ¬è‚¡ç¥¨æ•°æ®è®°å½•æ€»æ•°
+	DWORD	m_dwReserved;				// ä¿ç•™
 } CLK_INDEXRECORD;
 
 #define	CLK_BLOCKHEADER_MAGIC	'KCLB'
 
-// ×ÔÓĞÎÄ¼ş¸ñÊ½£¬Êı¾İÇø²¿·Ö£¬Êı¾İ¿éÍ·
+// è‡ªæœ‰æ–‡ä»¶æ ¼å¼ï¼Œæ•°æ®åŒºéƒ¨åˆ†ï¼Œæ•°æ®å—å¤´
 typedef	struct clk_blockheader
 {
 	DWORD	m_dwMagic;					// = CLK_BLOCKHEADER_MAGIC
-	DWORD	m_bUsed;					// ±¾BlockÊÇ·ñÊ¹ÓÃ
-	DWORD	m_dwPosFirstRecord;			// ±¾BlockÊı¾İ¼ÇÂ¼ÆğÊ¼Î»ÖÃ
-	DWORD	m_dwDataRecordCount;		// ±¾Block¿éÊı¾İ¼ÇÂ¼¸öÊı
-	DWORD	m_dwPosNextBlock;			// º¬ÓĞ±¾¹ÉÆ±Êı¾İµÄÏÂÒ»¸öBlockµÄÆğÊ¼Î»ÖÃ£¬-1»ò0±íÊ¾ÎŞ
-	DWORD	m_dwReserved;				// ±£Áô
+	DWORD	m_bUsed;					// æœ¬Blockæ˜¯å¦ä½¿ç”¨
+	DWORD	m_dwPosFirstRecord;			// æœ¬Blockæ•°æ®è®°å½•èµ·å§‹ä½ç½®
+	DWORD	m_dwDataRecordCount;		// æœ¬Blockå—æ•°æ®è®°å½•ä¸ªæ•°
+	DWORD	m_dwPosNextBlock;			// å«æœ‰æœ¬è‚¡ç¥¨æ•°æ®çš„ä¸‹ä¸€ä¸ªBlockçš„èµ·å§‹ä½ç½®ï¼Œ-1æˆ–0è¡¨ç¤ºæ— 
+	DWORD	m_dwReserved;				// ä¿ç•™
 } CLK_BLOCKHEADER;
 
 #pragma	pack()
@@ -282,7 +282,7 @@ protected:
 	CSPFile	 m_file;
 	CLK_FHEADER	m_header;
 
-	// ¼ÇÏÂµ±Ç°ÕıÔÚ²Ù×÷µÄ¹ÉÆ±
+	// è®°ä¸‹å½“å‰æ­£åœ¨æ“ä½œçš„è‚¡ç¥¨
 	CLK_INDEXRECORD m_CurIndexRecord;
 	DWORD m_dwPosCurIndex;
 
@@ -297,12 +297,12 @@ public:
 
 	// Store Function
 	BOOL	EmptyAll();
-	DWORD	StoreDataRecord(DWORD dwMarket, const char * szCode, void * pData, DWORD dwDataElementSize, DWORD dwDataElementCount, BOOL bOverWrite);	// ·µ»Ø³É¹¦±£´æ¼ÇÂ¼Êı
+	DWORD	StoreDataRecord(DWORD dwMarket, const char * szCode, void * pData, DWORD dwDataElementSize, DWORD dwDataElementCount, BOOL bOverWrite);	// è¿”å›æˆåŠŸä¿å­˜è®°å½•æ•°
 
 	// Load Function
 	DWORD	GetDataRecordCount(DWORD dwMarket, const char * szCode);
 	DWORD	LoadDataRecord(DWORD dwMarket, const char * szCode,
-							void * pData, DWORD dwDataElementSize, DWORD dwMaxDataElement);// ·µ»Ø³É¹¦¶ÁÈ¡¼ÇÂ¼Êı
+							void * pData, DWORD dwDataElementSize, DWORD dwMaxDataElement);// è¿”å›æˆåŠŸè¯»å–è®°å½•æ•°
 
 protected:
 	DWORD	Hash(LPCTSTR key, DWORD dwMax);

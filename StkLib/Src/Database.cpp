@@ -640,7 +640,7 @@ BOOL CStDatabase::GetNeedDownloadRange( CStockInfo &info, CSPTime tmBegin, CSPTi
 	return TRUE;
 }
 
-// ½«Ç®Áú¸ñÊ½KÏßÊı¾İ ¼ÓÈë Í¨ÓÃÊı¾İ°ü
+// å°†é’±é¾™æ ¼å¼Kçº¿æ•°æ® åŠ å…¥ é€šç”¨æ•°æ®åŒ…
 int CStDatabase::AppendToTyData( const char *code, const char *name, int nKType, LPCTSTR lpszKFile, LPCTSTR lpszTyDataFile, time_t tmBegin, time_t tmEnd )
 {
 	int	nCount	=	0;

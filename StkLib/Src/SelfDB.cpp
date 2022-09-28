@@ -58,18 +58,18 @@ char self_sh_xdr[]		= "data\\sh\\xdr\\";
 char self_sz_xdr[]		= "data\\sz\\xdr\\";
 char self_news[]		= "news\\";
 
-char self_chna_xdr[]	= "data\\chna.pwr";		// ³ıÈ¨ÎÄ¼ş£¬Óë·ÖÎö¼Ò¸ñÊ½ÏàÍ¬
-char self_chna_basetbl[]= "data\\shna.bst";		// ²ÆÎñ×ÊÁÏ±í
+char self_chna_xdr[]	= "data\\chna.pwr";		// é™¤æƒæ–‡ä»¶ï¼Œä¸åˆ†æå®¶æ ¼å¼ç›¸åŒ
+char self_chna_basetbl[]= "data\\shna.bst";		// è´¢åŠ¡èµ„æ–™è¡¨
 
-// ´úÂë±íÎÄ¼ş
-char self_sh_code[]		= "data\\shse.cod";		// ÉÏº£´úÂë±í
-char self_sz_code[]		= "data\\szse.cod";		// ÉîÛÚ´úÂë±í
+// ä»£ç è¡¨æ–‡ä»¶
+char self_sh_code[]		= "data\\shse.cod";		// ä¸Šæµ·ä»£ç è¡¨
+char self_sz_code[]		= "data\\szse.cod";		// æ·±åœ³ä»£ç è¡¨
 
-// ĞĞÇé»º´æÎÄ¼ş
-char self_sh_report[]	= "data\\shse.rpt";		// ÉÏº£ĞĞÇé±£´æÎÄ¼ş
-char self_sz_report[]	= "data\\szse.rpt";		// ÉîÛÚĞĞÇé±£´æÎÄ¼ş
-char self_sh_minute[]	= "data\\shse.min";		// ÉÏº£·ÖÊ±±£´æÎÄ¼ş
-char self_sz_minute[]	= "data\\szse.min";		// ÉîÛÚ·ÖÊ±±£´æÎÄ¼ş
+// è¡Œæƒ…ç¼“å­˜æ–‡ä»¶
+char self_sh_report[]	= "data\\shse.rpt";		// ä¸Šæµ·è¡Œæƒ…ä¿å­˜æ–‡ä»¶
+char self_sz_report[]	= "data\\szse.rpt";		// æ·±åœ³è¡Œæƒ…ä¿å­˜æ–‡ä»¶
+char self_sh_minute[]	= "data\\shse.min";		// ä¸Šæµ·åˆ†æ—¶ä¿å­˜æ–‡ä»¶
+char self_sz_minute[]	= "data\\szse.min";		// æ·±åœ³åˆ†æ—¶ä¿å­˜æ–‡ä»¶
 char self_outline[]		= "data\\clkoutln.out";
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -177,8 +177,8 @@ BOOL convert_TDX_BASEDATA_to_BASEDATA(TDX_BASEDATA * ptdxbd, BASEDATA *pbd)
 		pbd->m_dwMarket	= info.GetMarket();
 	}
 	
-	// char	m_szDomain[STKLIB_MAX_DOMAIN];		// °å¿é
-	// char	m_szProvince[STKLIB_MAX_PROVINCE];	// Ê¡·İ
+	// char	m_szDomain[STKLIB_MAX_DOMAIN];		// æ¿å—
+	// char	m_szProvince[STKLIB_MAX_PROVINCE];	// çœä»½
 
 	if ('0' == ptdxbd->m_szMarket)
 		pbd->m_dwMarket	= CStock::marketSZSE;
@@ -186,7 +186,7 @@ BOOL convert_TDX_BASEDATA_to_BASEDATA(TDX_BASEDATA * ptdxbd, BASEDATA *pbd)
 		pbd->m_dwMarket	= CStock::marketSHSE;
 
 	pbd->m_date	= (DWORD)StringToDouble(ptdxbd->m_szDate_modified, sizeof(ptdxbd->m_szDate_modified));
-	pbd->m_reporttype	= CStock::reportAnnals;	// ±¨¸æÀàĞÍ£ºÄê±¨¡¢ÖĞ±¨¡¢¼¾±¨
+	pbd->m_reporttype	= CStock::reportAnnals;	// æŠ¥å‘Šç±»å‹ï¼šå¹´æŠ¥ã€ä¸­æŠ¥ã€å­£æŠ¥
 	CSPTime	sptime;
 	if (sptime.FromStockTimeDay(pbd->m_date))
 	{
@@ -200,20 +200,20 @@ BOOL convert_TDX_BASEDATA_to_BASEDATA(TDX_BASEDATA * ptdxbd, BASEDATA *pbd)
 			pbd->m_reporttype	= CStock::reportQuarter3;
 	}
 
-	// float	m_fErate_dollar;			// µ±ÆÚÃÀÔª»ãÂÊ
-	// float	m_fErate_hkdollar;			// µ±ÆÚ¸Û±Ò»ãÂÊ
+	// float	m_fErate_dollar;			// å½“æœŸç¾å…ƒæ±‡ç‡
+	// float	m_fErate_hkdollar;			// å½“æœŸæ¸¯å¸æ±‡ç‡
 
-	// ¡ï³¥Õ®ÄÜÁ¦
-	// float	m_fRatio_liquidity;			// Á÷¶¯±ÈÂÊ
-	// float	m_fRatio_quick;				// ËÙ¶¯±ÈÂÊ
-	// float	m_fVelocity_receivables;	// Ó¦ÊÕÕÊ¿îÖÜÂÊ
+	// â˜…å¿å€ºèƒ½åŠ›
+	// float	m_fRatio_liquidity;			// æµåŠ¨æ¯”ç‡
+	// float	m_fRatio_quick;				// é€ŸåŠ¨æ¯”ç‡
+	// float	m_fVelocity_receivables;	// åº”æ”¶å¸æ¬¾å‘¨ç‡
 	
-	// ¡ï¾­ÓªÄÜÁ¦
-	// float	m_fVelocity_merchandise;	// ´æ»õÖÜ×ªÂÊ
+	// â˜…ç»è¥èƒ½åŠ›
+	// float	m_fVelocity_merchandise;	// å­˜è´§å‘¨è½¬ç‡
 	pbd->m_fMain_income			= (float)StringToDouble(ptdxbd->m_szMain_income, sizeof(ptdxbd->m_szMain_income)) * 1000;
-	// float	m_fCash_ps;					// Ã¿¹É¾»ÏÖ½ğÁ÷Á¿
+	// float	m_fCash_ps;					// æ¯è‚¡å‡€ç°é‡‘æµé‡
 	
-	// ¡ï×Ê±¾½á¹¹
+	// â˜…èµ„æœ¬ç»“æ„
 	pbd->m_datebegin			= (DWORD)StringToDouble(ptdxbd->m_szDate_begin, sizeof(ptdxbd->m_szDate_begin));
 	pbd->m_fShare_count_total	= (float)StringToDouble(ptdxbd->m_szShare_count_total, sizeof(ptdxbd->m_szShare_count_total)) * 10000;
 	pbd->m_fShare_count_a		= (float)StringToDouble(ptdxbd->m_szShare_count_currency, sizeof(ptdxbd->m_szShare_count_currency)) * 10000;
@@ -221,7 +221,7 @@ BOOL convert_TDX_BASEDATA_to_BASEDATA(TDX_BASEDATA * ptdxbd, BASEDATA *pbd)
 	pbd->m_fShare_count_h		= (float)StringToDouble(ptdxbd->m_szShare_count_h, sizeof(ptdxbd->m_szShare_count_h)) * 10000;
 	pbd->m_fShare_count_national= (float)StringToDouble(ptdxbd->m_szShare_count_national, sizeof(ptdxbd->m_szShare_count_national)) * 10000;
 	pbd->m_fShare_count_corp	= (float)StringToDouble(ptdxbd->m_szShare_count_corp, sizeof(ptdxbd->m_szShare_count_corp)) * 10000;
-	if (CStock::typeshB == info.GetType() || CStock::typeszB == info.GetType())	// A B¹É ½»»»
+	if (CStock::typeshB == info.GetType() || CStock::typeszB == info.GetType())	// A Bè‚¡ äº¤æ¢
 	{
 		float	fTemp	= pbd->m_fShare_count_a;
 		pbd->m_fShare_count_a	= pbd->m_fShare_count_b;
@@ -239,7 +239,7 @@ BOOL convert_TDX_BASEDATA_to_BASEDATA(TDX_BASEDATA * ptdxbd, BASEDATA *pbd)
 										+ StringToDouble(ptdxbd->m_szDebt_long, sizeof(ptdxbd->m_szDebt_long)) * 1000 / pbd->m_fAsset));
 	}
 
-	// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
+	// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
 	pbd->m_fNetasset_ps_regulate= (float)StringToDouble(ptdxbd->m_szNet_asset_ps_regulate, sizeof(ptdxbd->m_szNet_asset_ps_regulate));
 	if (pbd->m_fShare_count_total > 1e-4)
 	{
@@ -252,7 +252,7 @@ BOOL convert_TDX_BASEDATA_to_BASEDATA(TDX_BASEDATA * ptdxbd, BASEDATA *pbd)
 	pbd->m_fMain_profit			= (float)StringToDouble(ptdxbd->m_szMain_profit, sizeof(ptdxbd->m_szMain_profit)) * 1000;
 	pbd->m_fTotal_profit		= (float)StringToDouble(ptdxbd->m_szTotal_profit, sizeof(ptdxbd->m_szTotal_profit)) * 1000;
 
-	// ¡ïÓ¯ÀûÄÜÁ¦
+	// â˜…ç›ˆåˆ©èƒ½åŠ›
 	if (pbd->m_fMain_income > 1e-4)
 		pbd->m_fProfit_margin	= (float)(100 * pbd->m_fMain_profit / pbd->m_fMain_income);
 	if (pbd->m_fNetasset_ps > 1e-4)
@@ -280,8 +280,8 @@ BOOL convert_FXJ_BASEDATA_to_BASEDATA(FXJ_BASEDATA * pfxjbd, BASEDATA *pbd, DWOR
 		pbd->m_dwMarket	= info.GetMarket();
 	}
 	
-	// char	m_szDomain[STKLIB_MAX_DOMAIN];		// °å¿é
-	// char	m_szProvince[STKLIB_MAX_PROVINCE];	// Ê¡·İ
+	// char	m_szDomain[STKLIB_MAX_DOMAIN];		// æ¿å—
+	// char	m_szProvince[STKLIB_MAX_PROVINCE];	// çœä»½
 
 	if ('ZS' == pfxjbd->m_wMarket)
 		pbd->m_dwMarket	= CStock::marketSZSE;
@@ -289,7 +289,7 @@ BOOL convert_FXJ_BASEDATA_to_BASEDATA(FXJ_BASEDATA * pfxjbd, BASEDATA *pbd, DWOR
 		pbd->m_dwMarket	= CStock::marketSHSE;
 
 	pbd->m_date	= dwDate;
-	pbd->m_reporttype	= CStock::reportAnnals;	// ±¨¸æÀàĞÍ£ºÄê±¨¡¢ÖĞ±¨¡¢¼¾±¨
+	pbd->m_reporttype	= CStock::reportAnnals;	// æŠ¥å‘Šç±»å‹ï¼šå¹´æŠ¥ã€ä¸­æŠ¥ã€å­£æŠ¥
 	CSPTime	sptime;
 	if (sptime.FromStockTimeDay(pbd->m_date))
 	{
@@ -303,33 +303,33 @@ BOOL convert_FXJ_BASEDATA_to_BASEDATA(FXJ_BASEDATA * pfxjbd, BASEDATA *pbd, DWOR
 			pbd->m_reporttype	= CStock::reportQuarter3;
 	}
 
-	// float	m_fErate_dollar;			// µ±ÆÚÃÀÔª»ãÂÊ
-	// float	m_fErate_hkdollar;			// µ±ÆÚ¸Û±Ò»ãÂÊ
+	// float	m_fErate_dollar;			// å½“æœŸç¾å…ƒæ±‡ç‡
+	// float	m_fErate_hkdollar;			// å½“æœŸæ¸¯å¸æ±‡ç‡
 
-	// ¡ï³¥Õ®ÄÜÁ¦
-	// float	m_fRatio_liquidity;			// Á÷¶¯±ÈÂÊ
-	// float	m_fRatio_quick;				// ËÙ¶¯±ÈÂÊ
-	// float	m_fVelocity_receivables;	// Ó¦ÊÕÕÊ¿îÖÜÂÊ
+	// â˜…å¿å€ºèƒ½åŠ›
+	// float	m_fRatio_liquidity;			// æµåŠ¨æ¯”ç‡
+	// float	m_fRatio_quick;				// é€ŸåŠ¨æ¯”ç‡
+	// float	m_fVelocity_receivables;	// åº”æ”¶å¸æ¬¾å‘¨ç‡
 	
-	// ¡ï¾­ÓªÄÜÁ¦
-	// float	m_fVelocity_merchandise;	// ´æ»õÖÜ×ªÂÊ
+	// â˜…ç»è¥èƒ½åŠ›
+	// float	m_fVelocity_merchandise;	// å­˜è´§å‘¨è½¬ç‡
 	pbd->m_fMain_income			= pfxjbd->m_fData[21]*1000;
-	// float	m_fCash_ps;					// Ã¿¹É¾»ÏÖ½ğÁ÷Á¿
+	// float	m_fCash_ps;					// æ¯è‚¡å‡€ç°é‡‘æµé‡
 	
-	// ¡ïÓ¯ÀûÄÜÁ¦
+	// â˜…ç›ˆåˆ©èƒ½åŠ›
 	if (pbd->m_fMain_income > 1e-4)
 		pbd->m_fProfit_margin	= (float)(100 * pfxjbd->m_fData[22]*1000 / pbd->m_fMain_income);
 	pbd->m_fNetasset_yield		= pfxjbd->m_fData[38];
 
-	// ¡ï×Ê±¾½á¹¹
-	// DWORD	m_datebegin					// ÉÏÊĞÈÕÆÚ
+	// â˜…èµ„æœ¬ç»“æ„
+	// DWORD	m_datebegin					// ä¸Šå¸‚æ—¥æœŸ
 	pbd->m_fShare_count_total	= pfxjbd->m_fData[2]*10000;
 	pbd->m_fShare_count_a		= pfxjbd->m_fData[8]*10000;
 	pbd->m_fShare_count_b		= pfxjbd->m_fData[6]*10000;
 	pbd->m_fShare_count_h		= pfxjbd->m_fData[7]*10000;
 	pbd->m_fShare_count_national= pfxjbd->m_fData[3]*10000;
 	pbd->m_fShare_count_corp	= pfxjbd->m_fData[5]*10000;
-//	if (CStock::typeshB == info.GetType() || CStock::typeszB == info.GetType())	// A B¹É ½»»»
+//	if (CStock::typeshB == info.GetType() || CStock::typeszB == info.GetType())	// A Bè‚¡ äº¤æ¢
 //	{
 //		float	fTemp	= pbd->m_fShare_count_a;
 //		pbd->m_fShare_count_a	= pbd->m_fShare_count_b;
@@ -343,7 +343,7 @@ BOOL convert_FXJ_BASEDATA_to_BASEDATA(FXJ_BASEDATA * pfxjbd, BASEDATA *pbd, DWOR
 		pbd->m_fRatio_longdebt	= (float)(100 * pfxjbd->m_fData[17] * 1000 / pbd->m_fAsset);
 	pbd->m_fRatio_debt			= 100 - pbd->m_fRatio_holderright;
 
-	// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
+	// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
 	pbd->m_fNetasset_ps			= pfxjbd->m_fData[35];
 	pbd->m_fNetasset_ps_regulate= pfxjbd->m_fData[36];
 	pbd->m_fEps					= pfxjbd->m_fData[34];
@@ -432,19 +432,19 @@ void CTSKFile::Close()
 	m_dwPosCurIndex	= -1;
 }
 
-// ´´½¨¿ÕµÄÊı¾İÎÄ¼ş
+// åˆ›å»ºç©ºçš„æ•°æ®æ–‡ä»¶
 BOOL CTSKFile::BuildEmptyFile(LPCTSTR lpszFileName,
-						DWORD dwDataType,	// Êı¾İ·ÖÀàËµÃ÷£¬see CStock::DataType
-						DWORD dwMarket,			// ÊĞ³¡£¬see CStock::StockMarket£¬Èç¹ûÎÄ¼ş°üº¬¶à¸öÊĞ³¡£¬Ôò=0ÎŞĞ§
-						DWORD dwIndexRecordCount,	// Ë÷ÒıÇø¼ÇÂ¼µ¥Ôª¸öÊı
-						DWORD dwRecordPerBlock,		// Ã¿¸öBlockµÄ¼ÇÂ¼Êı
+						DWORD dwDataType,	// æ•°æ®åˆ†ç±»è¯´æ˜ï¼Œsee CStock::DataType
+						DWORD dwMarket,			// å¸‚åœºï¼Œsee CStock::StockMarketï¼Œå¦‚æœæ–‡ä»¶åŒ…å«å¤šä¸ªå¸‚åœºï¼Œåˆ™=0æ— æ•ˆ
+						DWORD dwIndexRecordCount,	// ç´¢å¼•åŒºè®°å½•å•å…ƒä¸ªæ•°
+						DWORD dwRecordPerBlock,		// æ¯ä¸ªBlockçš„è®°å½•æ•°
 						BOOL bRebuildIfExists)
 {
 	SP_ASSERT(NULL != lpszFileName && strlen(lpszFileName) > 0);
 	if (NULL == lpszFileName || strlen(lpszFileName) <= 0)
 		return FALSE;
 
-	// Èç¹ûÎÄ¼ş´æÔÚ
+	// å¦‚æœæ–‡ä»¶å­˜åœ¨
 	if (!bRebuildIfExists && 0 == access(lpszFileName,0))
 		return TRUE;
 
@@ -458,13 +458,13 @@ BOOL CTSKFile::BuildEmptyFile(LPCTSTR lpszFileName,
 	header.m_dwMarket	= dwMarket;
 	header.m_time		= time(NULL);
 	
-	// Ë÷ÒıÇøĞÅÏ¢
+	// ç´¢å¼•åŒºä¿¡æ¯
 	header.m_dwPosFirstIndex	= sizeof(header);
 	header.m_dwIndexRecordSize	= sizeof(CLK_INDEXRECORD);
 	header.m_dwIndexRecordCount	= dwIndexRecordCount;
 	header.m_dwStockCount		= 0;
 
-	// Êı¾İÇøĞÅÏ¢
+	// æ•°æ®åŒºä¿¡æ¯
 	switch (dwDataType)
 	{
 	case CStock::dataReport:
@@ -505,7 +505,7 @@ BOOL CTSKFile::BuildEmptyFile(LPCTSTR lpszFileName,
 	return TRUE;
 }
 
-// ÖØĞÂ´´½¨£¬Èç¹ûÈÕÆÚ²»ÊÇtmNow
+// é‡æ–°åˆ›å»ºï¼Œå¦‚æœæ—¥æœŸä¸æ˜¯tmNow
 BOOL CTSKFile::RemoveFileIfOutoftime(LPCTSTR lpszFileName, time_t tmNow)
 {
 	SP_ASSERT(NULL!=lpszFileName && strlen(lpszFileName) > 0);
@@ -519,7 +519,7 @@ BOOL CTSKFile::RemoveFileIfOutoftime(LPCTSTR lpszFileName, time_t tmNow)
 		CSPTime	tNow(tmNow);
 		
 		if (CLK_FHEADER_VERMAJOR == file.m_header.m_dwVerMajor 
-			&& CLK_FHEADER_VERMINOR == file.m_header.m_dwVerMinor)	// °æ±¾ÏàÍ¬
+			&& CLK_FHEADER_VERMINOR == file.m_header.m_dwVerMinor)	// ç‰ˆæœ¬ç›¸åŒ
 		{
 			if (ft.GetYear() == tNow.GetYear() && ft.GetMonth() == tNow.GetMonth() && ft.GetDay() == tNow.GetDay())
 				return FALSE;
@@ -554,7 +554,7 @@ BOOL CTSKFile::EmptyAll()
 	if (CSPFile::hFileNull == m_file.m_hFile)
 		return FALSE;
 
-	// Ë³ĞòÑ°ÕÒ
+	// é¡ºåºå¯»æ‰¾
 	DWORD	dwCount	= 0;
 	for (DWORD i=0; i<m_header.m_dwIndexRecordCount; i++)
 	{
@@ -583,10 +583,10 @@ BOOL CTSKFile::EmptyAll()
 	return dwCount > 0; // == m_header.m_dwStockCount;
 }
 
-// ±£´æÊı¾İ£¬²¢ĞŞ¸ÄÏàÓ¦Ë÷ÒıĞÅÏ¢
+// ä¿å­˜æ•°æ®ï¼Œå¹¶ä¿®æ”¹ç›¸åº”ç´¢å¼•ä¿¡æ¯
 DWORD CTSKFile::StoreDataRecord(DWORD dwMarket, const char * szCode,
 							void * pData, DWORD dwDataElementSize, DWORD dwDataElementCount,
-							BOOL bOverWrite)	// ·µ»Ø³É¹¦±£´æ¼ÇÂ¼Êı
+							BOOL bOverWrite)	// è¿”å›æˆåŠŸä¿å­˜è®°å½•æ•°
 {
 	CSPMutex::Scoped locker(g_mutexClkFile);
 
@@ -615,7 +615,7 @@ DWORD CTSKFile::StoreDataRecord(DWORD dwMarket, const char * szCode,
 	return dwCount;
 }
 
-// µÃµ½Ä³Ò»¹ÉÆ±µÄÊı¾İ¼ÇÂ¼Êı	
+// å¾—åˆ°æŸä¸€è‚¡ç¥¨çš„æ•°æ®è®°å½•æ•°	
 DWORD CTSKFile::GetDataRecordCount(DWORD dwMarket, const char * szCode)
 {
 	CSPMutex::Scoped locker(g_mutexClkFile);
@@ -627,9 +627,9 @@ DWORD CTSKFile::GetDataRecordCount(DWORD dwMarket, const char * szCode)
 	return 0;
 }
 
-// ¶ÁÈ¡Ä³Ò»¹ÉÆ±µÄÊı¾İ¼ÇÂ¼
+// è¯»å–æŸä¸€è‚¡ç¥¨çš„æ•°æ®è®°å½•
 DWORD CTSKFile::LoadDataRecord(DWORD dwMarket, const char * szCode,
-							void * pData, DWORD dwDataElementSize, DWORD dwMaxDataElement)// ·µ»Ø³É¹¦¶ÁÈ¡¼ÇÂ¼Êı
+							void * pData, DWORD dwDataElementSize, DWORD dwMaxDataElement)// è¿”å›æˆåŠŸè¯»å–è®°å½•æ•°
 {
 	CSPMutex::Scoped locker(g_mutexClkFile);
 
@@ -656,14 +656,14 @@ DWORD CTSKFile::Hash(LPCTSTR key, DWORD dwMax)
 	return dwHash % dwMax;
 }
 
-// µÃµ½Ä³Ò»¹ÉÆ±µÄË÷ÒıÇøĞÅÏ¢£¬Èç¹ûbAddIfNotExists²¢ÇÒ²»´æÔÚ£¬ÔòÌí¼Ó
+// å¾—åˆ°æŸä¸€è‚¡ç¥¨çš„ç´¢å¼•åŒºä¿¡æ¯ï¼Œå¦‚æœbAddIfNotExistså¹¶ä¸”ä¸å­˜åœ¨ï¼Œåˆ™æ·»åŠ 
 BOOL CTSKFile::GetDataInfo(	DWORD dwMarket, const char * szCode, CLK_INDEXRECORD & idxRet, DWORD & dwPosIndexFind, BOOL bAddIfNotExists)
 {
 	SP_ASSERT(CSPFile::hFileNull != m_file.m_hFile);
 	if (CSPFile::hFileNull == m_file.m_hFile)
 		return FALSE;
 
-	// ÊÇ·ñµ±Ç°Cache
+	// æ˜¯å¦å½“å‰Cache
 	if (m_CurIndexRecord.m_dwMarket == dwMarket
 		&& 0 == strcmp(m_CurIndexRecord.m_szCode, szCode))
 	{
@@ -673,7 +673,7 @@ BOOL CTSKFile::GetDataInfo(	DWORD dwMarket, const char * szCode, CLK_INDEXRECORD
 	}
 
 	DWORD	posBegin	= Hash(szCode, m_header.m_dwIndexRecordCount);
-	// HashË³ĞòÑ°ÕÒ
+	// Hashé¡ºåºå¯»æ‰¾
 	for (DWORD i=posBegin; i<m_header.m_dwIndexRecordCount; i++)
 	{
 		DWORD	dwPosIndex	= m_header.m_dwPosFirstIndex + m_header.m_dwIndexRecordSize * i;
@@ -708,7 +708,7 @@ BOOL CTSKFile::GetDataInfo(	DWORD dwMarket, const char * szCode, CLK_INDEXRECORD
 				m_file.Seek(dwPosIndex, CSPFile::begin);
 				m_file.Write(&index, sizeof(index));
 
-				// ÎÄ¼şÍ·
+				// æ–‡ä»¶å¤´
 				m_header.m_dwStockCount	+= 1;
 				m_file.Seek(0, CSPFile::begin);
 				m_file.Write(&m_header, sizeof(m_header));
@@ -724,7 +724,7 @@ BOOL CTSKFile::GetDataInfo(	DWORD dwMarket, const char * szCode, CLK_INDEXRECORD
 			return FALSE;
 		}
 
-		// Ñ­»·
+		// å¾ªç¯
 		if (m_header.m_dwIndexRecordCount-1 == i)
 			i = -1;
 		if (posBegin-1 == i)
@@ -734,14 +734,14 @@ BOOL CTSKFile::GetDataInfo(	DWORD dwMarket, const char * szCode, CLK_INDEXRECORD
 	return FALSE;
 }
 
-// ±£´æÄ³Ò»¹ÉÆ±µÄË÷ÒıÇøĞÅÏ¢
+// ä¿å­˜æŸä¸€è‚¡ç¥¨çš„ç´¢å¼•åŒºä¿¡æ¯
 BOOL CTSKFile::SetDataInfo(	DWORD dwPosIndex, CLK_INDEXRECORD idx, BOOL bFlush)
 {
 	SP_ASSERT(CSPFile::hFileNull != m_file.m_hFile);
 	if (CSPFile::hFileNull == m_file.m_hFile)
 		return FALSE;
 
-	// ÊÇ·ñµ±Ç°Cache
+	// æ˜¯å¦å½“å‰Cache
 	if (m_CurIndexRecord.m_dwMarket == idx.m_dwMarket
 		&& 0 == strcmp(m_CurIndexRecord.m_szCode, idx.m_szCode))
 	{
@@ -760,7 +760,7 @@ BOOL CTSKFile::SetDataInfo(	DWORD dwPosIndex, CLK_INDEXRECORD idx, BOOL bFlush)
 	return FALSE;
 }
 
-// µÃµ½Ä³Ò»¿ÕÊı¾İ¿é
+// å¾—åˆ°æŸä¸€ç©ºæ•°æ®å—
 DWORD CTSKFile::GetFirstBlankBlockPos(BOOL bAddIfNotExists, BOOL bUseIt)
 {
 	SP_ASSERT(CSPFile::hFileNull != m_file.m_hFile);
@@ -826,7 +826,7 @@ DWORD CTSKFile::GetFirstBlankBlockPos(BOOL bAddIfNotExists, BOOL bUseIt)
 	return dwPosBlock;
 }
 
-// Çå¿ÕÊı¾İBlockÁ´ÖĞµÄÊı¾İ£¬²¢½«³ıµÚÒ»¸öBlockÍâµÄÆäËûBlockÖÃÎªÎ´ÓÃ
+// æ¸…ç©ºæ•°æ®Blocké“¾ä¸­çš„æ•°æ®ï¼Œå¹¶å°†é™¤ç¬¬ä¸€ä¸ªBlockå¤–çš„å…¶ä»–Blockç½®ä¸ºæœªç”¨
 DWORD CTSKFile::EmptyBlockChain(DWORD dwPosFirstBlock)
 {
 	SP_ASSERT(CSPFile::hFileNull != m_file.m_hFile);
@@ -853,7 +853,7 @@ DWORD CTSKFile::EmptyBlockChain(DWORD dwPosFirstBlock)
 		}
 
 		// Empty it
-		bheader.m_bUsed	= (dwPosFirstBlock == dwPosBlock);	// µÚÒ»¿é¼ÌĞøÊ¹ÓÃ
+		bheader.m_bUsed	= (dwPosFirstBlock == dwPosBlock);	// ç¬¬ä¸€å—ç»§ç»­ä½¿ç”¨
 		bheader.m_dwDataRecordCount	= 0;
 		bheader.m_dwPosNextBlock	= -1;
 		if (!bheader.m_bUsed)
@@ -861,7 +861,7 @@ DWORD CTSKFile::EmptyBlockChain(DWORD dwPosFirstBlock)
 		m_file.Seek(dwPosBlock, CSPFile::begin);
 		m_file.Write(&bheader, sizeof(bheader));
 		
-		// ¼ÓÈëBlank Block Chain
+		// åŠ å…¥Blank Block Chain
 		if (!bheader.m_bUsed)
 		{
 			m_header.m_dwPosFirstBlankBlock	= dwPosBlock;
@@ -877,7 +877,7 @@ DWORD CTSKFile::EmptyBlockChain(DWORD dwPosFirstBlock)
 	return dwCount;
 }
 
-// ¶ÁÊı¾İ¼ÇÂ¼
+// è¯»æ•°æ®è®°å½•
 DWORD CTSKFile::ReadData(DWORD dwPosBlock, void * pData, DWORD dwDataElementSize, DWORD dwMaxDataElement)
 {
 	SP_ASSERT(CSPFile::hFileNull != m_file.m_hFile);
@@ -918,7 +918,7 @@ DWORD CTSKFile::ReadData(DWORD dwPosBlock, void * pData, DWORD dwDataElementSize
 	return dwCount;
 }
 
-// Ğ´Êı¾İ¼ÇÂ¼
+// å†™æ•°æ®è®°å½•
 DWORD CTSKFile::WriteData(DWORD dwPosBlock, void * pData, DWORD dwDataElementSize, DWORD dwDataElementCount, BOOL bFlush)
 {
 	SP_ASSERT(CSPFile::hFileNull != m_file.m_hFile);
@@ -966,7 +966,7 @@ DWORD CTSKFile::WriteData(DWORD dwPosBlock, void * pData, DWORD dwDataElementSiz
 				break;
 		}
 		
-		// ĞŞ¸ÄBlock Header
+		// ä¿®æ”¹Block Header
 		bheader.m_bUsed	= TRUE;
 		bheader.m_dwDataRecordCount	+= (dwCount-dwCountOld);
 		bheader.m_dwPosNextBlock	= -1;
@@ -975,7 +975,7 @@ DWORD CTSKFile::WriteData(DWORD dwPosBlock, void * pData, DWORD dwDataElementSiz
 		m_file.Seek(dwPosBlock, CSPFile::begin);
 		m_file.Write(&bheader, sizeof(bheader));
 
-		// ĞÂBlock
+		// æ–°Block
 		dwPosBlock	= bheader.m_dwPosNextBlock;
 	}
 
@@ -1007,7 +1007,7 @@ BOOL CSelfDB::GetFileName(CSPString& sFileName, int nDataType, CStockInfo* pInfo
 	if (pInfo==  NULL || !pInfo->IsValidStock())
 		return FALSE;
 
-	// Èç¹ûÇ®ÁúÎÄ¼ş´æÔÚ£¬¾Í·µ»ØÇ®ÁúÎÄ¼şÃû
+	// å¦‚æœé’±é¾™æ–‡ä»¶å­˜åœ¨ï¼Œå°±è¿”å›é’±é¾™æ–‡ä»¶å
 	CSPString sFileNameQL;
 	if (CStock::dataDR != nDataType
 		&& CQianlong::GetFileName(sFileNameQL, nDataType, pInfo, nKType)
@@ -1017,12 +1017,12 @@ BOOL CSelfDB::GetFileName(CSPString& sFileName, int nDataType, CStockInfo* pInfo
 		return TRUE;
 	}
 
-	// È·¶¨ÊĞ³¡ÀàĞÍ
+	// ç¡®å®šå¸‚åœºç±»å‹
 	if (pInfo->GetMarket() == CStock::marketUnknown)
 		pInfo->ResolveTypeAndMarket();
 
-	// Èç¹ûÔÚ ml_sh Ä¿Â¼ÏÂÕÒµ½ÎÄ¼ş£¬¾Í·µ»ØÕÒµ½µÄÎÄ¼şÃû
-	// ·ñÔò£¬ÈôÇ®ÁúÎÄ¼şÃû³¤¶È´óÓÚ0£¬¾Í·µ»ØÇ®ÁúÎÄ¼şÃû£¬µÈÓÚ0¾Í·µ»Ø ml_sh ÏÂµÄÎÄ¼şÃû
+	// å¦‚æœåœ¨ ml_sh ç›®å½•ä¸‹æ‰¾åˆ°æ–‡ä»¶ï¼Œå°±è¿”å›æ‰¾åˆ°çš„æ–‡ä»¶å
+	// å¦åˆ™ï¼Œè‹¥é’±é¾™æ–‡ä»¶åé•¿åº¦å¤§äº0ï¼Œå°±è¿”å›é’±é¾™æ–‡ä»¶åï¼Œç­‰äº0å°±è¿”å› ml_sh ä¸‹çš„æ–‡ä»¶å
 	if (nDataType == CStock::dataBasetext)
 	{
 		sFileName = GetRootPath();
@@ -1207,8 +1207,8 @@ int LoadCodeTable(CStockContainer& container, LPCTSTR lpszFileName, DWORD dwMark
 		{
 			CStockInfo	info;
 
-			// 600000,ÆÖ·¢ÒøĞĞ,17,PFYH,"PuFaYinHang"
-			// Ó¢ÎÄÃû³Æ¿ÉÒÔÓÃË«ÒıºÅÒıÆğÀ´
+			// 600000,æµ¦å‘é“¶è¡Œ,17,PFYH,"PuFaYinHang"
+			// è‹±æ–‡åç§°å¯ä»¥ç”¨åŒå¼•å·å¼•èµ·æ¥
 			int nToken = 0;
 			while(!rString.IsEmpty())
 			{
@@ -1276,12 +1276,12 @@ int	CSelfDB::LoadCodetable(CStockContainer& container)
 
 	container.SetSize(0, 2000);
 
-	// ÉÏº£Ö¸Êı
+	// ä¸Šæµ·æŒ‡æ•°
 	CSPString	sFileName	= GetRootPath();
 	sFileName	+= self_sh_code;
 	LoadCodeTable(container, sFileName, CStock::marketSHSE);
 
-	// ÉîÛÚÖ¸Êı
+	// æ·±åœ³æŒ‡æ•°
 	sFileName	= GetRootPath();
 	sFileName	+= self_sz_code;
 	LoadCodeTable(container, sFileName, CStock::marketSZSE);
@@ -1299,11 +1299,11 @@ int	CSelfDB::StoreCodetable(CStockContainer& container)
 	if (container.GetSize() <= 0)
 		return 0;
 
-	// ÉÏº£Ö¸Êı
+	// ä¸Šæµ·æŒ‡æ•°
 	CSPString	sFileNameSH	= GetRootPath();
 	sFileNameSH	+= self_sh_code;
 
-	// ÉîÛÚÖ¸Êı
+	// æ·±åœ³æŒ‡æ•°
 	CSPString	sFileNameSZ	= GetRootPath();
 	sFileNameSZ	+= self_sz_code;
 	

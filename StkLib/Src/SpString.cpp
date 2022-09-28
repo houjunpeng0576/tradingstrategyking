@@ -1215,7 +1215,7 @@ void CSPString::FormatV(LPCTSTR lpszFormat, va_list argList)
 // formatting (using wsprintf style formatting)
 void __cdecl CSPString::Format(LPCTSTR lpszFormat, ...)
 {
-	// Ôİ²»Ö§³Ö½Ï³¤×Ö·û´®
+	// æš‚ä¸æ”¯æŒè¾ƒé•¿å­—ç¬¦ä¸²
 	SP_ASSERT( NULL != lpszFormat && strlen(lpszFormat) < 1024 );
 	size_t	nSize	=	1024+4*strlen(lpszFormat);
 	TCHAR	* lpBuf	=	new TCHAR[nSize];

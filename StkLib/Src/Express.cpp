@@ -24,7 +24,7 @@ SLH_DATA	slh_data_array[SLH_MAX+1]	=	{
 	{ SLH_NONE,						"",	100,	"" },
 	{ SLH_CODE,						"",	100,	"" },
 	{ SLH_NAME,						"",	110,	"" },
-	//	¼¼ÊõÊı¾İ
+	//	æŠ€æœ¯æ•°æ®
 	{ SLH_DATE,						"",	110,	"" },
 	{ SLH_LASTCLOSE,				"",	100,	"lastclose" },
 	{ SLH_OPEN,						"",	100,	"open" },
@@ -55,7 +55,7 @@ SLH_DATA	slh_data_array[SLH_MAX+1]	=	{
 	{ SLH_SELLVOLUME2,				"",	100,	"sellvolume2" },
 	{ SLH_SELLVOLUME3,				"",	100,	"sellvolume3" },
 	
-	//	Ö÷Òª»ù±¾Ö¸±ê
+	//	ä¸»è¦åŸºæœ¬æŒ‡æ ‡
 	{ SLH_REPORTTYPE,				"",	100,	"" },
 	{ SLH_PE,						"",	100,	"pe" },
 	{ SLH_PNETASSET,				"",	100,	"pnetasset" },
@@ -68,18 +68,18 @@ SLH_DATA	slh_data_array[SLH_MAX+1]	=	{
 	{ SLH_MARKETVALUE,				"",	170,	"marketvalue" },
 	{ SLH_MARKETVALUEA,				"",	170,	"marketvaluea" },
 	{ SLH_MARKETVALUEB,				"",	170,	"marketvalueb" },
-	// ¡ï³¥Õ®ÄÜÁ¦
+	// â˜…å¿å€ºèƒ½åŠ›
 	{ SLH_RATIO_LIQUIDITY,			"",	140,	"ratio_liquidity" },
 	{ SLH_RATIO_QUICK,				"",	140,	"ratio_quick" },
 	{ SLH_VELOCITY_RECEIVABLES,		"",	170,	"velocity_receivables" },
-	// ¡ï¾­ÓªÄÜÁ¦
+	// â˜…ç»è¥èƒ½åŠ›
 	{ SLH_VELOCITY_MERCHANDISE,		"",	150,	"velocity_merchandise" },
 	{ SLH_MAIN_INCOME,				"",	160,	"main_income" },
 	{ SLH_CASH_PS,					"",	170,	"cash_ps" },
-	// ¡ïÓ¯ÀûÄÜÁ¦
+	// â˜…ç›ˆåˆ©èƒ½åŠ›
 	{ SLH_PROFIT_MARGIN,			"",	170,	"profit_margin" },
 	{ SLH_NETASSET_YIELD,			"",	190,	"netasset_yield" },
-	// ¡ï×Ê±¾½á¹¹
+	// â˜…èµ„æœ¬ç»“æ„
 	{ SLH_DATE_BEGIN,				"",	160,	"" },
 	{ SLH_SHARE_COUNT_TOTAL,		"",	160,	"share_count_total" },
 	{ SLH_SHARE_COUNT_A,			"",	140,	"share_count_a" },
@@ -92,7 +92,7 @@ SLH_DATA	slh_data_array[SLH_MAX+1]	=	{
 	{ SLH_RATIO_HOLDERRIGHT,		"",	170,	"ratio_holderright" },
 	{ SLH_RATIO_LONGDEBT,			"",	170,	"ratio_longdebt" },
 	{ SLH_RATIO_DEBT,				"",	170,	"ration_debt" },
-	// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
+	// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
 	{ SLH_NETASSET_PS,				"",	150,	"netasset_ps" },
 	{ SLH_NETASSET_PS_REGULATE,		"",	200,	"netasset_ps_regulate" },
 	{ SLH_EPS,						"",	140,	"eps" },
@@ -216,7 +216,7 @@ CSPString AfxGetVariantVarName( CSPString strName, BOOL bWithParameter )
 	return AfxGetVariantVarName( nVariantID );
 }
 
-/* ¼ÆËã¹ÉÆ±ÁĞ±íÊÓÍ¼ÖĞÄ³Ò»ÁĞµÄÖµ£¬ÆäÊıÖµµ¥Î»Óë¹ÉÆ±ÁĞ±íÊÓÍ¼ÖĞÏàÍ¬ */
+/* è®¡ç®—è‚¡ç¥¨åˆ—è¡¨è§†å›¾ä¸­æŸä¸€åˆ—çš„å€¼ï¼Œå…¶æ•°å€¼å•ä½ä¸è‚¡ç¥¨åˆ—è¡¨è§†å›¾ä¸­ç›¸åŒ */
 BOOL AfxGetVariantValue(UINT nVariantID, CStockInfo &info, double * pValue,
 						CStockContainer *pContainer )
 {
@@ -232,129 +232,129 @@ BOOL AfxGetVariantValue(UINT nVariantID, CStockInfo &info, double * pValue,
 	{
 		switch( nVariantID )
 		{
-		case	SLH_LASTCLOSE:					//	×òÊÕ
+		case	SLH_LASTCLOSE:					//	æ˜¨æ”¶
 			*pValue	=	info.m_fLast;
 			return ( info.m_fLast > 1e-4 );
-		case	SLH_OPEN:						//	½ñ¿ª
+		case	SLH_OPEN:						//	ä»Šå¼€
 			*pValue	=	info.m_fOpen;
 			return ( info.m_fOpen > 1e-4 );
-		case	SLH_CLOSE:						//	ÊÕÅÌ¼Û
+		case	SLH_CLOSE:						//	æ”¶ç›˜ä»·
 			*pValue	=	info.m_fClose;
 			return ( info.m_fClose > 1e-4 );
-		case	SLH_HIGH:						//	×î¸ß¼Û
+		case	SLH_HIGH:						//	æœ€é«˜ä»·
 			*pValue	=	info.m_fHigh;
 			return ( info.m_fHigh > 1e-4 );
-		case	SLH_LOW:						//	×îµÍ¼Û
+		case	SLH_LOW:						//	æœ€ä½ä»·
 			*pValue	=	info.m_fLow;
 			return ( info.m_fLow > 1e-4 );
-		case	SLH_AVERAGE:					//	¾ù¼Û
+		case	SLH_AVERAGE:					//	å‡ä»·
 			return info.GetAverage( pValue );
-		case	SLH_DIFF:						//	ÕÇµø
+		case	SLH_DIFF:						//	æ¶¨è·Œ
 			return info.GetDiff( pValue, info.m_datetech, AfxGetProfile().GetDiffDays() );
-		case	SLH_DIFFPERCENT:				//	ÕÇ·ù
+		case	SLH_DIFFPERCENT:				//	æ¶¨å¹…
 			return info.GetDiffPercent( pValue, info.m_datetech, AfxGetProfile().GetDiffPercentDays() );
-		case	SLH_SCOPE:						//	Õğ·ù
+		case	SLH_SCOPE:						//	éœ‡å¹…
 			return info.GetScope( pValue, info.m_datetech, AfxGetProfile().GetScopeDays() );
-		case	SLH_VOLUME:						//	³É½»Á¿
+		case	SLH_VOLUME:						//	æˆäº¤é‡
 			*pValue	=	info.m_fVolume*0.01;
 			return ( info.m_fVolume > 1e-4 );
-		case	SLH_AMOUNT:						//	³É½»¶î
+		case	SLH_AMOUNT:						//	æˆäº¤é¢
 			*pValue	=	info.m_fAmount*0.001;
 			return ( info.m_fAmount > 1e-4 );
-		case	SLH_VOLUP:						//	ÍâÅÌ
+		case	SLH_VOLUP:						//	å¤–ç›˜
 			if( info.m_minute.StatVolumeInfo( NULL, pValue, NULL ) )
 			{
 				*pValue	=	(*pValue) * 0.01;
 				return TRUE;
 			}
 			break;
-		case	SLH_VOLDOWN:					//	ÄÚÅÌ
+		case	SLH_VOLDOWN:					//	å†…ç›˜
 			if( info.m_minute.StatVolumeInfo( NULL, NULL, pValue ) )
 			{
 				*pValue	=	(*pValue) * 0.01;
 				return TRUE;
 			}
 			break;
-		case	SLH_DIFFPERCENT_MIN5:			//	Îå·ÖÖÓÕÇ·ù%
+		case	SLH_DIFFPERCENT_MIN5:			//	äº”åˆ†é’Ÿæ¶¨å¹…%
 			return info.GetDiffPercentMin5( pValue );
-		case	SLH_SELLBUYRATIO:				//	Î¯±È%
+		case	SLH_SELLBUYRATIO:				//	å§”æ¯”%
 			return info.GetSellBuyRatio( pValue, NULL );
-		case	SLH_SELLBUYDIFF:				//	Î¯Á¿²î
+		case	SLH_SELLBUYDIFF:				//	å§”é‡å·®
 			if( info.GetSellBuyRatio( NULL, pValue ) )
 			{
 				*pValue	=	(*pValue) * 0.01;
 				return TRUE;
 			}
 			break;
-		case	SLH_BUYPRICE3:					//	Âò¼ÛÈı
+		case	SLH_BUYPRICE3:					//	ä¹°ä»·ä¸‰
 			*pValue	=	info.m_fBuyPrice[2];
 			return ( info.m_fBuyPrice[2] > 1e-4 );
-		case	SLH_BUYPRICE2:					//	Âò¼Û¶ş
+		case	SLH_BUYPRICE2:					//	ä¹°ä»·äºŒ
 			*pValue	=	info.m_fBuyPrice[1];
 			return ( info.m_fBuyPrice[1] > 1e-4 );
-		case	SLH_BUYPRICE1:					//	Âò¼ÛÒ»
+		case	SLH_BUYPRICE1:					//	ä¹°ä»·ä¸€
 			*pValue	=	info.m_fBuyPrice[0];
 			return ( info.m_fBuyPrice[0] > 1e-4 );
-		case	SLH_SELLPRICE1:					//	Âô¼ÛÒ»
+		case	SLH_SELLPRICE1:					//	å–ä»·ä¸€
 			*pValue	=	info.m_fSellPrice[0];
 			return ( info.m_fSellPrice[0] > 1e-4 );
-		case	SLH_SELLPRICE2:					//	Âô¼Û¶ş
+		case	SLH_SELLPRICE2:					//	å–ä»·äºŒ
 			*pValue	=	info.m_fSellPrice[1];
 			return ( info.m_fSellPrice[1] > 1e-4 );
-		case	SLH_SELLPRICE3:					//	Âô¼ÛÈı
+		case	SLH_SELLPRICE3:					//	å–ä»·ä¸‰
 			*pValue	=	info.m_fSellPrice[2];
 			return ( info.m_fSellPrice[2] > 1e-4 );
-		case	SLH_BUYVOLUME3:					//	ÂòÁ¿Èı
+		case	SLH_BUYVOLUME3:					//	ä¹°é‡ä¸‰
 			*pValue	=	info.m_fBuyVolume[2] * 0.01;
 			return ( info.m_fBuyVolume[2] > 1e-4 );
-		case	SLH_BUYVOLUME2:					//	ÂòÁ¿¶ş
+		case	SLH_BUYVOLUME2:					//	ä¹°é‡äºŒ
 			*pValue	=	info.m_fBuyVolume[1] * 0.01;
 			return ( info.m_fBuyVolume[1] > 1e-4 );
-		case	SLH_BUYVOLUME1:					//	ÂòÁ¿Ò»
+		case	SLH_BUYVOLUME1:					//	ä¹°é‡ä¸€
 			*pValue	=	info.m_fBuyVolume[0] * 0.01;
 			return ( info.m_fBuyVolume[0] > 1e-4 );
-		case	SLH_SELLVOLUME1:				//	ÂôÁ¿Ò»
+		case	SLH_SELLVOLUME1:				//	å–é‡ä¸€
 			*pValue	=	info.m_fSellVolume[0] * 0.01;
 			return ( info.m_fSellVolume[0] > 1e-4 );
-		case	SLH_SELLVOLUME2:				//	ÂôÁ¿¶ş
+		case	SLH_SELLVOLUME2:				//	å–é‡äºŒ
 			*pValue	=	info.m_fSellVolume[1] * 0.01;
 			return ( info.m_fSellVolume[1] > 1e-4 );
-		case	SLH_SELLVOLUME3:				//	ÂôÁ¿Èı
+		case	SLH_SELLVOLUME3:				//	å–é‡ä¸‰
 			*pValue	=	info.m_fSellVolume[2] * 0.01;
 			return ( info.m_fSellVolume[2] > 1e-4 );
 
-			//	Ö÷Òª»ù±¾Ö¸±ê
-		case	SLH_PE:							//	ÊĞÓ¯ÂÊ
+			//	ä¸»è¦åŸºæœ¬æŒ‡æ ‡
+		case	SLH_PE:							//	å¸‚ç›ˆç‡
 			return info.GetPE( pValue );
-		case	SLH_PNETASSET:					//	ÊĞ¾»ÂÊ
+		case	SLH_PNETASSET:					//	å¸‚å‡€ç‡
 			return info.GetPNetAsset( pValue );
-		case	SLH_PMAININCOME:				//	ÊĞÏúÂÊ
+		case	SLH_PMAININCOME:				//	å¸‚é”€ç‡
 			return info.GetPMainIncome( pValue );
-		case	SLH_RATIO_PCASH:				//	¼Û¸ñ¾»ÏÖ½ğ±È
+		case	SLH_RATIO_PCASH:				//	ä»·æ ¼å‡€ç°é‡‘æ¯”
 			return info.GetRatioPCash( pValue );
-		case	SLH_RATIO_CURRENCY:				//	Á÷Í¨ÂÊ
+		case	SLH_RATIO_CURRENCY:				//	æµé€šç‡
 			return info.GetRatioCurrency( pValue );
-		case	SLH_RATIO_CHANGEHAND:			//	»»ÊÖÂÊ
+		case	SLH_RATIO_CHANGEHAND:			//	æ¢æ‰‹ç‡
 			return info.GetRatioChangeHand( pValue, info.m_datetech, AfxGetProfile().GetRatioChangeHandDays() );
-		case	SLH_RATIO_VOLUME:				//	Á¿±È
+		case	SLH_RATIO_VOLUME:				//	é‡æ¯”
 			return info.GetRatioVolume( pValue, info.m_datetech, AfxGetProfile().GetRatioVolumeDays() );
-		case	SLH_RS:							//	Ïà¶ÔÇ¿¶È
+		case	SLH_RS:							//	ç›¸å¯¹å¼ºåº¦
 			return info.GetRS( pValue, info.m_datetech, AfxGetProfile().GetRSDays() );
-		case	SLH_MARKETVALUE:				//	×ÜÊĞÖµ
+		case	SLH_MARKETVALUE:				//	æ€»å¸‚å€¼
 			if( info.GetMarketValue( pValue ) )
 			{
 				*pValue	=	(*pValue) * 0.0001;
 				return TRUE;
 			}
 			break;
-		case	SLH_MARKETVALUEA:				//	A¹ÉÊĞÖµ
+		case	SLH_MARKETVALUEA:				//	Aè‚¡å¸‚å€¼
 			if( info.GetMarketValueA( pValue ) )
 			{
 				*pValue	=	(*pValue) * 0.0001;
 				return TRUE;
 			}
 			break;
-		case	SLH_MARKETVALUEB:				//	B¹ÉÊĞÖµ
+		case	SLH_MARKETVALUEB:				//	Bè‚¡å¸‚å€¼
 			if( info.GetMarketValueB( pValue ) )
 			{
 				*pValue	=	(*pValue) * 0.0001;
@@ -362,112 +362,112 @@ BOOL AfxGetVariantValue(UINT nVariantID, CStockInfo &info, double * pValue,
 			}
 			break;
 			
-			// ¡ï³¥Õ®ÄÜÁ¦
-		case	SLH_RATIO_LIQUIDITY:			//	Á÷¶¯±ÈÂÊ
+			// â˜…å¿å€ºèƒ½åŠ›
+		case	SLH_RATIO_LIQUIDITY:			//	æµåŠ¨æ¯”ç‡
 			*pValue	=	info.m_fRatio_liquidity;
 			return ( fabs(info.m_fRatio_liquidity) > 1e-4 );
-		case	SLH_RATIO_QUICK:				//	ËÙ¶¯±ÈÂÊ
+		case	SLH_RATIO_QUICK:				//	é€ŸåŠ¨æ¯”ç‡
 			*pValue	=	info.m_fRatio_quick;
 			return ( fabs(info.m_fRatio_quick) > 1e-4 );
-		case	SLH_VELOCITY_RECEIVABLES:		//	Ó¦ÊÕÕÊ¿îÖÜÂÊ
+		case	SLH_VELOCITY_RECEIVABLES:		//	åº”æ”¶å¸æ¬¾å‘¨ç‡
 			*pValue	=	info.m_fVelocity_receivables;
 			return ( fabs(info.m_fVelocity_receivables) > 1e-4 );
 
-			// ¡ï¾­ÓªÄÜÁ¦
-		case	SLH_VELOCITY_MERCHANDISE:		// ´æ»õÖÜ×ªÂÊ
+			// â˜…ç»è¥èƒ½åŠ›
+		case	SLH_VELOCITY_MERCHANDISE:		// å­˜è´§å‘¨è½¬ç‡
 			*pValue	=	info.m_fVelocity_merchandise;
 			return ( fabs(info.m_fVelocity_merchandise) > 1e-4 );
-		case	SLH_MAIN_INCOME:				// Ö÷ÓªÒµÎñÊÕÈë
+		case	SLH_MAIN_INCOME:				// ä¸»è¥ä¸šåŠ¡æ”¶å…¥
 			*pValue	=	factor * info.m_fMain_income * 0.0001;
 			return ( fabs(info.m_fMain_income) > 1e-4 );
-		case	SLH_CASH_PS:					// Ã¿¹É¾»ÏÖ½ğÁ÷Á¿
+		case	SLH_CASH_PS:					// æ¯è‚¡å‡€ç°é‡‘æµé‡
 			*pValue	=	factor * info.m_fCash_ps;
 			return ( fabs(info.m_fCash_ps) > 1e-4 );
 
-			// ¡ïÓ¯ÀûÄÜÁ¦
-		case	SLH_PROFIT_MARGIN:				// Ö÷ÓªÒµÎñÀûÈóÂÊ
+			// â˜…ç›ˆåˆ©èƒ½åŠ›
+		case	SLH_PROFIT_MARGIN:				// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦ç‡
 			*pValue	=	info.m_fProfit_margin;
 			return ( fabs(info.m_fProfit_margin) > 1e-4 );
-		case	SLH_NETASSET_YIELD:				// ¾»×Ê²úÊÕÒæÂÊ
+		case	SLH_NETASSET_YIELD:				// å‡€èµ„äº§æ”¶ç›Šç‡
 			*pValue	=	factor * info.m_fNetasset_yield;
 			return ( fabs(info.m_fNetasset_yield) > 1e-4 );
 			
-			// ¡ï×Ê±¾½á¹¹
-		case	SLH_SHARE_COUNT_TOTAL:			//	×Ü¹É±¾
+			// â˜…èµ„æœ¬ç»“æ„
+		case	SLH_SHARE_COUNT_TOTAL:			//	æ€»è‚¡æœ¬
 			*pValue	=	info.m_fShare_count_total * 0.0001;
 			return ( info.m_fShare_count_total > 1e-4 );
-		case	SLH_SHARE_COUNT_A:				//	Á÷Í¨A¹É
+		case	SLH_SHARE_COUNT_A:				//	æµé€šAè‚¡
 			*pValue	=	info.m_fShare_count_a * 0.0001;
 			return TRUE;
-		case	SLH_SHARE_COUNT_B:				//	Á÷Í¨B¹É
+		case	SLH_SHARE_COUNT_B:				//	æµé€šBè‚¡
 			*pValue	=	info.m_fShare_count_b * 0.0001;
 			return TRUE;
-		case	SLH_SHARE_COUNT_H:				//	Á÷Í¨H¹É
+		case	SLH_SHARE_COUNT_H:				//	æµé€šHè‚¡
 			*pValue	=	info.m_fShare_count_h * 0.0001;
 			return TRUE;
-		case	SLH_SHARE_COUNT_NATIONAL:		//	¹úÓĞ¹É
+		case	SLH_SHARE_COUNT_NATIONAL:		//	å›½æœ‰è‚¡
 			*pValue	=	info.m_fShare_count_national * 0.0001;
 			return TRUE;
-		case	SLH_SHARE_COUNT_CORP:			//	·¨ÈË¹É
+		case	SLH_SHARE_COUNT_CORP:			//	æ³•äººè‚¡
 			*pValue	=	info.m_fShare_count_corp * 0.0001;
 			return TRUE;
-		case	SLH_PROFIT_PSUD:				// Ã¿¹ÉÎ´·ÖÅäÀûÈó
+		case	SLH_PROFIT_PSUD:				// æ¯è‚¡æœªåˆ†é…åˆ©æ¶¦
 			*pValue	=	info.m_fProfit_psud;
 			return TRUE;
-		case	SLH_ASSET:						// ×Ü×Ê²ú
+		case	SLH_ASSET:						// æ€»èµ„äº§
 			*pValue	=	info.m_fAsset * 0.0001;
 			return ( fabs(info.m_fAsset) > 1e-4 );
-		case	SLH_RATIO_HOLDERRIGHT:			// ¹É¶«È¨Òæ±ÈÂÊ
+		case	SLH_RATIO_HOLDERRIGHT:			// è‚¡ä¸œæƒç›Šæ¯”ç‡
 			*pValue	=	info.m_fRatio_holderright;
 			return ( fabs(info.m_fRatio_holderright) > 1e-4 );
-		case	SLH_RATIO_LONGDEBT:				// ³¤ÆÚ¸ºÕ®ÂÊ
+		case	SLH_RATIO_LONGDEBT:				// é•¿æœŸè´Ÿå€ºç‡
 			*pValue	=	info.m_fRatio_longdebt;
 			return TRUE;
-		case	SLH_RATIO_DEBT:					// ×Ê²ú¸ºÕ®ÂÊ
+		case	SLH_RATIO_DEBT:					// èµ„äº§è´Ÿå€ºç‡
 			*pValue	=	info.m_fRatio_debt;
 			return ( fabs(info.m_fRatio_debt) > 1e-4 );
 
-			// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
-		case	SLH_NETASSET_PS:				// Ã¿¹É¾»×Ê²ú
+			// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
+		case	SLH_NETASSET_PS:				// æ¯è‚¡å‡€èµ„äº§
 			*pValue	=	info.m_fNetasset_ps;
 			return ( fabs(info.m_fNetasset_ps) > 1e-4 );
-		case	SLH_NETASSET_PS_REGULATE:		// µ÷ÕûÃ¿¹É¾»×Ê²ú
+		case	SLH_NETASSET_PS_REGULATE:		// è°ƒæ•´æ¯è‚¡å‡€èµ„äº§
 			*pValue	=	info.m_fNetasset_ps_regulate;
 			return ( fabs(info.m_fNetasset_ps_regulate) > 1e-4 );
-		case	SLH_EPS:						// Ã¿¹ÉÊÕÒæ
+		case	SLH_EPS:						// æ¯è‚¡æ”¶ç›Š
 			*pValue	=	factor * info.m_fEps;
 			return ( fabs(info.m_fEps) > 1e-4 );
-		case	SLH_EPS_DEDUCT:					// ¿Û³ıºóÃ¿¹ÉÊÕÒæ
+		case	SLH_EPS_DEDUCT:					// æ‰£é™¤åæ¯è‚¡æ”¶ç›Š
 			*pValue	=	factor * info.m_fEps_deduct;
 			return ( fabs(info.m_fEps_deduct) > 1e-4 );
-		case	SLH_NET_PROFIT:					// ¾»ÀûÈó
+		case	SLH_NET_PROFIT:					// å‡€åˆ©æ¶¦
 			*pValue	=	factor * info.m_fNet_profit * 0.0001;
 			return ( fabs(info.m_fNet_profit) > 1e-4 );
-		case	SLH_MAIN_PROFIT:				// Ö÷ÓªÒµÎñÀûÈó
+		case	SLH_MAIN_PROFIT:				// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦
 			*pValue	=	factor * info.m_fMain_profit * 0.0001;
 			return ( fabs(info.m_fMain_profit) > 1e-4 );
-		case	SLH_TOTAL_PROFIT:				// ÀûÈó×Ü¶î
+		case	SLH_TOTAL_PROFIT:				// åˆ©æ¶¦æ€»é¢
 			*pValue	=	factor * info.m_fTotal_profit * 0.0001;
 			return ( fabs(info.m_fTotal_profit) > 1e-4 );
-		case	SLH_PROFIT_INC:					// Ö÷ÓªÀûÈóÔö³¤ÂÊ
+		case	SLH_PROFIT_INC:					// ä¸»è¥åˆ©æ¶¦å¢é•¿ç‡
 			*pValue	=	info.m_fProfit_inc;
 			return TRUE;
-		case	SLH_INCOME_INC:					// Ö÷ÓªÊÕÈëÔö³¤ÂÊ
+		case	SLH_INCOME_INC:					// ä¸»è¥æ”¶å…¥å¢é•¿ç‡
 			*pValue	=	info.m_fIncome_inc;
 			return TRUE;
-		case	SLH_ASSET_INC:					// ×Ü×Ê²úÔö³¤ÂÊ
+		case	SLH_ASSET_INC:					// æ€»èµ„äº§å¢é•¿ç‡
 			*pValue	=	info.m_fAsset_inc;
 			return TRUE;
-		case	SLH_ANNGAINS_AVERAGE:			// ÄêÆ½¾ùÊÕÒæÂÊ
+		case	SLH_ANNGAINS_AVERAGE:			// å¹´å¹³å‡æ”¶ç›Šç‡
 			*pValue	=	info.m_fYield_average;
 			return ( fabs(STKLIB_DATA_INVALID - info.m_fYield_average) > 1e-4 );
-		case	SLH_ANNGAINS_STDDEV:			// ÊÕÒæ±ê×¼²î
+		case	SLH_ANNGAINS_STDDEV:			// æ”¶ç›Šæ ‡å‡†å·®
 			*pValue	=	info.m_fYield_stddev;
 			return ( fabs(STKLIB_DATA_INVALID - info.m_fYield_stddev) > 1e-4 );
-		case	SLH_BETA:						// ¦ÂÖµ
+		case	SLH_BETA:						// Î²å€¼
 			*pValue	=	info.m_fBeite;
 			return ( fabs(STKLIB_DATA_INVALID - info.m_fBeite) > 1e-4 );
-		case	SLH_SHARP:						// ÏÄÆÕ·çÏÕÖ¸Êı
+		case	SLH_SHARP:						// å¤æ™®é£é™©æŒ‡æ•°
 			return info.GetXiapu( pValue );
 		default:	;
 		}
@@ -528,22 +528,22 @@ int AfxCompareVariantValue( int nVariantID, CStockInfo & info1, CStockInfo &info
 
 	switch( nVariantID )
 	{
-	case	SLH_CODE:						//	¹ÉÆ±´úÂë
+	case	SLH_CODE:						//	è‚¡ç¥¨ä»£ç 
 		return strcmp( info1.GetStockCode(), info2.GetStockCode() );
-	case	SLH_NAME:						//	¹ÉÆ±Ãû³Æ
+	case	SLH_NAME:						//	è‚¡ç¥¨åç§°
 		return strcmp( info1.GetStockName(), info2.GetStockName() );
-		//	¼¼ÊõÊı¾İ
-	case	SLH_DATE:						//	ÈÕÆÚ
+		//	æŠ€æœ¯æ•°æ®
+	case	SLH_DATE:						//	æ—¥æœŸ
 		return dwordcmp( info1.m_datetech, info2.m_datetech );
-	case	SLH_DATE_BEGIN:					//	ÉÏÊĞÈÕÆÚ
+	case	SLH_DATE_BEGIN:					//	ä¸Šå¸‚æ—¥æœŸ
 		return dwordcmp( info1.m_datebegin, info2.m_datebegin );
-		//	Ö÷Òª»ù±¾Ö¸±ê
-	case	SLH_REPORTTYPE:					// ±¨±íÀàĞÍ
+		//	ä¸»è¦åŸºæœ¬æŒ‡æ ‡
+	case	SLH_REPORTTYPE:					// æŠ¥è¡¨ç±»å‹
 		return dwordcmp( info1.m_reporttype, info2.m_reporttype );
-	case	SLH_PE:							//	ÊĞÓ¯ÂÊ
-	case	SLH_PNETASSET:					//	ÊĞ¾»ÂÊ
-	case	SLH_PMAININCOME:				//	ÊĞÏúÂÊ
-	case	SLH_RATIO_PCASH:				//	¼Û¸ñ¾»ÏÖ½ğ±È
+	case	SLH_PE:							//	å¸‚ç›ˆç‡
+	case	SLH_PNETASSET:					//	å¸‚å‡€ç‡
+	case	SLH_PMAININCOME:				//	å¸‚é”€ç‡
+	case	SLH_RATIO_PCASH:				//	ä»·æ ¼å‡€ç°é‡‘æ¯”
 		bGet2	=	AfxGetVariantValue( nVariantID, info2, &d2, pContainer );
 		bGet1	=	AfxGetVariantValue( nVariantID, info1, &d1, pContainer );
 		if( !bGet2 && !bGet1 )
@@ -555,9 +555,9 @@ int AfxCompareVariantValue( int nVariantID, CStockInfo & info1, CStockInfo &info
 		if( d1 < 0 )			return 1;
 		if( d2 < 0 )			return -1;
 		return doublecmp( d1, d2 );
-	case	SLH_TRADE:						// ĞĞÒµ
+	case	SLH_TRADE:						// è¡Œä¸š
 		return strcmp( info1.GetStockDomain(), info2.GetStockDomain() );
-	case	SLH_PROVINCE:					// Ê¡·İ
+	case	SLH_PROVINCE:					// çœä»½
 		return strcmp( info1.GetStockProvince(), info2.GetStockProvince() );
 	default:
 		bGet2	=	AfxGetVariantValue( nVariantID, info2, &d2, pContainer );
@@ -581,34 +581,34 @@ CSPString AfxGetVariantDispString(UINT nVariantID, CStockInfo &info,
 
 	switch( nVariantID )
 	{
-	case	SLH_CODE:						//	¹ÉÆ±´úÂë
+	case	SLH_CODE:						//	è‚¡ç¥¨ä»£ç 
 		strTemp	=	info.GetStockCode();
 		break;
-	case	SLH_NAME:						//	¹ÉÆ±Ãû³Æ
+	case	SLH_NAME:						//	è‚¡ç¥¨åç§°
 		strTemp	=	info.GetStockName();
 		break;
-	//	¼¼ÊõÊı¾İ
-	case	SLH_DATE:						//	ÈÕÆÚ
+	//	æŠ€æœ¯æ•°æ®
+	case	SLH_DATE:						//	æ—¥æœŸ
 		if( 0 != info.m_datetech )
 			strTemp.Format( "%.2d/%.2d/%.2d", (info.m_datetech/10000)%100, (info.m_datetech%10000)/100, info.m_datetech%100 );
 		break;
-	case	SLH_DATE_BEGIN:					//	ÉÏÊĞÈÕÆÚ
+	case	SLH_DATE_BEGIN:					//	ä¸Šå¸‚æ—¥æœŸ
 		if( 0 != info.m_datebegin )
 			strTemp.Format( "%.2d/%.2d/%.2d", (info.m_datebegin/10000)%100, (info.m_datebegin%10000)/100, info.m_datebegin%100 );
 		break;
-	case	SLH_LASTCLOSE:					//	×òÊÕ
-	case	SLH_OPEN:						//	½ñ¿ª
-	case	SLH_CLOSE:						//	ÊÕÅÌ¼Û
-	case	SLH_HIGH:						//	×î¸ß¼Û
-	case	SLH_LOW:						//	×îµÍ¼Û
-	case	SLH_AVERAGE:					//	¾ù¼Û
-	case	SLH_DIFF:						//	ÕÇµø
-	case	SLH_BUYPRICE3:					//	Âò¼ÛÈı
-	case	SLH_BUYPRICE2:					//	Âò¼Û¶ş
-	case	SLH_BUYPRICE1:					//	Âò¼ÛÒ»
-	case	SLH_SELLPRICE1:					//	Âô¼ÛÒ»
-	case	SLH_SELLPRICE2:					//	Âô¼Û¶ş
-	case	SLH_SELLPRICE3:					//	Âô¼ÛÈı
+	case	SLH_LASTCLOSE:					//	æ˜¨æ”¶
+	case	SLH_OPEN:						//	ä»Šå¼€
+	case	SLH_CLOSE:						//	æ”¶ç›˜ä»·
+	case	SLH_HIGH:						//	æœ€é«˜ä»·
+	case	SLH_LOW:						//	æœ€ä½ä»·
+	case	SLH_AVERAGE:					//	å‡ä»·
+	case	SLH_DIFF:						//	æ¶¨è·Œ
+	case	SLH_BUYPRICE3:					//	ä¹°ä»·ä¸‰
+	case	SLH_BUYPRICE2:					//	ä¹°ä»·äºŒ
+	case	SLH_BUYPRICE1:					//	ä¹°ä»·ä¸€
+	case	SLH_SELLPRICE1:					//	å–ä»·ä¸€
+	case	SLH_SELLPRICE2:					//	å–ä»·äºŒ
+	case	SLH_SELLPRICE3:					//	å–ä»·ä¸‰
 		if( AfxGetVariantValue( nVariantID, info, &dTemp, pContainer ) )
 		{
 			CSPString strPriceFmt;
@@ -616,44 +616,44 @@ CSPString AfxGetVariantDispString(UINT nVariantID, CStockInfo &info,
 			strTemp.Format( strPriceFmt, dTemp );
 		}
 		break;
-	case	SLH_VOLUME:						//	³É½»Á¿
-	case	SLH_AMOUNT:						//	³É½»¶î
-	case	SLH_VOLUP:						//	ÍâÅÌ
-	case	SLH_VOLDOWN:					//	ÄÚÅÌ
-	case	SLH_SELLBUYDIFF:				//	Î¯Á¿²î
-	case	SLH_BUYVOLUME3:					//	ÂòÁ¿Èı
-	case	SLH_BUYVOLUME2:					//	ÂòÁ¿¶ş
-	case	SLH_BUYVOLUME1:					//	ÂòÁ¿Ò»
-	case	SLH_SELLVOLUME1:				//	ÂôÁ¿Ò»
-	case	SLH_SELLVOLUME2:				//	ÂôÁ¿¶ş
-	case	SLH_SELLVOLUME3:				//	ÂôÁ¿Èı
-	case	SLH_MARKETVALUE:				//	×ÜÊĞÖµ
-	case	SLH_MARKETVALUEA:				//	A¹ÉÊĞÖµ
-	case	SLH_MARKETVALUEB:				//	B¹ÉÊĞÖµ
-	case	SLH_SHARE_COUNT_TOTAL:			//	×Ü¹É±¾
-	case	SLH_SHARE_COUNT_A:				//	Á÷Í¨A¹É
-	case	SLH_SHARE_COUNT_B:				//	Á÷Í¨B¹É
-	case	SLH_SHARE_COUNT_H:				//	Á÷Í¨H¹É
-	case	SLH_SHARE_COUNT_NATIONAL:		//	¹úÓĞ¹É
-	case	SLH_SHARE_COUNT_CORP:			//	·¨ÈË¹É
+	case	SLH_VOLUME:						//	æˆäº¤é‡
+	case	SLH_AMOUNT:						//	æˆäº¤é¢
+	case	SLH_VOLUP:						//	å¤–ç›˜
+	case	SLH_VOLDOWN:					//	å†…ç›˜
+	case	SLH_SELLBUYDIFF:				//	å§”é‡å·®
+	case	SLH_BUYVOLUME3:					//	ä¹°é‡ä¸‰
+	case	SLH_BUYVOLUME2:					//	ä¹°é‡äºŒ
+	case	SLH_BUYVOLUME1:					//	ä¹°é‡ä¸€
+	case	SLH_SELLVOLUME1:				//	å–é‡ä¸€
+	case	SLH_SELLVOLUME2:				//	å–é‡äºŒ
+	case	SLH_SELLVOLUME3:				//	å–é‡ä¸‰
+	case	SLH_MARKETVALUE:				//	æ€»å¸‚å€¼
+	case	SLH_MARKETVALUEA:				//	Aè‚¡å¸‚å€¼
+	case	SLH_MARKETVALUEB:				//	Bè‚¡å¸‚å€¼
+	case	SLH_SHARE_COUNT_TOTAL:			//	æ€»è‚¡æœ¬
+	case	SLH_SHARE_COUNT_A:				//	æµé€šAè‚¡
+	case	SLH_SHARE_COUNT_B:				//	æµé€šBè‚¡
+	case	SLH_SHARE_COUNT_H:				//	æµé€šHè‚¡
+	case	SLH_SHARE_COUNT_NATIONAL:		//	å›½æœ‰è‚¡
+	case	SLH_SHARE_COUNT_CORP:			//	æ³•äººè‚¡
 		if( AfxGetVariantValue( nVariantID, info, &dTemp, pContainer ) )
 			strTemp.Format( "%.0f", dTemp );
 		break;
-	case	SLH_MAIN_INCOME:				// Ö÷ÓªÒµÎñÊÕÈë
-	case	SLH_ASSET:						// ×Ü×Ê²ú
-	case	SLH_NET_PROFIT:					// ¾»ÀûÈó
-	case	SLH_MAIN_PROFIT:				// Ö÷ÓªÒµÎñÀûÈó
-	case	SLH_TOTAL_PROFIT:				// ÀûÈó×Ü¶î
+	case	SLH_MAIN_INCOME:				// ä¸»è¥ä¸šåŠ¡æ”¶å…¥
+	case	SLH_ASSET:						// æ€»èµ„äº§
+	case	SLH_NET_PROFIT:					// å‡€åˆ©æ¶¦
+	case	SLH_MAIN_PROFIT:				// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦
+	case	SLH_TOTAL_PROFIT:				// åˆ©æ¶¦æ€»é¢
 		if( AfxGetVariantValue( nVariantID, info, &dTemp, pContainer ) )
 			strTemp.Format( "%.0f", dTemp );
 		break;
-	case	SLH_REPORTTYPE:					// ±¨±íÀàĞÍ
+	case	SLH_REPORTTYPE:					// æŠ¥è¡¨ç±»å‹
 		strTemp	=	AfxGetReportTypeString( info.m_reporttype );
 		break;
-	case	SLH_TRADE:						// ĞĞÒµ
+	case	SLH_TRADE:						// è¡Œä¸š
 		strTemp	=	info.GetStockDomain();
 		break;
-	case	SLH_PROVINCE:					// Ê¡·İ
+	case	SLH_PROVINCE:					// çœä»½
 		strTemp	=	info.GetStockProvince();
 		break;
 	default:
@@ -678,37 +678,37 @@ COLORREF AfxGetVariantColor( UINT nVariantID, CStockInfo &info )
 
 	switch( nVariantID )
 	{
-	case	SLH_CODE:						//	¹ÉÆ±´úÂë
+	case	SLH_CODE:						//	è‚¡ç¥¨ä»£ç 
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrTitle);
 		break;
-	case	SLH_NAME:						//	¹ÉÆ±Ãû³Æ
+	case	SLH_NAME:						//	è‚¡ç¥¨åç§°
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrTitle);
 		break;
-	case	SLH_OPEN:						//	½ñ¿ª
+	case	SLH_OPEN:						//	ä»Šå¼€
 		if( info.m_fOpen > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fOpen < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_CLOSE:						//	ÊÕÅÌ¼Û
+	case	SLH_CLOSE:						//	æ”¶ç›˜ä»·
 		if( info.m_fClose > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fClose < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_HIGH:						//	×î¸ß¼Û
+	case	SLH_HIGH:						//	æœ€é«˜ä»·
 		if( info.m_fHigh > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fHigh < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_LOW:						//	×îµÍ¼Û
+	case	SLH_LOW:						//	æœ€ä½ä»·
 		if( info.m_fLow > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fLow < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_AVERAGE:					//	¾ù¼Û
+	case	SLH_AVERAGE:					//	å‡ä»·
 		if( info.GetAverage( &dTemp ) )
 		{
 			if( dTemp - info.m_fLast > 1e-4 )
@@ -717,7 +717,7 @@ COLORREF AfxGetVariantColor( UINT nVariantID, CStockInfo &info )
 				crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		}
 		break;
-	case	SLH_DIFF:						//	ÕÇµø
+	case	SLH_DIFF:						//	æ¶¨è·Œ
 		if( info.GetDiff( &dTemp, info.m_datetech, AfxGetProfile().GetDiffPercentDays() ) )
 		{
 			if( dTemp > 1e-4 )
@@ -726,7 +726,7 @@ COLORREF AfxGetVariantColor( UINT nVariantID, CStockInfo &info )
 				crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		}
 		break;
-	case	SLH_DIFFPERCENT:				//	ÕÇ·ù
+	case	SLH_DIFFPERCENT:				//	æ¶¨å¹…
 		if( info.GetDiffPercent( &dTemp, info.m_datetech, AfxGetProfile().GetDiffPercentDays() ) )
 		{
 			if( dTemp > 1e-4 )
@@ -735,20 +735,20 @@ COLORREF AfxGetVariantColor( UINT nVariantID, CStockInfo &info )
 				crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		}
 		break;
-	case	SLH_VOLUME:						//	³É½»Á¿
+	case	SLH_VOLUME:						//	æˆäº¤é‡
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrText);
 		break;
-	case	SLH_AMOUNT:						//	³É½»¶î
+	case	SLH_AMOUNT:						//	æˆäº¤é¢
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrText);
 		break;
 
-	case	SLH_VOLUP:						//	ÍâÅÌ
+	case	SLH_VOLUP:						//	å¤–ç›˜
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		break;
-	case	SLH_VOLDOWN:					//	ÄÚÅÌ
+	case	SLH_VOLDOWN:					//	å†…ç›˜
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_DIFFPERCENT_MIN5:			//	Îå·ÖÖÓÕÇ·ù%
+	case	SLH_DIFFPERCENT_MIN5:			//	äº”åˆ†é’Ÿæ¶¨å¹…%
 		if( info.GetDiffPercentMin5( &dTemp ) )
 		{
 			if( dTemp > 1e-4 )
@@ -758,8 +758,8 @@ COLORREF AfxGetVariantColor( UINT nVariantID, CStockInfo &info )
 		}
 		break;
 
-	case	SLH_SELLBUYRATIO:				//	Î¯±È%
-	case	SLH_SELLBUYDIFF:				//	Î¯Á¿²î
+	case	SLH_SELLBUYRATIO:				//	å§”æ¯”%
+	case	SLH_SELLBUYDIFF:				//	å§”é‡å·®
 		if( info.GetSellBuyRatio( &dTemp, NULL ) )
 		{
 			if( dTemp > 1e-4 )
@@ -769,134 +769,134 @@ COLORREF AfxGetVariantColor( UINT nVariantID, CStockInfo &info )
 		}
 		break;
 	
-	case	SLH_BUYPRICE3:					//	Âò¼ÛÈı
+	case	SLH_BUYPRICE3:					//	ä¹°ä»·ä¸‰
 		if( info.m_fBuyPrice[2] > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fBuyPrice[2] < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_BUYPRICE2:					//	Âò¼Û¶ş
+	case	SLH_BUYPRICE2:					//	ä¹°ä»·äºŒ
 		if( info.m_fBuyPrice[1] > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fBuyPrice[1] < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_BUYPRICE1:					//	Âò¼ÛÒ»
+	case	SLH_BUYPRICE1:					//	ä¹°ä»·ä¸€
 		if( info.m_fBuyPrice[0] > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fBuyPrice[0] < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_SELLPRICE1:					//	Âô¼ÛÒ»
+	case	SLH_SELLPRICE1:					//	å–ä»·ä¸€
 		if( info.m_fSellPrice[0] > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fSellPrice[0] < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_SELLPRICE2:					//	Âô¼Û¶ş
+	case	SLH_SELLPRICE2:					//	å–ä»·äºŒ
 		if( info.m_fSellPrice[1] > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fSellPrice[1] < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
-	case	SLH_SELLPRICE3:					//	Âô¼ÛÈı
+	case	SLH_SELLPRICE3:					//	å–ä»·ä¸‰
 		if( info.m_fSellPrice[2] > info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrRise);
 		else if( info.m_fSellPrice[2] < info.m_fLast )
 			crText	=	AfxGetProfile().GetColor(CColorClass::clrFall);
 		break;
 
-	case	SLH_BUYVOLUME3:					//	ÂòÁ¿Èı
-	case	SLH_BUYVOLUME2:					//	ÂòÁ¿¶ş
-	case	SLH_BUYVOLUME1:					//	ÂòÁ¿Ò»
-	case	SLH_SELLVOLUME1:				//	ÂôÁ¿Ò»
-	case	SLH_SELLVOLUME2:				//	ÂôÁ¿¶ş
-	case	SLH_SELLVOLUME3:				//	ÂôÁ¿Èı
+	case	SLH_BUYVOLUME3:					//	ä¹°é‡ä¸‰
+	case	SLH_BUYVOLUME2:					//	ä¹°é‡äºŒ
+	case	SLH_BUYVOLUME1:					//	ä¹°é‡ä¸€
+	case	SLH_SELLVOLUME1:				//	å–é‡ä¸€
+	case	SLH_SELLVOLUME2:				//	å–é‡äºŒ
+	case	SLH_SELLVOLUME3:				//	å–é‡ä¸‰
 	case	SLH_SCOPE:
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrPlane);
 		break;
 
-		//	Ö÷Òª»ù±¾Ö¸±ê
-	case	SLH_REPORTTYPE:					//	±¨±íÀàĞÍ
+		//	ä¸»è¦åŸºæœ¬æŒ‡æ ‡
+	case	SLH_REPORTTYPE:					//	æŠ¥è¡¨ç±»å‹
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrTitle);
 		break;
 
-	case	SLH_PE:							//	ÊĞÓ¯ÂÊ
-	case	SLH_PNETASSET:					//	ÊĞ¾»ÂÊ
-	case	SLH_PMAININCOME:				//	ÊĞÏúÂÊ
-	case	SLH_RATIO_PCASH:				//	¼Û¸ñ¾»ÏÖ½ğ±È
-	case	SLH_RATIO_CURRENCY:				//	Á÷Í¨ÂÊ
-	case	SLH_RATIO_CHANGEHAND:			//	»»ÊÖÂÊ
-	case	SLH_RATIO_VOLUME:				//	Á¿±È
-	case	SLH_RS:							//	Ïà¶ÔÇ¿¶È
+	case	SLH_PE:							//	å¸‚ç›ˆç‡
+	case	SLH_PNETASSET:					//	å¸‚å‡€ç‡
+	case	SLH_PMAININCOME:				//	å¸‚é”€ç‡
+	case	SLH_RATIO_PCASH:				//	ä»·æ ¼å‡€ç°é‡‘æ¯”
+	case	SLH_RATIO_CURRENCY:				//	æµé€šç‡
+	case	SLH_RATIO_CHANGEHAND:			//	æ¢æ‰‹ç‡
+	case	SLH_RATIO_VOLUME:				//	é‡æ¯”
+	case	SLH_RS:							//	ç›¸å¯¹å¼ºåº¦
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrPlane);
 		break;
 
-	case	SLH_MARKETVALUE:				//	×ÜÊĞÖµ
-	case	SLH_MARKETVALUEA:				//	A¹ÉÊĞÖµ
-	case	SLH_MARKETVALUEB:				//	B¹ÉÊĞÖµ
+	case	SLH_MARKETVALUE:				//	æ€»å¸‚å€¼
+	case	SLH_MARKETVALUEA:				//	Aè‚¡å¸‚å€¼
+	case	SLH_MARKETVALUEB:				//	Bè‚¡å¸‚å€¼
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrText);
 		break;
 		
-		// ¡ï³¥Õ®ÄÜÁ¦
-	case	SLH_RATIO_LIQUIDITY:			//	Á÷¶¯±ÈÂÊ
-	case	SLH_RATIO_QUICK:				//	ËÙ¶¯±ÈÂÊ
-	case	SLH_VELOCITY_RECEIVABLES:		//	Ó¦ÊÕÕÊ¿îÖÜÂÊ
+		// â˜…å¿å€ºèƒ½åŠ›
+	case	SLH_RATIO_LIQUIDITY:			//	æµåŠ¨æ¯”ç‡
+	case	SLH_RATIO_QUICK:				//	é€ŸåŠ¨æ¯”ç‡
+	case	SLH_VELOCITY_RECEIVABLES:		//	åº”æ”¶å¸æ¬¾å‘¨ç‡
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrPlane);
 		break;
 		
-		// ¡ï¾­ÓªÄÜÁ¦
-	case	SLH_VELOCITY_MERCHANDISE:		// ´æ»õÖÜ×ªÂÊ
+		// â˜…ç»è¥èƒ½åŠ›
+	case	SLH_VELOCITY_MERCHANDISE:		// å­˜è´§å‘¨è½¬ç‡
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrPlane);
 		break;
-	case	SLH_MAIN_INCOME:				// Ö÷ÓªÒµÎñÊÕÈë
-	case	SLH_CASH_PS:					// Ã¿¹É¾»ÏÖ½ğÁ÷Á¿
+	case	SLH_MAIN_INCOME:				// ä¸»è¥ä¸šåŠ¡æ”¶å…¥
+	case	SLH_CASH_PS:					// æ¯è‚¡å‡€ç°é‡‘æµé‡
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrText);
 		break;
-		// ¡ïÓ¯ÀûÄÜÁ¦
-	case	SLH_PROFIT_MARGIN:				// Ö÷ÓªÒµÎñÀûÈóÂÊ
-	case	SLH_NETASSET_YIELD:				// ¾»×Ê²úÊÕÒæÂÊ
+		// â˜…ç›ˆåˆ©èƒ½åŠ›
+	case	SLH_PROFIT_MARGIN:				// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦ç‡
+	case	SLH_NETASSET_YIELD:				// å‡€èµ„äº§æ”¶ç›Šç‡
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrPlane);
 		break;
 		
-		// ¡ï×Ê±¾½á¹¹
-	case	SLH_SHARE_COUNT_TOTAL:			//	×Ü¹É±¾
-	case	SLH_SHARE_COUNT_A:				//	Á÷Í¨A¹É
-	case	SLH_SHARE_COUNT_B:				//	Á÷Í¨B¹É
-	case	SLH_SHARE_COUNT_H:				//	Á÷Í¨H¹É
-	case	SLH_SHARE_COUNT_NATIONAL:		//	¹úÓĞ¹É
-	case	SLH_SHARE_COUNT_CORP:			//	·¨ÈË¹É
-	case	SLH_PROFIT_PSUD:				// Ã¿¹ÉÎ´·ÖÅäÀûÈó
-	case	SLH_ASSET:						// ×Ü×Ê²ú
+		// â˜…èµ„æœ¬ç»“æ„
+	case	SLH_SHARE_COUNT_TOTAL:			//	æ€»è‚¡æœ¬
+	case	SLH_SHARE_COUNT_A:				//	æµé€šAè‚¡
+	case	SLH_SHARE_COUNT_B:				//	æµé€šBè‚¡
+	case	SLH_SHARE_COUNT_H:				//	æµé€šHè‚¡
+	case	SLH_SHARE_COUNT_NATIONAL:		//	å›½æœ‰è‚¡
+	case	SLH_SHARE_COUNT_CORP:			//	æ³•äººè‚¡
+	case	SLH_PROFIT_PSUD:				// æ¯è‚¡æœªåˆ†é…åˆ©æ¶¦
+	case	SLH_ASSET:						// æ€»èµ„äº§
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrText);
 		break;
-	case	SLH_RATIO_HOLDERRIGHT:			// ¹É¶«È¨Òæ±ÈÂÊ
-	case	SLH_RATIO_LONGDEBT:				// ³¤ÆÚ¸ºÕ®ÂÊ
-	case	SLH_RATIO_DEBT:					// ×Ê²ú¸ºÕ®ÂÊ
+	case	SLH_RATIO_HOLDERRIGHT:			// è‚¡ä¸œæƒç›Šæ¯”ç‡
+	case	SLH_RATIO_LONGDEBT:				// é•¿æœŸè´Ÿå€ºç‡
+	case	SLH_RATIO_DEBT:					// èµ„äº§è´Ÿå€ºç‡
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrPlane);
 		break;
 
-		// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
-	case	SLH_NETASSET_PS:				// Ã¿¹É¾»×Ê²ú
-	case	SLH_NETASSET_PS_REGULATE:		// µ÷ÕûÃ¿¹É¾»×Ê²ú
-	case	SLH_EPS:						// Ã¿¹ÉÊÕÒæ
-	case	SLH_EPS_DEDUCT:					// ¿Û³ıºóÃ¿¹ÉÊÕÒæ
-	case	SLH_NET_PROFIT:					// ¾»ÀûÈó
-	case	SLH_MAIN_PROFIT:				// Ö÷ÓªÒµÎñÀûÈó
-	case	SLH_TOTAL_PROFIT:				// ÀûÈó×Ü¶î
+		// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
+	case	SLH_NETASSET_PS:				// æ¯è‚¡å‡€èµ„äº§
+	case	SLH_NETASSET_PS_REGULATE:		// è°ƒæ•´æ¯è‚¡å‡€èµ„äº§
+	case	SLH_EPS:						// æ¯è‚¡æ”¶ç›Š
+	case	SLH_EPS_DEDUCT:					// æ‰£é™¤åæ¯è‚¡æ”¶ç›Š
+	case	SLH_NET_PROFIT:					// å‡€åˆ©æ¶¦
+	case	SLH_MAIN_PROFIT:				// ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦
+	case	SLH_TOTAL_PROFIT:				// åˆ©æ¶¦æ€»é¢
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrText);
 		break;
-	case	SLH_PROFIT_INC:					// Ö÷ÓªÀûÈóÔö³¤ÂÊ
-	case	SLH_INCOME_INC:					// Ö÷ÓªÊÕÈëÔö³¤ÂÊ
-	case	SLH_ASSET_INC:					// ×Ü×Ê²úÔö³¤ÂÊ
-	case	SLH_ANNGAINS_AVERAGE:			// ÄêÆ½¾ùÊÕÒæÂÊ
-	case	SLH_ANNGAINS_STDDEV:			// ÊÕÒæ±ê×¼²î
-	case	SLH_BETA:						// ¦ÂÖµ
-	case	SLH_SHARP:						// ÏÄÆÕ·çÏÕÖ¸Êı
+	case	SLH_PROFIT_INC:					// ä¸»è¥åˆ©æ¶¦å¢é•¿ç‡
+	case	SLH_INCOME_INC:					// ä¸»è¥æ”¶å…¥å¢é•¿ç‡
+	case	SLH_ASSET_INC:					// æ€»èµ„äº§å¢é•¿ç‡
+	case	SLH_ANNGAINS_AVERAGE:			// å¹´å¹³å‡æ”¶ç›Šç‡
+	case	SLH_ANNGAINS_STDDEV:			// æ”¶ç›Šæ ‡å‡†å·®
+	case	SLH_BETA:						// Î²å€¼
+	case	SLH_SHARP:						// å¤æ™®é£é™©æŒ‡æ•°
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrPlane);
 		break;
-	case	SLH_TRADE:						// ĞĞÒµ
-	case	SLH_PROVINCE:					// Ê¡·İ
+	case	SLH_TRADE:						// è¡Œä¸š
+	case	SLH_PROVINCE:					// çœä»½
 		crText	=	AfxGetProfile().GetColor(CColorClass::clrTitle);
 		break;
 	default:	;
@@ -1009,7 +1009,7 @@ BOOL CExpress::GetExpressResult( double * pResult, BOOL * pError )
 	return TRUE;
 }
 
-// È¥µô¿Õ¸ñ¡¢Ã°ºÅ¡¢»Ø³µ¡¢»»ĞĞµÈ×Ö·û
+// å»æ‰ç©ºæ ¼ã€å†’å·ã€å›è½¦ã€æ¢è¡Œç­‰å­—ç¬¦
 BOOL CExpress::PreCompile( )
 {
 	if( m_bIsModified )
@@ -1029,7 +1029,7 @@ BOOL CExpress::PreCompile( )
 	return m_strExpress.GetLength() > 0;
 }
 
-// ³õÊ¼»¯m_parser±äÁ¿
+// åˆå§‹åŒ–m_parserå˜é‡
 BOOL CExpress::InitParser( )
 {
 	m_parser.SetParserString( m_strExpress );
@@ -1109,10 +1109,10 @@ BOOL CIndex::PreCompile( )
 {
 	if( m_bIsModified )
 	{
-		// »º´æ±äÁ¿ID
+		// ç¼“å­˜å˜é‡ID
 		m_adwVariant.RemoveAll();
 
-		// ½«ÖĞÎÄ±äÁ¿ÃûÌæ»»³ÉÓ¢ÎÄÃû
+		// å°†ä¸­æ–‡å˜é‡åæ›¿æ¢æˆè‹±æ–‡å
 		CSPStringArray astrVarName;
 		if( AfxGetVariantNameArray(astrVarName,FALSE) )
 		{
@@ -1137,7 +1137,7 @@ BOOL CIndex::PreCompile( )
 	return m_strExpress.GetLength() > 0;
 }
 
-// ³õÊ¼»¯m_parser±äÁ¿
+// åˆå§‹åŒ–m_parserå˜é‡
 BOOL CIndex::InitParser( CStockInfo &info, BOOL *pVariantNoValue )
 {
 	if( pVariantNoValue )
@@ -1150,7 +1150,7 @@ BOOL CIndex::InitParser( CStockInfo &info, BOOL *pVariantNoValue )
 	{
 		UINT nVariantID = m_adwVariant.ElementAt(i);
 
-		// ¼ÓÈë±äÁ¿¼°ÆäÖµ
+		// åŠ å…¥å˜é‡åŠå…¶å€¼
 		double	value	=	1.0;
 		if( !AfxGetVariantValue( nVariantID, info, &value, NULL ) && pVariantNoValue )
 			*pVariantNoValue	=	TRUE;

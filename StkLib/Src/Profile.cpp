@@ -2493,7 +2493,7 @@ void CStProfile::GetGraphTechsDefault( CSPDWordArray & anShow )
 		m_anGraphTechsAll.Add( i );
 	}
 	
-	// Íâ¹ÒÖ¸±ê
+	// å¤–æŒ‚æŒ‡æ ‡
 	UINT nTechUserCount = CTechUser::GetTechUserCount();
 	for( UINT i=0; i<nTechUserCount; i++ )
 	{

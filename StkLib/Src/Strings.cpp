@@ -21,29 +21,29 @@ char CQianlong::m_szDataType[]	=	"QianLong";
 char CShenglong::m_szDataType[]	=	"Salon";
 char CSelfDB::m_szDataType[]	=	"Ninebulls-Stock";
 #else
-char CQianlong::m_szDataType[]	=	"Ç®Áú";
-char CShenglong::m_szDataType[]	=	"Ê¤Áú";
-char CSelfDB::m_szDataType[]	=	"²ßÂÔÎªÍõ";
+char CQianlong::m_szDataType[]	=	"é’±é¾™";
+char CShenglong::m_szDataType[]	=	"èƒœé¾™";
+char CSelfDB::m_szDataType[]	=	"ç­–ç•¥ä¸ºçŽ‹";
 #endif
 
 //////////////////////////////////////////////////////////////////////////////////
-// ×Ö·û´®
+// å­—ç¬¦ä¸²
 #ifdef	CLKLAN_ENGLISH_US
-char	sz_stockname_fund[]		=	"»ù½ð";
-char	sz_stockname_bond[]		=	"Õ®È¯";
-char	sz_stockname_index[]	=	"Ö¸Êý";
-char	sz_stockname_bondindex[]		=	"¹úÕ®Ö¸Êý";
-char	sz_stockname_bondindexcorp[]	=	"ÆóÕ®Ö¸Êý";
+char	sz_stockname_fund[]		=	"åŸºé‡‘";
+char	sz_stockname_bond[]		=	"å€ºåˆ¸";
+char	sz_stockname_index[]	=	"æŒ‡æ•°";
+char	sz_stockname_bondindex[]		=	"å›½å€ºæŒ‡æ•°";
+char	sz_stockname_bondindexcorp[]	=	"ä¼å€ºæŒ‡æ•°";
 #else
-char	sz_stockname_fund[]		=	"»ù½ð";
-char	sz_stockname_bond[]		=	"Õ®È¯";
-char	sz_stockname_index[]	=	"Ö¸Êý";
-char	sz_stockname_bondindex[]		=	"¹úÕ®Ö¸Êý";
-char	sz_stockname_bondindexcorp[]	=	"ÆóÕ®Ö¸Êý";
+char	sz_stockname_fund[]		=	"åŸºé‡‘";
+char	sz_stockname_bond[]		=	"å€ºåˆ¸";
+char	sz_stockname_index[]	=	"æŒ‡æ•°";
+char	sz_stockname_bondindex[]		=	"å›½å€ºæŒ‡æ•°";
+char	sz_stockname_bondindexcorp[]	=	"ä¼å€ºæŒ‡æ•°";
 #endif
 
 //////////////////////////////////////////////////////////////////////////////////
-// Ö¸±êÂòÂôÐÅºÅ×Ö·û´®
+// æŒ‡æ ‡ä¹°å–ä¿¡å·å­—ç¬¦ä¸²
 #ifdef	CLKLAN_ENGLISH_US
 char	its_sellintense[]		=	"Strong Sell";
 char	its_sell[]				=	"Sell";
@@ -65,31 +65,31 @@ char	itsc_oversold[]			=	"oversold";
 char	itsc_support[]			=	"support";
 char	itsc_resistance[]		=	"resistance";
 #else
-char	its_sellintense[]		=	"Ç¿ÁÒÂô³ö";
-char	its_sell[]				=	"Âô³ö";
-char	its_sellfeeble[]		=	"Î¢ÈõÂô³ö";
-char	its_nothing[]			=	"ÎÞ";
-char	its_buyfeeble[]			=	"Î¢ÈõÂò½ø";
-char	its_buy[]				=	"Âò½ø";
-char	its_buyintense[]		=	"Ç¿ÁÒÂò½ø";
+char	its_sellintense[]		=	"å¼ºçƒˆå–å‡º";
+char	its_sell[]				=	"å–å‡º";
+char	its_sellfeeble[]		=	"å¾®å¼±å–å‡º";
+char	its_nothing[]			=	"æ— ";
+char	its_buyfeeble[]			=	"å¾®å¼±ä¹°è¿›";
+char	its_buy[]				=	"ä¹°è¿›";
+char	its_buyintense[]		=	"å¼ºçƒˆä¹°è¿›";
 
-char	itsc_nothing[]			=	"ÎÞ";
-char	itsc_deviateonbottom[]	=	"µ×±³Àë";
-char	itsc_deviateontop[]		=	"¶¥±³Àë";
-char	itsc_goldenfork[]		=	"½ð²æ";
-char	itsc_deadfork[]			=	"ËÀ²æ";
-char	itsc_long[]				=	"¶àÍ·Ç¿ÊÆ";
-char	itsc_short[]			=	"¿ÕÍ·Ç¿ÊÆ";
-char	itsc_overbought[]		=	"³¬Âò";
-char	itsc_oversold[]			=	"³¬Âô";
-char	itsc_support[]			=	"Ö§³Å";
-char	itsc_resistance[]		=	"Ñ¹Á¦";
+char	itsc_nothing[]			=	"æ— ";
+char	itsc_deviateonbottom[]	=	"åº•èƒŒç¦»";
+char	itsc_deviateontop[]		=	"é¡¶èƒŒç¦»";
+char	itsc_goldenfork[]		=	"é‡‘å‰";
+char	itsc_deadfork[]			=	"æ­»å‰";
+char	itsc_long[]				=	"å¤šå¤´å¼ºåŠ¿";
+char	itsc_short[]			=	"ç©ºå¤´å¼ºåŠ¿";
+char	itsc_overbought[]		=	"è¶…ä¹°";
+char	itsc_oversold[]			=	"è¶…å–";
+char	itsc_support[]			=	"æ”¯æ’‘";
+char	itsc_resistance[]		=	"åŽ‹åŠ›";
 #endif
 
 //////////////////////////////////////////////////////////////////////////////////
-// Ö¸±ê×Ö·û´®
+// æŒ‡æ ‡å­—ç¬¦ä¸²
 
-// ¸ø¶¨¼¼ÊõÖ¸±êÎ¨Ò»±àºÅ£¬·µ»Ø¼¼ÊõÖ¸±êÖÐÎÄÃû³Æ
+// ç»™å®šæŠ€æœ¯æŒ‡æ ‡å”¯ä¸€ç¼–å·ï¼Œè¿”å›žæŠ€æœ¯æŒ‡æ ‡ä¸­æ–‡åç§°
 CSPString	AfxGetSTTName( UINT nTech )
 {
 	static	CSPString	stt_names[STT_MAX+1];
@@ -101,7 +101,7 @@ CSPString	AfxGetSTTName( UINT nTech )
 		stt_names[0]			=	"STTNames";
 
 #ifdef	CLKLAN_ENGLISH_US
-		//	KÏßÊôÐÔÀà
+		//	Kçº¿å±žæ€§ç±»
 		stt_names[STT_MA]		=	("Moving Average");
 		stt_names[STT_BBI]		=	("BBI");
 		stt_names[STT_BOLL]		=	("Boollinger Bands");
@@ -109,11 +109,11 @@ CSPString	AfxGetSTTName( UINT nTech )
 		stt_names[STT_SAR]		=	("Stop And Reverse");
 		stt_names[STT_DJ]		=	("Superposition");
 		stt_names[STT_CW]		=	("Chips Distribution");
-		//	Ç÷ÊÆÀà
+		//	è¶‹åŠ¿ç±»
 		stt_names[STT_MACD]		=	("Moving Average Convergence/Divergence");
 		stt_names[STT_MIKE]		=	("Mike Base");
 		stt_names[STT_PSY]		=	("Psychological Line");
-		//	ÄÜÁ¿Àà
+		//	èƒ½é‡ç±»
 		stt_names[STT_VOLUME]	=	("Volume");
 		stt_names[STT_NVI]		=	("Negative Volume Indicator");
 		stt_names[STT_PVI]		=	("Positive Volume Indicator");
@@ -129,7 +129,7 @@ CSPString	AfxGetSTTName( UINT nTech )
 		stt_names[STT_NVRSI]	=	("New Volume Relative Strength Indicator");
 		stt_names[STT_AD]		=	("Accumulation/Distribution");
 		stt_names[STT_CI]		=	("Cumulation Indicator");
-		//	°Ú¶¯Àà
+		//	æ‘†åŠ¨ç±»
 		stt_names[STT_KDJ]		=	("Stochastics");
 		stt_names[STT_R]		=	("William's Overbought/Oversold Indicator");
 		stt_names[STT_RSI]		=	("Relative Strength Indicator");
@@ -147,7 +147,7 @@ CSPString	AfxGetSTTName( UINT nTech )
 		stt_names[STT_36BIAS]	=	("3-6 Bias");
 		stt_names[STT_DPO]		=	("Detrended Price Oscillator");
 		stt_names[STT_KST]		=	("Know Sure Things");
-		//	ÆäËûÀà
+		//	å…¶ä»–ç±»
 		stt_names[STT_REI]		=	("Range Expansion Indicator");
 		stt_names[STT_DMKI]		=	("Demaker Indicator");
 		stt_names[STT_PCNT]		=	("Percent");
@@ -155,71 +155,71 @@ CSPString	AfxGetSTTName( UINT nTech )
 		stt_names[STT_CDP]		=	("CDP");
 		stt_names[STT_ASI]		=	("Accumulation Swing Indicator");
 		stt_names[STT_ATR]		=	("Average True Ranger");
-		//	²ßÂÔÎªÍõÖ¸±êÀà
+		//	ç­–ç•¥ä¸ºçŽ‹æŒ‡æ ‡ç±»
 		stt_names[STT_CYO]		=	("Cycle Oscillator");
 		stt_names[STT_DCYO]		=	("Degaussed Cycle Oscillator");
 		stt_names[STT_HSL]		=	("Relative Change Hands");
 		stt_names[STT_DPER]		=	("Detrended Percent Oscillator");
 #else
-		//	KÏßÊôÐÔÀà
-		stt_names[STT_MA]		=	("ÒÆ¶¯Æ½¾ùÏß");
-		stt_names[STT_BBI]		=	("¶à¿ÕÖ¸±ê");
-		stt_names[STT_BOLL]		=	("²¼ÁÖ´ø");
-		stt_names[STT_PV]		=	("»ãÖ¤¾ù¼ÛÏß");
-		stt_names[STT_SAR]		=	("Í£Ëðµã×ªÏòÖ¸±ê");
-		stt_names[STT_DJ]		=	("µþ¼ÓÍ¼");
-		stt_names[STT_CW]		=	("³ïÂë·Ö²¼Í¼");
-		//	Ç÷ÊÆÀà
-		stt_names[STT_MACD]		=	("Ö¸ÊýÆ½»¬ÒìÍ¬ÒÆ¶¯Æ½¾ùÏß");
-		stt_names[STT_MIKE]		=	("Âó¿ËÖ¸±ê");
-		stt_names[STT_PSY]		=	("ÐÄÀíÏß");
-		//	ÄÜÁ¿Àà
-		stt_names[STT_VOLUME]	=	("³É½»Á¿");
-		stt_names[STT_NVI]		=	("¸º³É½»Á¿Ö¸±ê");
-		stt_names[STT_PVI]		=	("Õý³É½»Á¿Ö¸±ê");
-		stt_names[STT_VR]		=	("ÈÝÁ¿±ÈÂÊ");
-		stt_names[STT_VROC]		=	("³É½»Á¿±ä¶¯ÂÊÖ¸±ê");
-		stt_names[STT_OBV]		=	("ÄÜÁ¿Ïß");
-		stt_names[STT_MOBV]		=	("Ö÷Á¦½ø³ö");
-		stt_names[STT_MFI]		=	("×Ê½ðÁ÷¶¯Ö¸Êý");
-		stt_names[STT_VMACD]	=	("Á¿Ö¸ÊýÆ½»¬ÒìÍ¬ÒÆ¶¯Æ½¾ùÏß");
-		stt_names[STT_WVAD]		=	("ÍþÁ®±äÒìÀëÉ¢Á¿");
-		stt_names[STT_EMV]		=	("¼òÒ×²¨¶¯Ö¸±ê");
-		stt_names[STT_VRSI]		=	("Á¿Ïà¶ÔÇ¿ÈõÖ¸±ê");
-		stt_names[STT_NVRSI]	=	("ÐÂÁ¿Ïà¶ÔÇ¿ÈõÖ¸±ê");
-		stt_names[STT_AD]		=	("¾Û/É¢Ö¸±ê");
-		stt_names[STT_CI]		=	("ÀÛ»ýÖ¸Êý");
-		//	°Ú¶¯Àà
-		stt_names[STT_KDJ]		=	("Ëæ»úÖ¸±ê");
-		stt_names[STT_R]		=	("ÍþÁ®Ö¸±ê");
-		stt_names[STT_RSI]		=	("Ïà¶ÔÇ¿ÈõÖ¸±ê");
-		stt_names[STT_BIAS]		=	("¹ÔÀëÂÊ");
-		stt_names[STT_MTM]		=	("¶¯Á¿Ö¸±ê");
-		stt_names[STT_DMI]		=	("¶¯ÏòÖ¸±ê");
-		stt_names[STT_ROC]		=	("±ä¶¯ÂÊÖ¸±ê");
-		stt_names[STT_CCI]		=	("Ë³ÊÆÍ¨µÀÖ¸±ê");
-		stt_names[STT_CV]		=	("¼ÑÇìÖ¸±ê");
-		stt_names[STT_ARBR]		=	("ÈËÆøÒâÔ¸Ö¸±ê");
-		stt_names[STT_CR]		=	("ÖÐ¼äÒâÔ¸Ö¸±ê");
-		stt_names[STT_OSC]		=	("°Ú¶¯Á¿");
-		stt_names[STT_UOS]		=	("¼«°Ú¶¯Ö¸±ê");
-		stt_names[STT_MAOSC]	=	("ÒÆ¶¯Æ½¾ù°Ú¶¯Á¿");
-		stt_names[STT_36BIAS]	=	("3¼õ6ÈÕ¹ÔÀë");
-		stt_names[STT_DPO]		=	("È¥ÊÆ¼Û¸ñ°Ú¶¯Ö¸Êý");
-		stt_names[STT_KST]		=	("È·È»Ö¸±ê");
-		//	ÆäËûÀà
-		stt_names[STT_REI]		=	("·¶Î§ÅòÕÍÖ¸Êý");
-		stt_names[STT_DMKI]		=	("µÏÂí¿Ë¶ûÖ¸±ê");
-		stt_names[STT_PCNT]		=	("·ù¶È±È");
-		stt_names[STT_HLC]		=	("·ù¶È·ÖÎö");
-		stt_names[STT_CDP]		=	("ÄæÊÆ²Ù×÷Ö¸±ê");
-		stt_names[STT_ASI]		=	("ÀÛ»ý°Ú¶¯Ö¸±ê");
-		stt_names[STT_ATR]		=	("¾ù·ùÖ¸±ê");
-		//	²ßÂÔÎªÍõÖ¸±êÀà
-		stt_names[STT_CYO]		=	("ÖÜÆÚ°Ú¶¯Á¿");
-		stt_names[STT_DCYO]		=	("È¥ÔëÖÜÆÚ°Ú¶¯Á¿");
-		stt_names[STT_HSL]		=	("Ïà¶Ô»»ÊÖÂÊ");
-		stt_names[STT_DPER]		=	("È¥ÊÆ°Ù·Ö±ÈÖ¸±ê");
+		//	Kçº¿å±žæ€§ç±»
+		stt_names[STT_MA]		=	("ç§»åŠ¨å¹³å‡çº¿");
+		stt_names[STT_BBI]		=	("å¤šç©ºæŒ‡æ ‡");
+		stt_names[STT_BOLL]		=	("å¸ƒæž—å¸¦");
+		stt_names[STT_PV]		=	("æ±‡è¯å‡ä»·çº¿");
+		stt_names[STT_SAR]		=	("åœæŸç‚¹è½¬å‘æŒ‡æ ‡");
+		stt_names[STT_DJ]		=	("å åŠ å›¾");
+		stt_names[STT_CW]		=	("ç­¹ç åˆ†å¸ƒå›¾");
+		//	è¶‹åŠ¿ç±»
+		stt_names[STT_MACD]		=	("æŒ‡æ•°å¹³æ»‘å¼‚åŒç§»åŠ¨å¹³å‡çº¿");
+		stt_names[STT_MIKE]		=	("éº¦å…‹æŒ‡æ ‡");
+		stt_names[STT_PSY]		=	("å¿ƒç†çº¿");
+		//	èƒ½é‡ç±»
+		stt_names[STT_VOLUME]	=	("æˆäº¤é‡");
+		stt_names[STT_NVI]		=	("è´Ÿæˆäº¤é‡æŒ‡æ ‡");
+		stt_names[STT_PVI]		=	("æ­£æˆäº¤é‡æŒ‡æ ‡");
+		stt_names[STT_VR]		=	("å®¹é‡æ¯”çŽ‡");
+		stt_names[STT_VROC]		=	("æˆäº¤é‡å˜åŠ¨çŽ‡æŒ‡æ ‡");
+		stt_names[STT_OBV]		=	("èƒ½é‡çº¿");
+		stt_names[STT_MOBV]		=	("ä¸»åŠ›è¿›å‡º");
+		stt_names[STT_MFI]		=	("èµ„é‡‘æµåŠ¨æŒ‡æ•°");
+		stt_names[STT_VMACD]	=	("é‡æŒ‡æ•°å¹³æ»‘å¼‚åŒç§»åŠ¨å¹³å‡çº¿");
+		stt_names[STT_WVAD]		=	("å¨å»‰å˜å¼‚ç¦»æ•£é‡");
+		stt_names[STT_EMV]		=	("ç®€æ˜“æ³¢åŠ¨æŒ‡æ ‡");
+		stt_names[STT_VRSI]		=	("é‡ç›¸å¯¹å¼ºå¼±æŒ‡æ ‡");
+		stt_names[STT_NVRSI]	=	("æ–°é‡ç›¸å¯¹å¼ºå¼±æŒ‡æ ‡");
+		stt_names[STT_AD]		=	("èš/æ•£æŒ‡æ ‡");
+		stt_names[STT_CI]		=	("ç´¯ç§¯æŒ‡æ•°");
+		//	æ‘†åŠ¨ç±»
+		stt_names[STT_KDJ]		=	("éšæœºæŒ‡æ ‡");
+		stt_names[STT_R]		=	("å¨å»‰æŒ‡æ ‡");
+		stt_names[STT_RSI]		=	("ç›¸å¯¹å¼ºå¼±æŒ‡æ ‡");
+		stt_names[STT_BIAS]		=	("ä¹–ç¦»çŽ‡");
+		stt_names[STT_MTM]		=	("åŠ¨é‡æŒ‡æ ‡");
+		stt_names[STT_DMI]		=	("åŠ¨å‘æŒ‡æ ‡");
+		stt_names[STT_ROC]		=	("å˜åŠ¨çŽ‡æŒ‡æ ‡");
+		stt_names[STT_CCI]		=	("é¡ºåŠ¿é€šé“æŒ‡æ ‡");
+		stt_names[STT_CV]		=	("ä½³åº†æŒ‡æ ‡");
+		stt_names[STT_ARBR]		=	("äººæ°”æ„æ„¿æŒ‡æ ‡");
+		stt_names[STT_CR]		=	("ä¸­é—´æ„æ„¿æŒ‡æ ‡");
+		stt_names[STT_OSC]		=	("æ‘†åŠ¨é‡");
+		stt_names[STT_UOS]		=	("æžæ‘†åŠ¨æŒ‡æ ‡");
+		stt_names[STT_MAOSC]	=	("ç§»åŠ¨å¹³å‡æ‘†åŠ¨é‡");
+		stt_names[STT_36BIAS]	=	("3å‡6æ—¥ä¹–ç¦»");
+		stt_names[STT_DPO]		=	("åŽ»åŠ¿ä»·æ ¼æ‘†åŠ¨æŒ‡æ•°");
+		stt_names[STT_KST]		=	("ç¡®ç„¶æŒ‡æ ‡");
+		//	å…¶ä»–ç±»
+		stt_names[STT_REI]		=	("èŒƒå›´è†¨èƒ€æŒ‡æ•°");
+		stt_names[STT_DMKI]		=	("è¿ªé©¬å…‹å°”æŒ‡æ ‡");
+		stt_names[STT_PCNT]		=	("å¹…åº¦æ¯”");
+		stt_names[STT_HLC]		=	("å¹…åº¦åˆ†æž");
+		stt_names[STT_CDP]		=	("é€†åŠ¿æ“ä½œæŒ‡æ ‡");
+		stt_names[STT_ASI]		=	("ç´¯ç§¯æ‘†åŠ¨æŒ‡æ ‡");
+		stt_names[STT_ATR]		=	("å‡å¹…æŒ‡æ ‡");
+		//	ç­–ç•¥ä¸ºçŽ‹æŒ‡æ ‡ç±»
+		stt_names[STT_CYO]		=	("å‘¨æœŸæ‘†åŠ¨é‡");
+		stt_names[STT_DCYO]		=	("åŽ»å™ªå‘¨æœŸæ‘†åŠ¨é‡");
+		stt_names[STT_HSL]		=	("ç›¸å¯¹æ¢æ‰‹çŽ‡");
+		stt_names[STT_DPER]		=	("åŽ»åŠ¿ç™¾åˆ†æ¯”æŒ‡æ ‡");
 #endif
 	}
 	
@@ -234,7 +234,7 @@ CSPString	AfxGetSTTName( UINT nTech )
 	return "";
 }
 
-// ¸ø¶¨¼¼ÊõÖ¸±êÎ¨Ò»±àºÅ£¬·µ»Ø¼¼ÊõÖ¸±êÓ¢ÎÄ¼ò³Æ
+// ç»™å®šæŠ€æœ¯æŒ‡æ ‡å”¯ä¸€ç¼–å·ï¼Œè¿”å›žæŠ€æœ¯æŒ‡æ ‡è‹±æ–‡ç®€ç§°
 CSPString	AfxGetSTTShortName( UINT nTech )
 {
 	static	CSPString	stt_shortnames[STT_MAX+1];
@@ -245,7 +245,7 @@ CSPString	AfxGetSTTShortName( UINT nTech )
 		// stt_shortnames
 		stt_shortnames[0]			=	"STTShortNames";
 
-		//	KÏßÊôÐÔÀà
+		//	Kçº¿å±žæ€§ç±»
 		stt_shortnames[STT_MA]		=	("MA");
 		stt_shortnames[STT_BBI]		=	("BBI");
 		stt_shortnames[STT_BOLL]	=	("BOLL");
@@ -253,11 +253,11 @@ CSPString	AfxGetSTTShortName( UINT nTech )
 		stt_shortnames[STT_SAR]		=	("SAR");
 		stt_shortnames[STT_DJ]		=	("DJ");
 		stt_shortnames[STT_CW]		=	("CW");
-		//	Ç÷ÊÆÀà
+		//	è¶‹åŠ¿ç±»
 		stt_shortnames[STT_MACD]	=	("MACD");
 		stt_shortnames[STT_MIKE]	=	("MIKE");
 		stt_shortnames[STT_PSY]		=	("PSY");
-		//	ÄÜÁ¿Àà
+		//	èƒ½é‡ç±»
 		stt_shortnames[STT_VOLUME]	=	("VOLUME");
 		stt_shortnames[STT_NVI]		=	("NVI");
 		stt_shortnames[STT_PVI]		=	("PVI");
@@ -273,7 +273,7 @@ CSPString	AfxGetSTTShortName( UINT nTech )
 		stt_shortnames[STT_NVRSI]	=	("NVRSI");
 		stt_shortnames[STT_AD]		=	("A/D");
 		stt_shortnames[STT_CI]		=	("CI");
-		//	°Ú¶¯Àà
+		//	æ‘†åŠ¨ç±»
 		stt_shortnames[STT_KDJ]		=	("KDJ");
 		stt_shortnames[STT_R]		=	("R");
 		stt_shortnames[STT_RSI]		=	("RSI");
@@ -291,7 +291,7 @@ CSPString	AfxGetSTTShortName( UINT nTech )
 		stt_shortnames[STT_36BIAS]	=	("3-6BIAS");
 		stt_shortnames[STT_DPO]		=	("DPO");
 		stt_shortnames[STT_KST]		=	("KST");
-		//	ÆäËûÀà
+		//	å…¶ä»–ç±»
 		stt_shortnames[STT_REI]		=	("REI");
 		stt_shortnames[STT_DMKI]	=	("DMKI");
 		stt_shortnames[STT_PCNT]	=	("PCNT");
@@ -299,7 +299,7 @@ CSPString	AfxGetSTTShortName( UINT nTech )
 		stt_shortnames[STT_CDP]		=	("CDP");
 		stt_shortnames[STT_ASI]		=	("ASI");
 		stt_shortnames[STT_ATR]		=	("ATR");
-		//	²ßÂÔÎªÍõÖ¸±êÀà
+		//	ç­–ç•¥ä¸ºçŽ‹æŒ‡æ ‡ç±»
 		stt_shortnames[STT_CYO]		=	("CYO");
 		stt_shortnames[STT_DCYO]	=	("DCYO");
 		stt_shortnames[STT_HSL]		=	("HSL");
@@ -317,13 +317,13 @@ CSPString	AfxGetSTTShortName( UINT nTech )
 	return "";
 }
 
-// ¸ø¶¨¼¼ÊõÖ¸±êÎ¨Ò»±àºÅ£¬·µ»Ø¼¼ÊõÖ¸±êÖÐÎÄÃû³Æ+Ó¢ÎÄ¼ò³Æ
+// ç»™å®šæŠ€æœ¯æŒ‡æ ‡å”¯ä¸€ç¼–å·ï¼Œè¿”å›žæŠ€æœ¯æŒ‡æ ‡ä¸­æ–‡åç§°+è‹±æ–‡ç®€ç§°
 CSPString	AfxGetSTTFullName( UINT nTech )
 {
 	return AfxGetSTTName( nTech ) + "(" + AfxGetSTTShortName( nTech ) + ")";
 }
 
-// ¸ø¶¨¼¼ÊõÖ¸±êÎ¨Ò»±àºÅ£¬·µ»Ø¼¼ÊõÖ¸±êÀà±ðÃû³Æ
+// ç»™å®šæŠ€æœ¯æŒ‡æ ‡å”¯ä¸€ç¼–å·ï¼Œè¿”å›žæŠ€æœ¯æŒ‡æ ‡ç±»åˆ«åç§°
 CSPString	AfxGetSTTClassName( UINT nTech )
 {
 	static	CSPString	stt_classnames[STT_CLASS_MAX+1];
@@ -343,13 +343,13 @@ CSPString	AfxGetSTTClassName( UINT nTech )
 		stt_classnames[STT_CLASS_CLK]		=	"Ninebulls-Stock";
 		stt_classnames[STT_CLASS_USER]		=	"User Define";
 #else
-		stt_classnames[STT_CLASS_KLINE]		=	"KÏßÊôÐÔÀà";
-		stt_classnames[STT_CLASS_TREND]		=	"Ç÷ÊÆÀà";
-		stt_classnames[STT_CLASS_ENERGY]	=	"ÄÜÁ¿Àà";
-		stt_classnames[STT_CLASS_SWING]		=	"°Ú¶¯Àà";
-		stt_classnames[STT_CLASS_OTHER]		=	"ÆäËüÀà";
-		stt_classnames[STT_CLASS_CLK]		=	"²ßÂÔÎªÍõÖ¸±êÀà";
-		stt_classnames[STT_CLASS_USER]		=	"Íâ¹ÒÖ¸±êÀà";
+		stt_classnames[STT_CLASS_KLINE]		=	"Kçº¿å±žæ€§ç±»";
+		stt_classnames[STT_CLASS_TREND]		=	"è¶‹åŠ¿ç±»";
+		stt_classnames[STT_CLASS_ENERGY]	=	"èƒ½é‡ç±»";
+		stt_classnames[STT_CLASS_SWING]		=	"æ‘†åŠ¨ç±»";
+		stt_classnames[STT_CLASS_OTHER]		=	"å…¶å®ƒç±»";
+		stt_classnames[STT_CLASS_CLK]		=	"ç­–ç•¥ä¸ºçŽ‹æŒ‡æ ‡ç±»";
+		stt_classnames[STT_CLASS_USER]		=	"å¤–æŒ‚æŒ‡æ ‡ç±»";
 #endif
 	}
 
@@ -370,7 +370,7 @@ CSPString	AfxGetSTTClassName( UINT nTech )
 	return "";
 }
 
-// ¸ø¶¨ÂòÂôÐÅºÅÖµ£¬µÃµ½ÖÐÎÄËµÃ÷
+// ç»™å®šä¹°å–ä¿¡å·å€¼ï¼Œå¾—åˆ°ä¸­æ–‡è¯´æ˜Ž
 CSPString	AfxGetIntensityString( int nIntensity )
 {
 	if( nIntensity >= ITS_MIN && nIntensity <= ITSG_SELLINTENSE )
@@ -392,7 +392,7 @@ CSPString	AfxGetIntensityString( int nIntensity )
 	return "";
 }
 
-// ¸ø¶¨ÂòÂôÐÅºÅÀíÓÉËµÃ÷Öµ£¬µÃµ½ÖÐÎÄËµÃ÷
+// ç»™å®šä¹°å–ä¿¡å·ç†ç”±è¯´æ˜Žå€¼ï¼Œå¾—åˆ°ä¸­æ–‡è¯´æ˜Ž
 CSPString	AfxGetIntensityCodeString( UINT nCode )
 {
 	switch( nCode )
@@ -435,21 +435,21 @@ CSPString AfxGetKTypeString( int ktype )
 		return "Unknown";
 #else
 	if( CKData::ktypeMonth == ktype )
-		return "ÔÂÏß";
+		return "æœˆçº¿";
 	else if( CKData::ktypeWeek == ktype )
-		return "ÖÜÏß";
+		return "å‘¨çº¿";
 	else if( CKData::ktypeDay == ktype )
-		return "ÈÕÏß";
+		return "æ—¥çº¿";
 	else if( CKData::ktypeMin5 == ktype )
-		return "Îå·ÖÖÓÏß";
+		return "äº”åˆ†é’Ÿçº¿";
 	else if( CKData::ktypeMin15 == ktype )
-		return "Ê®Îå·ÖÖÓÏß";
+		return "åäº”åˆ†é’Ÿçº¿";
 	else if( CKData::ktypeMin30 == ktype )
-		return "ÈýÊ®·ÖÖÓÏß";
+		return "ä¸‰ååˆ†é’Ÿçº¿";
 	else if( CKData::ktypeMin60 == ktype )
-		return "ÁùÊ®·ÖÖÓÏß";
+		return "å…­ååˆ†é’Ÿçº¿";
 	else
-		return "Î´Öª";
+		return "æœªçŸ¥";
 #endif
 	return "";
 }
@@ -467,19 +467,19 @@ CSPString AfxGetMaindataTypeString( int type )
 		return "Unknown";
 #else
 	if( CKData::mdtypeClose == type )
-		return "ÊÕÅÌ¼Û";
+		return "æ”¶ç›˜ä»·";
 	else if( CKData::mdtypeOpen == type )
-		return "¿ªÅÌ¼Û";
+		return "å¼€ç›˜ä»·";
 	else if( CKData::mdtypeAverage == type )
-		return "Æ½¾ù¼Û";
+		return "å¹³å‡ä»·";
 	else
-		return "Î´Öª";
+		return "æœªçŸ¥";
 #endif
 	return "";
 }
 
 //////////////////////////////////////////////////////////////////////////////////
-// ¹ÉÆ±ÁÐ±íÁÐÃû³Æ×Ö·û´®
+// è‚¡ç¥¨åˆ—è¡¨åˆ—åç§°å­—ç¬¦ä¸²
 #ifdef	CLKLAN_ENGLISH_US
 char	slh_hdrday[]	=	"Day";
 char	slh_avrcode[]	=	"AVR";
@@ -487,11 +487,11 @@ char	slh_avrname[]	=	"Average";
 char	slh_wavrcode[]	=	"WAVR";
 char	slh_wavrname[]	=	"Weight-Average";
 #else
-char	slh_hdrday[]	=	"ÈÕ";
+char	slh_hdrday[]	=	"æ—¥";
 char	slh_avrcode[]	=	"AVR";
-char	slh_avrname[]	=	"Æ½¾ùÖµ";
+char	slh_avrname[]	=	"å¹³å‡å€¼";
 char	slh_wavrcode[]	=	"WAVR";
-char	slh_wavrname[]	=	"¼ÓÈ¨Æ½¾ù";
+char	slh_wavrname[]	=	"åŠ æƒå¹³å‡";
 #endif
 
 CSPString	AfxGetSLHTitle( UINT nSLH )
@@ -508,7 +508,7 @@ CSPString	AfxGetSLHTitle( UINT nSLH )
 		slh_titles[SLH_CODE]				=	"Code";
 		slh_titles[SLH_NAME]				=	"Name";
 		
-		//	¼¼ÊõÊý¾Ý
+		//	æŠ€æœ¯æ•°æ®
 		slh_titles[SLH_DATE]				=	"Trade Time";
 		slh_titles[SLH_LASTCLOSE]			=	"Prev Close";
 		slh_titles[SLH_OPEN]				=	"Open";
@@ -539,7 +539,7 @@ CSPString	AfxGetSLHTitle( UINT nSLH )
 		slh_titles[SLH_SELLVOLUME2]			=	"Ask Vol 2(100)";
 		slh_titles[SLH_SELLVOLUME3]			=	"Ask Vol 3(100)";
 
-		//	Ö÷Òª»ù±¾Ö¸±ê
+		//	ä¸»è¦åŸºæœ¬æŒ‡æ ‡
 		slh_titles[SLH_REPORTTYPE]			=	"Report Forms";
 		slh_titles[SLH_PE]					=	"P/E";
 		slh_titles[SLH_PNETASSET]			=	"P/B";
@@ -553,21 +553,21 @@ CSPString	AfxGetSLHTitle( UINT nSLH )
 		slh_titles[SLH_MARKETVALUEA]		=	"A Market Capitalisation(10000)";
 		slh_titles[SLH_MARKETVALUEB]		=	"B Market Capitalisation(10000)";
 		
-		// ¡ï³¥Õ®ÄÜÁ¦
+		// â˜…å¿å€ºèƒ½åŠ›
 		slh_titles[SLH_RATIO_LIQUIDITY]		=	"Liquidity Ratio";
 		slh_titles[SLH_RATIO_QUICK]			=	"Quickassets Ratio";
 		slh_titles[SLH_VELOCITY_RECEIVABLES]=	"Receivables Velocity";
 		
-		// ¡ï¾­ÓªÄÜÁ¦
+		// â˜…ç»è¥èƒ½åŠ›
 		slh_titles[SLH_VELOCITY_MERCHANDISE]=	"Merchandise Velocity";
 		slh_titles[SLH_MAIN_INCOME]			=	"Income(10000)";
 		slh_titles[SLH_CASH_PS]				=	"Cash per share";
 		
-		// ¡ïÓ¯ÀûÄÜÁ¦
+		// â˜…ç›ˆåˆ©èƒ½åŠ›
 		slh_titles[SLH_PROFIT_MARGIN]		=	"Profit Margin(%)";
 		slh_titles[SLH_NETASSET_YIELD]		=	"Return On Equity(%)";
 		
-		// ¡ï×Ê±¾½á¹¹
+		// â˜…èµ„æœ¬ç»“æž„
 		slh_titles[SLH_DATE_BEGIN]			=	"IPO Date";
 		slh_titles[SLH_SHARE_COUNT_TOTAL]	=	"Total Shares(10000)";
 		slh_titles[SLH_SHARE_COUNT_A]		=	"Issued Shares A(10000)";
@@ -581,7 +581,7 @@ CSPString	AfxGetSLHTitle( UINT nSLH )
 		slh_titles[SLH_RATIO_LONGDEBT]		=	"Long Debt Ratio(%)";
 		slh_titles[SLH_RATIO_DEBT]			=	"Debt Ratio(%)";
 
-		// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
+		// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
 		slh_titles[SLH_NETASSET_PS]			=	"Net Asset per Share";
 		slh_titles[SLH_NETASSET_PS_REGULATE]=	"Net Asset per Share Regulated";
 		slh_titles[SLH_EPS]					=	"EPS"; // "Earnings per Share";
@@ -599,99 +599,99 @@ CSPString	AfxGetSLHTitle( UINT nSLH )
 		slh_titles[SLH_TRADE]				=	"Business Classification";
 		slh_titles[SLH_PROVINCE]			=	"Province";
 #else
-		slh_titles[SLH_CODE]				=	"´úÂë";
-		slh_titles[SLH_NAME]				=	"Ãû³Æ";
+		slh_titles[SLH_CODE]				=	"ä»£ç ";
+		slh_titles[SLH_NAME]				=	"åç§°";
 		
-		//	¼¼ÊõÊý¾Ý
-		slh_titles[SLH_DATE]				=	"ÈÕÆÚ";
-		slh_titles[SLH_LASTCLOSE]			=	"×òÊÕ";
-		slh_titles[SLH_OPEN]				=	"¿ªÅÌ¼Û";
-		slh_titles[SLH_CLOSE]				=	"ÏÖ¼Û";
-		slh_titles[SLH_HIGH]				=	"×î¸ß¼Û";
-		slh_titles[SLH_LOW]					=	"×îµÍ¼Û";
-		slh_titles[SLH_AVERAGE]				=	"¾ù¼Û";
-		slh_titles[SLH_DIFF]				=	"ÕÇµø";
-		slh_titles[SLH_DIFFPERCENT]			=	"ÕÇ·ù%";
-		slh_titles[SLH_SCOPE]				=	"Õð·ù%";
-		slh_titles[SLH_VOLUME]				=	"³É½»Á¿(ÊÖ)";
-		slh_titles[SLH_AMOUNT]				=	"³É½»¶î(Ç§Ôª)";
-		slh_titles[SLH_VOLUP]				=	"ÍâÅÌ";
-		slh_titles[SLH_VOLDOWN]				=	"ÄÚÅÌ";
-		slh_titles[SLH_DIFFPERCENT_MIN5]	=	"Îå·ÖÖÓÕÇ·ù%";
-		slh_titles[SLH_SELLBUYRATIO]		=	"Î¯±È%";
-		slh_titles[SLH_SELLBUYDIFF]			=	"Î¯Á¿²î";
-		slh_titles[SLH_BUYPRICE3]			=	"Âò¼ÛÈý";
-		slh_titles[SLH_BUYPRICE2]			=	"Âò¼Û¶þ";
-		slh_titles[SLH_BUYPRICE1]			=	"Âò¼ÛÒ»";
-		slh_titles[SLH_SELLPRICE1]			=	"Âô¼ÛÒ»";
-		slh_titles[SLH_SELLPRICE2]			=	"Âô¼Û¶þ";
-		slh_titles[SLH_SELLPRICE3]			=	"Âô¼ÛÈý";
-		slh_titles[SLH_BUYVOLUME3]			=	"ÂòÁ¿Èý";
-		slh_titles[SLH_BUYVOLUME2]			=	"ÂòÁ¿¶þ";
-		slh_titles[SLH_BUYVOLUME1]			=	"ÂòÁ¿Ò»";
-		slh_titles[SLH_SELLVOLUME1]			=	"ÂôÁ¿Ò»";
-		slh_titles[SLH_SELLVOLUME2]			=	"ÂôÁ¿¶þ";
-		slh_titles[SLH_SELLVOLUME3]			=	"ÂôÁ¿Èý";
+		//	æŠ€æœ¯æ•°æ®
+		slh_titles[SLH_DATE]				=	"æ—¥æœŸ";
+		slh_titles[SLH_LASTCLOSE]			=	"æ˜¨æ”¶";
+		slh_titles[SLH_OPEN]				=	"å¼€ç›˜ä»·";
+		slh_titles[SLH_CLOSE]				=	"çŽ°ä»·";
+		slh_titles[SLH_HIGH]				=	"æœ€é«˜ä»·";
+		slh_titles[SLH_LOW]					=	"æœ€ä½Žä»·";
+		slh_titles[SLH_AVERAGE]				=	"å‡ä»·";
+		slh_titles[SLH_DIFF]				=	"æ¶¨è·Œ";
+		slh_titles[SLH_DIFFPERCENT]			=	"æ¶¨å¹…%";
+		slh_titles[SLH_SCOPE]				=	"éœ‡å¹…%";
+		slh_titles[SLH_VOLUME]				=	"æˆäº¤é‡(æ‰‹)";
+		slh_titles[SLH_AMOUNT]				=	"æˆäº¤é¢(åƒå…ƒ)";
+		slh_titles[SLH_VOLUP]				=	"å¤–ç›˜";
+		slh_titles[SLH_VOLDOWN]				=	"å†…ç›˜";
+		slh_titles[SLH_DIFFPERCENT_MIN5]	=	"äº”åˆ†é’Ÿæ¶¨å¹…%";
+		slh_titles[SLH_SELLBUYRATIO]		=	"å§”æ¯”%";
+		slh_titles[SLH_SELLBUYDIFF]			=	"å§”é‡å·®";
+		slh_titles[SLH_BUYPRICE3]			=	"ä¹°ä»·ä¸‰";
+		slh_titles[SLH_BUYPRICE2]			=	"ä¹°ä»·äºŒ";
+		slh_titles[SLH_BUYPRICE1]			=	"ä¹°ä»·ä¸€";
+		slh_titles[SLH_SELLPRICE1]			=	"å–ä»·ä¸€";
+		slh_titles[SLH_SELLPRICE2]			=	"å–ä»·äºŒ";
+		slh_titles[SLH_SELLPRICE3]			=	"å–ä»·ä¸‰";
+		slh_titles[SLH_BUYVOLUME3]			=	"ä¹°é‡ä¸‰";
+		slh_titles[SLH_BUYVOLUME2]			=	"ä¹°é‡äºŒ";
+		slh_titles[SLH_BUYVOLUME1]			=	"ä¹°é‡ä¸€";
+		slh_titles[SLH_SELLVOLUME1]			=	"å–é‡ä¸€";
+		slh_titles[SLH_SELLVOLUME2]			=	"å–é‡äºŒ";
+		slh_titles[SLH_SELLVOLUME3]			=	"å–é‡ä¸‰";
 
-		//	Ö÷Òª»ù±¾Ö¸±ê
-		slh_titles[SLH_REPORTTYPE]			=	"±¨±íÀàÐÍ";
-		slh_titles[SLH_PE]					=	"ÊÐÓ¯ÂÊ";
-		slh_titles[SLH_PNETASSET]			=	"ÊÐ¾»ÂÊ";
-		slh_titles[SLH_PMAININCOME]			=	"ÊÐÏúÂÊ";
-		slh_titles[SLH_RATIO_PCASH]			=	"¼Û¸ñ¾»ÏÖ½ð±È";
-		slh_titles[SLH_RATIO_CURRENCY]		=	"Á÷Í¨ÂÊ%";
-		slh_titles[SLH_RATIO_CHANGEHAND]	=	"»»ÊÖÂÊ%";
-		slh_titles[SLH_RATIO_VOLUME]		=	"Á¿±È";
-		slh_titles[SLH_RS]					=	"Ïà¶ÔÇ¿¶È";
-		slh_titles[SLH_MARKETVALUE]			=	"×ÜÊÐÖµ-Íò";
-		slh_titles[SLH_MARKETVALUEA]		=	"A¹ÉÊÐÖµ-Íò";
-		slh_titles[SLH_MARKETVALUEB]		=	"B¹ÉÊÐÖµ-Íò";
+		//	ä¸»è¦åŸºæœ¬æŒ‡æ ‡
+		slh_titles[SLH_REPORTTYPE]			=	"æŠ¥è¡¨ç±»åž‹";
+		slh_titles[SLH_PE]					=	"å¸‚ç›ˆçŽ‡";
+		slh_titles[SLH_PNETASSET]			=	"å¸‚å‡€çŽ‡";
+		slh_titles[SLH_PMAININCOME]			=	"å¸‚é”€çŽ‡";
+		slh_titles[SLH_RATIO_PCASH]			=	"ä»·æ ¼å‡€çŽ°é‡‘æ¯”";
+		slh_titles[SLH_RATIO_CURRENCY]		=	"æµé€šçŽ‡%";
+		slh_titles[SLH_RATIO_CHANGEHAND]	=	"æ¢æ‰‹çŽ‡%";
+		slh_titles[SLH_RATIO_VOLUME]		=	"é‡æ¯”";
+		slh_titles[SLH_RS]					=	"ç›¸å¯¹å¼ºåº¦";
+		slh_titles[SLH_MARKETVALUE]			=	"æ€»å¸‚å€¼-ä¸‡";
+		slh_titles[SLH_MARKETVALUEA]		=	"Aè‚¡å¸‚å€¼-ä¸‡";
+		slh_titles[SLH_MARKETVALUEB]		=	"Bè‚¡å¸‚å€¼-ä¸‡";
 		
-		// ¡ï³¥Õ®ÄÜÁ¦
-		slh_titles[SLH_RATIO_LIQUIDITY]		=	"Á÷¶¯±ÈÂÊ";
-		slh_titles[SLH_RATIO_QUICK]			=	"ËÙ¶¯±ÈÂÊ";
-		slh_titles[SLH_VELOCITY_RECEIVABLES]=	"Ó¦ÊÕÕË¿îÖÜÂÊ";
+		// â˜…å¿å€ºèƒ½åŠ›
+		slh_titles[SLH_RATIO_LIQUIDITY]		=	"æµåŠ¨æ¯”çŽ‡";
+		slh_titles[SLH_RATIO_QUICK]			=	"é€ŸåŠ¨æ¯”çŽ‡";
+		slh_titles[SLH_VELOCITY_RECEIVABLES]=	"åº”æ”¶è´¦æ¬¾å‘¨çŽ‡";
 		
-		// ¡ï¾­ÓªÄÜÁ¦
-		slh_titles[SLH_VELOCITY_MERCHANDISE]=	"´æ»õÖÜ×ªÂÊ";
-		slh_titles[SLH_MAIN_INCOME]			=	"Ö÷ÓªÊÕÈë-Íò";
-		slh_titles[SLH_CASH_PS]				=	"Ã¿¹É¾»ÏÖ½ð";
+		// â˜…ç»è¥èƒ½åŠ›
+		slh_titles[SLH_VELOCITY_MERCHANDISE]=	"å­˜è´§å‘¨è½¬çŽ‡";
+		slh_titles[SLH_MAIN_INCOME]			=	"ä¸»è¥æ”¶å…¥-ä¸‡";
+		slh_titles[SLH_CASH_PS]				=	"æ¯è‚¡å‡€çŽ°é‡‘";
 		
-		// ¡ïÓ¯ÀûÄÜÁ¦
-		slh_titles[SLH_PROFIT_MARGIN]		=	"Ö÷ÓªÀûÈóÂÊ%";
-		slh_titles[SLH_NETASSET_YIELD]		=	"¾»×Ê²úÊÕÒæÂÊ%";
+		// â˜…ç›ˆåˆ©èƒ½åŠ›
+		slh_titles[SLH_PROFIT_MARGIN]		=	"ä¸»è¥åˆ©æ¶¦çŽ‡%";
+		slh_titles[SLH_NETASSET_YIELD]		=	"å‡€èµ„äº§æ”¶ç›ŠçŽ‡%";
 		
-		// ¡ï×Ê±¾½á¹¹
-		slh_titles[SLH_DATE_BEGIN]			=	"ÉÏÊÐÈÕÆÚ";
-		slh_titles[SLH_SHARE_COUNT_TOTAL]	=	"×Ü¹É±¾-Íò";
-		slh_titles[SLH_SHARE_COUNT_A]		=	"A¹É-Íò";
-		slh_titles[SLH_SHARE_COUNT_B]		=	"B¹É-Íò";
-		slh_titles[SLH_SHARE_COUNT_H]		=	"H¹É-Íò";
-		slh_titles[SLH_SHARE_COUNT_NATIONAL]=	"¹úÓÐ¹É-Íò";
-		slh_titles[SLH_SHARE_COUNT_CORP]	=	"·¨ÈË¹É-Íò";
-		slh_titles[SLH_PROFIT_PSUD]			=	"Ã¿¹ÉÎ´·ÖÀûÈó";
-		slh_titles[SLH_ASSET]				=	"×Ü×Ê²ú-Íò";
-		slh_titles[SLH_RATIO_HOLDERRIGHT]	=	"¹É¶«È¨Òæ±È%";
-		slh_titles[SLH_RATIO_LONGDEBT]		=	"³¤ÆÚ¸ºÕ®ÂÊ%";
-		slh_titles[SLH_RATIO_DEBT]			=	"×Ê²ú¸ºÕ®ÂÊ%";
+		// â˜…èµ„æœ¬ç»“æž„
+		slh_titles[SLH_DATE_BEGIN]			=	"ä¸Šå¸‚æ—¥æœŸ";
+		slh_titles[SLH_SHARE_COUNT_TOTAL]	=	"æ€»è‚¡æœ¬-ä¸‡";
+		slh_titles[SLH_SHARE_COUNT_A]		=	"Aè‚¡-ä¸‡";
+		slh_titles[SLH_SHARE_COUNT_B]		=	"Bè‚¡-ä¸‡";
+		slh_titles[SLH_SHARE_COUNT_H]		=	"Hè‚¡-ä¸‡";
+		slh_titles[SLH_SHARE_COUNT_NATIONAL]=	"å›½æœ‰è‚¡-ä¸‡";
+		slh_titles[SLH_SHARE_COUNT_CORP]	=	"æ³•äººè‚¡-ä¸‡";
+		slh_titles[SLH_PROFIT_PSUD]			=	"æ¯è‚¡æœªåˆ†åˆ©æ¶¦";
+		slh_titles[SLH_ASSET]				=	"æ€»èµ„äº§-ä¸‡";
+		slh_titles[SLH_RATIO_HOLDERRIGHT]	=	"è‚¡ä¸œæƒç›Šæ¯”%";
+		slh_titles[SLH_RATIO_LONGDEBT]		=	"é•¿æœŸè´Ÿå€ºçŽ‡%";
+		slh_titles[SLH_RATIO_DEBT]			=	"èµ„äº§è´Ÿå€ºçŽ‡%";
 
-		// ¡ïÍ¶×ÊÊÕÒæÄÜÁ¦
-		slh_titles[SLH_NETASSET_PS]			=	"Ã¿¹É¾»×Ê²ú";
-		slh_titles[SLH_NETASSET_PS_REGULATE]=	"µ÷ÕûÃ¿¹É¾»×Ê²ú";
-		slh_titles[SLH_EPS]					=	"Ã¿¹ÉÊÕÒæ";
-		slh_titles[SLH_EPS_DEDUCT]			=	"¿Û³ýÃ¿¹ÉÊÕÒæ";
-		slh_titles[SLH_NET_PROFIT]			=	"¾»ÀûÈó-Íò";
-		slh_titles[SLH_MAIN_PROFIT]			=	"Ö÷ÓªÒµÎñÀûÈó-Íò";
-		slh_titles[SLH_TOTAL_PROFIT]		=	"ÀûÈó×Ü¶î-Íò";
-		slh_titles[SLH_PROFIT_INC]			=	"Ö÷ÓªÀûÈóÔö³¤ÂÊ%";
-		slh_titles[SLH_INCOME_INC]			=	"ÊÕÈëÔö³¤ÂÊ%";
-		slh_titles[SLH_ASSET_INC]			=	"×Ü×Ê²úÔö³¤ÂÊ%";
-		slh_titles[SLH_ANNGAINS_AVERAGE]	=	"ÄêÆ½¾ùÊÕÒæÂÊ%";
-		slh_titles[SLH_ANNGAINS_STDDEV]		=	"ÊÕÒæ±ê×¼²î%";
-		slh_titles[SLH_BETA]				=	"¦ÂÖµ";
-		slh_titles[SLH_SHARP]				=	"ÏÄÆÕ·çÏÕÖ¸Êý";
-		slh_titles[SLH_TRADE]				=	"ÐÐÒµ";
-		slh_titles[SLH_PROVINCE]			=	"Ê¡·Ý";
+		// â˜…æŠ•èµ„æ”¶ç›Šèƒ½åŠ›
+		slh_titles[SLH_NETASSET_PS]			=	"æ¯è‚¡å‡€èµ„äº§";
+		slh_titles[SLH_NETASSET_PS_REGULATE]=	"è°ƒæ•´æ¯è‚¡å‡€èµ„äº§";
+		slh_titles[SLH_EPS]					=	"æ¯è‚¡æ”¶ç›Š";
+		slh_titles[SLH_EPS_DEDUCT]			=	"æ‰£é™¤æ¯è‚¡æ”¶ç›Š";
+		slh_titles[SLH_NET_PROFIT]			=	"å‡€åˆ©æ¶¦-ä¸‡";
+		slh_titles[SLH_MAIN_PROFIT]			=	"ä¸»è¥ä¸šåŠ¡åˆ©æ¶¦-ä¸‡";
+		slh_titles[SLH_TOTAL_PROFIT]		=	"åˆ©æ¶¦æ€»é¢-ä¸‡";
+		slh_titles[SLH_PROFIT_INC]			=	"ä¸»è¥åˆ©æ¶¦å¢žé•¿çŽ‡%";
+		slh_titles[SLH_INCOME_INC]			=	"æ”¶å…¥å¢žé•¿çŽ‡%";
+		slh_titles[SLH_ASSET_INC]			=	"æ€»èµ„äº§å¢žé•¿çŽ‡%";
+		slh_titles[SLH_ANNGAINS_AVERAGE]	=	"å¹´å¹³å‡æ”¶ç›ŠçŽ‡%";
+		slh_titles[SLH_ANNGAINS_STDDEV]		=	"æ”¶ç›Šæ ‡å‡†å·®%";
+		slh_titles[SLH_BETA]				=	"Î²å€¼";
+		slh_titles[SLH_SHARP]				=	"å¤æ™®é£Žé™©æŒ‡æ•°";
+		slh_titles[SLH_TRADE]				=	"è¡Œä¸š";
+		slh_titles[SLH_PROVINCE]			=	"çœä»½";
 #endif
 	}
 
@@ -722,16 +722,16 @@ CSPString	AfxGetSLHDescript( UINT nSLH )
 		slh_descripts[SLH_BETA]			=	"Correlation with Indicator";
 		slh_descripts[SLH_SHARP]		=	"Ratio of Ann-Gains and Ann-Gains' Standard Deviation";
 #else
-		slh_descripts[SLH_PE]			=	"Ã¿¹É¼Û¸ñ±ÈÃ¿¹ÉÊÕÒæ";
+		slh_descripts[SLH_PE]			=	"æ¯è‚¡ä»·æ ¼æ¯”æ¯è‚¡æ”¶ç›Š";
 
-		slh_descripts[SLH_PNETASSET]	=	"Ã¿¹É¼Û¸ñ±ÈÃ¿¹É¾»×Ê²ú";
-		slh_descripts[SLH_PMAININCOME]	=	"×ÜÊÐÖµ±ÈÖ÷ÓªÊÕÈë";
-		slh_descripts[SLH_RATIO_PCASH]	=	"Ã¿¹É¼Û¸ñ±ÈÃ¿¹É¾»ÏÖ½ð";
-		slh_descripts[SLH_RS]			=	"nÈÕÄÚÕÇ·ùÓëµø·ùÖ®±È";
-		slh_descripts[SLH_ANNGAINS_AVERAGE]="Í¶×Ê¸Ã¹ÉÆ±ÄêÊÕÒæÂÊ";
-		slh_descripts[SLH_ANNGAINS_STDDEV]=	"ÄêÊÕÒæÂÊµÄ±ê×¼²î";
-		slh_descripts[SLH_BETA]			=	"±íÊ¾Óë´óÅÌÏà¹ØÐÔ";
-		slh_descripts[SLH_SHARP]		=	"ÄêÊÕÒæÂÊ±È±ê×¼²î";
+		slh_descripts[SLH_PNETASSET]	=	"æ¯è‚¡ä»·æ ¼æ¯”æ¯è‚¡å‡€èµ„äº§";
+		slh_descripts[SLH_PMAININCOME]	=	"æ€»å¸‚å€¼æ¯”ä¸»è¥æ”¶å…¥";
+		slh_descripts[SLH_RATIO_PCASH]	=	"æ¯è‚¡ä»·æ ¼æ¯”æ¯è‚¡å‡€çŽ°é‡‘";
+		slh_descripts[SLH_RS]			=	"næ—¥å†…æ¶¨å¹…ä¸Žè·Œå¹…ä¹‹æ¯”";
+		slh_descripts[SLH_ANNGAINS_AVERAGE]="æŠ•èµ„è¯¥è‚¡ç¥¨å¹´æ”¶ç›ŠçŽ‡";
+		slh_descripts[SLH_ANNGAINS_STDDEV]=	"å¹´æ”¶ç›ŠçŽ‡çš„æ ‡å‡†å·®";
+		slh_descripts[SLH_BETA]			=	"è¡¨ç¤ºä¸Žå¤§ç›˜ç›¸å…³æ€§";
+		slh_descripts[SLH_SHARP]		=	"å¹´æ”¶ç›ŠçŽ‡æ¯”æ ‡å‡†å·®";
 #endif
 	}
 	
@@ -744,7 +744,7 @@ CSPString	AfxGetSLHDescript( UINT nSLH )
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ±í´ïÊ½´íÎóÌáÊ¾×Ö·û´®
+// è¡¨è¾¾å¼é”™è¯¯æç¤ºå­—ç¬¦ä¸²
 #ifdef	CLKLAN_ENGLISH_US
 char	express_errparserstack[]	=	"Expression: Expression is too long and stack overflow.";
 char	express_errbadrange[]		=	"Expression: Value is out of range.";
@@ -756,55 +756,55 @@ char	express_errinvalidnum[]		=	"Expression: Invalid number.";
 char	express_errmath[]			=	"Expression: Mathematical error.";
 char	express_errunknown[]		=	"Expression: Unknown.";
 #else
-char	express_errparserstack[]	=	"±í´ïÊ½£º±í´ïÊ½Ì«³¤£¬Õ»Òç³ö¡£";
-char	express_errbadrange[]		=	"±í´ïÊ½£ºÊýÖµ³¬³ö·¶Î§¡£";
-char	express_errexpression[]		=	"±í´ïÊ½£º×Ö·û´®³öÏÖ´íÎó¡£";
-char	express_erroperator[]		=	"±í´ïÊ½£º²Ù×÷·û³öÏÖ´íÎó¡£";
-char	express_erropenparen[]		=	"±í´ïÊ½£º×óÀ¨ºÅ³öÏÖ´íÎó¡£";
-char	express_errcloseparen[]		=	"±í´ïÊ½£ºÓÒÀ¨ºÅ³öÏÖ´íÎó¡£";
-char	express_errinvalidnum[]		=	"±í´ïÊ½£º·Ç·¨Êý×Ö¡£";
-char	express_errmath[]			=	"±í´ïÊ½£ºÊýÑ§¼ÆËã³öÏÖ´íÎó¡£";
-char	express_errunknown[]		=	"±í´ïÊ½£ºÎ´Öª´íÎó¡£";
+char	express_errparserstack[]	=	"è¡¨è¾¾å¼ï¼šè¡¨è¾¾å¼å¤ªé•¿ï¼Œæ ˆæº¢å‡ºã€‚";
+char	express_errbadrange[]		=	"è¡¨è¾¾å¼ï¼šæ•°å€¼è¶…å‡ºèŒƒå›´ã€‚";
+char	express_errexpression[]		=	"è¡¨è¾¾å¼ï¼šå­—ç¬¦ä¸²å‡ºçŽ°é”™è¯¯ã€‚";
+char	express_erroperator[]		=	"è¡¨è¾¾å¼ï¼šæ“ä½œç¬¦å‡ºçŽ°é”™è¯¯ã€‚";
+char	express_erropenparen[]		=	"è¡¨è¾¾å¼ï¼šå·¦æ‹¬å·å‡ºçŽ°é”™è¯¯ã€‚";
+char	express_errcloseparen[]		=	"è¡¨è¾¾å¼ï¼šå³æ‹¬å·å‡ºçŽ°é”™è¯¯ã€‚";
+char	express_errinvalidnum[]		=	"è¡¨è¾¾å¼ï¼šéžæ³•æ•°å­—ã€‚";
+char	express_errmath[]			=	"è¡¨è¾¾å¼ï¼šæ•°å­¦è®¡ç®—å‡ºçŽ°é”™è¯¯ã€‚";
+char	express_errunknown[]		=	"è¡¨è¾¾å¼ï¼šæœªçŸ¥é”™è¯¯ã€‚";
 #endif
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ¹ÉÆ±°å¿é×Ö·û´®
+// è‚¡ç¥¨æ¿å—å­—ç¬¦ä¸²
 #ifdef	CLKLAN_ENGLISH_US
 char	domain_self[]	=	"Favorites";
 #else
-char	domain_self[]	=	"×ÔÑ¡¹É";
+char	domain_self[]	=	"è‡ªé€‰è‚¡";
 #endif
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ½çÃæÅäÉ«·½°¸×Ö·û´®
+// ç•Œé¢é…è‰²æ–¹æ¡ˆå­—ç¬¦ä¸²
 #ifdef	CLKLAN_ENGLISH_US
 char	colorclass_standard[]		=	"Standard color schemes";
 char	colorclass_byzantinesque[]	=	"Byzantinesque color schemes";
 char	colorclass_gothic[]			=	"Gothic color schemes";
 char	colorclass_baroque[]		=	"Barococo color schemes";
 #else
-char	colorclass_standard[]		=	"´«Í³Ê½ÅäÉ«·½°¸";
-char	colorclass_byzantinesque[]	=	"°ÝÕ¼Í¥Ê½ÅäÉ«·½°¸";
-char	colorclass_gothic[]			=	"¸çÌØÊ½ÅäÉ«·½°¸";
-char	colorclass_baroque[]		=	"°ÍÂå¿ËÊ½ÅäÉ«·½°¸";
+char	colorclass_standard[]		=	"ä¼ ç»Ÿå¼é…è‰²æ–¹æ¡ˆ";
+char	colorclass_byzantinesque[]	=	"æ‹œå åº­å¼é…è‰²æ–¹æ¡ˆ";
+char	colorclass_gothic[]			=	"å“¥ç‰¹å¼é…è‰²æ–¹æ¡ˆ";
+char	colorclass_baroque[]		=	"å·´æ´›å…‹å¼é…è‰²æ–¹æ¡ˆ";
 #endif
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ·þÎñÆ÷ËµÃ÷¡¢¼¼ÊõÖ§³Ö
+// æœåŠ¡å™¨è¯´æ˜Žã€æŠ€æœ¯æ”¯æŒ
 #ifdef	CLKLAN_ENGLISH_US
 char	sz_mainserverinfo[]			=	"Main Server";
 char	sz_mailsubjectsupport[]		=	"Support";
 #else
-char	sz_mainserverinfo[]			=	"Ö÷·þÎñÆ÷";
-char	sz_mailsubjectsupport[]		=	"¼¼ÊõÖ§³Ö";
+char	sz_mainserverinfo[]			=	"ä¸»æœåŠ¡å™¨";
+char	sz_mailsubjectsupport[]		=	"æŠ€æœ¯æ”¯æŒ";
 #endif
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ÖÜ
+// å‘¨
 #ifdef	CLKLAN_ENGLISH_US
 char	sz_sunday[]		=	"Sunday";
 char	sz_monday[]		=	"Monday";
@@ -814,45 +814,45 @@ char	sz_thursday[]	=	"Thursday";
 char	sz_friday[]		=	"Friday";
 char	sz_saturday[]	=	"Saturday";
 #else
-char	sz_sunday[]		=	"ÐÇÆÚÈÕ";
-char	sz_monday[]		=	"ÐÇÆÚÒ»";
-char	sz_tuesday[]	=	"ÐÇÆÚ¶þ";
-char	sz_wednesday[]	=	"ÐÇÆÚÈý";
-char	sz_thursday[]	=	"ÐÇÆÚËÄ";
-char	sz_friday[]		=	"ÐÇÆÚÎå";
-char	sz_saturday[]	=	"ÐÇÆÚÁù";
+char	sz_sunday[]		=	"æ˜ŸæœŸæ—¥";
+char	sz_monday[]		=	"æ˜ŸæœŸä¸€";
+char	sz_tuesday[]	=	"æ˜ŸæœŸäºŒ";
+char	sz_wednesday[]	=	"æ˜ŸæœŸä¸‰";
+char	sz_thursday[]	=	"æ˜ŸæœŸå››";
+char	sz_friday[]		=	"æ˜ŸæœŸäº”";
+char	sz_saturday[]	=	"æ˜ŸæœŸå…­";
 #endif
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ±¨±íÀàÐÍ
+// æŠ¥è¡¨ç±»åž‹
 #ifdef	CLKLAN_ENGLISH_US
 char	sz_reportQuarter[]	=	"1st quarter";
 char	sz_reportMid[]		=	"midyear";
 char	sz_reportQuarter3[]	=	"3rd quarter";
 char	sz_reportAnnals[]	=	"annals";
 #else
-char	sz_reportQuarter[]	=	"µÚÒ»¼¾¶È¼¾±¨";
-char	sz_reportMid[]		=	"ÖÐ±¨";
-char	sz_reportQuarter3[]	=	"µÚÈý¼¾¶È¼¾±¨";
-char	sz_reportAnnals[]	=	"Äê±¨";
+char	sz_reportQuarter[]	=	"ç¬¬ä¸€å­£åº¦å­£æŠ¥";
+char	sz_reportMid[]		=	"ä¸­æŠ¥";
+char	sz_reportQuarter3[]	=	"ç¬¬ä¸‰å­£åº¦å­£æŠ¥";
+char	sz_reportAnnals[]	=	"å¹´æŠ¥";
 #endif
 
 //////////////////////////////////////////////////////////////////////////////////
-// Êý¾Ý×Ö·û´®
+// æ•°æ®å­—ç¬¦ä¸²
 #ifdef	CLKLAN_ENGLISH_US
 char	db_errcreateselfdb[]	=	"Fail to create file, reinstall this software, please.";
 char	db_errrootpath[]		=	"Fail to initialize data, reinstall this software, please.";
 char	db_errqianlongpath[]	=	"Fail to read referred QianLong data source.";
 #else
-char	db_errcreateselfdb[]	=	"´´½¨Êý¾ÝÎÄ¼þÊ§°Ü£¬ÇëÖØÐÂ°²×°±¾Èí¼þ£¬»òÕßÓëÈí¼þ¹©Ó¦ÉÌÁªÏµ";
-char	db_errrootpath[]		=	"³õÊ¼»¯Êý¾ÝÊ§°Ü£¬ÇëÖØÐÂ°²×°±¾Èí¼þ£¬»òÕßÓëÈí¼þ¹©Ó¦ÉÌÁªÏµ";
-char	db_errqianlongpath[]	=	"¶ÁÈ¡Ö¸¶¨µÄÇ®ÁúÊý¾ÝÔ´Ê§°Ü¡£";
+char	db_errcreateselfdb[]	=	"åˆ›å»ºæ•°æ®æ–‡ä»¶å¤±è´¥ï¼Œè¯·é‡æ–°å®‰è£…æœ¬è½¯ä»¶ï¼Œæˆ–è€…ä¸Žè½¯ä»¶ä¾›åº”å•†è”ç³»";
+char	db_errrootpath[]		=	"åˆå§‹åŒ–æ•°æ®å¤±è´¥ï¼Œè¯·é‡æ–°å®‰è£…æœ¬è½¯ä»¶ï¼Œæˆ–è€…ä¸Žè½¯ä»¶ä¾›åº”å•†è”ç³»";
+char	db_errqianlongpath[]	=	"è¯»å–æŒ‡å®šçš„é’±é¾™æ•°æ®æºå¤±è´¥ã€‚";
 #endif
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ²ßÂÔ×Ö·û´®
+// ç­–ç•¥å­—ç¬¦ä¸²
 
 #ifdef	CLKLAN_ENGLISH_US
 
@@ -885,39 +885,39 @@ char	strategy_errfilever[]		=	"File version is not supported, please upgrade thi
 
 #else
 
-char	strategy_logicand[]		=	"È«²¿";
-char	strategy_logicor[]		=	"ÈÎÒâÒ»¸ö";
+char	strategy_logicand[]		=	"å…¨éƒ¨";
+char	strategy_logicor[]		=	"ä»»æ„ä¸€ä¸ª";
 
-char	strategy_sdonce[]		=	"È«²Ö";
-char	strategy_sdtwice[]		=	"°ë²Ö";
-char	strategy_sdthird[]		=	"Èý·ÖÖ®Ò»²Ö";
-char	strategy_sdforth[]		=	"ËÄ·ÖÖ®Ò»²Ö";
-char	strategy_sdfifth[]		=	"Îå·ÖÖ®Ò»²Ö";
-char	strategy_sdsixth[]		=	"Áù·ÖÖ®Ò»²Ö";
-char	strategy_sdseventh[]	=	"Æß·ÖÖ®Ò»²Ö";
-char	strategy_sdeighth[]		=	"°Ë·ÖÖ®Ò»²Ö";
-char	strategy_sdninth[]		=	"¾Å·ÖÖ®Ò»²Ö";
-char	strategy_sdtenth[]		=	"Ê®·ÖÖ®Ò»²Ö";
+char	strategy_sdonce[]		=	"å…¨ä»“";
+char	strategy_sdtwice[]		=	"åŠä»“";
+char	strategy_sdthird[]		=	"ä¸‰åˆ†ä¹‹ä¸€ä»“";
+char	strategy_sdforth[]		=	"å››åˆ†ä¹‹ä¸€ä»“";
+char	strategy_sdfifth[]		=	"äº”åˆ†ä¹‹ä¸€ä»“";
+char	strategy_sdsixth[]		=	"å…­åˆ†ä¹‹ä¸€ä»“";
+char	strategy_sdseventh[]	=	"ä¸ƒåˆ†ä¹‹ä¸€ä»“";
+char	strategy_sdeighth[]		=	"å…«åˆ†ä¹‹ä¸€ä»“";
+char	strategy_sdninth[]		=	"ä¹åˆ†ä¹‹ä¸€ä»“";
+char	strategy_sdtenth[]		=	"ååˆ†ä¹‹ä¸€ä»“";
 
-char	strategy_noselectedstock[]	=	"Ã»ÓÐÑ¡ÖÐ¹ÉÆ±";
-char	strategy_noselectedtech[]	=	"Ã»ÓÐÑ¡ÖÐÖ¸±ê";
+char	strategy_noselectedstock[]	=	"æ²¡æœ‰é€‰ä¸­è‚¡ç¥¨";
+char	strategy_noselectedtech[]	=	"æ²¡æœ‰é€‰ä¸­æŒ‡æ ‡";
 
-char	strategy_optype_buy[]		=	"ÂòÈë";
-char	strategy_optype_sell[]		=	"Âô³ö";
-char	strategy_optype_addstock[]	=	"Ôö¼Ó¹ÉÆ±";
-char	strategy_optype_removestock[]	=	"¼õÉÙ¹ÉÆ±";
-char	strategy_optype_addcash[]		=	"Ôö¼ÓÏÖ½ð";
-char	strategy_optype_removecash[]	=	"¼õÉÙÏÖ½ð";
+char	strategy_optype_buy[]		=	"ä¹°å…¥";
+char	strategy_optype_sell[]		=	"å–å‡º";
+char	strategy_optype_addstock[]	=	"å¢žåŠ è‚¡ç¥¨";
+char	strategy_optype_removestock[]	=	"å‡å°‘è‚¡ç¥¨";
+char	strategy_optype_addcash[]		=	"å¢žåŠ çŽ°é‡‘";
+char	strategy_optype_removecash[]	=	"å‡å°‘çŽ°é‡‘";
 
-char	strategy_errfile[]			=	"ÎÄ¼þÀàÐÍ²»·û£¬Ö¸¶¨ÎÄ¼þ²»ÊÇ²ßÂÔÎÄ¼þ¡£";
-char	strategy_errfilever[]		=	"´íÎóµÄÎÄ¼þ°æ±¾£ºÇëÉý¼¶Èí¼þ£¬ÒÔ±ã¿ÉÒÔ¶ÁÈ¡¸ß°æ±¾µÄ²ßÂÔÎÄ¼þ¡£";
+char	strategy_errfile[]			=	"æ–‡ä»¶ç±»åž‹ä¸ç¬¦ï¼ŒæŒ‡å®šæ–‡ä»¶ä¸æ˜¯ç­–ç•¥æ–‡ä»¶ã€‚";
+char	strategy_errfilever[]		=	"é”™è¯¯çš„æ–‡ä»¶ç‰ˆæœ¬ï¼šè¯·å‡çº§è½¯ä»¶ï¼Œä»¥ä¾¿å¯ä»¥è¯»å–é«˜ç‰ˆæœ¬çš„ç­–ç•¥æ–‡ä»¶ã€‚";
 
 #endif
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ¿ì½Ý¼ü
-// ¸ø¶¨¿ì½Ý¼üÎ¨Ò»±àºÅ£¬·µ»Ø¿ì½Ý¼ü¼°ÆäÖÐÎÄÃû³Æ
+// å¿«æ·é”®
+// ç»™å®šå¿«æ·é”®å”¯ä¸€ç¼–å·ï¼Œè¿”å›žå¿«æ·é”®åŠå…¶ä¸­æ–‡åç§°
 CSPString	AfxGetAccelerator( UINT nAcce, int nCharLeft )
 {
 	static	CSPString	acce_names[ACCE_MAX+1];
@@ -929,7 +929,7 @@ CSPString	AfxGetAccelerator( UINT nAcce, int nCharLeft )
 		acce_names[0]			=	"ACCENames";
 
 #ifdef	CLKLAN_ENGLISH_US
-		// ¿ì½Ý¼ü
+		// å¿«æ·é”®
 		acce_names[ACCE_01]		=	"01      Hot Key F1";
 		acce_names[ACCE_02]		=	"02      Hot Key F2";
 		acce_names[ACCE_03]		=	"03      Hot Key F3";
@@ -964,40 +964,40 @@ CSPString	AfxGetAccelerator( UINT nAcce, int nCharLeft )
 		acce_names[ACCE_LBDK]	=	"LBDK    Volume Ratio";
 		acce_names[ACCE_MMLD]	=	"MMLD    Consign Ratio";
 #else
-		// ¿ì½Ý¼ü
-		acce_names[ACCE_01]		=	"01      ÈÈ¼üF1";
-		acce_names[ACCE_02]		=	"02      ÈÈ¼üF2";
-		acce_names[ACCE_03]		=	"03      ÈÈ¼üF3";
-		acce_names[ACCE_04]		=	"04      ÈÈ¼üF4";
-		acce_names[ACCE_05]		=	"05      ÈÈ¼üF5";
-		acce_names[ACCE_06]		=	"06      ÈÈ¼üF6";
-		acce_names[ACCE_07]		=	"07      ÈÈ¼üF7";
-		acce_names[ACCE_08]		=	"08      ÈÈ¼üF8";
-		acce_names[ACCE_09]		=	"09      ÈÈ¼üF9";
-		acce_names[ACCE_10]		=	"10      ÈÈ¼üF10";
-		acce_names[ACCE_1]		=	"1       ÉÏA±¨¼Û";
-		acce_names[ACCE_2]		=	"2       ÉÏB±¨¼Û";
-		acce_names[ACCE_3]		=	"3       ÉîA±¨¼Û";
-		acce_names[ACCE_4]		=	"4       ÉîB±¨¼Û";
-		acce_names[ACCE_5]		=	"5       ÉÏÕ®±¨¼Û";
-		acce_names[ACCE_6]		=	"6       ÉîÕ®±¨¼Û";
-		acce_names[ACCE_61]		=	"61      ÉÏAÕÇµø";
-		acce_names[ACCE_62]		=	"62      ÉÏBÕÇµø";
-		acce_names[ACCE_63]		=	"63      ÉîAÕÇµø";
-		acce_names[ACCE_64]		=	"64      ÉîBÕÇµø";
-		acce_names[ACCE_65]		=	"65      ÉÏÕ®ÕÇµø";
-		acce_names[ACCE_66]		=	"66      ÉîÕ®ÕÇµø";
-		acce_names[ACCE_71]		=	"71      ÉÏÖ¤ÐÅÏ¢";
-		acce_names[ACCE_72]		=	"72      ÉîÖ¤ÐÅÏ¢";
-		acce_names[ACCE_73]		=	"73      È¯ÉÌÐÅÏ¢";
-		acce_names[ACCE_81]		=	"81      ÉÏA×ÛºÏ";
-		acce_names[ACCE_82]		=	"82      ÉÏB×ÛºÏ";
-		acce_names[ACCE_83]		=	"83      ÉîA×ÛºÏ";
-		acce_names[ACCE_84]		=	"84      ÉîB×ÛºÏ";
-		acce_names[ACCE_85]		=	"85      ÉÏÕ®×ÛºÏ";
-		acce_names[ACCE_86]		=	"86      ÉîÕ®×ÛºÏ";
-		acce_names[ACCE_LBDK]	=	"LBDK    Á¿±È£¨¶à¿Õ£©";
-		acce_names[ACCE_MMLD]	=	"MMLD    ÂòÂôÁ¦µÀ£¨ÕÇµøÂÊ£©";
+		// å¿«æ·é”®
+		acce_names[ACCE_01]		=	"01      çƒ­é”®F1";
+		acce_names[ACCE_02]		=	"02      çƒ­é”®F2";
+		acce_names[ACCE_03]		=	"03      çƒ­é”®F3";
+		acce_names[ACCE_04]		=	"04      çƒ­é”®F4";
+		acce_names[ACCE_05]		=	"05      çƒ­é”®F5";
+		acce_names[ACCE_06]		=	"06      çƒ­é”®F6";
+		acce_names[ACCE_07]		=	"07      çƒ­é”®F7";
+		acce_names[ACCE_08]		=	"08      çƒ­é”®F8";
+		acce_names[ACCE_09]		=	"09      çƒ­é”®F9";
+		acce_names[ACCE_10]		=	"10      çƒ­é”®F10";
+		acce_names[ACCE_1]		=	"1       ä¸ŠAæŠ¥ä»·";
+		acce_names[ACCE_2]		=	"2       ä¸ŠBæŠ¥ä»·";
+		acce_names[ACCE_3]		=	"3       æ·±AæŠ¥ä»·";
+		acce_names[ACCE_4]		=	"4       æ·±BæŠ¥ä»·";
+		acce_names[ACCE_5]		=	"5       ä¸Šå€ºæŠ¥ä»·";
+		acce_names[ACCE_6]		=	"6       æ·±å€ºæŠ¥ä»·";
+		acce_names[ACCE_61]		=	"61      ä¸ŠAæ¶¨è·Œ";
+		acce_names[ACCE_62]		=	"62      ä¸ŠBæ¶¨è·Œ";
+		acce_names[ACCE_63]		=	"63      æ·±Aæ¶¨è·Œ";
+		acce_names[ACCE_64]		=	"64      æ·±Bæ¶¨è·Œ";
+		acce_names[ACCE_65]		=	"65      ä¸Šå€ºæ¶¨è·Œ";
+		acce_names[ACCE_66]		=	"66      æ·±å€ºæ¶¨è·Œ";
+		acce_names[ACCE_71]		=	"71      ä¸Šè¯ä¿¡æ¯";
+		acce_names[ACCE_72]		=	"72      æ·±è¯ä¿¡æ¯";
+		acce_names[ACCE_73]		=	"73      åˆ¸å•†ä¿¡æ¯";
+		acce_names[ACCE_81]		=	"81      ä¸ŠAç»¼åˆ";
+		acce_names[ACCE_82]		=	"82      ä¸ŠBç»¼åˆ";
+		acce_names[ACCE_83]		=	"83      æ·±Aç»¼åˆ";
+		acce_names[ACCE_84]		=	"84      æ·±Bç»¼åˆ";
+		acce_names[ACCE_85]		=	"85      ä¸Šå€ºç»¼åˆ";
+		acce_names[ACCE_86]		=	"86      æ·±å€ºç»¼åˆ";
+		acce_names[ACCE_LBDK]	=	"LBDK    é‡æ¯”ï¼ˆå¤šç©ºï¼‰";
+		acce_names[ACCE_MMLD]	=	"MMLD    ä¹°å–åŠ›é“ï¼ˆæ¶¨è·ŒçŽ‡ï¼‰";
 #endif
 	}
 	
@@ -1016,7 +1016,7 @@ CSPString	AfxGetAccelerator( UINT nAcce, int nCharLeft )
 }
 
 //////////////////////////////////////////////////////////////////////////////////
-// ¹ú¼Ò»òµØÇø
+// å›½å®¶æˆ–åœ°åŒº
 
 void AfxGetAllDistrict( CSPStringArray & astr )
 {
@@ -1046,34 +1046,34 @@ void AfxGetAllDistrict( CSPStringArray & astr )
 	astr.Add( "Other" );
 #else
 	astr.SetSize( 0, 30 );
-	astr.Add( "°Ä´óÀûÑÇ" );
-	astr.Add( "°¢¸ùÍ¢" );
-	astr.Add( "°ÍÎ÷" );
-	astr.Add( "¼ÓÄÃ´ó" );
-	astr.Add( "ÖÐ¹ú" );
-	astr.Add( "µ¤Âó" );
-	astr.Add( "·¨¹ú" );
-	astr.Add( "µÂ¹ú" );
-	astr.Add( "ÖÐ¹úÏã¸Û" );
-	astr.Add( "Ó¡¶È" );
-	astr.Add( "Òâ´óÀû" );
-	astr.Add( "ÈÕ±¾" );
-	astr.Add( "º«¹ú" );
-	astr.Add( "Ä«Î÷¸ç" );
-	astr.Add( "Å²Íþ" );
-	astr.Add( "ÐÂ¼ÓÆÂ" );
-	astr.Add( "Î÷°àÑÀ" );
-	astr.Add( "Èðµä" );
-	astr.Add( "ÖÐ¹úÌ¨Íå" );
-	astr.Add( "Ó¢¹ú" );
-	astr.Add( "ÃÀ¹ú" );
-	astr.Add( "ÆäËû" );
+	astr.Add( "æ¾³å¤§åˆ©äºš" );
+	astr.Add( "é˜¿æ ¹å»·" );
+	astr.Add( "å·´è¥¿" );
+	astr.Add( "åŠ æ‹¿å¤§" );
+	astr.Add( "ä¸­å›½" );
+	astr.Add( "ä¸¹éº¦" );
+	astr.Add( "æ³•å›½" );
+	astr.Add( "å¾·å›½" );
+	astr.Add( "ä¸­å›½é¦™æ¸¯" );
+	astr.Add( "å°åº¦" );
+	astr.Add( "æ„å¤§åˆ©" );
+	astr.Add( "æ—¥æœ¬" );
+	astr.Add( "éŸ©å›½" );
+	astr.Add( "å¢¨è¥¿å“¥" );
+	astr.Add( "æŒªå¨" );
+	astr.Add( "æ–°åŠ å¡" );
+	astr.Add( "è¥¿ç­ç‰™" );
+	astr.Add( "ç‘žå…¸" );
+	astr.Add( "ä¸­å›½å°æ¹¾" );
+	astr.Add( "è‹±å›½" );
+	astr.Add( "ç¾Žå›½" );
+	astr.Add( "å…¶ä»–" );
 #endif
 }
 
 
 //////////////////////////////////////////////////////////////////////////////////
-// ¼òµ¥·­Òë
+// ç®€å•ç¿»è¯‘
 #define	CHS_ENU_MAX_WORDS	32
 typedef	struct	chs_enu_pair_t	{
 	char	chs[CHS_ENU_MAX_WORDS];
@@ -1083,17 +1083,17 @@ typedef	struct	chs_enu_pair_t	{
 CSPString	AfxFaintlyChsToEnu( const char * szCh )
 {
 	static	CHS_ENU_PAIR	chs_enu_pairs[]	=	{
-		{ "ÖÐ¹ú",	" China " },
-		{ "Ö¸Êý",	" Index " },
-		{ "ÉÏÖ¤",	" Shanghai " },
-		{ "ÉîÖ¤",	" Shenzhen " },
-		{ "»ù½ð",	" Fund " },
-		{ "¹úÕ®",	" Bond " },
-		{ "Õ®È¯",	" Bond " },
-		{ "×ªÕ®",	" Convertible Bond " },
-		{ "ÒøÐÐ",	" Bank " },
-		{ "ÆäËû",	" Other " },
-		{ "ÒøÐÐÒµ",	" Bank " },
+		{ "ä¸­å›½",	" China " },
+		{ "æŒ‡æ•°",	" Index " },
+		{ "ä¸Šè¯",	" Shanghai " },
+		{ "æ·±è¯",	" Shenzhen " },
+		{ "åŸºé‡‘",	" Fund " },
+		{ "å›½å€º",	" Bond " },
+		{ "å€ºåˆ¸",	" Bond " },
+		{ "è½¬å€º",	" Convertible Bond " },
+		{ "é“¶è¡Œ",	" Bank " },
+		{ "å…¶ä»–",	" Other " },
+		{ "é“¶è¡Œä¸š",	" Bank " },
 		{ "",	"" },
 	};
 	

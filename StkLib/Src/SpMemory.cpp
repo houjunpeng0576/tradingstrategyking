@@ -17,7 +17,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-// WARNING: Debug����ڴ�Ĵ�������֧���߳�ͬ�������Կ��ܻ�����⣬���ǲ�Ӱ��Release��
+// WARNING: Debug版对内存的处理，不支持线程同步，所以可能会出问题，但是不影响Release版
 
 #if	defined(_DEBUG) && !defined(_AFX)
 

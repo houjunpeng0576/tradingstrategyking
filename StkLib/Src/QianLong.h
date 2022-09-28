@@ -15,7 +15,7 @@
 #include	"../Include/Stock.h"
 #include	"../Include/Database.h"
 
-//	Ç®ÁúÍøÂç°æ¶¯Ì¬Êı¾İ¸ñÊ½£¨¼´ml30\lond\datÏÂµÄÊı¾İ¸ñÊ½£©
+//	é’±é¾™ç½‘ç»œç‰ˆåŠ¨æ€æ•°æ®æ ¼å¼ï¼ˆå³ml30\lond\datä¸‹çš„æ•°æ®æ ¼å¼ï¼‰
 //	Set the default value
 #define EXCH_MIN	240
 #define EXCH_A		9*60+30
@@ -145,13 +145,13 @@ struct QL_Cdp_data{ // shacdp.dat of HXTW
 
 // some dynamic data files structured upwards
 struct QL_Data_day{	// in .day files
-	DWORD	day_date;		//ÈÕÆÚ	Format is XXMMDDHHMM for 5min, Format is YYYYMMDD for day
-	DWORD	open_price;		// ¿ªÅÌ 0.001
-	DWORD	high_price;		// ×î¸ß¼Û 0.001
-	DWORD	low_price;		// ×îµÍ¼Û 0.001
-	DWORD	close_price;	// ÊÕÅÌ 0.001
-	DWORD	day_amount;		// ³É½»¶î(Ç§Ôª) 1000
-	DWORD	day_volume;		// ³É½»Á¿(ÊÖ) 100
+	DWORD	day_date;		//æ—¥æœŸ	Format is XXMMDDHHMM for 5min, Format is YYYYMMDD for day
+	DWORD	open_price;		// å¼€ç›˜ 0.001
+	DWORD	high_price;		// æœ€é«˜ä»· 0.001
+	DWORD	low_price;		// æœ€ä½ä»· 0.001
+	DWORD	close_price;	// æ”¶ç›˜ 0.001
+	DWORD	day_amount;		// æˆäº¤é¢(åƒå…ƒ) 1000
+	DWORD	day_volume;		// æˆäº¤é‡(æ‰‹) 100
 	
 	DWORD	time_count;		// sum trade time
 	BYTE	share_value;	// share value
@@ -264,7 +264,7 @@ void ConvertQLStockInfo( DWORD dwMarket, QL_Stock_info2_V304 & block, CStockInfo
 #define	QL_SHORTNAME_LEN	4
 
 /***
-	Ç®ÁúÊı¾İ¸ñÊ½µÄ¶ÁÈ¡Àà¡£
+	é’±é¾™æ•°æ®æ ¼å¼çš„è¯»å–ç±»ã€‚
 */
 class CQianlong : public IStStore
 {

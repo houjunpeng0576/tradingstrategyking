@@ -124,189 +124,189 @@ struct Slon_HS{ // in lonhs.dat of Slon
 
 /* SLON data structure from MR.ZHAO BIAO
 
-Lonhs.dat�ṹ������QB��
+Lonhs.dat结构分析（QB）
 
-λ�� ���� ���� ˵��
+位置 长度 类型 说明
 
 1 2 INTEGER ****************** 
 
-2 1 STRING ��־��FF->delete 64-> ok 
+2 1 STRING 标志，FF->delete 64-> ok 
 
-3 4 LONG ��Ʊ���� 
+3 4 LONG 股票代码 
 
-4 8 STRING ��Ʊ���� 
+4 8 STRING 股票名称 
 
 5 1 STRING 00-> ? ***************** 
 
 6 2 INTEGER 64-> ? ***************** 
 
-7 2 INTEGER ǰ���̼� 
+7 2 INTEGER 前收盘价 
 
-8 2 INTEGER ���̼� 
+8 2 INTEGER 开盘价 
 
-9 4 LONG ���վ��� 
+9 4 LONG 五日均量 
 
-10 2 INTEGER ��߼� 
+10 2 INTEGER 最高价 
 
-11 2 INTEGER ��ͼ� 
+11 2 INTEGER 最低价 
 
-12 2 INTEGER ���̼� 
+12 2 INTEGER 收盘价 
 
 13 4 LONG ***************** 
 
-14 4 LONG �ܳɽ��� 
+14 4 LONG 总成交量 
 
-15 4 LONG �ܳɽ��� 
+15 4 LONG 总成交量 
 
-16 2 INTEGER ��ǰ����ۣ�����1 
+16 2 INTEGER 当前买入价，即买1 
 
-17 1 STRING ��2�ۣ�Ϊ�뵱ǰ����۵Ĳ�ֵ 
+17 1 STRING 买2价，为与当前买入价的差值 
 
-18 1 STRING ��3�ۣ�Ϊ�뵱ǰ����۵Ĳ�ֵ 
+18 1 STRING 买3价，为与当前买入价的差值 
 
-19 4 LONG ��1�� 
+19 4 LONG 买1量 
 
-20 4 LONG ��2�� 
+20 4 LONG 买2量 
 
-21 4 LONG ��3�� 
+21 4 LONG 买3量 
 
-22 2 INTEGER ��ǰ�����ۣ�����1 
+22 2 INTEGER 当前卖出价，即卖1 
 
-23 1 STRING ��2�ۣ�Ϊ�뵱ǰ����۵Ĳ�ֵ 
+23 1 STRING 卖2价，为与当前买入价的差值 
 
-24 1 STRING ��3�ۣ�Ϊ�뵱ǰ����۵Ĳ�ֵ 
+24 1 STRING 卖3价，为与当前买入价的差值 
 
-25 4 LONG ��1�� 
+25 4 LONG 卖1量 
 
-26 4 LONG ��2�� 
+26 4 LONG 卖2量 
 
-27 4 LONG ��3�� 
+27 4 LONG 卖3量 
 
-28 2 INTEGER �����ʱ�������й� 
+28 2 INTEGER ？与分时线坐标有关 
 
-29 2 INTEGER �����ʱ�������й� 
+29 2 INTEGER ？与分时线坐标有关 
 
-30 2 INTEGER ����ɽ�������LONHIS��DAT�ļ��е�ָ�� 
+30 2 INTEGER 最近成交数据在LONHIS。DAT文件中的指针 
 
-31 2 INTEGER ��LONHIS��DAT�е���ҳ���ݸ��� 
+31 2 INTEGER 在LONHIS。DAT中的首页数据个数 
 
-32 1 STRING ��LONHIS��DAT�е����ݶ�������ҳ�� 
+32 1 STRING 在LONHIS。DAT中的数据段数量，页数 
 
-33 2 INTEGER ��һҳ��LONHIS��DAT�е�ָ��1��FF-���� 
+33 2 INTEGER 第一页在LONHIS。DAT中的指针1，FF-》无 
 
-34 2 INTEGER �ڶ�ҳָ�� 
+34 2 INTEGER 第二页指针 
 
-35 2 INTEGER ����ҳָ�� 
+35 2 INTEGER 第三页指针 
 
-36 2 INTEGER ����ҳָ�� 
+36 2 INTEGER 第四页指针 
 
-37 2 INTEGER ����ҳָ�� 
+37 2 INTEGER 第五页指针 
 
-38 2 INTEGER ����ҳָ�� 
+38 2 INTEGER 第六页指针 
 
-39 2 INTEGER ����ҳָ�� 
+39 2 INTEGER 第七页指针 
 
-40 2 INTEGER �ڰ�ҳָ�� 
+40 2 INTEGER 第八页指针 
 
-41 2 INTEGER �ھ�ҳָ�� 
+41 2 INTEGER 第九页指针 
 
-42 2 INTEGER ��ʮҳָ�� 
+42 2 INTEGER 第十页指针 
 
 43 2 INTEGER **************** 
 
-44 4 LONG ��ǰ�ɽ����� 
+44 4 LONG 当前成交手数 
 
 45 12 STRING **************** 
 
-46 2 INTEGER �ù�Ʊ������LONMIN��DAT�е�ָ�� 
+46 2 INTEGER 该股票数据在LONMIN。DAT中的指针 
 
-47 2 INTEGER ��ʱ����LONMIN�ļ��еĳ��ȣ������ӣ� 
+47 2 INTEGER 分时线在LONMIN文件中的长度，（分钟） 
 
 48 2 INTEGER **************** 
 
 49 2 INTEGER **************** 
 
-50 4 LONG �������� 
+50 4 LONG 外盘数据 
 
 51 133 STRING **************** 
 
-52 1 STRING �� �ƺ�ֻ��Ϊ?/FONT>07�� 
+52 1 STRING ？ 似乎只能为?/FONT>07” 
 
 53 145 STRING **************** 
 
-54 1 STRING Сʱ����Ϊ��ʱ�ߵ���ֹʱ�� 
+54 1 STRING 小时，似为分时线的终止时间 
 
-55 1 STRING ���ӣ� 
+55 1 STRING 分钟， 
 
-56 2 INTEGER ���һ���ӳɽ��� 
+56 2 INTEGER 最近一分钟成交量 
 
 57 2 INTEGER *************** 
 
-58 4 LONG �ܳɽ��� 
+58 4 LONG 总成交量 
 
-59 2 INTEGER ���³ɽ��� 
+59 2 INTEGER 最新成交价 
 
-60 4 LONG ���� 
+60 4 LONG 均价 
 
 61 82 STRING ************************* 
 
-��
+　
 
-**************** �����ò��ꡣ
+**************** 项作用不详。
 
-��
+　
 
-Lohis.dat�ṹ������QB��
+Lohis.dat结构分析（QB）
 
-λ�� ���� ���� ˵��
+位置 长度 类型 说明
 
-1 1 STRING ʱ 
+1 1 STRING 时 
 
-2 1 STRING �� 
+2 1 STRING 分 
 
-3 4 LONG �ɽ������֣� 
+3 4 LONG 成交量（手） 
 
-4 2 INTEGER �ɽ��� 
+4 2 INTEGER 成交价 
 
-5 2 INTEGER ����� 
+5 2 INTEGER 买入价 
 
-6 2 INTEGER ������ 
+6 2 INTEGER 卖出价 
 
-��
+　
 
-��
+　
 
-���ļ�ÿ128����¼Ϊ1ֻ��Ʊ��ĳһʱ��μ۸��¼����ָ����LONHS��DAT�ļ��С�
+该文件每128个记录为1只股票的某一时间段价格记录，其指针在LONHS。DAT文件中。
 
-���ɽ������¼
+按成交情况记录
 
-Lomin.dat�ṹ������QB��
+Lomin.dat结构分析（QB）
 
-λ�� ���� ���� ˵��
+位置 长度 类型 说明
 
-1 1 STRING ʱ 
+1 1 STRING 时 
 
-2 1 STRING �� 
+2 1 STRING 分 
 
-3 4 LONG �ֳɽ��������֣� 
+3 4 LONG 现成交量（现手） 
 
-4 4 LONG �ܳɽ��������֣� 
+4 4 LONG 总成交量（总手） 
 
-5 2 INTEGER ��ǰ�ɽ��� 
+5 2 INTEGER 当前成交价 
 
-6 2 SINGLE ���� 
+6 2 SINGLE 均价 
 
-7 2 INTEGER ��������ǰ�ķ����� 
+7 2 INTEGER 开盘至当前的分钟数 
 
-8 6 STRING ����Ϊ������������ 
+8 6 STRING 估计为买卖力道数据 
 
-���ļ�ÿ400����¼Ϊ1ֻ��Ʊ�ķ�ʱ�����ݣ���ָ����LONHS��DAT�ļ��С�
+该文件每400个记录为1只股票的分时线数据，其指针在LONHS。DAT文件中。
 
-��ʱ���¼
+按时间记录
 */
 
 /***
-	ʤ�����ݸ�ʽ�Ķ�ȡ��δʵ��
+	胜龙数据格式的读取，未实现
 */
 class CShenglong : public IStStore
 {
