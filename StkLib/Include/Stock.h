@@ -1043,11 +1043,18 @@ protected:
 	CKData		m_kdMin15;
 	CKData		m_kdMin5;
 	CDRData		m_drData;
-{
-		classRise		=	0x01,	// 娑ㄥ箙
-		classFall		=	0x02,	// 璺屽箙
-		claddRiseMin5	=	0x04,	// 5鍒嗛挓娑ㄥ箙
-		classFallMin5	=	0x08,	// 5鍒嗛挓璺屽箙
-		classBSRatioAsc	=	0x10,	// 濮旀瘮鍓嶅叚
-		classBSRatioDesc=	0x20,	// 濮旀瘮鍚庡叚
-		classDiff		=	0x40,	/
+	CReport		m_report;
+	CMinute		m_minute;
+	COutline	m_outline;
+	int			m_nBaseTextLen;
+	char *		m_pBaseText;
+};
+
+
+#ifdef	_SP_ENABLE_INLINES
+#define	_STOCK_INLINE	inline
+#include "Stock.inl"
+#undef	_STOCK_INLINE
+#endif
+
+#endif	//__STKLIB_STOCK_H__
